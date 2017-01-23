@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="Author" content="井本拓伸"/>
+<title>HTML、CSS、JavaScript</title>
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<link rel="stylesheet" href="../css/hcj.css"/>
+<script src="../js/hcj.js"></script>
+</head>
+<body>
+<h1>HTML、CSS、JavaScript</h1>
+<h1>JavaScript jQueryで数学と物理</h1>
+<p>jQueryをライブラリとしてSVGの要素にアクセスし数学と物理の応用を行うJavaScriptを練習するためのファイルです。</p>
+<p><svg id="sample" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+	<circle cx="50" cy="50" r="100" ></circle>
+	<path d="M 200,0 200,400 z" stroke="black" stroke-width="1"/>
+	<path d="M 0,200 400,200 z" stroke="black" stroke-width="1"/>
+</svg></p>
+<p><img src="../svg/sample.svg" width="100" height="100" alt="sample"/></p>
+<p><object data="../svg/icon.svg" type="image/svg+xml" width="100" height="100">sample</object></p>
+<p onclick="loadSvg(this,'../svg/sample.svg');"></p>
+</body>
+</html>

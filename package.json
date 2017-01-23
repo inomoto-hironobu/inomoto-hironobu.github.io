@@ -1,0 +1,26 @@
+{
+  "name": "inmthrnb",
+  "version": "0.0.0",
+  "description": "ぎっとはぶ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://inomoto-hironobu@github.com/inomoto-hironobu/inomoto-hironobu.github.io.git"
+  },
+  "author": "井本拓伸",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inomoto-hironobu/inomoto-hironobu.github.io/issues"
+  },
+  "homepage": "https://github.com/inomoto-hironobu/inomoto-hironobu.github.io",
+  "devDependencies": {
+    "typescript": "^2.1.4"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "vue": "~2.1.10"
+  }
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlilnk="https://www.w3.org/1999/xlink" lang="ja">
+<head>
+<meta name="Author" content="井本拓伸"/>
+<title>CSSの学習</title>
+<style id="sample-css">
+pre {
+	padding: 30px;
+	border: solid 1px #492;
+	box-shadow: 3px 3px 5px #492;
+}
+/*
+
+*/
+.block {
+	border: solid 1px #249;
+	box-shadow: 3px 3px 5px #249;
+}
+/*
+*/
+abbr {
+	background-color: #f8c;
+	font-size: 24px;
+	font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+	letter-spacing: 3px;
+	line-height: 36px;
+	text-shadow: 1px 1px 1px gray;
+}
+.inline {
+	
+}
+</style>
+<link type="text/css" rel="stylesheet" href="kamizono.css" />
+<script type="text/javascript">//<!--
+//--></script>
+</head>
+<body>
+<h1></h1>
+<main>
+<p><abbr>XML</abbr><abbr title="Cascading Style Sheet">CSS</abbr>とは<abbr title="Hyper Text Markup Language">HTML</abbr>に色や大きさなど、主に視覚的な情報を付加するための形式としてできたテキストです。主にウェブデザイナーが書くべきだと思うので神園さんにCSSを勉強してもらいたいと思います。<br/>
+このファイルでは練習用の文章として「プロジェクト進行でのこれまでの雑感」章を用意しています。これらの中から基本となる構成要素のうち対象となる段落とキーワードをデザインしてみてください。<a href="kamizono.css">神園さんが扱うCSSファイル（kamizono.css）</a>で .inline と .block でプロパティを書いて装飾を行ってください。<br/>
+このファイルで埋め込みのCSSを設定していてその内容は下記にある通りです。参考にしてください。</p>
+<pre id="display-sample"></pre>
+<p>スタイルを設定できる箇所は「これまでの雑感」節にあるので、CSSを書いていくとどうなるのかを試していってみてください。</p>
+<div class="section">
+<h2>プロジェクト進行でのこれまでの雑感</h2>
+<p>プロジェクトを進行していく中で考えた事や感じた事を書いてみます。</p>
+<div class="section">
+<h3>作業の優先順位と割り振り</h3>
+<p class="block">どのプロジェクトか明瞭ではない場合、例えばウェブ案件に関して何かをしてほしい、というような範囲の広いものを依頼された場合は確認が必要になります。
+いくつかが当てはまるなら、場合分けで指示を出すこともできますが、それぞれの事にどうすればいいか考えなければならないので、労力の無駄が生じると言えます。<br/>
+また、作業の成果に対して評価し改めて作業の割り振りを考えた方がいいかもしれません。作業依頼はその人にしかできない作業を割り振り誰でも出来そうなものは振らないようにした方がいいでしょう。<br/>
+仕事の依頼作業を変更する場合は変更理由や作業の必要性、作業を担える能力があるとは限らないのでその確認などをする必要があり、その連絡手段ができる良い環境を用意しておくべきだと思います。<br/>
+作業が割り振られていない事を言われた場合は、どうすべきかは必ずしも定かではないと思いますが、私の場合は練習もかねて他の利用者も使えるような下地となる画像を作ってみてはどうかと提案しました。</p>
+
+<h3>報連相や情報共有の手段</h3>
+<p class="in-style-block">連絡手段については口頭、サイボウズLive、ロリポップウェブメーラー、Gmail、Googleドライブなどを使ったが、私の場合は一応全て目を通してから要らないと判断したものは削除するようにしていますが、サイボウズからの新着情報などは特に目を通す必要はないと思いますので、未読で削除しても構わないでしょう。
+また、サイボウズLiveのアカウント→個人設定でメールで通知を設定できるようなので、ここで調整するのもいいと思います。
+また、メールの練習（ロリポップとGmail）も少ししたいので、やり取りをメールで求めるかもしれません。</p>
+
+<h3>近況を公開的に報告する意義</h3>
+<p class="block">サイボウズLiveに<a href="https://cybozulive.com/mpAddress/top">近況を書く</a>機能がありますが、なるべく利用することを勧めます。なぜかというと、Googleドライブを社内で使うことになった時、それについて知っている人がいない状態でした。そのため、個々各々で調べていたと思いますが、それぞれやっていたことは違っていたでしょうけれど、一方で同じことを調べたり試していたりしていた場合、簡単に分かるものならともかく、時間のかかるものならそれぞれが労力を消費しますが、近況を書いておけば一人が労力を消費するだけで済むからです。
+
+パソコンの事なんでもという<span class="inline">テーマチャット</span>で何か困ったことで、多くの人に知ってもらいたいことがあれば、ここに書いてもらえますか？
+社内で見れるようになっているので助けになると思います。<br/>
+サイボウズLiveのテーマチャットを使ってもいいかもしれません。
+いづれも無理に使う必要はないですが、他の利用者も助けになると思います。
+
+</p>
+
+<h3>プロジェクトのファイルとフォルダの管理</h3>
+<p class="in-style-block">世にファイルの共有の仕方は色々ありますが、いずれにせよファイルの置き場所の整頓をすることは重要だと思います。現在では<span class="inline">Googleドライブ</span>を使っています。</p>
+</div>
+<!-- /h3 -->
+<ul class="references">
+<li><a href="https://cybozulive.com/mpAddress/top">近況を書く</a></li>
+<li></li>
+<li></li>
+</ul>
+</div>
+<!-- /h2 -->
+<pre id="display-sample"></pre>
+
+<div class="section">
+
+<h2>実験用</h2>
+<div class="">
+<p class="view"><svg xml:id="canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400"></svg></p>
+<fieldset class="controll">
+<label>コントロール</label>
+<table>
+<tr><td></td><td><input></input></td></tr>
+<tr><td colspan="2"><button type="button" onclick="sampleScript()" value="invoke">test</button></td></tr>
+</table>
+</fieldset>
+</div>
+
+<h2 style="clear: both">サンプル</h2>
+<div class="">
+<div class="view">
+
+</div>
+<fieldset id="sample-controll" class="controll">
+<label>コントロール</label>
+<table>
+<tr><td>繰り返し数</td><td><input id="num" value="" type="text" size="4"></input></td></tr>
+<tr><td>x</td><td></td></tr>
+<tr><td colspan="2"><button type="button" onclick="sampleScript()" value="invoke">test</button></td></tr>
+<tr><td>y</td><td></td></tr>
+</table>
+</fieldset>
+</div>
+<hr style="clear: both"/>
+</div>
+</main>
+</body>
+</html>

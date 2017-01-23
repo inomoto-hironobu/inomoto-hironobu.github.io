@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+body {
+	padding-left: 120px;
+	padding-right: 120px;
+}
+body > * {
+	margin-left: 120px;
+	margin-right: 120px;
+	margin-top: 30px;
+}
+
+body > p {
+	padding: 30px;
+	border:solid 3px fuchsia;
+}
+
+body > section {
+	padding: 16px;
+	border:solid 3px blue;
+}
+
+article {
+	margin: 1%;
+	padding: 1%;
+	width: 96%;
+}
+
+#target {
+	border: solid 1px aqua;
+}
+.owners {
+	box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.4) inset;
+}
+
+.cotroll {
+	width: 20%;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+.view {
+	width: 70%;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
