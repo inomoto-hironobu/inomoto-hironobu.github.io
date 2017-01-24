@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlilnk="https://www.w3.org/1999/xlink" lang="ja">
+<html lang="ja">
 <head>
+<meta charset="UTF-8"/>
 <meta name="Author" content="井本拓伸"/>
 <title>CSSの学習</title>
+<link rel="stylesheet" href="../css/hcj.css"/>
+<script src="../js/hcj.js"></script>
 <style id="sample-css">
-pre {
+p {
 	padding: 30px;
 	border: solid 1px #492;
 	box-shadow: 3px 3px 5px #492;
@@ -30,17 +33,19 @@ abbr {
 	
 }
 </style>
-<link type="text/css" rel="stylesheet" href="kamizono.css" />
-<script type="text/javascript">//<!--
-//--></script>
+<style id="userstyle"></style>
 </head>
 <body>
-<h1></h1>
+<h1>CSS</h1>
+<aside>
+
+</aside>
 <main>
 <p><abbr>XML</abbr><abbr title="Cascading Style Sheet">CSS</abbr>とは<abbr title="Hyper Text Markup Language">HTML</abbr>に色や大きさなど、主に視覚的な情報を付加するための形式としてできたテキストです。主にウェブデザイナーが書くべきだと思うので神園さんにCSSを勉強してもらいたいと思います。<br/>
 このファイルでは練習用の文章として「プロジェクト進行でのこれまでの雑感」章を用意しています。これらの中から基本となる構成要素のうち対象となる段落とキーワードをデザインしてみてください。<a href="kamizono.css">神園さんが扱うCSSファイル（kamizono.css）</a>で .inline と .block でプロパティを書いて装飾を行ってください。<br/>
 このファイルで埋め込みのCSSを設定していてその内容は下記にある通りです。参考にしてください。</p>
 <pre id="display-sample"></pre>
+<div class="block"></div>
 <p>スタイルを設定できる箇所は「これまでの雑感」節にあるので、CSSを書いていくとどうなるのかを試していってみてください。</p>
 <div class="section">
 <h2>プロジェクト進行でのこれまでの雑感</h2>
@@ -83,17 +88,7 @@ abbr {
 
 <div class="section">
 
-<h2>実験用</h2>
-<div class="">
-<p class="view"><svg xml:id="canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400"></svg></p>
-<fieldset class="controll">
-<label>コントロール</label>
-<table>
-<tr><td></td><td><input></input></td></tr>
-<tr><td colspan="2"><button type="button" onclick="sampleScript()" value="invoke">test</button></td></tr>
-</table>
-</fieldset>
-</div>
+
 
 <h2 style="clear: both">サンプル</h2>
 <div class="">
