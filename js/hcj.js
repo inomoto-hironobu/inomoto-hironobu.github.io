@@ -8,12 +8,10 @@ function html() {
 
 function displaySample() {
 	var sample = document.getElementById("sample-css");
-	var displaySample = document.getElementById("display-sample");
-	displaySample.appendChild(document.createTextNode(sample.firstChild.nodeValue));
+	var displaySampleElem = document.getElementById("display-sample");
+	displaySampleElem.appendChild(document.createTextNode(sample.firstChild.nodeValue));
 }
-window.addEventListener("load",function() {
-	displaySample();
-});
+
 function loadSvg(target, url) {
 	$.ajax({
 		type: "GET",

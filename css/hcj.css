@@ -8,6 +8,7 @@ body > * {
 	margin-right: 120px;
 	margin-top: 30px;
 }
+h1 {margin:5% 10%;}
 
 body > p {
 	padding: 30px;
@@ -15,6 +16,7 @@ body > p {
 }
 
 body > section {
+	margin:5% 20%;
 	padding: 16px;
 	border:solid 3px blue;
 }
