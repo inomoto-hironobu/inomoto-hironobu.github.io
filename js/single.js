@@ -3,13 +3,14 @@ var app = new Vue({
     data: {
         message: "message",
         seen: true,
-        store: ""
+        stored: ""
     },
     methods: {
         done: function(event) {
             console.log(event);
         },
         store: function(event) {
+        	console.log("store");
             localStorage.setItem("store", this.store);
         }
     }
