@@ -4,24 +4,16 @@
 <meta charset="UTF-8"/>
 <meta name="Author" content="井本拓伸"/>
 <title>HTMLの学習</title>
-<link rel="stylesheet" href="../css/hcj.css"/>
-<script src="../js/hcj.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-74360841-3', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
+<meta property="og:title" content="HTMLの学習"/>
+<meta property="og:type" content="article"/>
+<meta property="url" content="http://inomoto-hironobu.github.io/"/>
+<meta property="og:description" content="Vue.jsについて"/>
 </head>
 <body>
+<main>
 <h1>HTMLの基本の学習</h1>
 <p>このページはHTMLを学習したい、または、復習したい人のために配布しています。</p>
-<main>
+
 <h2>HTMLの種類</h2>
 
 <h2 id="section-テキスト">テキスト</h2>
@@ -54,7 +46,6 @@
 <dt>dt</dt><dd></dd>
 <dt>dd</dt><dd></dd>
 </dl>
-</p>
 <ol>
 <li>基本となるリスト要素</li>
 <li>従属する項目要素</li>
@@ -69,17 +60,17 @@
 <div id="html">
 <p><meter value="2" min="1" max="5" onchange=""></meter></p>
 
-<textarea rows="18" cols="64"></textarea><br>
+<textarea rows="18" cols="64"></textarea><br/>
 <button type="button" onclick="">send</button>
-<label>text:<input maxlength="15" minlength="3" required="required" value="" type="text"></label>
-<label>email:<input type="email"></label>
-<label>password:<input type="password"></label>
-<label>date:<input type="date"></label>
-<label>time:<input type="time"></label>
-<label>file:<input type="file"></label>
-<label>button<input type="button"></label>
-<label>url:<input type="url"></label>
-<label><input type="checkbox"></label>
+<label>text:<input maxlength="15" minlength="3" required="required" value="" type="text"/></label>
+<label>email:<input type="email"/></label>
+<label>password:<input type="password"/></label>
+<label>date:<input type="date"/></label>
+<label>time:<input type="time"/></label>
+<label>file:<input type="file"/></label>
+<label>button<input type="button"/></label>
+<label>url:<input type="url"/></label>
+<label><input type="checkbox"/></label>
 <div><keygen></keygen></div>
 
 <progress value=""></progress>
@@ -142,12 +133,12 @@
 </section>
 
 <h2>メディア</h2>
-<section></section>
+<section>
 <p>メディア</p>
 <figure><figcaption>youtube初めての動画</figcaption><video width="800" src="/20160820_142136.mp4"></video></figure>
-<figure><figcaption>SVG</figcaption><img alt="" src="/sample.svg"></figure>
+<figure><figcaption>SVG</figcaption><img alt="" src="/sample.svg"/></figure>
 <audio src=""></audio>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/jNQXAC9IVRw" frameborder="0" allowfullscreen></iframe>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/jNQXAC9IVRw" frameborder="0"></iframe>
 <iframe></iframe>
 <object type="video" width="800" data="/20160820_142136.mp4"></object>
 </section>
@@ -157,8 +148,8 @@
 
 <legend>HTMLの入力</legend>
 <div id="html">
-<meter value="2" min="1" max="5" onchange=""></meter><br>
-<textarea rows="18" cols="64"></textarea><br>
+<meter value="2" min="1" max="5" onchange=""></meter><br/>
+<textarea rows="18" cols="64"></textarea><br/>
 <button type="button" onclick="">send</button>
 </div>
 </fieldset>
