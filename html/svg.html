@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
 <meta charset="UTF-8"/>
 <title>SVG</title>
+<link rel="index" href="../index.html"/>
 <meta property="og:title" content="SVG"/>
 <meta property="og:type" content="article"/>
 <meta property="url" content="http://inomoto-hironobu.github.io/"/>
@@ -18,10 +19,9 @@
 	<path d="M 200,0 200,400 z" stroke="black" stroke-width="1"/>
 	<path d="M 0,200 400,200 z" stroke="black" stroke-width="1"/>
 </svg></p>
-<p><img src="../svg/wireframe.svg" width="400" height="100" /></p>
-<p><img src="../svg/sample.svg" width="100" height="100" alt="sample"/></p>
-<p><object data="../svg/icon.svg" type="image/svg+xml" width="100" height="100">sample</object></p>
-<p onclick="loadSvg(this,'../svg/sample.svg');"></p>
+<p><img src="/svg/wireframe.svg" width="400" height="100" /></p>
+<p><object data="/svg/icon.svg" type="image/svg+xml" width="100" height="100">sample</object></p>
+<p><button onclick="loadXml(this.parentNode,'/svg/sample.svg');">xml</button></p>
 </main>
 </body>
 </html>
