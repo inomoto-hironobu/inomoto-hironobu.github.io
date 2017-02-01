@@ -2,25 +2,16 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8"/>
-<meta name="Author" content="井本拓伸"/>
 <title>SVG</title>
-<script src="../node_modules/jquery/dist/jquery.js"></script>
-<link rel="stylesheet" href="../css/hcj.css"/>
-<script src="../js/hcj.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-74360841-3', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
+<meta property="og:title" content="SVG"/>
+<meta property="og:type" content="article"/>
+<meta property="url" content="http://inomoto-hironobu.github.io/"/>
+<meta property="og:description" content=""/>
 </head>
 <body>
+<header><a href="../index.html">index</a></header>
 <h1>SVG</h1>
+<main>
 <p>SVGについて</p>
 <p><svg id="sample" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
 	<circle cx="50" cy="50" r="100" ></circle>
@@ -31,5 +22,6 @@
 <p><img src="../svg/sample.svg" width="100" height="100" alt="sample"/></p>
 <p><object data="../svg/icon.svg" type="image/svg+xml" width="100" height="100">sample</object></p>
 <p onclick="loadSvg(this,'../svg/sample.svg');"></p>
+</main>
 </body>
 </html>

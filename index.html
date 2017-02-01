@@ -2,9 +2,8 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8"/>
-<meta name="Author" content="井本拓伸"/>
-<title>個人的な学習とメモのサイト</title>
-<!-- 共通 -->
+<title>井本拓伸のサイト</title>
+
 <script
   src="https://code.jquery.com/jquery-3.1.1.js"
   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
@@ -22,23 +21,63 @@
   ga('send', 'pageview');
 
 </script>
-<!-- /共通 -->
-<script src="js/main.js"></script>
+
+<style id="sample-css">
+p {
+	padding: 30px;
+	border: solid 1px #492;
+	box-shadow: 3px 3px 5px #492;
+}
+/*
+
+*/
+.block {
+	border: solid 1px #249;
+	box-shadow: 3px 3px 5px #249;
+}
+/*
+*/
+abbr {
+	background-color: #f8c;
+	font-size: 24px;
+	font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+	letter-spacing: 3px;
+	line-height: 36px;
+	text-shadow: 1px 1px 1px gray;
+}
+.inline {
+	
+}</style>
+<style id="userstyle"></style>
+<script async src="js/main.js"></script>
 <link rel="stylesheet" href="css/hcj.css"/>
 </head>
 <body>
+<main>
 <h1>トップページ</h1>
 <section>
 <p>Hello World.</p>
 <p><a href="single.html">こちら</a>はシングルページアプリです。</p>
-<p><a href="html/hcj.html">こちら</a>のページではHTML、CSS、JavaScriptの解説を行います。</p>
+
+<div id="document"></div>
 </section>
+</main>
 <aside>
-<ul>
-  <li v-on:click="load">hcj</li>
-  <li></li>
+<div id="hcjapp">
+<ul id="contents">
+  <li><span>HCJではHTML、CSS、JavaScriptの解説を行います</span> <code v-on:click="load">html/hcj.html</code></li>
+  <li><span></span><code v-on:click="load">html/html.html</code></li>
+  <li><span></span><code v-on:click="load">html/css.html</code></li>
+  <li><span></span><code v-on:click="load">html/javascript.html</code></li>
+  <li><span></span><code v-on:click="load">html/svg.html</code></li>
+  <li><span></span><code v-on:click="load">html/jquery.html</code></li>
+  <li><span></span><code v-on:click="load">html/vuejs.html</code></li>
+  <li><span></span><code v-on:click="load">html/web.html</code></li>
+  <li><span></span><code v-on:click="load">html/phisic.html</code></li>
+  <li><span></span><code v-on:click="load"></code></li>
 </ul>
+</div>
+<div id="sidebox"></div>
 </aside>
-<nav></nav>
 </body>
 </html>

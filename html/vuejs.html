@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
 <meta charset="UTF-8"/>
-<meta name="Author" content="井本拓伸"/>
 <title>Vue.js</title>
-<meta property="og:title" content=""/>
+<meta property="og:title" content="Vue.js"/>
 <meta property="og:type" content="article"/>
 <meta property="url" content="http://inomoto-hironobu.github.io/"/>
 <meta property="og:description" content="Vue.jsについて"/>
-<link rel="stylesheet" href="../css/hcj.css"/>
-<script src="../js/hcj.js"></script>
-<script src="../js/vuejs.js"></script>
 </head>
 <body>
+<header><a href="../index.html">index</a></header>
+<main>
 <h1>Vue.js</h1>
 <section>
 <div id="app">
 <p>{{message}}</p>
+<p>{{stored}}</p>
 <p v-if="seen">seen true</p>
+<p v-on:click="done">done</p>
+<p><button v-on:click="store">store</button></p>
+<div id="content">
+<textarea v-model="stored" cols="40" rows="20"></textarea>
+</div>
 <p><button v-on:click="log">log</button></p>
 <ul>
 <li v-for="todo in todos">{{todo.text}}</li>
@@ -34,5 +38,6 @@
 <ol><todo-item></todo-item></ol>
 </div>
 </section>
+</main>
 </body>
 </html>
