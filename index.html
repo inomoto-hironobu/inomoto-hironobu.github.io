@@ -27,7 +27,7 @@
 </script>
 
 <style id="sample-css">
-p {
+pre {
 	padding: 30px;
 	border: solid 1px #492;
 	box-shadow: 3px 3px 5px #492;
@@ -57,14 +57,36 @@ abbr {
 <link rel="stylesheet" href="css/hcj.css"/>
 </head>
 <body>
-<header>
-<h1>シングルインデックスページ</h1>
+<div id="mainpane" class="container">
+<header id="logo" class="row">
+<h1>実験室SPA</h1>
 </header>
-<main>
-<div id="document"></div>
+<main class="row">
+  <div id="document"></div>
+<article>
+  <p>このサイトはGitHub.ioを利用して公開しているWeb技術のメモを兼ねた実験室です。</p>
+</article>
+
 </main>
-<aside>
-<div id="hcjapp">
+<footer id="info" class="row">
+
+</footer>
+</div>
+<aside id="sidepane">
+
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#sidehome">Home</a></li>
+  <li><a data-toggle="tab" href="#hcjapp">contents</a></li>
+  <li><a data-toggle="tab" href="#">Menu 2</a></li>
+</ul>
+
+<div class="tab-content">
+<div id="sidebox"></div>
+<div id="sidehome" class="tab-pane fade in active">
+  test
+</div>
+
+<div id="hcjapp" class="tab-pane fade">
 <ul id="contents">
   <li><code v-on:click="load">html/web.html</code></li>
   <li><code v-on:click="load">html/html.html</code></li>
@@ -81,7 +103,9 @@ abbr {
 <dd></dd>
 </dl>
 </div>
-<div id="sidebox"></div>
+
+</div>
+
 </aside>
 </body>
 </html>

@@ -72,7 +72,7 @@ window.addEventListener("load", function () {
 			dataType: "xml",
 			url: code.textContent,
 			success: function (data) {
-				var meta = {
+				let meta = {
 					title: null,
 					description: null,
 				};
@@ -85,7 +85,7 @@ window.addEventListener("load", function () {
 							meta.description = d.getAttribute("content");
 					}
 				});
-				jQuery(code.parentNode).before('<span>' + meta.title + " : " + meta.description + '</span>', code);
+				jQuery(code).before('<div>' + meta.title + " </div><p> " + meta.description + '</p>', code);
 			}
 		});
 	});
@@ -127,6 +127,30 @@ function newApp() {
 }
 function arg(arg) {
 	application.message = arg;
+}
+function testjson() {
+	var obj = {
+		enquete: {
+			question: "",
+			survey:{
+				q1: "",
+				q2: "",
+				q3: "",
+				q4: ""
+			},
+			answers: [
+				{
+					id: 0,
+					answer: 0
+				},
+				{
+					id: 1,
+					answer: 1
+				}
+			]
+		}
+	}
+	return null;
 }
 function ogp() {
 
