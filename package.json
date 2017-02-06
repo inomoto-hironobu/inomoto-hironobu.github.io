@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/inomoto-hironobu/inomoto-hironobu.github.io",
   "devDependencies": {
-    "typescript": "^2.1.4"
+    "typescript": "^2.1.5"
   },
   "dependencies": {
     "@types/d3": "^4.4.1",

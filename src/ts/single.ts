@@ -6,4 +6,4 @@ export default {
     
 }
 
-var d3body : D3.selection = D3.select("body");
+var d3body = d3.select("body");
