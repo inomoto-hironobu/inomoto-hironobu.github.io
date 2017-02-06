@@ -13,21 +13,6 @@ var app = new Vue({
         store: function(event) {
         	console.log("stored");
             localStorage.setItem("stored", this.stored);
-        },
-        load: function() {
-            jQuery.ajax({
-                type: "GET",
-                dataType: "xml",
-                url: this.html,
-                success: function(data) {
-                    var v = jQuery(data.documentElement).find("meta");
-                    console.log(v);
-                },
-                error: function(error,e) {
-                    console.log(e);
-                    console.warn(error);
-                }
-            });
         }
     }
 });

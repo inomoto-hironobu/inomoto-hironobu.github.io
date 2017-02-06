@@ -12,7 +12,7 @@ function displaySample() {
 	displaySampleElem.appendChild(document.createTextNode(sample.firstChild.nodeValue));
 }
 function createImage(target, src) {
-	$(target).append('<img src="' + location.href + src + '"' + $(target).textContent+'">');
+	$(target).append('<img src="' + location.href + src + '"' + $(target).textContent + '">');
 }
 function loadXml(target, url) {
 	console.log(target);
@@ -39,7 +39,7 @@ Vue.component("todo-item", {
 });
 
 window.addEventListener("load", function () {
-	
+
 	var hcjapp = new Vue({
 		el: "#hcjapp",
 		data: {
@@ -55,7 +55,14 @@ window.addEventListener("load", function () {
 						dataType: "xml",
 						url: event.srcElement.textContent,
 						success: function (data) {
-							jQuery("#document").empty().append($(data).find("main > *"));
+							var html = $(data);
+							jQuery("#document")
+								.empty()
+								.append($("h1")
+									.append(html.find("meta[property='og:title']").attr("content")))
+								.append($("p")
+									.append(html.find("meta[property='og:description']").attr("content")))
+								.append($(data).find("main > *"));
 							jQuery("#sidebox").empty().append($(data).find("aside > *"));
 						},
 						error: function (data) {
@@ -63,6 +70,13 @@ window.addEventListener("load", function () {
 						}
 					});
 				}
+			},
+			done: function (event) {
+				console.log(event);
+			},
+			store: function (event) {
+				console.log("stored");
+				localStorage.setItem("stored", this.stored);
 			}
 		}
 	});
@@ -132,7 +146,7 @@ function testjson() {
 	var obj = {
 		enquete: {
 			question: "",
-			survey:{
+			survey: {
 				q1: "",
 				q2: "",
 				q3: "",

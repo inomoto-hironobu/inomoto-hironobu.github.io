@@ -2,16 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja">
 <head>
 <meta charset="UTF-8"/>
-<title>HTMLの学習</title>
-<meta property="og:title" content="HTMLの学習"/>
+<title>ローカルデータ,IndexedDB,LocalStorage,Cookie</title>
+<meta property="og:title" content="ローカルデータ,IndexedDB,LocalStorage,Cookie"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="このページはHTMLを学習したい、または、復習したい人のために配布しています。"/>
+<meta property="og:description" content="IndexedDB,LocalStorage,Cookie"/>
+<script>
+function store() {
+    localStorage.setItem("stored", this.stored);
+}
+function cookies() {
+    document.cookie;
+}
+</script>
 </head>
 <body>
 <header><a href="../index.html">index</a></header>
 <main>
-<h1>HTMLの基本の学習</h1>
-<p>このページはHTMLを学習したい、または、復習したい人のために配布しています。</p>
+<h1>IndexedDB,LocalStorage,Cookie</h1>
 
 <section>
 <fieldset>
@@ -19,18 +26,10 @@
 <div id="html">
 <p><meter value="2" min="1" max="5" onchange=""></meter></p>
 
-<textarea rows="9" cols="64"></textarea><br/>
-<button type="button" onclick="">send</button>
+<textarea id="cookies" rows="9" cols="64"></textarea>
+<textarea id="localStorage" rows="9" cols="64"></textarea>
+<button type="button" onclick="cookies();">send</button>
 <label>text:<input maxlength="15" minlength="3" required="required" value="" type="text"/></label>
-<label>email:<input type="email"/></label>
-<label>password:<input type="password"/></label>
-<label>date:<input type="date"/></label>
-<label>time:<input type="time"/></label>
-<label>file:<input type="file"/></label>
-<label>button<input type="button"/></label>
-<label>url:<input type="url"/></label>
-<label><input type="checkbox"/></label>
-<div><keygen></keygen></div>
 
 <progress value=""></progress>
 <datalist>
