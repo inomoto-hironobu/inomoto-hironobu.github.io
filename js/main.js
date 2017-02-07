@@ -90,16 +90,9 @@ window.addEventListener("load", function () {
 					title: null,
 					description: null,
 				};
-				$(data.documentElement).find("meta[property]").each(function (i, d) {
-					switch (d.getAttribute("property")) {
-						case "og:title":
-							meta.title = d.getAttribute("content");
-							break;
-						case "og:description":
-							meta.description = d.getAttribute("content");
-					}
+				$(data.documentElement).find("meta[property='og:title']").each(function (i, d) {
+					jQuery(code).before('<div>' + d.getAttribute("content") + " </div>", code);
 				});
-				jQuery(code).before('<div>' + meta.title + " </div><p> " + meta.description + '</p>', code);
 			}
 		});
 	});
