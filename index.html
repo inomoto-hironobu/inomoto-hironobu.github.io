@@ -77,18 +77,13 @@ abbr {
 <aside id="sidepane">
 
 <ul class="nav nav-tabs">
-  <li class="active"><a data-toggle="tab" href="#sidehome">Home</a></li>
-  <li><a data-toggle="tab" href="#hcjapp">contents</a></li>
+  <li class="active"><a data-toggle="tab" href="#hcjapp">contents</a></li>
+  <li><a data-toggle="tab" href="#sidebox">navigation</a></li>
   <li><a data-toggle="tab" href="#">Menu 2</a></li>
 </ul>
 
 <div class="tab-content">
-<div id="sidebox"></div>
-<div id="sidehome" class="tab-pane fade in active">
-  test
-</div>
-
-<div id="hcjapp" class="tab-pane fade">
+<div id="hcjapp" class="tab-pane fade in active">
 <ul id="contents">
   <li><code v-on:click="load">html/web.html</code></li>
   <li><code v-on:click="load">html/html.html</code></li>
@@ -106,6 +101,11 @@ abbr {
 <dd></dd>
 </dl>
 </div>
+<div id="sidebox" class="tab-pane fade">
+  test
+</div>
+
+
 
 </div>
 

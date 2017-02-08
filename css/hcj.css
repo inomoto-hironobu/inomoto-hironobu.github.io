@@ -33,6 +33,10 @@ article {
 .owners {
 	box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.4) inset;
 }
+#contents {
+	padding: 0;
+	margin: 0;
+}
 #contents > li {
 	list-style-type: none;
 	margin: 10px 3px;
