@@ -37,10 +37,39 @@ Vue.component("todo-item", {
 	props: ['todo'],
 	template: "<li>{{todo.text}}</li>"
 });
-
+var hcjapp;
 window.addEventListener("load", function () {
-
-	var hcjapp = new Vue({
+	jQuery("#contents code").each(function (i, code) {
+		code.setAttribute("v-on:click", "load");
+		switch (code) {
+			case "":break;
+		}
+		
+	});
+	hcjapp = hcjapp();
+	jQuery("#contents code").each(function (i, code) {
+		code.setAttribute("v-on:click", "load");
+		switch (code) {
+			case "":break;
+		}
+		jQuery.ajax({
+			type: "GET",
+			dataType: "xml",
+			url: code.textContent,
+			success: function (data) {
+				let item = jQuery(code).parent();
+				$(data.documentElement).find("meta[property='og:title']").each(function (i, d) {
+					item
+						.append($('<div>' + d.getAttribute("content") + '</div>'))
+						.append($("<div></div>").append(code));
+				});
+			}
+		});
+	});
+	
+});
+function hcjapp() {
+	let hcjapp = new Vue({
 		el: "#hcjapp",
 		data: {
 
@@ -80,24 +109,8 @@ window.addEventListener("load", function () {
 			}
 		}
 	});
-	jQuery("#contents code").each(function (i, code) {
-		jQuery.ajax({
-			type: "GET",
-			dataType: "xml",
-			url: code.textContent,
-			success: function (data) {
-				let meta = {
-					title: null,
-					description: null,
-				};
-				$(data.documentElement).find("meta[property='og:title']").each(function (i, d) {
-					jQuery(code).before('<div>' + d.getAttribute("content") + " </div>", code);
-				});
-			}
-		});
-	});
-});
-
+	return hcjapp;
+}
 function newApp() {
 	application = new Vue({
 		el: "#app",
