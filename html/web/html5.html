@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja">
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xmlns:v-on="urn:v-on">
 <head>
 <meta charset="UTF-8"/>
 <title>HTML5の学習</title>
 <meta property="og:title" content="HTMLの学習"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="このページはHTMLを学習したい、または、復習したい人のために配布しています。"/>
+<script src="../js/html.js"></script>
 </head>
 <body>
 <header><a href="../index.html">index</a></header>
 <main>
 <h2 id="section-テキスト">テキスト</h2>
 <section>
+<div id="htmlApp">
+<div id="resultd"></div>
+<div id="result"></div>
+<textarea v-model="html"></textarea>
+<button v-on:click="innerHtml">innerHtml</button>
+</div>
 <p>a要素はリンクをつける場合に使います。また、href属性が無い場合はリンクになりません。q要素、cite要素は引用文と引用元を表します。<cite>徹底解説　ＨＴＭＬ５　マークアップガイド</cite>では、<quote cite="">cite要素は、引用元のタイトルや作品名を表します</quote>、とあります。<dfn>dfn</dfn></p>
 <p><mark></mark><link href="#">a</link>em要素は文章の中で<em>特定の部分</em>を<span>強調する場合に</span>使い、strong要素は強い重要性、意味を持っている場合に使います。HTML4では特に違いがありませんでしたが、<strong>HTML5では明確にem要素とは役割が違います。</strong></p>
 <p><time datetime="1989-01-08">平成元年・西暦1989年1月8日</time><small>small</small><sub>sub</sub><sup></sup><del>del</del><ins>ins</ins><f i="i">text</f><f b="b">text</f><bdo>text</bdo><blink>text</blink></p>
@@ -47,43 +54,7 @@
 </ol>
 </section>
 
-<h2></h2>
-<section>
-<fieldset>
-<legend>HTMLの入力</legend>
-<div id="html">
-<p><meter value="2" min="1" max="5" onchange=""></meter></p>
-<table>
-<tbody>
-<tr><td>text:</td><td><input maxlength="15" minlength="3" required="required" value="" type="text"/></td></tr>
-<tr><td>email:</td><td><input type="email"/></td></tr>
-<tr><td>password:</td><td><input type="password"/></td></tr>
-<tr><td>date:</td><td><input type="date"/></td></tr>
-<tr><td>time:</td><td><input type="time"/></td></tr>
-<tr><td>file:</td><td><input type="file"/></td></tr>
-<tr><td>button</td><td><input type="button"/></td></tr>
-<tr><td>url:</td><td><input type="url"/></td></tr>
-<tr><td>checkbox</td><td><input type="checkbox"/></td></tr>
-</tbody>
-</table>
-<textarea rows="9" cols="64"></textarea><br/>
-<button type="button" onclick="">send</button>
-<div><keygen></keygen></div>
 
-<progress value=""></progress>
-<datalist>
-<option/>
-</datalist>
-<select>
-<optgroup label="">
-<option value="HTML"/>
-<option value="CSS"/>
-</optgroup>
-</select>
-</div>
-</fieldset>
-<details><summary>詳細</summary><div>詳細を表示する</div></details>
-</section>
 
 <h2 id="section-テーブル">表／テーブル</h2>
 <section>
@@ -129,7 +100,7 @@
 </table>
 </section>
 
-<h2>メディア</h2>
+<h2 id="メディア">メディア</h2>
 <section>
 <p>メディア</p>
 <figure><figcaption>youtube初めての動画</figcaption><video width="800" src="/20160820_142136.mp4"></video></figure>
@@ -143,7 +114,7 @@
 </main>
 <aside>
 <ol>
-    <li><a href=""></a></li>
+    <li><a href="#メディア"></a></li>
 </ol>
 </aside>
 </body>
