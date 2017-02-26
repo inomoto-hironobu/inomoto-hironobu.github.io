@@ -13,10 +13,10 @@
 <h1>HTMLの基本の学習</h1>
 <h2>HTMLの種類</h2>
 <ul>
-    <li>HTML4.01</li>
-    <li>XHTML1.0</li>
-    <li>XHTML1.1</li>
-    <li>HTML5</li>
+    <li>HTML4.01<a href="https://www.w3.org/TR/html4/">W3C</a></li>
+    <li>XHTML1.0<a href="https://www.w3.org/TR/xhtml1/">W3C</a></li>
+    <li>XHTML1.1<a href="https://www.w3.org/TR/xhtml11/">W3C</a></li>
+    <li>HTML5<a href="https://www.w3.org/TR/html5/">W3C</a><a href="https://html.spec.whatwg.org/multipage/">WHATWG</a></li>
 </ul>
 <blockquote>
 <p>現在、HTML5 の仕様は、WHATWG と W3C という2つのグループで策定が行われています。</p>
@@ -28,11 +28,110 @@
 <p>HTML5と関連仕様を日本語で読む – 読み解くHTML5 http://html.yomitoku.net/</p>
 </blockquote>
 <p></p>
+<h2 id="section-テキスト">テキスト</h2>
+<section>
+<div id="htmlApp">
+<div id="resultd"></div>
+<div id="result"></div>
+<textarea v-model="html"></textarea>
+<button v-on:click="innerHtml">innerHtml</button>
+</div>
+<p>a要素はリンクをつける場合に使います。また、href属性が無い場合はリンクになりません。q要素、cite要素は引用文と引用元を表します。<cite>徹底解説　ＨＴＭＬ５　マークアップガイド</cite>では、<quote cite="">cite要素は、引用元のタイトルや作品名を表します</quote>、とあります。<dfn>dfn</dfn></p>
+<p><mark></mark><link href="#">a</link>em要素は文章の中で<em>特定の部分</em>を<span>強調する場合に</span>使い、strong要素は強い重要性、意味を持っている場合に使います。HTML4では特に違いがありませんでしたが、<strong>HTML5では明確にem要素とは役割が違います。</strong></p>
+<p><time datetime="1989-01-08">平成元年・西暦1989年1月8日</time><small>small</small><sub>sub</sub><sup></sup><del>del</del><ins>ins</ins><f i="i">text</f><f b="b">text</f><bdo>text</bdo><blink>text</blink></p>
+<blockquote cite="http://www.html5.jp/trans/w3c_differences.html">
+<p>HTML5が、これまで利用されてきたHTML4とどのような違いがあるのかを、分かりやすく解説したものです。HTML5では、どんな要素・属性がなぜ追加・変更・削除されたかが、一通り説明されています。</p>
+<p>HTML5では、要素からプレゼンテーション的な意味を取り除き、さらに、HTML4では定義されていなかった語義を新規の要素として追加しています。プレゼンテーションはCSSに任せ、HTML要素に明確なセマンティクスを与えることで、タグスープを避けようとう考え方がはっきりと表れています。</p>
+<p>なお、HTML5そのものがまだ策定中でどんどん変更・改良が行われていますので、このドキュメントも時とともに情報が古くなり、最新のHTML5を正確に表さなくなってしまう点にご注意ください。</p>
+<p><cite><link href="http://www.html5.jp/trans/w3c_differences.html">W3C - 『HTML 5 differences from HTML 4』日本語訳 - HTML5.JP</link></cite></p>
+</blockquote>
+</section>
+<!-- /section-テキスト-->
+<h2 section="section-リスト">リスト</h2>
+<section>
+<p>リストを表現する要素には基本となる</p>
+<ul id="リスト要素のリスト">
+<li href="リスト要素のリスト">ol</li>
+<li>ul</li>
+<li>dl</li>
+</ul>
+<p>の３つがあり、</p>
+<dl id="dl">
+<dt>ol</dt><dd></dd>
+<dt>ul</dt><dd></dd>
+<dt>dl</dt><dd></dd>
+<dt>li</dt><dd></dd>
+<dt>dt</dt><dd></dd>
+<dt>dd</dt><dd></dd>
+</dl>
+<ol>
+<li>基本となるリスト要素</li>
+<li>従属する項目要素</li>
+<li>項目の中身</li>
+</ol>
+</section>
+
+
+
+<h2 id="section-テーブル">表／テーブル</h2>
+<section>
+<table>
+<caption>要素</caption>
+<summary></summary>
+<thead><tr><th>要素</th><th>スタイル</th><th></th></tr></thead>
+<tbody>
+<tr><td>1</td><td>table</td><td>caption,summary,thead,tbody,tfoot,tr,colgroup,col</td></tr>
+<tr><td>2</td><td>tr</td><td>th,td</td></tr>
+<tr><td>3</td><td>th</td><td>フロージングコンテンツ</td></tr>
+<tr><td>4</td><td>td</td><td>フロージングコンテンツ</td></tr>
+<tr><td>5</td><td>thead</td><td>tr</td></tr>
+<tr><td>6</td><td>tbody</td><td>tr</td></tr>
+<tr><td>7</td><td>tfoot</td><td>tr</td></tr>
+<tr><td>8</td><td>caption</td><td></td></tr>
+<tr><td>9</td><td>colgroup</td><td>col</td></tr>
+<tr><td>10</td><td>col</td><td>#empty</td></tr>
+</tbody>
+</table>
+
+<table>
+<caption></caption>
+<thead><tr></tr></thead>
+<tbody id="tbody-テキスト">
+<tr><th colspan="2">テキスト</th></tr>
+<tr><td>a</td><td><a>text</a></td></tr>
+<tr><td>em</td><td></td></tr>
+<tr><td>strong</td><td><strong>text</strong></td></tr>
+<tr><td>cite</td><td><cite>text</cite></td></tr>
+<tr><td>q</td><td><q>text</q></td></tr>
+<tr><td>dfn</td><td><dfn>text</dfn></td></tr>
+<tr><td>samp</td><td><samp>text</samp></td></tr>
+<tr><td>kbd</td><td></td></tr>
+<tr><td>var</td><td></td></tr>
+<tr><td>abbr</td><td><abbr>text</abbr></td></tr>
+</tbody>
+<tbody>
+<tr><td>html</td><td></td></tr>
+<tr><td>head</td><td></td></tr>
+<tr><td>body</td><td></td></tr>
+</tbody>
+</table>
+</section>
+
+<h2 id="メディア">メディア</h2>
+<section>
+<p>メディア</p>
+<figure><figcaption>youtube初めての動画</figcaption><video width="800" src="/20160820_142136.mp4"></video></figure>
+<figure><figcaption>SVG</figcaption><img alt="" src="/sample.svg"/></figure>
+<audio src=""></audio>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/jNQXAC9IVRw" frameborder="0"></iframe>
+<iframe></iframe>
+<object type="video" width="800" data="/20160820_142136.mp4"></object>
+</section>
 
 </main>
 <aside>
 <ol>
-    <li><a href=""></a></li>
+    <li><a href="#メディア"></a></li>
 </ol>
 </aside>
 </body>
