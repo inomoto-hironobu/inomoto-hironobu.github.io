@@ -1,18 +1,6 @@
-var app = new Vue({
-    el:"#app",
-    data: {
-        message: "message",
-        seen: true,
-        stored: localStorage.getItem("stored"),
-        html: ""
-    },
-    methods: {
-        done: function(event) {
-            console.log(event);
-        },
-        store: function(event) {
-        	console.log("stored");
-            localStorage.setItem("stored", this.stored);
-        }
-    }
-});
+
+moment = require("./moment.js");
+
+var now = moment();
+console.log(now.unix());
+console.log(now.unix() < now.add(1,"hours").unix());
