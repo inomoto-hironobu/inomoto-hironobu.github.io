@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" xml:lang="ja">
+<head>
+<title>スキーマを指定しないXHTML</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="スキーマを指定しないXHTML" />
+<meta property="og:description" content="スキーマを指定しないXHTML" />
+<script
+	type="application/ecmascript"
+	src="https://code.jquery.com/jquery-3.1.1.js"
+	integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+	crossorigin="anonymous"></script>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body>
+<article>
+<p id="namespace"></p>
+<![CDATA[test]]>
+<p id="innerHTML"></p>
+<div id="svg-pane">
+<svg id="no-namespace-svg" width="100" height="100" style="background-color:red"></svg>
+<svg xmlns="http://www.w3.org/2000/svg" id="having-namespace-svg" width="100" height="100" style="background-color:red"></svg>
+<p id="no-namespace-svg-namespace"></p>
+<p id="having-namespace-svg-namespace"></p>
+</div>
+</article>
+</body>
+</html>
