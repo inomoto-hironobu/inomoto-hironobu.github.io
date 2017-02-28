@@ -10,7 +10,9 @@
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
 
 <style id="sample-css">
-
+#paths  input {
+	min-width:4em;
+}
 /*
 */
 abbr {
@@ -25,15 +27,41 @@ abbr {
 <style id="userstyle"></style>
 <link id="maincss" rel="stylesheet" href="css/hcj.css"/>
 <script async src="js/test.js"></script>
+<script src="https://js.cybozu.com/momentjs/2.10.6/moment.min.js"></script>
 </head>
 <body>
 <h1>トップページ</h1>
 <section>
 <p>Hello World.</p>
-<div id="hcj">
 
+<div id="hcj">
+<svg id="svg" xmlns="http://www.w3.org/2000/svg" width="800">
+    <path>
+    	<animate attributeName="d"
+             dur="2s"
+             to="M0,10 l 50,50 l 7,70z"/>
+    	<animate attributeName="d"
+             dur="2s"
+             to="M0,0 l 10,10 l 33,100z"/>
+        <animate attributeName="d"
+             repeatCount="indefinite"
+             dur="2s"
+             to="M50,50 l 10,10 l 33,100z"/>
+     </path>
+</svg>
+</div>
+<div id="svgapp">
+<div>{{row}}</div>
+<input type="text" v-model="row"/><input type="text" v-model="col"/>
+<table id="paths" style="border-collapse:collapse">
+<thead style="border: solid 3px blue"><tr><th>列</th><th v-for="(dvalue,i) in dvalues"><input v-model="dvalues[i]"/></th></tr></thead>
+<tbody style="border: solid 3px red"><tr v-for="(pathd,pi) in pathArr"><td>{{pi}}</td><td v-for="(value,vi) in pathd"><input v-model="pathArr[pi][vi]"/></td></tr></tbody>
+</table>
+<button v-on:click="table">table</button><button v-on:click="create">create</button><button onclick="save();">save</button><input id="csvload" type="file"/>
+<div><button v-on:click="changeTable">列追加</button><button v-on:click="changeTable">列削除</button><button v-on:click="changeTable">行追加</button><button v-on:click="changeTable">行削除</button></div>
 </div>
 <div id="app">
+
 <p>{{message}}</p>
 <p>{{stored}}</p>
 <p v-if="seen">test</p>

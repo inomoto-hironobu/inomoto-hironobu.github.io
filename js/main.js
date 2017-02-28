@@ -38,6 +38,7 @@ Vue.component("todo-item", {
 	template: "<li>{{todo.text}}</li>"
 });
 var hcjapp;
+var svgapp;
 window.addEventListener("load", function () {
 	jQuery("#contents code").each(function (i, code) {
 		code.setAttribute("v-on:click", "load");
@@ -66,7 +67,8 @@ window.addEventListener("load", function () {
 			}
 		});
 	});
-	
+	console.log("test");
+
 });
 function hcjapp() {
 	let hcjapp = new Vue({
