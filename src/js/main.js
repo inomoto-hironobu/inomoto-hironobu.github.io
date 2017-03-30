@@ -74,8 +74,18 @@ function hcjapp() {
 	let hcjapp = new Vue({
 		el: "#hcjapp",
 		data: {
-
+			doclocs: [
+				"html/web/html.html",
+				"html/web/css.html",
+				"html/web/svg.html",
+				"html/web/javascript.html",
+				"html/web/webstorage.html",
+				"html/web/hcj.html",
+				"html/web/phisic.html"
+			]
 		},
+		watch: {},
+		computed: {},
 		methods: {
 			load: function (event) {
 				console.log(event);
@@ -113,40 +123,7 @@ function hcjapp() {
 	});
 	return hcjapp;
 }
-function newApp() {
-	application = new Vue({
-		el: "#app",
-		data: {
-			message: "message",
-			seen: true,
-			todos: [
-				{ text: "vuejs" },
-				{ text: "typescript" },
-				{ text: "cssframework" }
-			],
-			stored: "",
-			model: "model"
-		},
-		methods: {
-			log: function (e) {
-				console.log(e);
-			},
-			done: function (event) {
-				console.log(event);
-			},
-			store: function (event) {
-				console.log("store");
-				localStorage.setItem("stored", this.stored);
-			},
-			reverseMessage: function () {
-				console.log(e);
-				this.message = this.message.split("").reverse().join("");
-			}
-		},
-		watch: {},
-		compute: {}
-	});
-}
+
 function arg(arg) {
 	application.message = arg;
 }

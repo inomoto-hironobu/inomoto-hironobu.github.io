@@ -55,7 +55,7 @@ abbr {
 	
 }</style>
 <style id="userstyle"></style>
-<script async src="js/main.js"></script>
+<script async src="src/js/main.js"></script>
 <link rel="stylesheet" href="css/hcj.css"/>
 </head>
 <body>
@@ -87,14 +87,8 @@ abbr {
 <ul id="contents">
   <li>
     <div class="itemhead"><code v-on:click="load">html/web.html</code></div>
-    <ul>
-      <li><code v-on:click="load">html/web/html.html</code></li>
-      <li><code>html/web/css.html</code></li>
-      <li><code>html/web/svg.html</code></li>
-      <li><code>html/web/javascript.html</code></li>
-      <li><code>html/web/webstorage.html</code></li>
-      <li><code>html/web/hcj.html</code></li>
-      <li><code>html/web/phisic.html</code></li>
+    <ul v-for="loc in doclocs">
+      <li><a href="{{loc}}"><code>{{loc}}</code></a></li>
     </ul>
   </li>
   <li>
