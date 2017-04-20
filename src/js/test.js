@@ -3,6 +3,7 @@
 var now = moment();
 console.log(now.unix());
 console.log(now.unix() < now.add(1,"hours").unix());
+
 var svgapp;
 window.addEventListener("load", function () {
 	svgapp = new Vue({
@@ -16,7 +17,8 @@ window.addEventListener("load", function () {
 			dvalues:["M","l","c","c"],
 			col: 10,
 			row: 10,
-			file: ""
+			file: "",
+			currentRoute: window.location.pathname
 		},
 		methods: {
 			inv: function() {
@@ -96,6 +98,27 @@ window.addEventListener("load", function () {
 		}
 	});
 })
+const NotFound = { template: '<p>Page not found</p>' }
+const Home = { template: '<p>home page</p>' }
+const About = { template: '<p>about page</p>' }
+const routes = {
+  '/': Home,
+  '/about': About
+}
+
+const app3 = new Vue({
+  el: '#app3',
+  data: {
+    currentRoute: window.location.pathname
+  },
+  computed: {
+    ViewComponent () {
+      return routes[this.currentRoute] || NotFound
+    }
+  },
+  render (h) { return h(this.ViewComponent) }
+});
+
 jQuery("#csvload").change(e => {
 	var reader = new FileReader()
 	console.log(e);

@@ -4,7 +4,8 @@
   "description": "ぎっとはぶ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "http": "http-server"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,7 @@
   },
   "homepage": "https://github.com/inomoto-hironobu/inomoto-hironobu.github.io",
   "devDependencies": {
-    "typescript": "^2.1.5"
+    "typescript": "^2.2.1"
   },
   "dependencies": {
     "@types/d3": "^4.4.1",
@@ -25,6 +26,7 @@
     "d3": "^4.4.4",
     "eslint": "^3.15.0",
     "jquery2": "^2.0.3-a",
-    "vue": "~2.1.10"
+    "vue": "~2.1.10",
+    "vue-router": "2.4.0"
   }
 }

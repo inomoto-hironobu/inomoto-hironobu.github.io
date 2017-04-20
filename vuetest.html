@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+<div id="app">
+  <h1>Hello App!</h1>
+  <p>
+    <!-- ナビゲーションに router-link コンポーネントを使う -->
+    <!-- リンク先を `to` プロパティに指定します -->
+    <!-- デフォルトで <router-link> は `<a>` タグとしてレンダリングされます -->
+    <router-link to="/foo">Go to Foo</router-link>
+    <router-link to="/bar">Go to Bar</router-link>
+  </p>
+  <!-- ルートアウトレット -->
+  <!-- ルートとマッチしたコンポーネントがここへレンダリングされます -->
+  <router-view></router-view>
+</div>
