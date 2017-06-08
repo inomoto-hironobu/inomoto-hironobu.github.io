@@ -75,13 +75,13 @@ function hcjapp() {
 		el: "#hcjapp",
 		data: {
 			doclocs: [
-				"html/web/html.html",
-				"html/web/css.html",
-				"html/web/svg.html",
-				"html/web/javascript.html",
-				"html/web/webstorage.html",
-				"html/web/hcj.html",
-				"html/web/phisic.html"
+				"data/html/web/html.html",
+				"data/html/web/css.html",
+				"data/html/web/svg.html",
+				"data/html/web/javascript.html",
+				"data/html/web/webstorage.html",
+				"data/html/web/hcj.html",
+				"data/html/web/phisic.html"
 			]
 		},
 		watch: {},
