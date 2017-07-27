@@ -37,18 +37,20 @@ window.addEventListener("load", function () {
 				jQuery("#svg").empty().append(path);
 			},
 			changeTable: function(e) {
-				switch(e.srcElement.textContent) {
+				switch(e.target.textContent) {
 				case "列追加":
 					this.pathArr.push(this.pathArr[this.pathArr.length - 1]);
 					break;
 				case "列削除":
 					break;
 				case "行追加":
+					
 					break;
 				case "行削除":
+					this.pathArr.length = this.pathArr.length - 1;
 					break;
 				}
-				console.log(e);
+				console.log(this.pathArr);
 			},
 			reflect: function() {
 			},
