@@ -41,47 +41,36 @@ var hcjapp;
 var svgapp;
 window.addEventListener("load", function () {
 	jQuery.ajax({
-		type:"GET",
+		type: "GET",
 		dataType: "json",
-		url:"data/json/doc.json",
-		success: function(data) {
+		url: "data/json/doc.json",
+		success: function (data) {
 			console.log(data);
 			function create(doc, elem) {
 				console.log(elem);
 				var ul = jQuery('<ul></ul>');
 				elem.append(ul);
-				for(var i = 0; i < doc.length; i++) {
+				for (var i = 0; i < doc.length; i++) {
 					var item = doc[i];
-					if(typeof item === "string") {
-						jQuery.ajax({
-							type:"GET",
-							dataType:"html",
-							url:item,
-							success: function(data) {
-								var li = jQuery('<li>' + i + '</li>');
-								var title = jQuery(data).filter("title").text();
-								li.text(title);
-								//li.append($('<div>' + title + '</div>').attr("v-on:click", "load")
-								//);
-								ul.append(li);
-							},
-							error: function() {
-								console.log('no data');
-							}
-						});
-					} else if(item instanceof Array) {
+					if (item instanceof Array) {
 						var li = jQuery('<li>' + i + '</li>');
 						ul.append(li);
 						create(item, li);
+					} else if (item instanceof Object) {
+						var li = jQuery('<li></li>');
+						var title = data['title'];
+						li.text(title);
+						li.append($('<div>' + title + '</div>').attr("v-on:click", "load"));
+						ul.append(li);
 					} else {
 						console.log(item);
 					}
 				}
 			}
-			create(data,jQuery("#contents"));
+			create(data, jQuery("#contents"));
 			hcjapp = hcjapp();
 		},
-		error: function(data) {
+		error: function (data) {
 			console.log(data);
 		}
 	});
@@ -90,19 +79,19 @@ function hcjapp() {
 	let hcjapp = new Vue({
 		el: "#hcjapp",
 		data: {
-			
+
 		},
 		watch: {},
 		computed: {},
 		methods: {
 			load: function (event) {
 				console.log(event);
-				if (event.srcElement.nodeName === 'CODE') {
-					console.log(event.srcElement.textContent);
+				if (event.target.nodeName === 'CODE') {
+					console.log(event.target.textContent);
 					jQuery.ajax({
 						type: "GET",
 						dataType: "xml",
-						url: event.srcElement.textContent,
+						url: event.target.textContent,
 						success: function (data) {
 							var html = $(data);
 							jQuery("#document")
@@ -119,6 +108,18 @@ function hcjapp() {
 						}
 					});
 				}
+			},
+			loadMarkdown: function() {
+				var target = $("#markdown_content");
+
+                $.ajax({
+                    url: target[0].attributes["src"].value,
+                }).success(function(data){
+                    target.append(marked(data));
+                }).error(function(data){
+                    target.append("This content failed to load.");
+                });
+
 			},
 			done: function (event) {
 				console.log(event);

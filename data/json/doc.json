@@ -1,7 +1,7 @@
 [
     {"title":"Web","url":"data/html/web.html"},
     [
-		"data/html/web.html",
+		{"title": "","url":"data/html/web.html"},
 		"data/html/svg.html",
 		"data/html/hcj.html",
 		"data/html/css.html",

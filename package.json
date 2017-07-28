@@ -5,7 +5,8 @@
   "main": "src/js/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "http": "http-server"
+    "http": "http-server",
+    "build": "node src/js/main"
   },
   "repository": {
     "type": "git",
@@ -22,12 +23,13 @@
   },
   "dependencies": {
     "@types/d3": "^4.4.1",
-    "@types/jquery": "^2.0.39",
+    "@types/jquery": "^3.2.1",
     "babel": "^6.23.0",
     "babel-cli": "^6.24.1",
     "d3": "^4.4.4",
     "eslint": "^3.15.0",
-    "jquery2": "^2.0.3-a",
+    "jquery": "^3.2.1",
+    "jsdom": "^11.1.0",
     "vue": "~2.1.10",
     "vue-router": "2.4.0"
   }
