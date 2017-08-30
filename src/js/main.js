@@ -1,7 +1,7 @@
 const fs = require("fs");
 const jsdom = require("jsdom").jsdom;
 const $ = require("jquery");
-
+console.log("test");
 fs.readFile("src/doc.json", function (err, data) {
 	"use strict";
 	console.log(err);

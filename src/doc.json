@@ -1,10 +1,10 @@
 [
-    "data/html/web.html",
+    "web.html",
     [
-		"data/html/web.html",
-		"data/html/svg.html",
-		"data/html/hcj.html",
-		"data/html/css.html",
-		"data/html/javascript.html"
+		"web.html",
+		"svg.html",
+		"hcj.html",
+		"css.html",
+		"javascript.html"
 	]
 ]
