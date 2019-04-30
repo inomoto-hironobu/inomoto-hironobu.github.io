@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vueml xmlns="https://jp.vuejs.org/" xmlns:v-bind="b" xmlns:v-on="o">
+	<v>app</v>
+	<vue name="enquete">
+		<p>enq</p>
+		<template>
+			<div class="enquete" v-on:click="selectEnquete(enq.id)">
+				<p v-bind:eid="enq.id">
+					<a v-bind:href="\'enquete?id=\'+enq.id">id:{{enq.id}}</a> 作成日:{{enq.created}}</p>
+				<p>{{enq.description}}</p>
+				<ol>
+					<li v-for="e in enq.entries">{{e.string}}</li>
+				</ol>
+				<p>{{enq.total}}</p>
+			</div>
+		</template>
+		<methods>
+			<m name="selectEnquete" args="d">
+				app.targetEnqueteId = d;
+				app.callEnquete();
+			</m>
+		</methods>
+	</vue>
+
+</vueml>
