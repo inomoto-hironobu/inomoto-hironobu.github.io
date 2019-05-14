@@ -1,4 +1,4 @@
-@CHARSET "UTF-8";
+@charset "UTF-8";
 body {
 	padding-left: 120px;
 	padding-right: 120px;
@@ -26,13 +26,6 @@ article {
 	padding: 1%;
 	width: 96%;
 }
-
-#target {
-	border: solid 1px aqua;
-}
-.owners {
-	box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.4) inset;
-}
 #contents {
 	padding: 0;
 	margin: 0;
@@ -41,21 +34,4 @@ article {
 	list-style-type: none;
 	margin: 10px 3px;
 	border: outset 1px silver;
-}
-#mainpane {
-	position:relative;
-	top:0;
-	width:60%;
-	right:10%;
-	left:10%;
-	margin:0;
-}
-#sidepane {
-	position: fixed;
-	top:0;
-	left:70%;
-	right:0;
-	width:20%;
-	height:80%;
-	overflow-y: scroll;
 }
