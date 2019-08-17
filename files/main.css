@@ -10,7 +10,7 @@ body > * {
 }
 h1 {margin:5% 10%;}
 
-article > p {
+article p {
 	padding: 30px;
 	border:solid 3px fuchsia;
 }

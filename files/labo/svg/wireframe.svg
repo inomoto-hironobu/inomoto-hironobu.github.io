@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="100" height="100" stroke="black">
+	<rect stroke="black" stroke-width="3px" width="100" height="100" x="0" y="0" fill="white" />
+	<path d="M 0,0 L 100,100 z"/>
+	<path d="M 100,0 L 0,100 z"/>
+</svg>

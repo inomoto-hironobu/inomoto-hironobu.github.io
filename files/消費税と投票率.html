@@ -24,7 +24,7 @@
 <title>消費税と投票率</title>
 <meta property="og:title" content="消費税と投票率"/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://inomoto-hironobu.github.io/消費税と投票率.html"/>
+<meta property="og:url" content="https://inomoto-hironobu.github.io/files/消費税と投票率.html"/>
 <meta property="og:description" content=""/>
 <meta property="og:site_name" content="井本拓伸のギッハブページ"/>
 <script
@@ -33,13 +33,14 @@
   crossorigin="anonymous"></script>
 <link async href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet"/>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
-<script async src="main.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script async src="消費税と投票率.js"></script>
 <link rel="stylesheet" href="main.css"/>
 </head>
 <body>
 <div id="mainpane" class="container">
 <header class="row">
-<p class="col-md-6" id="logo"><a href="index.html">トップへ</a></p>
+<p class="col-md-6" id="logo"><a href="/index.html">トップへ</a></p>
 <p class="col-md-6">更新日時：<time datetime="2019-08-12">2019/8/12</time></p>
 </header>
 <div class="row">
@@ -47,24 +48,34 @@
 <h1>消費税と投票率</h1>
 <p>消費税の税収を選挙時の投票者にまわすアイデアをまとめる。</p>
 <article>
+<section>
 <h2>投票率</h2>
-<p>国政選挙時に投票率を上げるために金銭を支給した場合の効果についての考察を行う。<br/>
-1億人の有権者がいたとしたら支給額が1万円なら最大で1兆円程度だ。<br/>
-そして所得の関係はどうなるだろうか。</p>
+<p><a href="http://www.soumu.go.jp/senkyo/senkyo_s/data/index.html#chapter1">国政選挙</a>時に<a href="http://www.soumu.go.jp/main_content/000365958.pdf">投票率</a>を上げるために金銭を支給した場合の効果についての考察を行う。</p>
+<p>1億人の有権者がいたとしたら支給額が1万円なら最大で配布金額は1兆円程度だ。そのうちは購入にあてられ消費税収としてある程度回収される。</p>
+<ul>
+<li><a href="data/投票率.csv">投票率のCSV</a></li>
+</ul>
+</section>
+<section>
+<h2>金銭の配布</h2>
+<p>新しい経済と保障の制度としてベーシックインカムというものがある。これの効果は</p>
+</section>
+<section>
 <h2>消費税</h2>
-<p>まず財務省の税収の推移を見てみよう。<br/>
-消費税の税収は2017年度だと17兆円程度だ。<br/>
-しかし問題は軽減税率だ。<br/>
-確かに低所得者向けには助かる面もあるかもしれないが、社会の仕組みが複雑になる。<br/>
+<p>消費税の税収は2017年度だと17兆円程度だ。</p>
+<h3>軽減税率</h3>
+<p>しかし問題は軽減税率だ。確かに低所得者向けには助かる面もあるかもしれないが、社会の仕組みが複雑になる。<br/>
 少子高齢化と人手不足の時代で余計な手間を割さける余力などあるのだろうか。</p>
 <ul>
 <li><a href="https://www.mof.go.jp/tax_policy/summary/condition/010.pdf">財務省の税収の推移のPDF</a></li>
 <li><a href="data/税収.csv">主要税収のCSV</a></li>
 </ul>
+</section>
 <h2>式</h2>
 <table>
 <tr><td>[投票率]=f([支給額])</td></tr>
-<tr><td>[消費税分]=[年収]*[計率]</td></tr>
+<tr><td>d[消費税分]/d[年収]=[年収]*[計率]</td></tr>
+<tr><td>F([消費税収])=f([消費税分])g([年収])</td></tr>
 <tr><td>[支給総額]=[有権者数]*[投票率]*[支給額]</td></tr>
 <tr><td>[支給準備金]=[有権者数]*[支給額]</td></tr>
 </table>
