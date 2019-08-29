@@ -1,31 +1,36 @@
 @charset "UTF-8";
 body {
-	padding-left: 120px;
-	padding-right: 120px;
+	padding: 0;
+	margin: 0;
+	background: linear-gradient(0deg, #434343, #222222)
 }
-body > * {
-	margin-left: 20px;
-	margin-right: 20px;
-	margin-top: 30px;
+main {
+	background-color: #eeeeee
+}
+header {
+	background-color: beige;
+}
+footer {
+	background-color: beige;
 }
 h1 {margin:5% 10%;}
-
-article p {
-	padding: 30px;
-	border:solid 3px fuchsia;
-}
-
-body > section {
-	margin:5% 20%;
-	padding: 16px;
-	border:solid 3px blue;
-}
 
 article {
 	margin: 1%;
 	padding: 1%;
 	width: 96%;
+	
 }
+section {
+	margin: 1%;
+	box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, .2)
+}
+article p {
+	margin: .5em;
+	padding: .5em;
+	box-shadow: 1px 1px 3px 3px rgba(221, 116, 109, 0.842)
+}
+
 #contents {
 	padding: 0;
 	margin: 0;

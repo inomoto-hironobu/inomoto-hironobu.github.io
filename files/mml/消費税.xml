@@ -1,0 +1,17 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+	<mrow>
+		<mi>投票率</mi>
+		<mo>=</mo>
+		<mrow>
+			<mi> f </mi>
+			<mo> &#x2061;<!--FUNCTION APPLICATION--> </mo>
+			<mrow>
+				<mo> ( </mo>
+				<mrow>
+					<mi> x </mi>
+				</mrow>
+				<mo> ) </mo>
+			</mrow>
+		</mrow>
+	</mrow>
+</math>
