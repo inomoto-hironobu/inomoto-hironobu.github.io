@@ -1,49 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74360841-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-74360841-3');
-</script>
-<!-- AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-1181541789430557",
-    enable_page_level_ads: true
-  });
-</script>
-<!-- /AdSense -->
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=360,initial-scale=1"/>
-<title>消費税と投票率</title>
-<meta property="og:title" content="消費税と投票率"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://inomoto-hironobu.github.io/files/消費税と投票率.html"/>
-<meta property="og:description" content=""/>
-<meta property="og:site_name" content="井本拓伸のギッハブページ"/>
-<script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
-<link async href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet"/>
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
-<script src="https://d3js.org/d3.v5.min.js"></script>
-<script async src="消費税と投票率.js"></script>
-<link rel="stylesheet" href="main.css"/>
-</head>
-<body>
-<div id="mainpane" class="container">
-<header class="row">
-<p class="col-md-6"><a href="/index.html">トップへ</a></p>
-<p class="col-md-6">更新日時：2019/9/8</p>
-</header>
-<div class="row">
+<template>
 <main class="col-md-10">
 <h1>消費税と投票率</h1>
 <p>消費税の税収を選挙時の投票者にまわすアイデアをまとめる。</p>
@@ -61,6 +16,11 @@
 <p>もし仮に地方参政権は外国人に付与されるが国政選挙の参政権は日本国民のみの場合、こうするとn+m+l万円は日本国民のみに配布されることになる。これを<dfn>弱いBI</dfn>と呼ぶことにする。</p>
 <p>1億人の有権者がいたとしたら支給額がn,m,lが1万円なら最大で配布金額は4兆円程度だ。そのうちは購入にあてられ消費税収としてある程度回収される。</p>
 <p>また投票権があっても選挙に参加する機会が全く無かった場合は投票したとみなす。</p>
+<p>日本の一人当たりの年間の消費税の対象となる額（<dfn>消費額</dfn>）は<dfn>年収</dfn>および<dfn>資産額</dfn>で決まると予想する。
+例を挙げると年収100万円資産100万円の人:A、年収1000万円資産100万円の人:B、年収100万円資産1000万円の人:C、年収1000万円資産1000万円の人:Dがいたとする。
+ここでz:消費額、x:年収、ｙ:資産額とすると、</p>
+<p>z=f(x,y)</p>
+<p>が成り立つ。またzA&lt;zB、zA&lt;zC、zC&lt;zD、zB&lt;zDとなる。</p>
 <table>
 <tr><th>金額</th></tr>
 <tr><td></td></tr>
@@ -105,13 +65,31 @@
 </section>
 </article>
 </main>
-<aside class="col-md-2">
-<ul>
-<li></li>
-<li></li>
-</ul>
-</aside>
-</div>
-</div>
-</body>
-</html>
+</template>
+
+<script>
+export default {
+  name: 'HelloWorld',
+  props: {
+    msg: String
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+</style>

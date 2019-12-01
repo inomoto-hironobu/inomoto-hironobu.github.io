@@ -1,48 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74360841-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-74360841-3');
-</script>
-<!-- AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-1181541789430557",
-    enable_page_level_ads: true
-  });
-</script>
-<!-- /AdSense -->
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=360,initial-scale=1"/>
-<title>Webに関する技術</title>
-<meta name="description" content="Webサイト製作の流れと解説Web技術の基本であるHTML、CSS、JavaScriptの学習を行うためのページ"/>
-<meta property="og:title" content="クラウドソーシングについて"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://inomoto-hironobu.github.io/files/web.html"/>
-<meta property="og:description" content="クラウドソーシングについての考察などを書いていく。"/>
-<meta property="og:site_name" content="井本拓伸のギッハブページ"/>
-<script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
-<link async href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet"/>
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
-<script async src="main.js"></script>
-<link rel="stylesheet" href="main.css"/>
-</head>
-<body class="container">
-<header class="row">
-<p class="col-sm-6"><a href="/index.html">トップへ</a></p>
-<p class="col-sm-6">更新日時：<time datetime="2019-08-01">2019/8/1</time></p>
-</header>
-<div class="row">
+<template>
 <main class="col-md-10">
 <h1>Webに関する技術</h1>
 <p>Web技術の基本であるHTML、CSS、JavaScriptとサーバとプロトコルについての概要</p>
@@ -173,7 +129,19 @@
 <section>
 <h2>CSS</h2>
 <p><abbr title="Cascading Style Sheet">CSS</abbr>とは<abbr title="Hyper Text Markup Language">HTML</abbr>に色や大きさなど、主に視覚的な情報を付加するための形式としてできたテキストです。<br/></p>
-</section>
+<h3>CSSフレームワーク</h3>
+<ul>
+<li>Bulma</li>
+<li>Bootstrap</li>
+<li>Tailwind CSS</li>
+<li>UIkit</li>
+<li>Materialize</li>
+<li>Foundation</li>
+<li>Semantic UI</li>
+<li>Pure</li>
+<li>SkyBlue</li>
+<li>Skeleton</li>
+</ul>
 </section>
 <section>
 <h2>JavaScript</h2>
@@ -216,11 +184,11 @@
 </table>
 <textarea rows="9" cols="64"></textarea><br/>
 <button type="button" onclick="">send</button>
-<div><keygen></keygen></div>
+<div></div>
 
 <progress value=""></progress>
 <datalist>
-<option/>
+<option />
 </datalist>
 <select>
 <optgroup label="">
@@ -264,12 +232,33 @@
 <p>MathMLとは。</p>
 <p><button onclick="loadXml(this.parentNode, 'mml/消費税.xml');">消費税</button></p>
 </section>
-</section>
 </article>
 </main>
-<aside class="col-md-2">
-<p>test</p>
-</aside>
-</div>
-</body>
-</html>
+</template>
+
+<script>
+export default {
+  name: 'HelloWorld',
+  props: {
+    msg: String
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+</style>
