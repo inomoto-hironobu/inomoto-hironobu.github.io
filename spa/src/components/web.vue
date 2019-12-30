@@ -243,6 +243,12 @@ export default {
     msg: String
   }
 }
+function store() {
+    localStorage.setItem("stored", this.stored);
+}
+function cookies() {
+    document.cookie;
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

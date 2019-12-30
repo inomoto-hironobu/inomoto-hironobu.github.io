@@ -1,0 +1,10 @@
+{
+    "data":"data",
+    "array": [
+        1,
+        2,
+        3
+    ],
+    "str_array": ["test","test2","test3"],
+    "subdata":"subdata"
+}
