@@ -9,7 +9,7 @@ window.addEventListener('load', function() {
 			$('#mainlist > .active').toggleClass('active');
 			$('#アイデア-tab').toggleClass('active');
 			$('#ホーム').toggleClass('active').toggleClass('show');
-			$('#アイデア').toggleClass('active').toggleClass('show');
+			$('#アイデア').toggleClass('active');
 		}
 	});
 });
