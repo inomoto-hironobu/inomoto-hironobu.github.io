@@ -40,11 +40,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a class="nav-item nav-link" id="コンタクト-tab" data-toggle="tab" href="#コンタクト" role="tab" aria-controls="コンタクト-tab" aria-selected="false">コンタクト</a>
 </div>
 </nav>
-<p>更新日：<span id="modified"></span id="modified"></p>
 </header>
 <main class="bg-light">
-<div class="tab-content">
-<!-- ホーム -->
+<main class="tab-content">
 <article class="tab-pane fade show active" role="tabpanel" id="ホーム" aria-labelledby="ホーム-tab">
 <h1>ホーム</h1>
 <p>フロントエンドからインフラまで浅く広く渡り歩いているエンジニアです。<br>
@@ -58,18 +56,16 @@ GitHubで鋭意プログラムを開発中です。</p>
 <li><a href="https://inmthrnb.hatenablog.com/">はてなブログ</a></li>
 </ul>
 </article>
-<!-- /home pane -->
-<!-- アイデア -->
-<div class="tab-pane fade" role="tabpanel" id="アイデア" aria-labelledby="アイデア-tab">
+<!-- /#ホーム -->
+<section class="tab-pane fade" role="tabpanel" id="アイデア" aria-labelledby="アイデア-tab">
 <h1>アイデア集</h1>
 <p>主にITを通じて何ができるかというアイデアの公開およびその基礎となる知識の集積。</p>
-<div id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
-<!-- ネットで副収入 -->
-<article class="card">
-<div class="card-header" role="tab" id="ネットで副収入header">
-<h2><a class="text-body" data-toggle="collapse" href="#ネットで副収入" role="button" aria-expanded="true" aria-controls="ネットで副収入">ネットで副収入</a></h2>
-</div>
-<div id="ネットで副収入" class="collapse" role="tabpanel" aria-labelledby="ネットで副収入header" data-parent="#accordion">
+<header id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
+<article class="card" id="ネット副収入">
+<header class="card-header" role="tab" id="ネットで副収入header">
+<h2><a class="text-body" data-toggle="collapse" href="#ネットで副収入main" role="button" aria-expanded="true" aria-controls="ネットで副収入main">ネットで副収入</a></h2>
+</header>
+<main class="collapse" role="tabpanel" id="ネットで副収入main" aria-labelledby="ネットで副収入header" data-parent="#accordion">
 <section class="card-body">
 <h2>ネットで副収入を得るには</h2>
 <p>Google AdSenseやAmazonアソシエイトがある。</p>
@@ -85,15 +81,15 @@ GitHubで鋭意プログラムを開発中です。</p>
 <p>他にもアナリティクス360など大規模な会社向けの物もあるようだ。</p>
 <p>コンテナとしてGTM-WLVT8X4が設定されてある。</p>
 </section>
-</div>
+</main>
 </article>
-<!-- /ネットで副収入 -->
+<!-- /#ネット副収入 -->
 <!-- クラウドソーシング -->
-<article class="card">
+<article class="card" id="クラウドソーシング">
 <div class="card-header" role="tab" id="クラウドソーシングheader">
-<h2><a class="text-body" data-toggle="collapse" href="#クラウドソーシング" role="button" aria-expanded="true" aria-controls="クラウドソーシング">クラウドソーシングについて</a></h2>
+<h2><a class="text-body" data-toggle="collapse" href="#クラウドソーシングmain" role="button" aria-expanded="true" aria-controls="クラウドソーシングmain">クラウドソーシングについて</a></h2>
 </div>
-<div id="クラウドソーシング" class="collapse" role="tabpanel" aria-labelledby="クラウドソーシングheader" data-parent="#accordion">
+<div class="collapse" role="tabpanel" id="クラウドソーシングmain" aria-labelledby="クラウドソーシングheader" data-parent="#accordion">
 <section class="card-body">
 <p>クラウドソーシングで効率よく稼ぐ方法を探り、ここで公開しまた更新していく。<br/>
 その効果や試案の報告などを<a href="https://inmthrnb.hatenablog.com/archive/category/クラウドソーシング">はてなブログのカテゴリ</a>で公表する。</p> 
@@ -137,14 +133,14 @@ GitHubで鋭意プログラムを開発中です。</p>
 </div>
 </article>
 <!-- /クラウドソーシング -->
-<!-- 消費税と投票率 -->
-<article class="card">
-<div class="card-header" role="tab" id="消費税と投票率header">
-<h2><a class="text-body" data-toggle="collapse" href="#消費税と投票率" role="button" aria-expanded="true" aria-controls="消費税と投票率">消費税と投票率</a></h2>
-</div>
-<div id="消費税と投票率" class="collapse" role="tabpanel" aria-labelledby="消費税と投票率header" data-parent="#accordion">
+<!-- 政治経済 -->
+<article class="card" id="政治経済">
+<header class="card-header" role="tab" id="政治経済header">
+<h2><a class="text-body" data-toggle="collapse" href="#政治経済main" role="button" aria-expanded="true" aria-controls="政治経済main">政治経済</a></h2>
+</header>
+<main id="政治経済main" class="collapse" role="tabpanel" aria-labelledby="政治経済header" data-parent="#accordion">
 <section class="card-body">
-<p>消費税の税収を選挙時の投票者にまわすアイデアをまとめる。</p>
+<p>政治経済についての話題を扱う。特に消費税の税収を選挙時の投票者にまわすアイデアをまとめる。</p>
 <section>
 <h2>金銭の配布</h2>
 <p>新しい経済と保障の制度としてベーシックインカムというものがある。この発想を<strong>弱く</strong>借りる。<br/>
@@ -200,18 +196,17 @@ GitHubで鋭意プログラムを開発中です。</p>
 <tr><td>[支給準備金]=[有権者数]*[支給額]</td><td></td></tr>
 </table>
 </section>
-</div>
+</main>
 </article>
-<!-- / -->
-<!-- Web -->
-<article class="card">
-<div class="card-header" role="tab" id="Webheader">
-<h2><a class="text-body" data-toggle="collapse" href="#Web" role="button" aria-expanded="true" aria-controls="Web">Webに関する技術</a></h2>
-</div>
-<div id="Web" class="collapse" role="tabpanel" aria-labelledby="Webheader" data-parent="#accordion">
+<!-- /#政治経済 -->
+<article class="card" id="Web・ICT">
+<header class="card-header" role="tab" id="Webheader">
+<h2><a class="text-body" data-toggle="collapse" href="#Webmain" role="button" aria-expanded="true" aria-controls="Webmain">WebとICTに関する技術</a></h2>
+</header>
+<main id="Webmain" class="collapse" role="tabpanel" aria-labelledby="Webheader" data-parent="#accordion">
 <section class="card-body">
 <h2>Webサイト製作の流れと解説</h2>
-<p>Web技術の基本であるHTML、CSS、JavaScriptの総合的な学習を行うためのページ</p>
+<p>Web技術の基本である<abbr title="Hyper Text Markup Language">HTML</abbr>、CSS、JavaScriptの総合的な学習を行うためのページ</p>
 <p>JavaScript jQueryで数学と物理jQueryをライブラリとしてSVGの要素にアクセスし数学と物理の応用を行うJavaScriptを練習するためのファイルです。</p>
 <p>Web技術の基本であるHTML、CSS、JavaScriptとサーバとプロトコルについての概要</p>
 <p>HTTP、HTTPS/TCP/IPとサーバとUser Agent</p>
@@ -219,10 +214,10 @@ GitHubで鋭意プログラムを開発中です。</p>
 <h2>HTML</h2>
 <p>HTMLとはHTMLの種類</p>
 <ul>
-  <li>HTML4.01<a href="https://www.w3.org/TR/html4/">W3C</a></li>
-  <li>XHTML1.0<a href="https://www.w3.org/TR/xhtml1/">W3C</a></li>
-  <li>XHTML1.1<a href="https://www.w3.org/TR/xhtml11/">W3C</a></li>
-  <li>HTML5<a href="https://www.w3.org/TR/html5/">W3C</a><a href="https://html.spec.whatwg.org/multipage/">WHATWG</a></li>
+  <li><a href="https://www.w3.org/TR/html4/">W3C HTML4</a></li>
+  <li><a href="https://www.w3.org/TR/xhtml1/">W3C XHTML1.0</a></li>
+  <li><a href="https://www.w3.org/TR/xhtml11/">W3C XHTML1.1</a></li>
+  <li><a href="https://html.spec.whatwg.org/multipage/">WHATWG HTML5</a></li>
 </ul>
 <blockquote>
 <p>現在、HTML5 の仕様は、WHATWG と W3C という2つのグループで策定が行われています。</p>
@@ -241,26 +236,34 @@ GitHubで鋭意プログラムを開発中です。</p>
 </blockquote>
 <section>
 <h2>CSS</h2>
-<p><abbr title="Cascading Style Sheet">CSS</abbr>とは<abbr title="Hyper Text Markup Language">HTML</abbr>に色や大きさなど、主に視覚的な情報を付加するための形式としてできたテキストです。<br/></p>
+<p><abbr title="Cascading Style Sheet">CSS</abbr>とはHTMLに色や大きさなど、主に視覚的な情報を付加するための形式としてできたテキストです。<br/>
+フレームワークがあり代表的なものとしては
+</p>
 <ul>
 <li>bootstrap</li>
 </ul>
+<p>がある。</p>
 </section>
-<section>
+<section id="javascript">
 <h2>JavaScript</h2>
 <p>JavaScriptとはプログラミング言語の一種でウェブクライアントで実行されるほぼ唯一の言語として人気がある。</p>
-<h3>ES5</h3>
-<p>ECMAScript</p>
-<h3>ES6(ES2015)以降</h3>
+<p>バージョンがありES3、ES5、ES6(ES2015)以降が大きな違いがある。</p>
+<p>代表的なライブラリとしては</p>
 <ul>
 <li>jQuery</li>
 <li>Underscore</li>
 <li>D3.js</li>
 </ul>
+<p>がありCDNを通して利用することが多い。jsDeliver,cdnjsなどがある。</p>
+<p>フレームワークがあり代表的なもとしては</p>
 <ul>
 <li>Vue.js</li>
+<li>React</li>
+<li>Angular</li>
 </ul>
+<p>がある。</p>
 </section>
+<!-- /#javascript -->
 <section>
 <h2>製作</h2>
 <p></p>
@@ -276,19 +279,26 @@ GitHubで鋭意プログラムを開発中です。</p>
 <li><a href="isbn:9784844363989">現場のプロが教えるWeb製作の最新常識</a></li>
 </ul>
 </section>
-<section>
-<h2>SVG</h2>
-<p>XMLでの画像フォーマット</p>
+<section id="xml">
+<h2>XML</h2>
+<p>XMLとは<a href="https://www.w3.org/XML/">W3CのXMLワーキンググループ</a>で策定されている規格であり、Extensible Markup Languageの略称である。</p>
+<p>XMLにはさらに特定の目的に沿った規格があり代表的な物としては同じくW3Cで策定されたXHTMLがある。</p>
+<section id="svg">
+<h3>SVG</h3>
+<p><a href="https://www.w3.org/Graphics/SVG/">W3C SVG Working Group</a>で策定されているXMLの規格の一つ。</p>
+<p>XMLでの画像フォーマット形式でimage/svg+xmlでタイプが表現される。これからわかる通りPNGやJPGと同じように画像として扱われる。ただし、対応しているサイトは少ない。</p>
 </section>
-<section>
-<h2>MathML</h2>
+<section id="mathml">
+<h3>MathML</h3>
 <p>MathMLとは。</p>
 </section>
 </section>
-</div>
+<!-- /#xml -->
+</section>
+</main>
 </article>
-<!-- /Web -->
-</div>
+<!-- /#Web -->
+</section>
 </div>
 <!-- /アイデア-tab -->
 <div class="tab-pane fade" role="tabpanel" id="コンタクト" aria-labelledby="コンタクト-tab">
@@ -304,7 +314,10 @@ GitHubで鋭意プログラムを開発中です。</p>
 </div>
 <!-- /tabContent -->
 </main>
-<footer class="bg-info"><address id="email" style="text-align: center;"><a class="text-white" href="mailto:inmthrnb@gmail.com">Email</a></address></footer>
+<footer class="bg-info">
+  <p>更新日：<span id="modified"></span id="modified"></p>
+  <address id="email" style="text-align: center;"><a class="text-white" href="mailto:inmthrnb@gmail.com">Email</a></address>
+</footer>
 </div>
 <!-- /container -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

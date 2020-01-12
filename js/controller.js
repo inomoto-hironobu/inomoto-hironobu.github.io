@@ -1,15 +1,18 @@
-window.addEventListener('load', function() {
-	$('[role=\'tabpanel\']')
+window.addEventListener('DOMContentLoaded', function() {
+	$('#accordion > article')
 	.filter(function() {
 		return checkid(this);
 	})
 	.each(function() {
-		$(this).addClass('show');
 		if($('#アイデア').has(this)) {
+			var tabpanel = $(this).find('[role=\'tabpanel\']');
+			tabpanel.addClass('show');
+			console.log(tabpanel);
+			//console.log(tabpanel.attr('class'));
 			$('#mainlist > .active').toggleClass('active');
 			$('#アイデア-tab').toggleClass('active');
 			$('#ホーム').toggleClass('active').toggleClass('show');
-			$('#アイデア').toggleClass('active');
+			$('#アイデア').toggleClass('active').toggleClass('show');
 		}
 	});
 });
