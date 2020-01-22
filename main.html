@@ -45,10 +45,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="tab-content">
 <article class="tab-pane fade show active" role="tabpanel" id="ホーム" aria-labelledby="ホーム-tab">
 <h1>ホーム</h1>
-<p>フロントエンドからインフラまで浅く広く渡り歩いているエンジニアです。<br/>
-得意なのはHTMLとCSSです。プログラミング言語はJavaが得意です。<br/>
-GitHubで鋭意プログラムを開発中です。</p>
-<h2>アイデア</h2>
 <p>様々なアイデアと考察を書いています。随時更新していきたいと思っているので、意見をSNSなどで求めます。</p>
 <p>その他SPAでの学習素材なども予定。</p>
 <ul>
@@ -69,8 +65,11 @@ GitHubで鋭意プログラムを開発中です。</p>
 <section class="card-body">
 <h2>ネットで副収入を得るには</h2>
 <p>Google AdSenseやAmazonアソシエイトがある。</p>
+<h3>サイト運営</h3>
 <p>サイト運営をするときはアクセス解析をするのが当たり前、というかそれなしでは運営なんて言えない。<br />
-さらに広告とアクセス解析を組み合わせるなら高度な分析が必要だ。そこでGoogleマーケティングプラットフォームの一つ<a href="https://support.google.com/tagmanager">Google Tag Manager</a>を使う方法を試す。</p>
+さらに広告とアクセス解析を組み合わせるなら高度な分析が必要だ。</p>
+<p>このページでは<a href="https://marketingplatform.google.com/">Googleマーケティングプラットフォーム</a>（<abbr>GMP</abbr>）を使う方法と試した結果を書く。</p>
+<p>GMPには主に以下のものがある。</p>
 <ul>
 <li>アナリティクス</li>
 <li>タグマネージャー</li>
@@ -79,7 +78,8 @@ GitHubで鋭意プログラムを開発中です。</p>
 <li>サーベイ</li>
 </ul>
 <p>他にもアナリティクス360など大規模な会社向けの物もあるようだ。</p>
-<p>このサイトおよびはてなブログではコンテナとしてGTM-WLVT8X4が設定されてある。</p>
+<p>ここで中心となるのはGoogle Tag Manager（GTM）であり、このサイトおよびはてなブログではコンテナとしてGTM-WLVT8X4が設定されてある。</p>
+<p></p>
 </section>
 </main>
 </article>
@@ -206,6 +206,20 @@ GitHubで鋭意プログラムを開発中です。</p>
 </section>
 </main>
 </article>
+<article class="card" id="こんな会社があったら">
+<header class="card-header" role="tab" id="こんな会社があったらheader">
+<h2><a class="text-body" data-toggle="collapse" href="#こんな会社があったらmain" role="button" aria-expanded="true" aria-controls="こんな会社があったらmain">こんな会社があったら</a></h2>
+</header>
+<main class="collapse" role="tabpanel" id="こんな会社があったらmain" aria-labelledby="こんな会社があったらheader" data-parent="#accordion">
+<section class="card-body">
+<p>こんな会社があったらいいのにという思い付きをまとめていく。</p>
+<ul>
+<li>日韓情報ハブ会社</li>
+<li>コンビニエンスショップ</li>
+</ul>
+</section>
+</main>
+</article>  
 <!-- /#政治経済 -->
 <article class="card" id="Web・ICT">
 <header class="card-header" role="tab" id="Webheader">
@@ -247,8 +261,18 @@ GitHubで鋭意プログラムを開発中です。</p>
 <p><abbr title="Cascading Style Sheet">CSS</abbr>とはHTMLに色や大きさなど、主に視覚的な情報を付加するための形式としてできたテキストです。<br/>
 フレームワークがあり代表的なものとしては
 </p>
+<h3>CSSフレームワーク</h3>
 <ul>
-<li>bootstrap</li>
+<li>Bulma</li>
+<li>Bootstrap</li>
+<li>Tailwind CSS</li>
+<li>UIkit</li>
+<li>Materialize</li>
+<li>Foundation</li>
+<li>Semantic UI</li>
+<li>Pure</li>
+<li>SkyBlue</li>
+<li>Skeleton</li>
 </ul>
 <p>がある。</p>
 </section>
@@ -326,7 +350,7 @@ GitHubで鋭意プログラムを開発中です。</p>
 </main>
 <footer class="bg-info">
   <p>更新日：<span id="modified"></span></p>
-  <address id="email" style="text-align: center;"><a class="text-white" href="mailto:inmthrnb@gmail.com">Email</a></address>
+  <address id="email" style="text-align: center;"><p>Author:井本拓伸 Email:<a class="text-white" href="mailto:inmthrnb@gmail.com">inmthrnb@gmail.com</a></p></address>
 </footer>
 </div>
 <!-- /container -->
