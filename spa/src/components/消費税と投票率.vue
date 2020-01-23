@@ -1,13 +1,8 @@
 <template>
 <main class="col-md-10">
-<h1>消費税と投票率</h1>
+<h2>消費税と投票率</h1>
 <p>消費税の税収を選挙時の投票者にまわすアイデアをまとめる。</p>
-<article>
 <section>
-<h2>金銭の配布</h2>
-<p>新しい経済と保障の制度としてベーシックインカムというものがある。この発想を<strong>弱く</strong>借りる。<br/>
-1年間での金銭の配布については、以下の条件によって変わるものとする。
-</p>
 <ol>
 <li>日本の住民であるものにはn万円を配布する</li>
 <li>第一の条件を満たし、かつ、選挙などの投票に1年間においてすべて参加した場合はn+m万円を配布する</li>
@@ -25,33 +20,14 @@
 <tr><th>金額</th></tr>
 <tr><td></td></tr>
 </table>
-</section>
-<section>
-<h2>投票率</h2>
-<p><a href="http://www.soumu.go.jp/senkyo/senkyo_s/data/index.html#chapter1">国政選挙</a>時に<a href="http://www.soumu.go.jp/main_content/000365958.pdf">投票率</a>を上げるために金銭を支給した場合の効果についての考察を行う。</p>
 <ul>
 <li><a href="data/投票率.csv">投票率のCSV</a></li>
-</ul>
-</section>
-<section>
-<h2>消費税</h2>
-<p>消費税の税収は2017年度だと17兆円程度だ。まず株式などの有価証券の売買にも消費税を掛けるようにする。</p>
-<p>また、名称も購買税と変えた方がいいかもしれない。あるいは、消費税を廃止して証券売買税を導入するというのもいいかもしれない。</p>
-<h3>軽減税率</h3>
-<p>しかし問題は軽減税率だ。確かに低所得者向けには助かる面もあるかもしれないが、社会の仕組みが複雑になる。<br/>
-少子高齢化と人手不足の時代で余計な手間を割さける余力などあるのだろうか。</p>
-<ul>
-<li><a href="https://www.mof.go.jp/tax_policy/summary/condition/010.pdf">財務省の税収の推移のPDF</a></li>
 <li><a href="data/税収.csv">主要税収のCSV</a></li>
 </ul>
 </section>
 <section>
 <h2>式と単位</h2>
 <dl>
-<dt>人口</dt>
-<dd><a href="https://www.stat.go.jp/data/jinsui/2018np/index.html">統計局</a></dd>
-<dt>有権者率</dt>
-<dd></dd>
 </dl>
 <table id="式表">
 <tr><th>式</th><th>MathML</th></tr>
@@ -63,7 +39,6 @@
 <tr><td>[支給準備金]=[有権者数]*[支給額]</td><td></td></tr>
 </table>
 </section>
-</article>
 </main>
 </template>
 
