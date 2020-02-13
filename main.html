@@ -21,8 +21,8 @@ dataLayer = [];
 <meta property="og:site_name" content="GitHubホームページ"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 <link rel="stylesheet" href="main.css"/>
-<script src="js/controller.js"></script>
 <script src="js/http.js"></script>
+<script src="js/controller.js"></script>
 <script async="" defer="" src="//survey.g.doubleclick.net/async_survey?site=u7mehjhrqvosros3my3mxijaa4"></script>
 <script data-ad-client="ca-pub-1181541789430557" async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
@@ -35,9 +35,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="bg-white">
 <nav>
 <div class="nav nav-tabs text-white" role="tablist" id="mainlist">
-<a class="nav-item nav-link active" id="ホーム-tab" data-toggle="tab" href="#ホーム" role="tab" aria-controls="ホーム-tab" aria-selected="true">Home</a>
-<a class="nav-item nav-link" id="アイデア-tab" data-toggle="tab" href="#アイデア" role="tab" aria-controls="アイデア-tab" aria-selected="false">アイデア</a>
-<a class="nav-item nav-link" id="コンタクト-tab" data-toggle="tab" href="#コンタクト" role="tab" aria-controls="コンタクト-tab" aria-selected="false">コンタクト</a>
+<a class="nav-item nav-link active" id="ホーム-tab" data-toggle="tab" href="#ホーム" role="tab" aria-controls="ホーム" aria-selected="true">Home</a>
+<a class="nav-item nav-link" id="アイデア-tab" data-toggle="tab" href="#アイデア" role="tab" aria-controls="アイデア" aria-selected="false">アイデア</a>
+<a class="nav-item nav-link" id="コンタクト-tab" data-toggle="tab" href="#コンタクト" role="tab" aria-controls="コンタクト" aria-selected="false">コンタクト</a>
 </div>
 </nav>
 </header>
@@ -46,6 +46,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <article class="tab-pane fade show active" role="tabpanel" id="ホーム" aria-labelledby="ホーム-tab">
 <h1>ホーム</h1>
 <p>様々なアイデアと考察を書いています。随時更新していきたいと思っているので、意見をSNSなどで求めます。</p>
+<p>このページは頻繁に書き換えていきます。変更の履歴は<a href="https://github.com/inomoto-hironobu/inomoto-hironobu.github.io/commits/master/main.html">GitHubのHistory</a>で確認できます。</p>
 <p>その他SPAでの学習素材なども予定。</p>
 <ul>
 <li><a href="https://github.com/inomoto-hironobu">GitHub</a></li>
@@ -56,7 +57,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="tab-pane fade" role="tabpanel" id="アイデア" aria-labelledby="アイデア-tab">
 <h1>アイデア集</h1>
 <p>主にITを通じて何ができるかというアイデアの公開およびその基礎となる知識の集積。</p>
-<section id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
+<div id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
 <article class="card" id="ネット副収入">
 <header class="card-header" role="tab" id="ネットで副収入header">
 <h2><a class="text-body" data-toggle="collapse" href="#ネットで副収入main" role="button" aria-expanded="true" aria-controls="ネットで副収入main">ネットで副収入</a></h2>
@@ -119,13 +120,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="マニュアル">
 <h3>共通マニュアル</h3>
 <p>作業はテンプレート.txtという依頼に付属したテキストファイルをダウンロードし、その名前を指定された名前に変更して加筆編集したのち、完成すればそれを納品する。<br/>
-ファイル形式は文字コードがUTF-8のテキストファイルであるようにし、変更しない。<br/>
-テキストファイルを編集するアプリケーションはMicrosoft Wordなどなんでもいいが、ファイルの保存時は納品時に指定された形式でなければならない。<br/>
-全角数字全角英字など半角に変換しうる全角文字は使わない。ただし句読点は半角記号ではなく日本語で一般的に使われるものにする。<br/>
-漢数字を使うべき箇所があればそれはそのままにする。例えば「一番」は「1番」に変更しない。<br/>
-分からないことがあった場合はまずはネットで調べ、それでもわからなかった場合にどのように調べたかを述べたのち尋ねる。</p>
-<p>依頼する場合元となるテキストファイルを用意し発注時に添付する。ライティングの希望というテーマで記事があった場合、次のようなテンプレートを配布するので後述のルールに従って編集する。</p>
-<pre>
+<ul>
+<li>ファイル形式は文字コードがUTF-8のテキストファイルであるようにし、変更しない。</li>
+<li>テキストファイルを編集するアプリケーションはMicrosoft Wordなどなんでもいいが、ファイルの保存時は納品時に指定された形式でなければならない</li>
+<li>全角数字全角英字など半角に変換しうる全角文字は使わない。</li>
+<li>漢数字を使うべき箇所があればそれはそのままにする。例えば「一番」は「1番」に変更しない。</li>
+<li>日本語の文章の中での句読点は半角記号ではなく日本語で一般的に使われるものにする。「本日は,晴天なり.」はダメでこの場合は「本日は、晴天なり。」にする。</li>
+</ul>
+<p>分からないことがあった場合はまずはネットで調べ、それでもわからなかった場合にどのように調べたかを述べたのち尋ねる。</p>
+<p>依頼する場合元となるテキストファイルを用意し発注時に添付する。<br/>
+例えば「ライティングの希望」というテーマで記事作製の依頼があった場合、次のようなテンプレートを配布するので後述のルールに従って編集する。</p>
+<pre style="border: double 1px red">
 * 自己紹介
 //名前と簡単な自己紹介を書く
 //プロフィールを表すためにURLを貼っても良い
@@ -141,7 +146,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </pre>
 <h4>編集ルール</h4>
 <p>このテンプレートの編集方法は行頭のダブルスラッシュ//のある行はライターへのコメントでありそのコメントどおりの事を書いてから削除する。<br/>
-この場合「○○を書く」が含まれている行はすべて削除する。ミスがあれば検収は不合格となる。</p>
+この場合「○○を書く」が含まれている行はすべて削除する。ミスがあれば検収は不合格となる。<br/>
+例えばこのようになる。</p>
+<pre style="border: double 1px blue">
+* 自己紹介
+私は井本拓伸と言います。
+https://inmthrnb.hatenablog.com/ でブログをしています。
+
+* 記事の概要
+今回はクラウドソーシングの特にライティングについて書きます。
+
+* 不満
+現状のライティングの仕事は大量生産方式での依頼が多く単価が低いわりに多くの文字を書かされます。
+
+* アイデア
+単価が高く書く文字が少なくても済むようにクラウドワーカ―同士で発注しあえば良くなると考えます。
+</pre>
 </section>
 <h2>試すこと試したこと</h2>
 <h4>ブログのネタ</h4>
@@ -357,7 +377,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </main>
 </article>
 <!-- /#Web -->
-</section>
+</div>
 </section>
 <!-- /アイデア-tab -->
 <section class="tab-pane fade" role="tabpanel" id="コンタクト" aria-labelledby="コンタクト-tab">
