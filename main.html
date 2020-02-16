@@ -21,6 +21,7 @@ dataLayer = [];
 <meta property="og:site_name" content="GitHubホームページ"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 <link rel="stylesheet" href="main.css"/>
+<script src="fdom-javascirpt/fdom.js"></script>
 <script src="js/http.js"></script>
 <script src="js/controller.js"></script>
 <script async="" defer="" src="//survey.g.doubleclick.net/async_survey?site=u7mehjhrqvosros3my3mxijaa4"></script>
@@ -35,9 +36,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="bg-white">
 <nav>
 <div class="nav nav-tabs text-white" role="tablist" id="mainlist">
-<a class="nav-item nav-link active" id="ホーム-tab" data-toggle="tab" href="#ホーム" role="tab" aria-controls="ホーム" aria-selected="true">Home</a>
-<a class="nav-item nav-link" id="アイデア-tab" data-toggle="tab" href="#アイデア" role="tab" aria-controls="アイデア" aria-selected="false">アイデア</a>
-<a class="nav-item nav-link" id="コンタクト-tab" data-toggle="tab" href="#コンタクト" role="tab" aria-controls="コンタクト" aria-selected="false">コンタクト</a>
+<a class="nav-item nav-link active" role="tab" data-toggle="tab" id="ホーム-tab" href="#ホーム" aria-controls="ホーム" aria-selected="true">Home</a>
+<a class="nav-item nav-link" role="tab" data-toggle="tab" id="アイデア-tab" href="#アイデア" aria-controls="アイデア" aria-selected="false">アイデア</a>
+<a class="nav-item nav-link" role="tab" data-toggle="tab" id="コンタクト-tab" href="#コンタクト" aria-controls="コンタクト" aria-selected="false">コンタクト</a>
 </div>
 </nav>
 </header>
@@ -184,8 +185,9 @@ https://inmthrnb.hatenablog.com/ でブログをしています。
 </header>
 <main id="政治経済main" class="collapse" role="tabpanel" aria-labelledby="政治経済header" data-parent="#accordion">
 <section class="card-body">
-<p>政治経済についての話題を扱う。特に消費税の税収を選挙時の投票者にまわすアイデアをまとめる。</p>
+<p>政治経済についての話題を扱う。特に消費税、投票報償制、ベーシックインカム投票者にまわすアイデアをまとめる。</p>
 <section>
+<h2>ベーシックインカム</h2>
 <h2>選挙とベーシックインカム</h2>
 <p>選挙時に投票した場合の報償制度を提案する。そして新しい経済と福祉保障の制度としてベーシックインカムというものがある。この発想を<strong>弱く</strong>借りて組み合わせる。<br/>
 例えば次の案達のような場合を考える。</p>
@@ -200,6 +202,16 @@ https://inmthrnb.hatenablog.com/ でブログをしています。
 <p>もし仮に地方参政権は外国人に付与されるが国政選挙の参政権は日本国民のみの場合、こうするとn+m+l万円は日本国民のみに配布されることになる。これを<dfn>弱いBI</dfn>と呼ぶことにする。</p>
 <p>1億人の有権者がいたとしたら支給額n,m,lがそれぞれ1万円なら最大で配布金額は4兆円程度だ。そのうちは購入にあてられ消費税収としてある程度回収される。<br/>
 また投票権があっても選挙に参加する機会が全く無かった場合は投票したとみなす。</p>
+
+<p>今までは国政選挙の投票時に金銭を配布すること、あるいはすべての選挙に参加すれば金銭の配布を受け取れることを考えていたが、これは投票率を上げるうえであまり効率がよくないかもしれない。<br/>
+というのも条件を厳しくすると初めから諦める人も出てくるかもしれないからだ。<br/>
+なので条件を緩め国政選挙でも地方自治体の選挙でも年1回でも何らかの選挙に参加すれば投票奨励金を受け取れるようにすれば投票率は100%近くにならなくても今までより投票率は大きくあがるだろう。<br/>
+要は投票率を上げることが肝心で100%を求める必要はないということだ。</p>
+<ul>
+<li>国政選挙</li>
+<li>地方選挙</li>
+<li>住民投票</li>
+</ul>
 </section>
 <section>
 <h3>案2　ベーシックインカムとしての国債</h3>
@@ -225,6 +237,40 @@ https://inmthrnb.hatenablog.com/ でブログをしています。
 少子高齢化と人手不足の時代で余計な手間を割さける余力などあるのだろうか。</p>
 </section>
 <p>これらの案は総合的に考え組み合わせることが可能である。最適な経済と政治の関係を構築する為の基礎となる。</p>
+</section>
+<section>
+<h3></h3>
+<p>
+  投票奨励金
+  
+  
+  消費税の範囲
+  ある法人が別の法人の株を買う場合は消費税がかからない。今の日本は法人が貴族として世の中を支配することを良しとする。
+  
+  これを変え、個人も法人も金融や株を買うときは消費税を払うようにすれば大きな税収増となるだろう。
+  
+  もちろんそれだけでは景気の悪化は避けられないが弱いベーシックインカムと組み合わされればむしろ景気がよくなる可能性もあるのではないだろうか。
+  
+  米の配給
+  前回の記事の続きで国債だけではなく米も配布することを考える。
+  
+  米を配布するといっても国が米を直接を配布するわけではなく金銭を使い市場を通して弱いベーシックインカムの一種としての配布だ。方法としては
+  
+  消費税収から国が自治体に金銭を配布する
+  自治体が米の引換券を住人に配布する
+  住人が店から引換券で米を購入する
+  店が自治体から引換券分の金銭を受け取る
+  となるだろうか。
+  
+  これは米の価格を高く上げ農家の収入や楽にし国全体の農業を安定させる効果があるだろう。
+  
+  金銭と通貨代替品
+  国債にしても米にしても通貨の代替と定めたものを受け取る場合は金銭を直接受け取る場合よりも高くなるように設計すれば国の財政と農業と経済を健全化する効果が出るはずだ。例えば金銭であれば月に1万円で代替品なら2万円というぐあいだ。
+  
+  ただ、金銭か代替品かのどちらか一方の選択は極端なので柔軟なやり方ができれば混乱は少ないだろう。
+  
+  道州制と特区
+  日本全国でいきなりするのが難しいなら道州制を導入して一部の特区で実験を行うものおもしろい。北海道と沖縄で先行してみるのはいいかもしれない。なぜならこれら地域は本土から離れている道州のようなものだからだ。そして東京一極集中の弊害を受けている地域でもあるのでそれを解消するためにもいいと確信する。</p>
 </section>
 <section>
 <h2>式と単位</h2>
@@ -263,6 +309,35 @@ https://inmthrnb.hatenablog.com/ でブログをしています。
 <li>日韓情報ハブ会社</li>
 <li>コンビニエンスショップ</li>
 </ul>
+<h3>IT雑務</h3>
+<p>IT業における雑務とは雑務といえば高いスキルを持たない人がやること、そのような印象が持たれるだろう。しかし、ITに関しては雑務にこそ高いスキルと幅広い知識、洗練された理知さが必要となる。</p>
+<dl>
+<dt>パソコン管理</dt>
+<dd>使用OSとパソコンの性能の把握と、設定、保守、アプリケーション、設定動作が遅くなっているかどうか、遅い原因は何か、CPU、メモリ、ディスクドライブの調整</dd>
+<dt>ネットワーク</dt>
+<dd>社内あるいは社外の適切なネットワーク構築</dd>
+<dt>デジタル書類管理</dt>
+<dd>デジタル・アナログ書類の把握と評価、そして整理・移動及び廃棄、精査と整理</dd>
+<dt>ネット検索</dt>
+<dd>古い情報、誤りのある情報を見極め、</dd>
+</dl>
+<p>開発の課題：システムあるいはアプリケーション開発における課題とその解決難問となっているのは何か、なぜ難しくしているか。特にビルドツールの選定と使い方に問題はないか。</p>
+<p>調査と評価と報告報告書をどう書くべきか、どのように時間的に提出するか。</p>
+<h3>IT雑務ネットワーク</h3>
+<p>事務作業におけるIT雑務は何になるだろうか。<br/>
+まずはパソコンで事務作業を行っている状況を想定しよう。<br/>
+その場合には当然LANとWANなどのネットワークが構築されているはずだ。もちろんネットワークのない状況でパソコンを使うことも考えられるがそれはITの活用ではない。あくまでITを使うことが主眼であってパソコンそのものに重点を置くものではない。<br/>
+そうなると重要なのはルーターになる。ルーターがあって初めてLANとWANが活用できる。ではルーターがあってそれを活用できたならどうなるか。
+まずはLANのことを考えよう。LANではいくつかの端末機器があり代表的なのはパソコンとプリンターになる。あまり一般的ではないが重要な役割を担うのはNAS(Network Attached Storage)になる。これはファイルサーバー機能を搭載した端末機器でパソコンからファイルの保存機能だけを抜き出してそれに特化しているのようなものだ。<br/>
+ファイルの共有手段としてはインターネット上のGoogle DriveやMicrosoft OneDriveなどのクラウドストレージもあるが、手続きが必要となる。もちろんこれらも活用すべきであるが、LAN内でどれだけ充実した環境ができるかがまずは重要だ。
+そしてWAN、インターネットを活用するには、前述のクラウドストレージ、それに通信とタスク管理が重要になるだろう。通信にはメールが基本になるが2019年現在ではさまざなまサービスがあり何を使用すべきかは一概には言えない。タスク管理であればGoogleカレンダーの使用が一般的だろう。</p>
+<h3>IT雑務Java</h3>
+<p>課題：JavaのITシステムを開発する<br/>
+検索するときはJavaのバージョンなどの適切な対象事項であるかを意識する。<br/>
+Dockerで開発環境を作るか否か。VirtualBoxが必要か。<br/>
+今日においてOpen Source Softwareの使用は当然のこととなっている。Apache Software Foundationのライブラリは真っ先に候補となる。Eclipse Foundationも候補になりうる。<br/>
+場合によってはGitHubなどのソーシャルコーディングに参加する必要もある。またライセンスを意識する。<br/>
+フロントエンドではJavaScriptフレームワークとCSSフレームワークの使用が検討事項になるのでそれらを勘案する。</p>
 </section>
 </main>
 </article>  
