@@ -13,13 +13,13 @@ dataLayer = [
     })(window,document,'script','dataLayer','GTM-WLVT8X4');</script>
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<meta framexs:fix="" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 <title> - 井本拓伸</title>
-<meta property="og:title" content="ホームページ"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://inomoto-hironobu.github.io/main.html"/>
+<meta property="og:title" content="-ホームページ"/>
+<meta framexs:fix="" property="og:type" content="website"/>
+<meta property="og:url" content="https://inomoto-hironobu.github.io/"/>
 <meta property="og:description" content="ホームページ"/>
-<meta property="og:site_name" content="井本拓伸のホームページ"/>
+<meta framexs:fix="" property="og:site_name" content="井本拓伸のホームページ"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 <link rel="stylesheet" href="main.css"/>
 <script src="js/http.js"></script>
@@ -33,7 +33,7 @@ dataLayer = [
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLVT8X4"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<div class="container-sm">
+<div>
 <header class="bg-white">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">日々雑感のまとめ</a>
@@ -66,26 +66,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a class="dropdown-item" href="../knowledge/gmp.xhtml">Googleマーケティングプラットフォーム</a>
         </div>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="idea" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          人物
+        </a>
+        <div class="dropdown-menu" aria-labelledby="idea">
+          <a class="dropdown-item" href="../person/books.xhtml">読んだ本</a>
+        </div>
+      </li>
     </ul>
   </div>
 </nav>
 </header>
-<main class="bg-light">
-<div class="tab-content">
+<div class="container">
+<div class="row">
+<main class="col-md-9 bg-light" data-spy="scroll" data-target="#toc">
 <article>
 <div framexs:id-d="content"></div>
 </article>
-</div>
-<!-- /tab-content -->
 </main>
+<aside class="col-md-3 bg-white d-md-none d-md-block">
+<nav id="toc" data-toggle="toc" class="text-white"></nav>
+</aside>
+</div>
+</div>
 <footer class="bg-info">
   <p>更新日<span id="modified"></span></p>
-  <address id="email" style="text-align: center;"><p> Email:<a class="text-white" href="mailto:inmthrnb@gmail.com">inmthrnb@gmail.com</a></p></address>
+  <address id="email" style="text-align: center;"><p class="text-white"> Email:<a class="text-white" href="mailto:inmthrnb@gmail.com">inmthrnb@gmail.com</a></p></address>
 </footer>
 </div>
 <!-- /container -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link
+  rel="stylesheet"
+  href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"
+/>
+<!-- add after bootstrap.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
 </body>
 </html>
