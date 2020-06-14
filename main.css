@@ -26,6 +26,10 @@ section table {
 section pre {
 	background-color: white;
 }
+.adv {
+	margin-left: auto;
+	margin-right: auto;
+}
 @media screen and (max-width: 480px){
 	
 }
