@@ -2,14 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://inomoto-hironobu.github.io/index.html</loc>
-    <lastmod>2019-08-18</lastmod>
+    <lastmod>2020-07-1</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/main.html</loc>
-    <lastmod>2020-02-18</lastmod>
-    <changefreq>dayly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://inomoto-hironobu.github.io/idea/クラウドソーシング.xhtml</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inomoto-hironobu.github.io/idea/ビジネス.xhtml</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inomoto-hironobu.github.io/idea/ベーシックインカム.xhtml</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inomoto-hironobu.github.io/idea/創業.xhtml</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inomoto-hironobu.github.io/idea/労働.xhtml</loc>
+    <priority>0.8</priority>
   </url>
 </urlset>
