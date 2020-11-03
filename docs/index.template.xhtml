@@ -73,14 +73,15 @@ dataLayer = [{
 </nav>
 </header>
 <div class="container">
-<div class="row">
-<aside class="col-md-3 bg-white">
-<nav id="toc" data-toggle="toc" class="text-white"></nav>
-</aside>
-<main class="col-md-9 bg-light" data-spy="scroll" data-target="#toc">
-<div framexs:id-d="main"></div>
+<main class="bg-light" data-spy="scroll" data-target="#toc">
+<article><div framexs:id-d="prelude"/></article>
+<article>
+<table class="responsive">
+<tr><th>リンク</th><th>要約</th></tr>
+<tr framexs:id-d="indexes"></tr>
+</table>
+</article>
 </main>
-</div>
 </div>
 <!-- /container -->
 <footer class="bg-info">
