@@ -17,11 +17,15 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/docs/books.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/docs/visualization/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/docs/consulting.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/docs/personal/index.xhtml</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inomoto-hironobu.github.io/docs/lp/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
 </urlset>
