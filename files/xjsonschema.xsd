@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	version="1.1" elementFormDefault="qualified">
+	<xs:simpleType name="data.type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="boolean" />
+			<xs:enumeration value="integer" />
+			<xs:enumeration value="number" />
+			<xs:enumeration value="string" />
+			<xs:enumeration value="array" />
+			<xs:enumeration value="object" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

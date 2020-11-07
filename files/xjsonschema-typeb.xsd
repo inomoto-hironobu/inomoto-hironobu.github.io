@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	version="1.1" elementFormDefault="qualified"
+	xmlns:tns="https://www.json.org/typeb"
+	targetNamespace="https://www.json.org/typeb">
+	<xs:annotation>
+		<xs:documentation>シンプルさを目指したJSONのスキーマ</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="xjsonschema.xsd" />
+	<xs:attributeGroup name="common.attr">
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="required" type="xs:boolean"
+			default="false" />
+		<xs:attribute name="nullable" type="xs:boolean"
+			default="false" />
+	</xs:attributeGroup>
+	<xs:group name="object.content.group">
+		<xs:choice>
+			<xs:element name="type">
+				<xs:complexType>
+					<xs:attribute name="value" type="tns:data.type" />
+				</xs:complexType>
+			</xs:element>
+			<xs:group ref="tns:object.group" minOccurs="0"
+				maxOccurs="unbounded" />
+		</xs:choice>
+	</xs:group>
+	<xs:group name="object.group">
+		<xs:choice>
+			<xs:element name="boolean">
+				<xs:complexType>
+					<xs:attribute name="default" type="xs:boolean" />
+					<xs:attributeGroup ref="tns:common.attr" />
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="string">
+				<xs:complexType>
+					<xs:attribute name="default" type="xs:string" />
+					<xs:attributeGroup ref="tns:common.attr" />
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="integer">
+				<xs:complexType>
+					<xs:attribute name="default" type="xs:integer" />
+					<xs:attributeGroup ref="tns:common.attr" />
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="number">
+				<xs:complexType>
+					<xs:attribute name="default" type="xs:float" />
+					<xs:attributeGroup ref="tns:common.attr" />
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="array">
+				<xs:complexType>
+					<xs:attribute name="type" type="tns:data.type"></xs:attribute>
+					<xs:attributeGroup ref="tns:common.attr" />
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="object">
+				<xs:complexType>
+					<xs:group ref="tns:object.content.group" />
+					<xs:attributeGroup ref="tns:common.attr" />
+				</xs:complexType>
+				<xs:unique name="object.restriction">
+					<xs:selector xpath="tns:*" />
+					<xs:field xpath="@name" />
+				</xs:unique>
+			</xs:element>
+		</xs:choice>
+	</xs:group>
+	<xs:element name="json-schema">
+		<xs:complexType>
+			<xs:group ref="tns:object.content.group" />
+			<xs:attribute name="name" />
+		</xs:complexType>
+		<xs:unique name="json-schema.restriction">
+			<xs:selector xpath="tns:*" />
+			<xs:field xpath="@name" />
+		</xs:unique>
+	</xs:element>
+</xs:schema>

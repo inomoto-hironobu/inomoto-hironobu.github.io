@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	version="1.1" elementFormDefault="qualified"
+	xmlns:tns="https://yaml.org/typed"
+	targetNamespace="https://yaml.org/typed">
+	<xs:annotation>
+		<xs:documentation>シンプルさを目指したJSONのスキーマ。https://yaml.org/
+		</xs:documentation>
+	</xs:annotation>
+	<xs:simpleType name="data.type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="boolean" />
+			<xs:enumeration value="integer" />
+			<xs:enumeration value="number" />
+			<xs:enumeration value="string" />
+			<xs:enumeration value="list" />
+			<xs:enumeration value="map" />
+			<xs:enumeration value="date" />
+			<xs:enumeration value="timestamp" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:attributeGroup name="common.attr">
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="required" type="xs:boolean"
+			default="false" />
+		<xs:attribute name="nullable" type="xs:boolean"
+			default="false" />
+	</xs:attributeGroup>
+	<xs:element name="sequence">
+		<xs:complexType>
+			<xs:attribute name="type" type="tns:data.type" />
+			<xs:attributeGroup ref="tns:common.attr" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="mapping">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="tns:mapping" />
+				<xs:element ref="tns:sequence" />
+				<xs:group ref="tns:map.group" />
+			</xs:choice>
+			<xs:attributeGroup ref="tns:common.attr" />
+		</xs:complexType>
+		<xs:unique name="object.restriction">
+			<xs:selector xpath="tns:*" />
+			<xs:field xpath="@name" />
+		</xs:unique>
+	</xs:element>
+	<xs:group name="map.group">
+		<xs:choice>
+			<xs:element name="boolean">
+				<xs:complexType>
+					<xs:attribute name="default" type="xs:boolean" />
+					<xs:attributeGroup ref="tns:common.attr" />
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="string">
+				<xs:complexType>
+					<xs:attribute name="default" type="xs:string" />
+					<xs:attributeGroup ref="tns:common.attr" />
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="integer">
+				<xs:complexType>
+					<xs:attribute name="default" type="xs:integer" />
+					<xs:attributeGroup ref="tns:common.attr" />
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="float">
+				<xs:complexType>
+					<xs:attribute name="default" type="xs:float" />
+					<xs:attributeGroup ref="tns:common.attr" />
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="date">
+				<xs:complexType>
+					<xs:attribute name="default" type="xs:date" />
+					<xs:attributeGroup ref="tns:common.attr" />
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="timestamp">
+				<xs:complexType>
+					<xs:attribute name="default" type="xs:dateTime" />
+					<xs:attributeGroup ref="tns:common.attr" />
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="typed-mapping">
+				<xs:complexType>
+					<xs:attribute name="type" type="tns:data.type" />
+					<xs:attributeGroup ref="tns:common.attr" />
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:group>
+	<xs:element name="yaml-schema">
+		<xs:complexType>
+			<xs:choice>
+				<xs:choice>
+					<xs:element ref="tns:mapping" />
+					<xs:element ref="tns:sequence" />
+				</xs:choice>
+			</xs:choice>
+			<xs:attribute name="name" />
+		</xs:complexType>
+		<xs:unique name="yaml-schema.restriction">
+			<xs:selector xpath="tns:*" />
+			<xs:field xpath="@name" />
+		</xs:unique>
+	</xs:element>
+</xs:schema>
