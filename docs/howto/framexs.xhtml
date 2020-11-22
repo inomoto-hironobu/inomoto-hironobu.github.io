@@ -3,18 +3,17 @@
 <?framexs.skeleton ../template.xhtml?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
-<title>XSLTによるウェブサイト簡易管理</title>
+<title>Framexs入門</title>
 </head>
 <body>
 <article id="prelude">
-<h2>XML+XSLT->XHTML</h2>
-<p>西暦2000年前後、XMLはWebの技術として発展していた。特にXML+XSLTでXHTMLを生成するプロセスは未来技術として期待されていた。</p>
-<p>しかしその後は期待されていた効果はなく、HTML5が浸透し始める。XSLTもXHTMLも主だって使われることなくXMLもJSONに置き換わろうとしている。</p>
+<h2>事前の準備</h2>
+<p>パソコンとJava実行環境とjEditとJettyを用意する。</p>
 </article>
 <article id="main">
 <p>そんな中でXML隆盛から20年経った今、ついにXSLTのフレームワークが誕生する。Framexsだ。</p>
 <p>FramexsはXHTMLをMVCの材料として合成を行うフレームワークである。</p>
-<p>まずモデルを用意する。</p>
+<p>まずモデルを用意する。content.xhtmlを作り、次のコードを貼り付ける。</p>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton template.xhtml?>
@@ -29,7 +28,7 @@
 </div>
 </body>
 </html>]]></code></pre>
-<p>これに対してビューとして次のテンプレートを与える。</p>
+<p>これに対してビューとして次のテンプレートを与える。skeleton.xhtmlを作り、次のコードを貼り付ける。</p>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" xml:lang="ja" lang="ja">
 <head>
@@ -40,6 +39,7 @@
 <article><p framexs:id-d="main">コンテンツのid属性がmainの部分を読み込み置き換える</p></article>
 </body>
 </html>]]></code></pre>
+<p>http://localhost/content.xhtml</p>
 <p>すると次のように出力される。</p>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html xml:lang="ja" lang="ja">

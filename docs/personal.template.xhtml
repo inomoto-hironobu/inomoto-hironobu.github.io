@@ -57,6 +57,7 @@
         <div class="dropdown-menu" aria-labelledby="基本情報">
           <a class="dropdown-item" href="/docs/base/books.xhtml">読んだ本</a>
           <a class="dropdown-item" href="/docs/base/job.xhtml">仕事依頼</a>
+          <a class="dropdown-item" href="/docs/base/history.xhtml">来歴</a>
           <a class="dropdown-item" href="/docs/base/このサイトについて.xhtml">このサイトについて</a>
         </div>
       </li>
@@ -67,8 +68,11 @@
 <div class="container">
 <div class="row">
 <aside class="col-md-3 bg-white">
+<div><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#aside-content">付属の内容</button></div>
+<div id="aside-content" class="collapse">
 <nav id="toc" data-toggle="toc" class="text-white"></nav>
 <object type="text/plain" data="/info.txt" width="160" height="100"></object>
+</div>
 </aside>
 <main class="col-md-9 bg-light" data-spy="scroll" data-target="#toc">
 <h1><h1><framexs:title/></h1></h1>
