@@ -10,6 +10,7 @@
 <article id="main">
 <p>FramexsはXHTMLをMVCの材料として合成を行うフレームワークである。<br/>
 モデルもビューもXHTMLを使い、ウェブサイトでの配布の場合はコントローラーもXHTMLに処理命令という形で埋めこむ。</p>
+<h2>初心者用コード</h2>
 <p>モデルであるcontent.xhtmlは次のようになっているとする。</p>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -72,6 +73,10 @@
 </html>]]></code></pre>
 <p>この場合ブラウザでhttp://localhost/content.xhtmlにアクセスすると出力結果が最終的なパース対象となる。<br/>
 この出力はブラウザによって解析される。</p>
+<h2>このページ</h2>
+<p>このページ自身もFramexsを応用しておりその先頭部分は以下の通りである。</p>
+<pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?framexs.skeleton ../../template/template.xhtml?>]]></code></pre>
 </article>
 </body>
 </html>
