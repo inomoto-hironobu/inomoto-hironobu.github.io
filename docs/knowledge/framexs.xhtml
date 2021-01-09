@@ -73,6 +73,37 @@
 </html>]]></code></pre>
 <p>この場合ブラウザでhttp://localhost/content.xhtmlにアクセスすると出力結果が最終的なパース対象となる。<br/>
 この出力はブラウザによって解析される。</p>
+<h2>意義</h2>
+<p>これの何が嬉しいかというとlink要素やscript要素などの記述のあるテンプレートの使いまわしができるという事である。例えば次のようなコードを記述したい場合、</p>
+<pre><code class="language xml"><![CDATA[
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5L2SQ9B');</script>
+<!-- End Google Tag Manager -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-74360841-9">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-74360841-9');
+</script>
+<!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','o583g');
+twq('track','PageView');
+</script>]]></code></pre>
+<p>この記述をHTMLファイルに挿入することを考えると<strong>全ての</strong>HTMLにこの記述をしなくてはならなくかつ、変更があった場合に対応が難しい。</p>
+<p>Framexsなら変更に極めて強い。</p>
 <h2>このページ</h2>
 <p>このページ自身もFramexsを応用しておりその先頭部分は以下の通りである。</p>
 <pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
