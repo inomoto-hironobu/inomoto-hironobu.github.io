@@ -102,8 +102,29 @@ a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,
 twq('init','o583g');
 twq('track','PageView');
 </script>]]></code></pre>
-<p>この記述をHTMLファイルに挿入することを考えると<strong>全ての</strong>HTMLにこの記述をしなくてはならなくかつ、変更があった場合に対応が難しい。</p>
-<p>Framexsなら変更に極めて強い。</p>
+<p>この記述をHTMLファイルに挿入することを考えると<strong>全ての</strong>HTMLにこの記述をしなくてはならなくかつ、変更があった場合に対応が難しい。しかしFramexsなら変更に極めて強い。</p>
+<h2>原初法との比較</h2>
+<p>XSLTが開発された時その意義としてあるXMLに対しての再利用性がうたわれていた。</p>
+<pre><code class="language xml"><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<hoge xmlns="urn:hoge">
+<foo>hello world.</foo>
+<bar>this is a pen.</bar>
+</hoge>
+]]></code></pre>
+<p>に対して</p>
+<pre><code class="language xml"><![CDATA[
+<html>
+<head><title>hello world</title></head>
+<body>
+<h1>見出し</h1>
+<p>this is a pen.</p>
+</body>
+</html>
+]]></code></pre>
+<p>というHTMLを出力を行うときどのような方法を使うかというとき、単純にあるXSLを適用するだけというものである。これを<dfn>原初法</dfn>と名づけると、原初法はXML+XSLT=HTMLである。</p>
+<p>これに対してFramexsは上述のようにXHTML+XHTML+XSLT=HTMLという方法で行う。</p>
+<p>違いは出力のひな型をXSLTにするか特殊なXHTMLにするかというものである。Framexsの方が直観的で、容易性が高く、再利用性が高い。</p>
 <h2>このページ</h2>
 <p>このページ自身もFramexsを応用しておりその先頭部分は以下の通りである。</p>
 <pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
