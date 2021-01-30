@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+body {
+	padding:0;
+	margin:0;
+}
+address {
+	margin: auto 0;
+}
+section {
+	border: dotted 0 gray;
+	border-top-width: 0.2rem;
+	margin-top: 0.4rem;
+	padding-top: 0.4rem;
+	
+}
+section p {
+	border: dashed 1px lightgray;
+	background-color: white;
+	padding: 0.25rem;
+}
+section ul, section ol, section dl {
+	background-color: lightyellow;
+}
+section table {
+	background-color: linen;
+}
+section pre {
+	background-color: white;
+}
+.adv {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+}
+@media screen and (max-width:1080px) {
+table.responsive {
+	display: block;
+}
+table.responsive tbody {
+	display: block;
+}
+table.responsive tr {
+	display: block;
+}
+table.responsive th,td {
+	display: block;
+}
+}
