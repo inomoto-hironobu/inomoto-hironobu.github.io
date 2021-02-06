@@ -34,16 +34,22 @@ section pre {
 	background-color: white;
 }
 @media screen and (max-width:1080px) {
-table.responsive {
-	display: block;
-}
-table.responsive tbody {
-	display: block;
-}
-table.responsive tr {
-	display: block;
-}
-table.responsive th,td {
-	display: block;
-}
+	table.responsive {
+		display: block;
+	}
+	table.responsive tbody {
+		display: block;
+	}
+	table.responsive tr {
+		display: block;
+	}
+	table.responsive th,td {
+		display: block;
+	}
+	table.responsive thead {
+		display:block;
+	}
+	table.responsive tfoot {
+		display:block;
+	}
 }
