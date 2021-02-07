@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?framexs.skeleton ../../template/template.xhtml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<title>Framexsとは</title>
+</head>
+<body>
+<article id="main">
+<p>FramexsはXHTMLをMVCの材料として合成を行うフレームワークである。<br/>
+モデルもビューもXHTMLを使い、ウェブサイトでの配布の場合はコントローラーもXHTMLに処理命令という形で埋めこむ。</p>
+<h2>初心者用コード</h2>
+<p>モデルであるcontent.xhtmlは次のようになっているとする。</p>
+<div>
+<div>コード1</div>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>世界よこんにちは</title>
+</head>
+<body>
+<div id="main">
+<p>ハローワールド！</p>
+</div>
+</body>
+</html>]]></code></pre>
+</div>
+<p>次にビューであるtempalte.xhtmlは次のようになっているとする。</p>
+<div>
+<div>コード2</div>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" xml:lang="ja" lang="ja">
+<head>
+<title> - テンプレートタイトル</title>
+</head>
+<body>
+<h1>あいさつ</h1>
+<article><p framexs:id-d="main">コンテンツのid属性がmainの部分を読み込み置き換える</p></article>
+</body>
+</html>]]></code></pre>
+</div>
+<p>これらをXSLTプロセッサに対してframexs.xslをスタイルシートに、XMLをcontent.xhtmlに、引数にframexs.skeletonをtemplate.xhtmlにすると次の出力を得る。</p>
+<pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>世界よこんにちは - テンプレートタイトル</title>
+</head>
+<body>
+<h1>あいさつ</h1>
+<article>
+<p>ハローワールド！</p>
+</article>
+</body>
+</html>]]></code></pre>
+<p>これをブラウザのXSLTプロセッサを通す場合を考える。<br/>
+ウェブサーバーがファイルシステム/docs/に結び付けられていて、次の3つのファイルがあるととする。</p>
+<ul>
+<li>/docs/framexs.xsl</li>
+<li>/docs/template.xhtml</li>
+<li>/docs/content.xhtml</li>
+</ul>
+<p>モデルであるcontent.xhtmlは次のようになっている。</p>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml" href="framexs.xsl"?>
+<?framexs.skeleton template.xhtml?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>世界よこんにちは</title>
+</head>
+<body>
+<div id="main">
+<p>ハローワールド！</p>
+</div>
+</body>
+</html>]]></code></pre>
+<p>この場合ブラウザでhttp://localhost/content.xhtmlにアクセスすると出力結果が最終的なパース対象となる。<br/>
+この出力はブラウザによって解析される。</p>
+<h2>意義</h2>
+<p>これの何が嬉しいかというとlink要素やscript要素などの記述のあるテンプレートの使いまわしができるという事である。例えば次のようなコードを記述したい場合、</p>
+<pre><code class="language xml"><![CDATA[
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5L2SQ9B');</script>
+<!-- End Google Tag Manager -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-74360841-9">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-74360841-9');
+</script>
+<!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','o583g');
+twq('track','PageView');
+</script>]]></code></pre>
+<p>この記述をHTMLファイルに挿入することを考えると<strong>全ての</strong>HTMLにこの記述をしなくてはならなくかつ、変更があった場合に対応が難しい。しかしFramexsなら変更に極めて強い。</p>
+<h2>原初法との比較</h2>
+<p>XSLTが開発された時その意義としてあるXMLに対しての再利用性がうたわれていた。</p>
+<pre><code class="language xml"><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<hoge xmlns="urn:hoge">
+<foo>hello world.</foo>
+<bar>this is a pen.</bar>
+</hoge>
+]]></code></pre>
+<p>に対して</p>
+<pre><code class="language xml"><![CDATA[
+<html>
+<head><title>hello world</title></head>
+<body>
+<h1>見出し</h1>
+<p>this is a pen.</p>
+</body>
+</html>
+]]></code></pre>
+<p>というHTMLを出力を行うときどのような方法を使うかというとき、単純にあるXSLを適用するだけというものである。これを<dfn>原初法</dfn>と名づけると、原初法はXML+XSLT=HTMLである。</p>
+<p>これに対してFramexsは上述のようにXHTML+XHTML+XSLT=HTMLという方法で行う。</p>
+<p>違いは出力のひな型をXSLTにするか特殊なXHTMLにするかというものである。Framexsの方が直観的で、容易性が高く、再利用性が高い。</p>
+<h2>このページ</h2>
+<p>このページ自身もFramexsを応用しておりその先頭部分は以下の通りである。</p>
+<pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?framexs.skeleton ../../template/template.xhtml?>]]></code></pre>
+<p>ソースコードは<a href="https://github.com/inomoto-hironobu/inomoto-hironobu.github.io/blob/master/docs/knowledge/framexs.xhtml">GitHubのページ</a>も参照されたい。</p>
+<h2>参考記事</h2>
+<p>私が運営しているはてなブログの<a href="https://inmthrnb.hatenablog.com/archive/category/Framexs%2FXSLT">Framexs/XSLTカテゴリ</a>を参考になるかもしれない。</p>
+</article>
+</body>
+</html>
