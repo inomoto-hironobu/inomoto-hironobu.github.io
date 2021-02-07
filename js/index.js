@@ -28,7 +28,13 @@ function pull(e) {
 	axios
 	.get(a.getAttribute('href'), {responseType:'document'})
 	.then((res)=>{
-		let description = res.data.evaluate('/xhtml:html/xhtml:head/xhtml:meta[@name=\'description\']/@content', res.data, nsResolver, XPathResult.STRING_TYPE, null);
+		let description = res.data.evaluate('//xhtml:meta[@name=\'description\']/@content', res.data, nsResolver, XPathResult.STRING_TYPE, null);
 		td.appendChild(document.createTextNode(description.stringValue));
+		description = res.data.evaluate('//xhtml:article//text()', res.data, nsResolver, XPathResult.UNORDERED_NODE_ITERATOR_TYPE , null);
+		let text;
+		for(v = description.iterateNext(); v != null; v = description.iterateNext()) {
+			text += v.nodeValue;
+		}
+		td.appendChild(document.createTextNode('【文字数：'+text.length+'】'));
 	});                                                         
 }
