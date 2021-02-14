@@ -5,31 +5,31 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/docs/idea/index.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/idea/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/docs/howto/index.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/howto/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/docs/knowledge/index.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/knowledge/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/docs/visualization/index.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/visualization/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/docs/article/index.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/article/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/docs/base/index.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/base/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/docs/lp/index.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/lp/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
 </urlset>
