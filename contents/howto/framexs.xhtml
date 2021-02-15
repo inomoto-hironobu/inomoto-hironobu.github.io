@@ -5,31 +5,47 @@
 <head>
 <title>Framexs入門</title>
 <meta name="description" content="Framexsの始め方を解説する"/>
+<meta name="modified" content="2021/02/15"/>
 </head>
 <body>
 <article id="prelude">
-<h2>事前の準備</h2>
-<p>パソコンとJava実行環境とjEditとJettyを用意する。</p>
+
 </article>
 <article id="main">
-<p>まずモデルを用意する。content.xhtmlを作り、次のコードを貼り付ける。</p>
+<h2>事前の準備</h2>
+<p>あるディレクトリをドキュメントルートにして、ポート80でHTTPサーバを起動したとする。<br/>
+ここにtest.txtファイルを作り中身を「test」にした場合http://localhost/test.txtにブラウザでアクセスしたら「test」が表示されるはずである。<br/>
+この時のファイルパスを/test.txtで表すとする。</p>
+<h2>初めに</h2>
+<p>まず<a href="https://github.com/nandaka-furari/framexs">FramexsのGitHubリポジトリ</a>からframexs.xslをダウンロードする。<br/>
+それを/framexs.xslになるように置く。そして次のファイルを用意する。</p>
+<ul>
+<li>/framexs.xsl</li>
+<li>/contents1.xhtml</li>
+<li>/template.xhtml</li>
+</ul>
+<p>contents1.xhtmlの中身をコード1にし、</p>
+<figure>
+<figcaption>コード1</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton template.xhtml?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>世界よこんにちは</title>
 </head>
 <body>
-<div id="main">
+<article id="main">
 <p>ハローワールド！</p>
-</div>
+</article>
 </body>
 </html>]]></code></pre>
-<p>これに対してビューとして次のテンプレートを与える。skeleton.xhtmlを作り、次のコードを貼り付ける。</p>
+</figure>
+<p>/template.xhtmlの中身をコード2にする。</p>
+<figure>
+<figcaption>コード2</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" xml:lang="ja" lang="ja">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <head>
 <title> - テンプレートタイトル</title>
 </head>
@@ -38,10 +54,12 @@
 <article><p framexs:id-d="main">コンテンツのid属性がmainの部分を読み込み置き換える</p></article>
 </body>
 </html>]]></code></pre>
-<p>http://localhost/content.xhtml</p>
-<p>すると次のように出力される。</p>
+</figure>
+<p><samp>http://localhost/contents1.xhtml</samp>にアクセスしたらコード3のようなHTMLのDOMが出来上がる。</p>
+<figure>
+<figcaption>コード3</figcaption>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
-<html xml:lang="ja" lang="ja">
+<html lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>世界よこんにちは - テンプレートタイトル</title>
@@ -53,7 +71,119 @@
 </article>
 </body>
 </html>]]></code></pre>
-<p>この出力はブラウザによって解析される。</p>
+</figure>
+<p>ここから次のようにファイルを移動する。</p>
+<ul>
+<li>/framexs.xsl</li>
+<li>/contents/contents1.xhtml</li>
+<li>/template/template.xhtml</li>
+</ul>
+<p>/contents/contents1.xhtmlをコード4にする。</p>
+<figure>
+<figcaption>コード4</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml" href="framexs.xsl"?>
+<?framexs.skeleton ../template/template.xhtml?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>世界よこんにちは</title>
+</head>
+<body>
+<article id="main">
+<p>ハローワールド！</p>
+</article>
+</body>
+</html>]]></code></pre>
+</figure>
+<p><code><![CDATA[<?framexs.skeleton ../template/template.xhtml?>]]></code>の部分が変更箇所である。<br/>
+<samp>http://localhost/contents/contents1.xhtml</samp>にアクセスしてコード3と同じHTMLのDOMができているか確認しよう。</p>
+<h2>テンプレートの意義</h2>
+<p>contents1.xhtmlを同じディレクトリにコピーしcontent2.xhtmlを作る。</p>
+<ul>
+<li>/framexs.xsl</li>
+<li>/contents/contents1.xhtml</li>
+<li>/contents/contents2.xhtml</li>
+<li>/template/template.xhtml</li>
+</ul>
+<p>/contents/contents2.xhtmlをコード5にする。</p>
+<figure>
+<figcaption>コード5</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml" href="framexs.xsl"?>
+<?framexs.skeleton ../template/template.xhtml?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>今日の天気</title>
+</head>
+<body>
+<article id="main">
+<p>本日は晴天なり。</p>
+</article>
+</body>
+</html>]]></code></pre>
+</figure>
+<p><samp>http://localhost/contents/contents2.xhtml</samp>にアクセスしてコード6と同じHTMLのDOMができているか確認しよう。</p>
+<figure>
+<figcaption>コード6</figcaption>
+<pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>今日の天気 - テンプレートタイトル</title>
+</head>
+<body>
+<h1>あいさつ</h1>
+<article>
+<p>本日は晴天なり。</p>
+</article>
+</body>
+</html>]]></code></pre>
+</figure>
+<p>/template/template.xhtmlをコード7にする。</p>
+<figure>
+<figcaption>コード2</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
+<head>
+<title> - テンプレートタイトル</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+</head>
+<body>
+<div class="container">
+<h1>あいさつ</h1>
+<article class="bg-primary text-white"><p framexs:id-d="main">コンテンツのid属性がmainの部分を読み込み置き換える</p></article>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+</body>
+</html>]]></code></pre>
+</figure>
+<p><samp>http://localhost/contents/contents2.xhtml</samp>にアクセスしたらコード7のHTMLのDOMが出来上がっていることを確認する。</p>
+<figure>
+<figcaption>コード7</figcaption>
+<pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>今日の天気 - テンプレートタイトル</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+</head>
+<body>
+<div class="container">
+<h1>あいさつ</h1>
+<article class="bg-primary text-white">
+<p>本日は晴天なり。</p>
+</article>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>]]></code></pre>
+</figure>
+
 </article>
 <article id="coda">
 <p>このようにXSLTのフレームワークは静的サイト構築を容易にしデザインを優れたものにする。<br/>
