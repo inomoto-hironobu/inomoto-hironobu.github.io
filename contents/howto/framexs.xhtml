@@ -3,19 +3,21 @@
 <?framexs.skeleton ../../template/template.xhtml?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
-<title>Framexs入門</title>
-<meta name="description" content="Framexsの始め方を解説する"/>
-<meta name="modified" content="2021/02/15"/>
+<title>Framexs入門と利点</title>
+<meta name="description" content="Framexsの始め方を通して利点を解説する"/>
+<meta name="modified" content="2021/02/27"/>
+<link rel="up" href="index.xhtml"/>
 </head>
 <body>
 <article id="prelude">
-
+<p>8つのコードでFramexsの利用方法及び利点を書く。</p>
 </article>
 <article id="main">
 <h2>事前の準備</h2>
-<p>あるディレクトリをドキュメントルートにして、ポート80でHTTPサーバを起動したとする。<br/>
-ここにtest.txtファイルを作り中身を「test」にした場合http://localhost/test.txtにブラウザでアクセスしたら「test」が表示されるはずである。<br/>
-この時のファイルパスを/test.txtで表すとする。</p>
+<p>FramexsにはHTTPサーバーが必要となる。何らかの手段によってHTTPサーバーが起動できる状態を作る。
+そしてあるディレクトリをドキュメントルートにして、ポート8085でHTTPサーバを起動したとする。
+ここにtest.txtファイルを作り中身を「test」にしたとする。この場合 `http://localhost:8085/test.txt` にブラウザでアクセスしたら「test」が表示されるはずである。このファイルパスを/test.txtで表現する。
+</p>
 <h2>初めに</h2>
 <p>まず<a href="https://github.com/nandaka-furari/framexs">FramexsのGitHubリポジトリ</a>からframexs.xslをダウンロードする。<br/>
 それを/framexs.xslになるように置く。そして次のファイルを用意する。</p>
@@ -24,8 +26,8 @@
 <li>/contents1.xhtml</li>
 <li>/template.xhtml</li>
 </ul>
-<p>contents1.xhtmlの中身をコード1にし、</p>
-<figure>
+<p>contents1.xhtmlの中身をコード1にする。</p>
+<figure id="コード1">
 <figcaption>コード1</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
@@ -42,7 +44,7 @@
 </html>]]></code></pre>
 </figure>
 <p>/template.xhtmlの中身をコード2にする。</p>
-<figure>
+<figure id="コード2">
 <figcaption>コード2</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
@@ -56,7 +58,7 @@
 </html>]]></code></pre>
 </figure>
 <p><kbd>http://localhost/contents1.xhtml</kbd>にアクセスしたらコード3のようなHTMLのDOMが出来上がる。</p>
-<figure>
+<figure id="コード3">
 <figcaption>コード3</figcaption>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="ja">
@@ -72,6 +74,9 @@
 </body>
 </html>]]></code></pre>
 </figure>
+<p>title要素が合成され、「世界よこんにちは - テンプレートタイトル」となり、テンプレートのframexs:id-d="main"の属性を持つp要素がコンテンツのid="main"属性を持つarticle要素の子要素へと置き換わっている。
+この形が基本でありここから主にテンプレートを改造していく。</p>
+<h2>改造</h2>
 <p>ここから次のようにファイルを移動する。</p>
 <ul>
 <li>/framexs.xsl</li>
@@ -79,7 +84,7 @@
 <li>/template/template.xhtml</li>
 </ul>
 <p>/contents/contents1.xhtmlをコード4にする。</p>
-<figure>
+<figure id="コード4">
 <figcaption>コード4</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
@@ -96,7 +101,7 @@
 </html>]]></code></pre>
 </figure>
 <p><code><![CDATA[<?framexs.skeleton ../template/template.xhtml?>]]></code>の部分が変更箇所である。<br/>
-<kbd>http://localhost/contents/contents1.xhtml</kbd>にアクセスしてコード3と同じHTMLのDOMができているか確認しよう。</p>
+<kbd>http://localhost:8085/contents/contents1.xhtml</kbd>にアクセスしてコード3と同じHTMLのDOMができているか確認しよう。</p>
 <h2>テンプレートの意義</h2>
 <p>contents1.xhtmlを同じディレクトリにコピーしcontent2.xhtmlを作る。</p>
 <ul>
@@ -106,7 +111,7 @@
 <li>/template/template.xhtml</li>
 </ul>
 <p>/contents/contents2.xhtmlをコード5にする。</p>
-<figure>
+<figure id="コード5">
 <figcaption>コード5</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
@@ -122,8 +127,8 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p><kbd>http://localhost/contents/contents2.xhtml</kbd>にアクセスしてコード6と同じHTMLのDOMができているか確認しよう。</p>
-<figure>
+<p><kbd>http://localhost:8085/contents/contents2.xhtml</kbd>にアクセスしてコード6と同じHTMLのDOMができているか確認しよう。</p>
+<figure id="コード6">
 <figcaption>コード6</figcaption>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="ja">
@@ -139,9 +144,10 @@
 </body>
 </html>]]></code></pre>
 </figure>
+<p>ここからわかる通りコンテンツは僅かなコードでテンプレートを共通に使う。ここからさらにテンプレートを改造することで何が起きるか確認しよう。</p>
 <p>/template/template.xhtmlをコード7にする。</p>
-<figure>
-<figcaption>コード2</figcaption>
+<figure id="コード7">
+<figcaption>コード7</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <head>
@@ -160,9 +166,9 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p><kbd>http://localhost/contents/contents2.xhtml</kbd>にアクセスしたらコード7のHTMLのDOMが出来上がっていることを確認する。</p>
-<figure>
-<figcaption>コード7</figcaption>
+<p><kbd>http://localhost:8085/contents/contents2.xhtml</kbd>にアクセスしたらコード8のHTMLのDOMが出来上がっていることを確認する。</p>
+<figure id="コード8">
+<figcaption>コード8</figcaption>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="ja">
 <head>
@@ -183,7 +189,13 @@
 </body>
 </html>]]></code></pre>
 </figure>
-
+<p>結果として得られるHTMLがコード6からコード8にするのに/contents/contents2.xhtmlの中身は全く変更していないことに注目してほしい。Framexsで管理したサイトの基盤となるHTMLはテンプレートの改造によって進める。</p>
+<h2>CSSフレームワークとの相性</h2>
+<p>FramexsはCSSフレームワークとの相性が抜群に良い。link要素やscript要素の決まりきったボイラープレートコードはテンプレートに集約され、またclass="container"などの決まりきった構成もまたテンプレートに集約される。</p>
+<h2>Buildless性</h2>
+<p>FramexsはBuildlessである。Node.jsコマンドに頼らずとも静的サイトの構築を可能にし、CSSフレームワークやJavaScriptフレームワークもBuildlessに利用することができる。</p>
+<h2>動的サイトとの相性</h2>
+<p>まだ動的サイトとの相性は検証されていないが、大きな相乗効果を生み出すことが予想できる。というのも例えばJavaプログラマーがJSPを書くとき、最終的なHTMLの合成はマークアップエンジニアに任せて、自分はごく単純なXHTMLを出力することができる。一方マークアップエンジニアはテンプレートの製作に専念できるのでJavaやPHPを覚える必要がない。今後IT業界に高い分担制、専業性をもたらすだろう。</p>
 </article>
 <article id="coda">
 <p>このようにXSLTのフレームワークは静的サイト構築を容易にしデザインを優れたものにする。<br/>
