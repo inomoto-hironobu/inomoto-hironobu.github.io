@@ -8,7 +8,6 @@ XSLTで実現するフレームワーク framexs
 
 	<!-- skeleton_locが指定されればXHTMLテンプレート処理を行う -->
 	<xsl:param name="skeleton_loc" select="/processing-instruction('framexs.skeleton')"/>
-	<xsl:param name="skeleton" select="document($skeleton_loc)"/>
 	<xsl:param name="framexs.base" select="/processing-instruction('framexs.base')"/>
 	<xsl:param name="framexs.addpath" select="concat($skeleton_loc, '/../')"/>
 
@@ -17,7 +16,7 @@ XSLTで実現するフレームワーク framexs
 	<xsl:variable name="xhns" select="'http://www.w3.org/1999/xhtml'"/>
 	<xsl:variable name="fmxns" select="'urn:framexs'"/>
 	<xsl:variable name="empty" select="''"/>
-	<xsl:variable name="version" select="'1.6.1'"/>
+	<xsl:variable name="version" select="'1.8.0'"/>
 	
 	<xsl:template match="/">
 		<xsl:message>framexs <xsl:value-of select="$version"/></xsl:message>
@@ -118,19 +117,6 @@ XSLTで実現するフレームワーク framexs
     	</xsl:for-each>
     </xsl:template>
 
-    <xsl:template match="xh:*[@framexs:element-sd]">              
-    	<xsl:call-template name="search-element">
-    		<xsl:with-param name="name" select="@framexs:element-sd"/>
-			<xsl:with-param name="self" select="true()"/>
-    	</xsl:call-template>
-	</xsl:template>
-	<xsl:template match="xh:*[@framexs:element-d]">
-		<xsl:call-template name="search-element">
-			<xsl:with-param name="name" select="@framexs:element-d"/>
-			<xsl:with-param name="self" select="false()"/>
-		</xsl:call-template>
-	</xsl:template>
-
 	<xsl:template match="xh:*[@framexs:fetch-sd]">
 		<xsl:variable name="name" select="@framexs:fetch-sd"/>
 		<xsl:for-each select="$content/processing-instruction('framexs.fetch')">
@@ -147,25 +133,66 @@ XSLTで実現するフレームワーク framexs
 			</xsl:if>
 		</xsl:for-each>
 	</xsl:template>
+	<xsl:template match="xh:*[@framexs:meta-name]">
+		<xsl:variable name="name" select="@framexs:meta-name"/>
+		<xsl:for-each select="$content/xh:html/xh:head/xh:meta">
+			<xsl:if test="@name = $name">
+				<xsl:value-of select="@content"/>
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:template>
+	
+	<xsl:template match="xh:*[@framexs:meta-property]">
+		<xsl:variable name="property" select="@framexs:meta-property"/>
+		<xsl:for-each select="$content/xh:html/xh:head/xh:meta">
+			<xsl:if test="@property = $property">
+				<xsl:value-of select="@content"/>
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:template>
 
+	<xsl:template match="xh:*[@framexs:concat and @framexs:attr]">
+		<xsl:variable name="attribute" select="@framexs:attr"/>
+		<xsl:variable name="target" select="@framexs:concat"/>
+	</xsl:template>
 	<!--  -->
 	
 	<xsl:template match="*">
 		<xsl:copy-of select="."/>
 	</xsl:template>
-	<xsl:template match="framexs:pull[@src]">
-		<xsl:copy-of select="document(@src, $skeleton)"/>
+	<!--framexs要素-->
+	<xsl:template match="framexs:fetch[@src]">
+		<xsl:variable name="name" select="@src"/>
+		<xsl:for-each select="$content/processing-instruction('framexs.fetch')">
+			<xsl:if test="$name = substring-before(.,' ')">
+				<xsl:choose>
+					<xsl:when test="@framexs:self">
+						<xsl:apply-templates mode="content" select="document(substring-after(.,' '), $content)/*"/>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:apply-templates mode="content" select="document(substring-after(.,' '), $content)/*[1]/*"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:for-each>
 	</xsl:template>
 	<xsl:template match="framexs:title">
 		<xsl:value-of select="$content/xh:html/xh:head/xh:title"/>
 	</xsl:template>
-	<xsl:template match="framexs:script">
+	<xsl:template match="framexs:script[@src]">
 		<xsl:for-each select="$content/xh:html/xh:head/xh:script">
-			<xsl:element name="script">
-				<xsl:call-template name="replacepath">
-					<xsl:with-param name="current" select="."/>
-				</xsl:call-template>
-			</xsl:element>        
+			<xsl:choose>
+				<xsl:when test="@src">
+					<xsl:element name="script">
+						<xsl:call-template name="replacepath">
+							<xsl:with-param name="current" select="."/>
+						</xsl:call-template>
+					</xsl:element>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:copy-of select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
 	<xsl:template match="framexs:style">
@@ -174,18 +201,95 @@ XSLTで実現するフレームワーク framexs
 				<xsl:call-template name="replacepath">
 					<xsl:with-param name="current" select="."/>
 				</xsl:call-template>
-			</xsl:element>        
+			</xsl:element>
 		</xsl:for-each>
 	</xsl:template>
-		<xsl:template match="framexs:link">
+	<xsl:template match="framexs:link">
 		<xsl:for-each select="$content/xh:html/xh:head/xh:link">
-			<xsl:element name="style">
+			<xsl:element name="link">
 				<xsl:call-template name="replacepath">
 					<xsl:with-param name="current" select="."/>
 				</xsl:call-template>
-			</xsl:element>        
+			</xsl:element>
 		</xsl:for-each>
 	</xsl:template>
+	<xsl:template match="framexs:meta[@name]">
+		<xsl:variable name="name" select="@name"/>
+		<xsl:for-each select="$content/xh:html/xh:head/xh:meta">
+			<xsl:if test="@name = $name">
+				<xsl:value-of select="@content"/>
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template match="framexs:meta[@property]">
+		<xsl:variable name="property" select="@property"/>
+		<xsl:for-each select="$content/xh:html/xh:head/xh:meta">
+			<xsl:if test="@property = $property">
+				<xsl:value-of select="@content"/>
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template match="framexs:if[@meta-name]">
+		<xsl:variable name="name" select="@meta-name"></xsl:variable>
+		<xsl:variable name="current" select="."></xsl:variable>
+		<xsl:for-each select="$content/xh:html/xh:head/xh:meta">
+			<xsl:if test="$name = @name">
+				<xsl:apply-templates select="$current/*"/>
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template match="framexs:if[@meta-property]">
+		<xsl:variable name="property" select="@meta-property"></xsl:variable>
+		<xsl:variable name="current" select="."></xsl:variable>
+		<xsl:for-each select="$content/xh:html/xh:head/xh:meta">
+			<xsl:if test="$property = @property">
+				<xsl:apply-templates select="$current/*"/>
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:template>
+	
+	<xsl:template match="xh:*" mode="id-exists">
+		<xsl:param name="id"/>
+		<xsl:choose>
+			<xsl:when test="@id = $id"><xsl:value-of select="true()"/></xsl:when>
+			<xsl:otherwise>
+				<xsl:apply-templates select="xh:*" mode="id-exists">
+					<xsl:with-param name="id" select="$id"/>
+				</xsl:apply-templates>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<xsl:template name="is-exists">
+		<xsl:param name="id"></xsl:param>
+		<xsl:apply-templates select="$content" mode="id-exists">
+			<xsl:with-param name="id" select="$id" />
+		</xsl:apply-templates>
+	</xsl:template>
+	<xsl:template match="framexs:if[@id]">
+		<xsl:variable name="id" select="@id"></xsl:variable>
+		<xsl:variable name="exists">
+			<xsl:call-template name="is-exists">
+				<xsl:with-param name="id" select="$id"/>
+			</xsl:call-template>
+		</xsl:variable>
+		<xsl:if test="$exists = 'true'">
+			<xsl:apply-templates/>
+		</xsl:if>
+	</xsl:template>
+	<!--
+	<xsl:template match="framexs:array[@id]">
+		<xsl:variable name="id" select="@id"></xsl:variable>
+		<xsl:variable name="exists">
+			<xsl:call-template name="is-exists">
+				<xsl:with-param name="id" select="$id"/>
+			</xsl:call-template>
+		</xsl:variable>
+		<xsl:if test="$exists = 'true'">
+			<xsl:apply-templates/>
+		</xsl:if>
+	</xsl:template>-->
+	<xsl:template match="framexs:*"></xsl:template>
+
 	<xsl:template match="xh:*[@framexs:title]">
 		<xsl:value-of select="$content/xh:html/xh:head/xh:title"/>
 	</xsl:template>
@@ -225,8 +329,9 @@ XSLTで実現するフレームワーク framexs
 	<xsl:template match="xh:title">
 		<xsl:element name="title">
 			<xsl:value-of select="concat($content/xh:html/xh:head/xh:title/text(),.)"/>
-		</xsl:element>                                       
+		</xsl:element>
 	</xsl:template>
+
 
 	<!-- meta要素は特別な扱いをする -->
 	<xsl:template name="metatemplate">
@@ -305,8 +410,8 @@ XSLTで実現するフレームワーク framexs
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
-	
-	<xsl:template match="xh:*">            
+
+	<xsl:template match="xh:*">
 		<xsl:element name="{name()}">
 			<xsl:call-template name="replacepath">
 				<xsl:with-param name="current" select="."/>
@@ -314,7 +419,7 @@ XSLTで実現するフレームワーク framexs
 			<xsl:apply-templates/>
 		</xsl:element>
 	</xsl:template>
-	
+	<!--文字列を受け取ってそれが絶対URIかを判定する-->	
 	<xsl:template name="is-absolute">
 		<xsl:param name="uri" />
 
