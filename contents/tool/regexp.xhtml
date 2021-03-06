@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?framexs.skeleton ../../template/tool.template.xhtml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xmlns:v-on="vuejs">
+<head>
+<meta charset="UTF-8"/>
+<title>正規表現で置換</title>            
+<script><![CDATA[
+window.addEventListener('load', e => {
+const app = new Vue({
+	el:"#app",
+	data: {
+		source: "test\ntest",
+		replacement: "<br/>",
+		pattern: /\r?\n/g,
+		result: ""
+	},
+	methods: {
+		transform: function() {
+			this.result = this.source.replace(this.pattern, this.replacement);
+		},
+		read: function(e) {
+		    const filereader = new FileReader();
+			filereader.onload = () => {
+				this.source = filereader.result;
+			}
+			filereader.readAsText(e.target.files[0]);
+		}
+	}
+});
+});
+]]></script>
+</head>
+<body>
+<article id="prelude"></article>
+<article id="main">
+<section id="app">
+<label>
+パターン
+<input size="40" v-model="pattern"/>
+</label><br/>
+<label>
+置換文字列
+<textarea cols="40" rows="3" v-model="replacement"></textarea>
+</label><br/>
+<button v-on:click="transform">変換</button>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="source-tab" data-toggle="tab" href="#source" role="tab" aria-controls="source" aria-selected="true">ソース</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="result-tab" data-toggle="tab" href="#result" role="tab" aria-controls="result" aria-selected="false">結果</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="source" role="tabpanel" aria-labelledby="source-tab">
+	<textarea cols="40" rows="15" v-model="source" draggable="true"></textarea><br/>
+	<input type="file" v-on:change="read"/>
+  </div>
+  <div class="tab-pane fade" id="result" role="tabpanel" aria-labelledby="result-tab">
+    <textarea cols="40" rows="15" v-model="result" draggable="true"></textarea>
+  </div>
+</div>
+</section>
+</article>
+<article id="coda"></article>
+</body>
+</html>

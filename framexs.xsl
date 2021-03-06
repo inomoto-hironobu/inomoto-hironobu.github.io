@@ -16,7 +16,7 @@ XSLTで実現するフレームワーク framexs
 	<xsl:variable name="xhns" select="'http://www.w3.org/1999/xhtml'"/>
 	<xsl:variable name="fmxns" select="'urn:framexs'"/>
 	<xsl:variable name="empty" select="''"/>
-	<xsl:variable name="version" select="'1.8.0'"/>
+	<xsl:variable name="version" select="'1.9.0'"/>
 	
 	<xsl:template match="/">
 		<xsl:message>framexs <xsl:value-of select="$version"/></xsl:message>
@@ -179,7 +179,7 @@ XSLTで実現するフレームワーク framexs
 	<xsl:template match="framexs:title">
 		<xsl:value-of select="$content/xh:html/xh:head/xh:title"/>
 	</xsl:template>
-	<xsl:template match="framexs:script[@src]">
+	<xsl:template match="framexs:script">
 		<xsl:for-each select="$content/xh:html/xh:head/xh:script">
 			<xsl:choose>
 				<xsl:when test="@src">
