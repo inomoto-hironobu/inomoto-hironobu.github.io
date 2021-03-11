@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja" xmlns:v-on="vuejs">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5L2SQ9B');</script>
+<!-- End Google Tag Manager -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async=""><framexs:attribute name="src">https://www.googletagmanager.com/gtag/js?id=UA-74360841-9</framexs:attribute></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-74360841-9');
+</script>
+<!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','o583g');
+twq('track','PageView');
+</script>
+<script>
+<![CDATA[      
+window.addEventListener("load",e=>{
+const storagename = document.getElementById("tablename").textContent;
+let storage = localStorage.getItem(storagename);
+let tmp;
+if(storage == null) {
+ tmp = {};
+} else {
+ tmp = storage;
+}
+const data = {"1111":{test:2,test2:"ddd"}};
+const app = new Vue({
+el:"#app",
+data:{
+ data:data,
+ objname:null,
+ objnames:Object.keys(data),
+ propname:null,
+ value:null,
+ newobjname:null,
+ table:Object.entries(data)
+},
+watch:{
+ objname:function(){
+  this.value = this.data[this.objname][this.propname];
+ },
+ propname:function(){
+  this.value = this.data[this.objname][this.propname];
+ },
+ value:function(){
+  this.data[this.objname][this.propname] = this.value;
+  this.table = Object.entries(this.data);
+ }
+},
+methods:{
+ del:function(){
+  delete this.data[this.objname];
+ },
+ create:function(){
+  this.data[this.newobjname] = {};
+  this.objnames.push(this.newobjname);
+  this.table = Object.entries(this.data);
+ },
+ save:function(){
+  localStorage.setItem(storagename, JSON.stringify(this.data));
+ },
+ load:function(){
+  alert();
+ }
+},
+computed:{
+}
+});
+});]]>
+</script>
+<!-- End Twitter universal website tag code -->
+<meta charset="UTF-8"/>
+<meta framexs:fix="" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<title> - 八百幡（やおはた）―日々雑感のまとめ</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+<link rel="stylesheet" href="/css/main.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/js/http.js"></script>
+<script async="" src="/js/controller.js"></script>
+<script data-ad-client="ca-pub-1181541789430557" async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<framexs:script/>
+</head>
+<body class="bg-primary">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5L2SQ9B"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header class="bg-white">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand"><img src="/images/logo.png" width="64"/></a>
+  <a class="navbar-brand" href="https://inomoto-hironobu.github.io/index.xhtml">八百幡</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/index.xhtml">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="メインコンテンツ" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          メインコンテンツ
+        </a>
+        <div class="dropdown-menu" aria-labelledby="メインコンテンツ">
+          <a class="dropdown-item" href="/contents/howto/index.xhtml">ハウツー</a>
+          <a class="dropdown-item" href="/contents/knowledge/index.xhtml">知識</a>
+          <a class="dropdown-item" href="/contents/visualization/index.xhtml">視覚化データ</a>
+          <a class="dropdown-item" href="/contents/idea/index.xhtml">アイデア</a>
+          <a class="dropdown-item" href="/contents/article/index.xhtml">記事</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="基本情報" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          その他
+        </a>
+        <div class="dropdown-menu" aria-labelledby="基本情報">
+          <a class="dropdown-item" href="/contents/base/books.xhtml">読んだ本</a>
+          <a class="dropdown-item" href="/contents/base/job.xhtml">仕事依頼</a>
+          <a class="dropdown-item" href="/contents/base/history.xhtml">来歴</a>
+          <a class="dropdown-item" href="/contents/base/このサイトについて.xhtml">このサイトについて</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+</header>
+<div class="container">
+<div class="row">
+<aside class="col-md-3 bg-white">
+<nav id="toc" data-toggle="toc" class="text-white"></nav>
+<object type="text/plain" data="/info.txt" width="160" height="100"></object>
+<div class="d-none d-md-block adv" style="width:210px">
+<script src="https://adm.shinobi.jp/s/4fdb831093a7c78fcdf1b8836cd6c3f4"></script>
+</div>
+</aside>
+<main class="col-md-9 bg-light" data-spy="scroll" data-target="#toc">
+<h1><framexs:title/></h1>
+<p class="description"><span framexs:meta-name="description"/></p>
+<article><div framexs:id-d="prelude"></div></article>
+<div class="adv"><script src="https://adm.shinobi.jp/o/667ef2cf80b3ebc68a5f98077009c196"></script></div>
+<article>
+<p framexs:id-d="main"></p>
+</article>
+<article id="app">
+<fieldset>
+<label>オブジェクト名
+<select v-model="objname">
+<option v-for="n in objnames">{{n}}</option>
+</select>
+<button v-on:click="del">削除</button>
+</label><br/>
+<label>プロパティ―名
+<select v-model="propname">
+<option framexs:id-d="propnames"></option>
+</select>
+</label><br/>
+<label>値                 
+<textarea v-model="value" cols="40"></textarea>
+</label><br/>
+<button v-on:click="save">保存</button>
+<input type="file" v-on:change="load"/>
+</fieldset>
+<fieldset>
+<input type="text" v-model="newobjname"></input>
+<button v-on:click="create">新規作製</button>
+</fieldset>
+<div framexs:id-sd="view"></div>
+</article>
+<div class="adv"><script src="https://adm.shinobi.jp/o/667ef2cf80b3ebc68a5f98077009c196"></script></div>
+<article><div framexs:id-d="coda"></div></article>
+</main>
+</div>
+</div>
+<!-- /container -->
+<footer class="bg-info">
+  <p>更新日:<framexs:meta name="modified"/></p>
+  <address id="email" style="text-align: center;"><p class="text-white"> Email:<a class="text-white" href="mailto:inmthrnb@gmail.com">inmthrnb@gmail.com</a></p></address>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
