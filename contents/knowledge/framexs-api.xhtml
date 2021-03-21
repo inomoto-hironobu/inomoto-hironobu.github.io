@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?framexs.skeleton ../../template/template.xhtml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<title>FramexsのAPI一覧</title>
+<meta name="description" content="FramexsのAPIを解説する。"/>
+<meta name="modified" content="2021/03/21"/>
+</head>
+<body>
+<article id="main">
+<p>FramexsのAPIについて省略記法でのタグと解説、結果の値を表す。<br/>
+Framexsコンテンツのサンプルとして<a href="#コード1">コード1</a>を、Framexsフラグメントのサンプルとして<a href="#コード2">コード2</a>を用意している。</p>
+<table border="1">
+<thead><tr><th>タグ</th><th>解説</th><th>値</th></tr></thead>
+<tbody>
+<tr>
+<td>p framexs:id-d="hoge"</td>
+<td>id属性値がhogeの要素と置き換える。</td>
+<td><pre><![CDATA[<p>本日は晴天なり。</p>]]></pre></td>
+</tr>
+<tr
+><td>p framexs:id-sd="hoge"</td>
+<td>id属性値がhogeの要素の子要素群と置き換える。</td>
+<td><pre><![CDATA[<article id="hoge">
+<p>本日は晴天なり。</p>
+</article>]]></pre></td>
+</tr>
+<tr>
+<td>p framexs:fetch-d="foo"</td>
+<td>framexs.fetchで指定された名前のフラグメントリソースの子要素群に置き換える。</td>
+<td><pre><![CDATA[<li>test1</li>
+<li>テスト2</li>]]></pre></td>
+</tr>
+<tr>
+<td>p framexs:fetch-sd="foo"</td>
+<td>framexs.fetchで指定された名前のフラグメントリソースに置き換える。</td>
+<td><pre><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ul xmlns="http://www.w3.org/1999/xhtml">
+<li>test1</li>
+<li>テスト2</li>
+</ul>]]></pre></td>
+</tr>
+<tr><td>framexs:title</td>
+<td>title要素のテキストに置き換えます。</td>
+<td>世界よこんにちは</td>
+</tr>
+<tr>
+<td>framexs:meta name="description"</td>
+<td>name属性の値がdescriptionのmeta要素のcontent属性値に置き換えます。</td>
+<td>サンプルです</td>
+</tr>
+<tr>
+<td>framexs:meta property="og:description"</td>
+<td>property属性の値がog:descriptionのmeta要素のcontent属性値に置き換えます。</td>
+<td>参考になるものです</td>
+</tr>
+<tr>
+<td>framexs:link</td>
+<td>head直下のlink要素全てと置き換える。</td>
+<td></td>
+</tr>
+<tr>
+<td>framexs:style</td>
+<td>head直下のlink要素全てと置き換える。</td>
+<td><pre><![CDATA[<style>body {background-color:white}</style>]]></pre></td>
+</tr>                                                    
+<tr>
+<td>framexs:script</td>
+<td>head直下のlink要素全てと置き換える。</td>
+<td><pre><![CDATA[<script>console.log('test');</script>
+<script src="bar.js"></script>]]></pre></td>
+</tr>
+<tr><td>p framexs:print="no"</td><td>何も出力しません。</td><td></td></tr>
+<tr>
+<td>framexs:if meta-name="description"</td>
+<td>もしmeta-name属性値のname属性値(description)を持つmeta要素があれば子孫ノードを解釈する。サンプルコードでは解釈する。</td>
+<td></td>
+</tr>
+<tr>
+<td>framexs:if meta-property="og:title"</td>
+<td>もしmeta-propety属性値のproperty属性値(og:title)を持つmeta要素があれば子孫ノードを解釈する。サンプルコードでは解釈しない。</td>
+<td></td>
+</tr>
+<tr>
+<td>meta framexs:fix="" name="keywords" content="test"</td>
+<td></td>
+<td><![CDATA[<meta name="keywords" content="test">]]></td>
+</tr>
+</tbody>
+</table>
+<figure id="コード1">
+<figcaption>コード1</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml" href="framexs.xsl"?>
+<?framexs.skeleton template.xhtml?>
+<?framexs.fetch foo ../fragment/ul.xhtml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<title>世界よこんにちは</title>
+<script>console.log('test');</script>
+<meta name="description" content="サンプルです"/>
+<script src="bar.js"></script>
+<meta property="og:description" content="参考になるものです"/>
+<meta name="keywords" content="hoge,foo,bar"/>
+<style>body {background-color:white}</style>
+</head>
+<body>
+<article id="hoge">
+<p>本日は晴天なり。</p>
+</article>
+</body>
+</html>]]></code></pre>
+</figure>
+<figure id="コード2">
+<figcaption>コード2</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ul xmlns="http://www.w3.org/1999/xhtml">
+<li>test1</li>
+<li>テスト2</li>
+</ul>]]></code></pre>
+</figure>
+</article>
+</body>
+</html>
