@@ -11,6 +11,8 @@
 <figure>
 <figcaption>コード1</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml" href="../framexs.xsl"?>
+<?framexs.skeleton ../template/template.xhtml?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>世界よこんにちは</title>
@@ -35,6 +37,12 @@
 </body>
 </html>]]></code></pre>
 </figure>
+<p>またファイル配置はこうなっているとする。</p>
+<dl>
+<dt>コード1</dt><dd>/contents/sample.xhtml</dd>
+<dt>コード2</dt><dd>/template/template.xhtml</dd>
+<dt>Framexs</dt><dd>/framexs.xsl</dd>
+</dl>
 <p>この方法はコンテンツXHTMLにいくつもの処理命令を書く方法であるが、一つのコンテンツに対して一つのテンプレートが密接に結びつけてしまうことを意味する。<br/>
 これはサイトの運用を煩雑にしつつできることを制限する。</p>
 <h2>framexs:tunnelによる多対多法</h2>
@@ -61,6 +69,7 @@
 <dl>
 <dt>コード1</dt><dd>/contents/sample.xhtml</dd>
 <dt>コード2</dt><dd>/template/template.xhtml</dd>
+<dt>Framexs</dt><dd>/framexs.xsl</dd>
 <dt>コード4</dt><dd>/tunnel/sample.xml</dd>
 </dl>
 <p>/tunnel/sample.xmlにアクセスした結果はコード5になる。</p>
