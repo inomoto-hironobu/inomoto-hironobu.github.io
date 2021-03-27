@@ -15,16 +15,15 @@ XSLTで実現するフレームワーク framexs
 	<xsl:variable name="xhns" select="'http://www.w3.org/1999/xhtml'"/>
 	<xsl:variable name="fmxns" select="'urn:framexs'"/>
 	<xsl:variable name="empty" select="''"/>
-	<xsl:variable name="version" select="'1.10.0'"/>
+	<xsl:variable name="version" select="'1.11.0'"/>
 	
 	<xsl:template match="/">
 		<xsl:message>framexs <xsl:value-of select="$version"/></xsl:message>
 		<!-- 基本的な処理分けを行う。XHTMLか一般XMLか -->
 		<xsl:choose>
 			<xsl:when test="$skeleton_loc and namespace-uri(*[1]) = $fmxns">
-				<xsl:value-of select="/framexs:tunnel/@src"></xsl:value-of>
 				<xsl:apply-templates select="document($skeleton_loc)/*">
-					<xsl:with-param name="content" select="document(/framexs:tunnel/@src)"></xsl:with-param>
+					<xsl:with-param name="content" select="document(/framexs:tunnel/@content)"></xsl:with-param>
 				</xsl:apply-templates>
 			</xsl:when>
 			<xsl:when test="$skeleton_loc and namespace-uri(*[1]) = $xhns">
@@ -244,18 +243,6 @@ XSLTで実現するフレームワーク framexs
 			<xsl:apply-templates/>
 		</xsl:if>
 	</xsl:template>
-	<!--
-	<xsl:template match="framexs:array[@id]">
-		<xsl:variable name="id" select="@id"></xsl:variable>
-		<xsl:variable name="exists">
-			<xsl:call-template name="is-exists">
-				<xsl:with-param name="id" select="$id"/>
-			</xsl:call-template>
-		</xsl:variable>
-		<xsl:if test="$exists = 'true'">
-			<xsl:apply-templates/>
-		</xsl:if>
-	</xsl:template>-->
 	<xsl:template match="framexs:*"></xsl:template>
 	
 	<!-- コンテンツにframexs.baseがあるならbaseのhrefを上書きする -->
@@ -282,7 +269,6 @@ XSLTで実現するフレームワーク framexs
 
 	<!-- meta要素は特別な扱いをする -->
 	<xsl:template name="metatemplate">
-		<xsl:param name="content"/>
 		<xsl:param name="target"/>
 		<xsl:param name="base"/>
 		<xsl:element name="meta">
@@ -309,13 +295,12 @@ XSLTで実現するフレームワーク framexs
 
 	<xsl:template match="xh:meta[@name and not(@framexs:fix)]">
 		<xsl:param name="content"/>
-		<xsl:variable name="template" select="."/>
+		<xsl:variable name="base" select="."/>
 		<xsl:for-each select="$content/xh:html/xh:head/xh:meta[@name]">
 			<xsl:variable name="target" select="."/>
-			<xsl:if test="$template/@name=$target/@name">
+			<xsl:if test="$base/@name=$target/@name">
 				<xsl:call-template name="metatemplate">
-					<xsl:with-param name="content" select="$content"/>
-					<xsl:with-param name="base" select="$template"/>
+					<xsl:with-param name="base" select="$base"/>
 					<xsl:with-param name="target" select="$target"/>
 				</xsl:call-template>
 			</xsl:if>
