@@ -7,7 +7,7 @@
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5L2SQ9B');</script>
+  })(window,document,'script','dataLayer','<framexs:property name="google-tag-manager-code"/>');</script>
 <!-- End Google Tag Manager -->
 </framexs:if-property>
 <framexs:if-property name="google-analytics-code">
@@ -33,7 +33,7 @@ twq('track','PageView');
 <!-- End Twitter universal website tag code -->
 <meta charset="UTF-8"/>
 <meta framexs:fix="" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-<title> - 八百幡（やおはた）</title>
+<title> - <framexs:property name="site-name"/></title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 <link rel="stylesheet" href="/css/main.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.min.css"/>
@@ -49,8 +49,9 @@ twq('track','PageView');
 </head>
 <body class="bg-primary">
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5L2SQ9B"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript>
+<iframe height="0" width="0" style="display:none;visibility:hidden"><framexs:attribute name="src">https://www.googletagmanager.com/ns.html?id=<framexs:property name="google-tag-manager-code"/></framexs:attribute></iframe>
+</noscript>
 <!-- End Google Tag Manager (noscript) -->
 <header class="bg-white">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

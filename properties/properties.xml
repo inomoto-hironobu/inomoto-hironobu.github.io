@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <properties xmlns="urn:framexs">
+<property name="site-name">八百幡（やおはた）</property>
 <property name="google-tag-manager-code">GTM-5L2SQ9B</property>
 <property name="google-analytics-code">UA-74360841-9</property>
 <property name="twitter-tag-code">o583g</property>

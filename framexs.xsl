@@ -290,8 +290,12 @@ XSLTで実現するフレームワーク framexs
 	
 	<xsl:template match="xh:title">
 		<xsl:param name="content"/>
+		<xsl:param name="properties"/>
 		<xsl:element name="title">
-			<xsl:value-of select="concat($content/xh:html/xh:head/xh:title/text(),.)"/>
+			<xsl:value-of select="$content/xh:html/xh:head/xh:title/text()"/>
+			<xsl:apply-templates>
+				<xsl:with-param name="properties" select="$properties"/>
+			</xsl:apply-templates>
 		</xsl:element>
 	</xsl:template>
 
