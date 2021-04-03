@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <head>
+<framexs:if-property name="google-tag-manager-code">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -8,15 +9,18 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-5L2SQ9B');</script>
 <!-- End Google Tag Manager -->
+</framexs:if-property>
+<framexs:if-property name="google-analytics-code">
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async=""><framexs:attribute name="src">https://www.googletagmanager.com/gtag/js?id=UA-74360841-9</framexs:attribute></script>
+<script async=""><framexs:attribute name="src">https://www.googletagmanager.com/gtag/js?id=<framexs:property name="google-analytics-code"/></framexs:attribute></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-74360841-9');
+  gtag('config', '<framexs:property name="google-analytics-code"/>');
 </script>
+</framexs:if-property>
 <!-- Twitter universal website tag code -->
 <script>
 !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
@@ -37,7 +41,9 @@ twq('track','PageView');
 <script>hljs.initHighlightingOnLoad();</script>
 <script src="/js/http.js"></script>
 <script async="" src="/js/controller.js"></script>
-<script data-ad-client="ca-pub-1181541789430557" async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<framexs:if-property name="google-ads-code">
+<script data-ad-client="" async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><framexs:attribute name="data-ad-client"><framexs:property name="google-ads-code"/></framexs:attribute></script>
+</framexs:if-property>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
 <framexs:script/>
 </head>
@@ -100,24 +106,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <aside class="col-md-3 bg-white">
 <nav id="toc" data-toggle="toc" class="text-white"></nav>
 <object type="text/plain" data="/info.txt" width="160" height="100"></object>
+<framexs:if-property name="ninja-ad-side">
 <div class="d-none d-md-block adv" style="width:210px">
-<script src="https://adm.shinobi.jp/s/4fdb831093a7c78fcdf1b8836cd6c3f4"></script>
+<script src="https://adm.shinobi.jp/s/"><framexs:attribute name="src">https://adm.shinobi.jp/o/<framexs:property name="ninja-ad-side"/></framexs:attribute></script>
 </div>
+</framexs:if-property>
 </aside>
 <main class="col-md-9 bg-light" data-spy="scroll" data-target="#toc">
+<p>更新日:<framexs:meta name="modified"/></p>
 <h1><framexs:title/></h1>
 <p class="description"><span framexs:meta-name="description"/></p>
 <article><div framexs:id-d="prelude"></div></article>
-<div class="adv"><script src="https://adm.shinobi.jp/o/667ef2cf80b3ebc68a5f98077009c196"></script></div>
+<framexs:if-property name="ninja-ad-body">
+<div class="adv"><script><framexs:attribute name="src">https://adm.shinobi.jp/o/<framexs:property name="ninja-ad-body"/></framexs:attribute></script></div>
+</framexs:if-property>
 <article><div framexs:id-d="main"></div></article>
-<div class="adv"><script src="https://adm.shinobi.jp/o/667ef2cf80b3ebc68a5f98077009c196"></script></div>
+<framexs:if-property name="ninja-ad-body">
+<div class="adv"><script><framexs:attribute name="src">https://adm.shinobi.jp/o/<framexs:property name="ninja-ad-body"/></framexs:attribute></script></div>
+</framexs:if-property>
 <article><div framexs:id-d="coda"></div></article>
 </main>
 </div>
 </div>
 <!-- /container -->
 <footer class="bg-info">
-  <p>更新日:<framexs:meta name="modified"/></p>
   <address id="email" style="text-align: center;"><p class="text-white"> Email:<a class="text-white" href="mailto:inmthrnb@gmail.com">inmthrnb@gmail.com</a></p></address>
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
