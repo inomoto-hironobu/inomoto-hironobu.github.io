@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?framexs.skeleton ../../template/template.xhtml?>
+<?framexs.properties ../../properties/properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<title>property</title>
+<meta name="description" content="property機能についての解説"/>
+<meta name="modified" content="2021/04/03"/>
+</head>
+<body>
+<article id="main">
+<p>コンテンツXHTMLに定数の定義の一群を追加するプロパティ機能について解説する。次のテンプレートXHTML、コード1があるとする。</p>
+<figure id="コード1">
+<figcaption>コード1 /template.xhtml</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml" href="framexs.xsl"?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<title><framexs:property name="site-name"/></title>
+</head>
+<body>
+<article>
+<p framexs:id-d="main"></p>
+</article>
+<p>property:hoge:<framexs:property name="hoge"/></p>
+</body>
+</html>]]></code></pre>
+</figure>
+<p>これに対して次のコンテンツXHTML、コード2とプロパティXML、コード3を用意する。</p>
+<figure id="コード2">
+<figcaption>コード2 /contents.xhtml</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml" href="framexs.xsl"?>
+<?framexs.skeleton template.xhtml?>
+<?framexs.properties properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<title>世界よこんにちは</title>
+</head>
+<body>
+<article id="hoge">
+<p>本日は晴天なり。</p>
+</article>
+</body>
+</html>]]></code></pre>
+</figure>
+<figure id="コード3">
+<figcaption>コード3 /properties.xml</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<properties xmlns="urn:framexs">
+<property name="site-name">- 八百幡</property>
+<property name="hoge">foo</property>
+</properties>
+]]></code></pre>
+</figure>
+<p>すると次のコード4を得る。</p>
+<figure>
+<figcaption>コード4</figcaption>
+<pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>世界よこんにちは - 八百幡</title>
+</head>
+<body>
+<h1>あいさつ</h1>
+<article>
+<p>ハローワールド！</p>
+</article>
+<p>property:hoge:foo</p>
+</body>
+</html>]]></code></pre>
+</figure>
+</article>
+</body>
+</html>

@@ -75,13 +75,13 @@ Framexsコンテンツのサンプルとして<a href="#コード1">コード1</
 </tr>
 <tr><td>p framexs:print="no"</td><td>何も出力しません。</td><td></td></tr>
 <tr>
-<td>framexs:if meta-name="description"</td>
+<td>framexs:if-meta name="description"</td>
 <td>もしmeta-name属性値のname属性値(description)を持つmeta要素があれば子孫ノードを解釈する。サンプルコードでは解釈する。</td>
 <td></td>
 </tr>
 <tr>
-<td>framexs:if meta-property="og:title"</td>
-<td>もしmeta-propety属性値のproperty属性値(og:title)を持つmeta要素があれば子孫ノードを解釈する。サンプルコードでは解釈しない。</td>
+<td>framexs:if-meta property="og:title"</td>
+<td>もしif-meta要素のpropety属性値(og:title)のproperty属性値を持つmeta要素がコンテンツにあればテンプレートの子孫ノードを解釈する。サンプルコードでは解釈しない。</td>
 <td></td>
 </tr>
 <tr>
@@ -89,6 +89,11 @@ Framexsコンテンツのサンプルとして<a href="#コード1">コード1</
 <td></td>
 <td><![CDATA[<meta name="keywords" content="test">]]></td>
 </tr>
+<tr>
+<td>framexs:if-property name="hoge"</td>
+<td>もしname属性値のname属性値(hoge)を持つproperty要素があればテンプレートの子孫ノードを解釈する。サンプルコードでは解釈する。</td>
+<td></td>
+</tr
 </tbody>
 </table>
 <figure id="コード1">
@@ -121,6 +126,12 @@ Framexsコンテンツのサンプルとして<a href="#コード1">コード1</
 <li>test1</li>
 <li>テスト2</li>
 </ul>]]></code></pre>
+</figure>
+<figcaption>コード3</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<properties xmlns="urn:framexs">
+<property name="hoge"></property>
+</properties>]]></code></pre>
 </figure>
 </article>
 </body>
