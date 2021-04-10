@@ -271,7 +271,14 @@ XSLTで実現するフレームワーク framexs
 			</xsl:apply-templates>
 		</xsl:attribute>
 	</xsl:template>
-
+	<xsl:template match="framexs:import[@src]">
+		<xsl:param name="content"/>
+		<xsl:param name="properties"/>
+		<xsl:apply-templates select="document(@src)/framexs:fragment/node()">
+			<xsl:with-param name="content" select="$content"/>
+			<xsl:with-param name="properties" select="$properties"/>
+		</xsl:apply-templates>
+	</xsl:template>
 	<xsl:template match="framexs:*"></xsl:template>
 	
 	<!-- コンテンツにframexs.baseがあるならbaseのhrefを上書きする -->
