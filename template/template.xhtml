@@ -12,7 +12,9 @@
 </framexs:if-property>
 <framexs:if-property name="google-analytics-code">
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async=""><framexs:attribute name="src">https://www.googletagmanager.com/gtag/js?id=<framexs:property name="google-analytics-code"/></framexs:attribute></script>
+<script async="" framexs:element="">
+<framexs:attribute name="src">https://www.googletagmanager.com/gtag/js?id=<framexs:property name="google-analytics-code"/></framexs:attribute>
+</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -27,7 +29,7 @@
 },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
 a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
 // Insert Twitter Pixel ID and Standard Event data below
-twq('init','o583g');
+twq('init','<framexs:property name="twitter-tag-code"/>');
 twq('track','PageView');
 </script>
 <!-- End Twitter universal website tag code -->
@@ -50,7 +52,9 @@ twq('track','PageView');
 <body class="bg-primary">
 <!-- Google Tag Manager (noscript) -->
 <noscript>
-<iframe height="0" width="0" style="display:none;visibility:hidden"><framexs:attribute name="src">https://www.googletagmanager.com/ns.html?id=<framexs:property name="google-tag-manager-code"/></framexs:attribute></iframe>
+<iframe height="0" width="0" style="display:none;visibility:hidden" framexs:element="">
+<framexs:attribute name="src">https://www.googletagmanager.com/ns.html?id=<framexs:property name="google-tag-manager-code"/></framexs:attribute>
+</iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 <header class="bg-white">
@@ -111,7 +115,9 @@ twq('track','PageView');
 <object type="text/plain" data="/info.txt" width="160" height="100"></object>
 <framexs:if-property name="ninja-ad-side">
 <div class="d-none d-md-block adv" style="width:210px">
-<script src="https://adm.shinobi.jp/s/"><framexs:attribute name="src">https://adm.shinobi.jp/o/<framexs:property name="ninja-ad-side"/></framexs:attribute></script>
+<script framexs:element="">
+<framexs:attribute name="src">https://adm.shinobi.jp/o/<framexs:property name="ninja-ad-side"/></framexs:attribute>
+</script>
 </div>
 </framexs:if-property>
 </aside>
@@ -121,11 +127,19 @@ twq('track','PageView');
 <p class="description"><span framexs:meta-name="description"/></p>
 <article><div framexs:id-d="prelude"></div></article>
 <framexs:if-property name="ninja-ad-body">
-<div class="adv"><script><framexs:attribute name="src">https://adm.shinobi.jp/o/<framexs:property name="ninja-ad-body"/></framexs:attribute></script></div>
+<div class="adv">
+<script framexs:element="">
+<framexs:attribute name="src">https://adm.shinobi.jp/o/<framexs:property name="ninja-ad-body"/></framexs:attribute>
+</script>
+</div>
 </framexs:if-property>
 <article><div framexs:id-d="main"></div></article>
 <framexs:if-property name="ninja-ad-body">
-<div class="adv"><script><framexs:attribute name="src">https://adm.shinobi.jp/o/<framexs:property name="ninja-ad-body"/></framexs:attribute></script></div>
+<div class="adv">
+<script framexs:element="">
+<framexs:attribute name="src">https://adm.shinobi.jp/o/<framexs:property name="ninja-ad-body"/></framexs:attribute>
+</script>
+</div>
 </framexs:if-property>
 <article><div framexs:id-d="coda"></div></article>
 </main>
@@ -133,7 +147,8 @@ twq('track','PageView');
 </div>
 <!-- /container -->
 <footer class="bg-info">
-  <address id="email" style="text-align: center;"><p class="text-white"> Email:<a class="text-white" href="mailto:inmthrnb@gmail.com">inmthrnb@gmail.com</a></p></address>
+<p>Framexs version:<framexs:version/></p>
+<address id="email" style="text-align: center;"><p class="text-white"> Email:<a class="text-white" href="mailto:inmthrnb@gmail.com">inmthrnb@gmail.com</a></p></address>
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
