@@ -16,7 +16,7 @@ XSLTで実現するフレームワーク framexs
 	<xsl:variable name="xhns" select="'http://www.w3.org/1999/xhtml'"/>
 	<xsl:variable name="fmxns" select="'urn:framexs'"/>
 	<xsl:variable name="empty" select="''"/>
-	<xsl:variable name="version" select="'1.14.0'"/>
+	<xsl:variable name="version" select="'1.15.0'"/>
 	
 	<xsl:template match="/">
 		<xsl:message>framexs <xsl:value-of select="$version"/></xsl:message>
@@ -269,12 +269,17 @@ XSLTで実現するフレームワーク framexs
 	<xsl:template match="framexs:attribute[@name]">
 		<xsl:param name="content"/>
 		<xsl:param name="properties"/>
-		<xsl:attribute name="{@name}">
-			<xsl:apply-templates>
-				<xsl:with-param name="content" select="$content"/>
-				<xsl:with-param name="properties" select="$properties"/>
-			</xsl:apply-templates>
-		</xsl:attribute>
+		<xsl:param name="target"/>
+		<xsl:param name="switch"/>
+		<xsl:if test="$switch = 'true'">
+			<xsl:attribute name="{@name}">
+				<xsl:apply-templates>
+					<xsl:with-param name="content" select="$content"/>
+					<xsl:with-param name="properties" select="$properties"/>
+					<xsl:with-param name="target" select="$target"/>
+				</xsl:apply-templates>
+			</xsl:attribute>
+		</xsl:if>
 	</xsl:template>
 	<xsl:template match="framexs:import[@src]">
 		<xsl:param name="content"/>
@@ -396,17 +401,35 @@ XSLTで実現するフレームワーク framexs
 	<xsl:template match="xh:*">
 		<xsl:param name="content"/>
 		<xsl:param name="properties"/>
+		<xsl:param name="target"/>
 		<xsl:element name="{name()}">
-			<xsl:apply-templates select="framexs:attribute">
-				<xsl:with-param name="content" select="$content"/>
-				<xsl:with-param name="properties" select="$properties"/>
-			</xsl:apply-templates>
-			<xsl:call-template name="replacepath">
-				<xsl:with-param name="current" select="."/>
-			</xsl:call-template>
+			<xsl:if test="namespace-uri() != $fmxns">
+				<xsl:call-template name="replacepath">
+					<xsl:with-param name="current" select="."/>
+				</xsl:call-template>
+			</xsl:if>
 			<xsl:apply-templates>
 				<xsl:with-param name="content" select="$content"/>
 				<xsl:with-param name="properties" select="$properties"/>
+				<xsl:with-param name="target" select="$target"/>
+			</xsl:apply-templates>
+		</xsl:element>
+	</xsl:template>
+	<xsl:template match="xh:*[@framexs:element]">
+		<xsl:param name="content"/>
+		<xsl:param name="properties"/>
+		<xsl:param name="target"/>
+		<xsl:element name="{name()}">
+			<xsl:if test="namespace-uri() != $fmxns">
+				<xsl:call-template name="replacepath">
+					<xsl:with-param name="current" select="."/>
+				</xsl:call-template>
+			</xsl:if>
+			<xsl:apply-templates select="*">
+				<xsl:with-param name="content" select="$content"/>
+				<xsl:with-param name="properties" select="$properties"/>
+				<xsl:with-param name="target" select="$target"/>
+				<xsl:with-param name="switch" select="'true'"/>
 			</xsl:apply-templates>
 		</xsl:element>
 	</xsl:template>
