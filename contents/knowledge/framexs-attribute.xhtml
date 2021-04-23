@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?framexs.skeleton ../../template/template.xhtml?>
+<?framexs.properties ../../properties/properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<title>Framexsのattribute</title>
+<meta name="description" content="property機能についての解説"/>
+<meta name="modified" content="2021/04/24"/>
+</head>
+<body>
+<article id="main">
+<p>Framexsでは属性を動的に生成することができる。次のテンプレートXHTML、コード1があるとする。</p>
+<figure id="コード1">
+<figcaption>コード1 /template.xhtml</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml" href="framexs.xsl"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
+<head>
+<title> - 八百幡</title>
+</head>
+<body>
+<h1>リンク</h1>
+<article>
+<p><a framexs:element="">
+<framexs:attribute name="href">http://inomoto-hironobu.github.io/contents/knowledged/<framexs:property name="filename"/></framexs:attribute>
+<framexs:text>リンク</framexs:text>
+test
+</a></p>
+</article>
+</body>
+</html>]]></code></pre>
+</figure>
+<p>これに対して次のコンテンツXHTML、コード2とプロパティXML、コード3を用意する。</p>
+<figure id="コード2">
+<figcaption>コード2 /contents.xhtml</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml" href="framexs.xsl"?>
+<?framexs.skeleton template.xhtml?>
+<?framexs.properties properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<title>リンク</title>
+</head>
+<body>
+</body>
+</html>]]></code></pre>
+</figure>
+<figure id="コード3">
+<figcaption>コード3 /properties.xml</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<properties xmlns="urn:framexs">
+<property name="filename">framexs-attribute.xhtml</property>
+</properties>
+]]></code></pre>
+</figure>
+<p>すると次のコード4を得る。</p>
+<figure>
+<figcaption>コード4</figcaption>
+<pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>リンク - 八百幡</title>
+</head>
+<body>
+<h1>リンク</h1>
+<article>
+<p><a href="http://inomoto-hironobu.github.io/contents/knowledged/framexs-attribute.xhtml">リンク</a></p>
+</article>
+</body>
+</html>]]></code></pre>
+</figure>
+<p>framexs:element属性のある要素では子にframexs:attribute要素がある場合動的に属性を生成する。
+逆に言えばframexs:attribute要素を使いたいときは親要素にframexs:element属性を追加しなければならない。
+また、framexs:element属性のある要素では処理するのは要素のみでありテキストは無視される。なのでframexs:text要素で含めたいテキストを定義しておく。</p>
+</article>
+</body>
+</html>
