@@ -191,67 +191,98 @@ XSLTで実現するフレームワーク framexs
 			</xsl:if>
 		</xsl:for-each>
 	</xsl:template>
-		<xsl:template match="framexs:if-meta[@name]">
+	<!--
+		if文を定義。meta,property,resource
+	-->
+	<xsl:template match="framexs:if-meta[@name]">
 		<xsl:param name="content"/>
-		<xsl:variable name="name" select="@meta-name"></xsl:variable>
 		<xsl:variable name="if-meta" select="."></xsl:variable>
-		<xsl:for-each select="$content/xh:html/xh:head/xh:meta">
-			<xsl:if test="$name = @name">
-				<xsl:apply-templates select="$if-meta/*">
-					<xsl:with-param name="content" select="$content"/>
-				</xsl:apply-templates>
-			</xsl:if>
-		</xsl:for-each>
+		<xsl:for-each select="$content/xh:html/xh:head/xh:meta[@name and @content]">
+			<xsl:choose>
+				<xsl:when test="@name = $if-meta/@name and @content = $if-meta/@content">
+					<xsl:apply-templates select="$if-meta/node()">
+						<xsl:with-param name="content" select="$content"/>
+					</xsl:apply-templates>
+				</xsl:when>
+				<xsl:when test="@name = $if-meta/@name and not($if-meta/@content)">
+					<xsl:apply-templates select="$if-meta/node()">
+						<xsl:with-param name="content" select="$content"/>
+					</xsl:apply-templates>
+				</xsl:when>
+			</xsl:choose>
+		</xsl:for-each>	
 	</xsl:template>
-	<xsl:template match="framexs:if-meta[@name and @content]">
-		<xsl:param name="content"/>
-		<xsl:variable name="name" select="@name"/>   
-		<xsl:variable name="value" select="@content"/>
-		<xsl:variable name="if-meta" select="."/>
-		<xsl:for-each select="$content/xh:html/xh:head/xh:meta">
-			<xsl:if test="@name = $name and @content = $value">
-				<xsl:apply-templates select="$if-meta/*">
-					<xsl:with-param name="content" select="$content"/>
-				</xsl:apply-templates>
-			</xsl:if>
-		</xsl:for-each>
-	</xsl:template>
+
 	<xsl:template match="framexs:if-meta[@property]">
 		<xsl:param name="content"/>
-		<xsl:variable name="property" select="@meta-property"/>
-		<xsl:variable name="if-meta" select="."/>
-		<xsl:for-each select="$content/xh:html/xh:head/xh:meta">
-			<xsl:if test="$property = @property">
-				<xsl:apply-templates select="$if-meta/*">
-					<xsl:with-param name="content" select="$content"/>
-				</xsl:apply-templates>
-			</xsl:if>
-		</xsl:for-each>
-	</xsl:template>
-	<xsl:template match="framexs:if-meta[@property and @content]">
-		<xsl:param name="content"/>
 		<xsl:variable name="property" select="@property"/>
-		<xsl:variable name="value" select="@content"/>
 		<xsl:variable name="if-meta" select="."/>
 		<xsl:for-each select="$content/xh:html/xh:head/xh:meta">
-			<xsl:if test="@property = $property and @content = $value">
-				<xsl:apply-templates select="$if-meta/*">
-					<xsl:with-param name="content" select="$content"/>
-				</xsl:apply-templates>
-			</xsl:if>
+			<xsl:choose>
+				<xsl:when test="@property = $if-meta/@property and @content = $if-meta/@content">
+					<xsl:apply-templates select="$if-meta/node()">
+						<xsl:with-param name="content" select="$content"/>
+					</xsl:apply-templates>
+				</xsl:when>
+				<xsl:when test="@property = $if-meta/@property and not($if-meta/@content)">
+					<xsl:apply-templates select="$if-meta/node()">
+						<xsl:with-param name="content" select="$content"/>
+					</xsl:apply-templates>
+				</xsl:when>
+			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
+
 	<xsl:template match="framexs:if-property[@name]">
 		<xsl:param name="content"/>
 		<xsl:param name="properties"/>
-		<xsl:variable name="name" select="@name"></xsl:variable>
-		<xsl:variable name="if-property" select="."></xsl:variable>
+		<xsl:variable name="name" select="@name"/>
+		<xsl:variable name="if-property" select="."/>
 		<xsl:for-each select="$properties/framexs:property">
-			<xsl:if test="@name = $name">
-				<xsl:apply-templates select="$if-property/*">
+			<xsl:choose>
+				<xsl:when test="@name = $if-property/@name and text() = $if-property/@value">
+					<xsl:apply-templates select="$if-property/node()">
+						<xsl:with-param name="content" select="$content"/>
+						<xsl:with-param name="properties" select="$properties"/>
+					</xsl:apply-templates> 
+				</xsl:when>
+				<xsl:when test="@name = $if-property/@name and not($if-property/@value)">
+					<xsl:apply-templates select="$if-property/node()">
+						<xsl:with-param name="content" select="$content"/>
+						<xsl:with-param name="properties" select="$properties"/>
+					</xsl:apply-templates> 
+				</xsl:when>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template match="framexs:if-resource[@name]">
+		<xsl:param name="content"/>
+		<xsl:param name="properties"/>
+		<xsl:variable name="name" select="@name"/>
+		<xsl:variable name="if-resource" select="."></xsl:variable>
+		<xsl:for-each select="$content/processing-instruction('framexs.resource')">
+			<xsl:if test="$name = substring-before(.,' ')">
+				<xsl:apply-templates select="$if-resource/node()">
 					<xsl:with-param name="content" select="$content"/>
 					<xsl:with-param name="properties" select="$properties"/>
 				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:template>
+	<!--
+		<?framexs:resource hoge resource/hoge.xml?>
+		で指定し次のXMLを呼出しframexs:reourceの子孫ノードを展開する。
+		<framexs:resource xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
+			<li>item1</li>
+			<li>item2</li>
+		</framexs:resource>
+	-->
+	<xsl:template match="framexs:resource[@name]">
+		<xsl:param name="content"/>
+		<xsl:variable name="name" select="@name"/>
+		<xsl:for-each select="$content/processing-instruction('framexs.resource')">
+			<xsl:if test="$name = substring-before(.,' ')">
+				<xsl:apply-templates mode="content" select="document(substring-after(.,' '), $content)/framexs:resource/node()"/>
 			</xsl:if>
 		</xsl:for-each>
 	</xsl:template>
@@ -308,10 +339,12 @@ XSLTで実現するフレームワーク framexs
 	<xsl:template match="xh:title">
 		<xsl:param name="content"/>
 		<xsl:param name="properties"/>
+		<xsl:param name="target"/>
 		<xsl:element name="title">
 			<xsl:value-of select="$content/xh:html/xh:head/xh:title/text()"/>
 			<xsl:apply-templates>
 				<xsl:with-param name="properties" select="$properties"/>
+				<xsl:with-param name="target" select="$target"/>
 			</xsl:apply-templates>
 		</xsl:element>
 	</xsl:template>
