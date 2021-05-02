@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?framexs.skeleton ../../template/template.xhtml?>
+<?framexs.properties ../../properties/properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<title>import</title>
+<meta name="description" content="if文機能についての解説"/>
+<meta name="modified" content="2021/05/02"/>
+</head>
+<body>
+<article id="main">
+<p>if文機能について解説する。次のコード1で表されるテンプレートがあるとする。</p>
+<figure id="コード1">
+<figcaption>コード1 /template.xhtml</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
+<head>
+<title>- template</title>
+</head>
+<body>
+<h1>あいさつ</h1>
+<article>
+<framexs:if-id name="prelude">
+<h2>前書き</h2>
+<section>
+<p framexs:id-d="prelude"></p>
+</section>
+</framexs:if-id>
+<framexs:if-id name="main">
+<h2>主文</h2>
+<section>
+<p framexs:id-d="main"></p>
+</section>
+</framexs:if-id>
+
+<framexs:if-meta name="description">
+<h2>description</h2>
+<section>
+<framexs:meta name="description"/>
+</secton>
+</framexs:if-meta>
+<framexs:if-resource name="hoge">
+<ul>
+<framexs:resource name="hoge"/>
+</ul>
+</framexs:if-resource>
+<framexs:if-property name="hoge">
+<p><framexs:property name="hoge"/></p>
+</framexs:if-property>
+</article>
+</body>
+</html>]]></code></pre>
+</figure>
+<p>これに対して次のコンテンツXHTML、コード2とフラグメントXML、コード3を用意する。</p>
+<figure id="コード2">
+<figcaption>コード2 /contents.xhtml</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml" href="framexs.xsl"?>
+<?framexs.skeleton template.xhtml?>
+<?framexs.resource hoge foo.xml?>
+<?framexs.properties properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<title>世界よこんにちは</title>
+</head>
+<body>
+<article id="hoge">
+<p>本日は晴天なり。</p>
+</article>
+</body>
+</html>]]></code></pre>
+</figure>
+<figure id="コード3">
+<figcaption>コード3 /foo.xml</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<framexs:resource xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
+<li>hoge</li>
+<li>foo</li>
+<li>bar</li>
+</framexs:resource>                                                                                                        
+]]></code></pre>
+</figure>
+<figure id="コード3">
+<figcaption>コード4 /properties.xml</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<properties xmlns="urn:framexs">
+<property name="site-name">- 八百幡</property>
+<property name="hoge">foo</property>
+</properties>
+]]></code></pre>
+</figure>
+<p>すると次のコード5を得る。</p>
+<figure>
+<figcaption>コード5</figcaption>
+<pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>世界よこんにちは - template</title>
+<script src="hoge.js"></script>
+<link rel="stylesheet" href="foo.css"/>
+</head>
+<body>
+<h1>あいさつ</h1>
+<article>
+<p>ハローワールド！</p>
+</article>
+</body>
+</html>]]></code></pre>
+</figure>
+</article>
+</body>
+</html>

@@ -192,10 +192,40 @@ XSLTで実現するフレームワーク framexs
 		</xsl:for-each>
 	</xsl:template>
 	<!--
-		if文を定義。meta,property,resource
+		if文を定義。id,meta,property,resource
 	-->
+	<xsl:template match="xh:*" mode="search-id-if">
+		<xsl:param name="id"/>
+		<xsl:param name="content"/>
+		<xsl:param name="properties"/>
+		<xsl:choose>
+			<xsl:when test="@id = $id">
+				<xsl:apply-templates>
+					<xsl:with-param name="content" select="$content"/>
+					<xsl:with-param name="properties" select="$properties"/>
+				</xsl:apply-templates>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:apply-templates select="xh:*" mode="search-id-if">
+					<xsl:with-param name="id" select="$id"/>
+					<xsl:with-param name="content" select="$content"/>
+					<xsl:with-param name="properties" select="$properties"/>
+				</xsl:apply-templates>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<xsl:template match="framexs:if-id[@name]">
+		<xsl:param name="content"/>
+		<xsl:param name="properties"/>
+		<xsl:apply-templates mode="search-id-if" select="$content/xh:html">
+			<xsl:with-param name="id" select="@name"/>
+			<xsl:with-param name="content" select="$content"/>
+			<xsl:with-param name="properties" select="$properties"/>
+		</xsl:apply-templates>
+	</xsl:template>
 	<xsl:template match="framexs:if-meta[@name]">
 		<xsl:param name="content"/>
+		<xsl:param name="properties"/>
 		<xsl:variable name="if-meta" select="."></xsl:variable>
 		<xsl:for-each select="$content/xh:html/xh:head/xh:meta[@name and @content]">
 			<xsl:choose>
@@ -215,18 +245,15 @@ XSLTで実現するフレームワーク framexs
 
 	<xsl:template match="framexs:if-meta[@property]">
 		<xsl:param name="content"/>
+		<xsl:param name="properties"/>
 		<xsl:variable name="property" select="@property"/>
 		<xsl:variable name="if-meta" select="."/>
 		<xsl:for-each select="$content/xh:html/xh:head/xh:meta">
 			<xsl:choose>
-				<xsl:when test="@property = $if-meta/@property and @content = $if-meta/@content">
+				<xsl:when test="(@property = $if-meta/@property and @content = $if-meta/@content) or (@property = $if-meta/@property and not($if-meta/@content))">
 					<xsl:apply-templates select="$if-meta/node()">
 						<xsl:with-param name="content" select="$content"/>
-					</xsl:apply-templates>
-				</xsl:when>
-				<xsl:when test="@property = $if-meta/@property and not($if-meta/@content)">
-					<xsl:apply-templates select="$if-meta/node()">
-						<xsl:with-param name="content" select="$content"/>
+						<xsl:with-param name="properties" select="$properties"/>
 					</xsl:apply-templates>
 				</xsl:when>
 			</xsl:choose>
