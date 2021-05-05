@@ -21,8 +21,7 @@ Framexsコンテンツのサンプルとして<a href="#コード1">コード1</
 <td>id属性値がhogeの要素と置き換える。</td>
 <td><pre><![CDATA[<p>本日は晴天なり。</p>]]></pre></td>
 </tr>
-<tr
-><td>p framexs:id-sd="hoge"</td>
+<tr><td>p framexs:id-sd="hoge"</td>
 <td>id属性値がhogeの要素の子要素群と置き換える。</td>
 <td><pre><![CDATA[<article id="hoge">
 <p>本日は晴天なり。</p>
@@ -90,8 +89,18 @@ Framexsコンテンツのサンプルとして<a href="#コード1">コード1</
 <td><![CDATA[<meta name="keywords" content="test">]]></td>
 </tr>
 <tr>
-<td>framexs:if-property name="hoge"</td>
-<td>もしname属性値のname属性値(hoge)を持つproperty要素があればテンプレートの子孫ノードを解釈する。サンプルコードでは解釈する。</td>
+<td>framexs:if-resource name="foo"</td>
+<td>もしname属性値のname属性値(foo)を持つresource処理命令があればテンプレートの子孫ノードを解釈する。サンプルコードでは解釈する。</td>
+<td></td>
+</tr>
+<tr>
+<td>framexs:resource name="hoge"</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>framexs:property name="hoge"</td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
@@ -101,7 +110,7 @@ Framexsコンテンツのサンプルとして<a href="#コード1">コード1</
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton template.xhtml?>
-<?framexs.fetch foo ../fragment/ul.xhtml?>
+<?framexs.resource foo ../resource/ul.xml?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
 <title>世界よこんにちは</title>
@@ -122,11 +131,12 @@ Framexsコンテンツのサンプルとして<a href="#コード1">コード1</
 <figure id="コード2">
 <figcaption>コード2</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<ul xmlns="http://www.w3.org/1999/xhtml">
+<framexs:resource xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
 <li>test1</li>
 <li>テスト2</li>
-</ul>]]></code></pre>
+</framexs:resource>]]></code></pre>
 </figure>
+<figure>
 <figcaption>コード3</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <properties xmlns="urn:framexs">
