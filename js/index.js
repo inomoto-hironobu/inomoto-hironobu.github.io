@@ -1,8 +1,7 @@
-window.addEventListener('DOMContentLoaded', ()=>{
+window.addEventListener('load', ()=>{
 	document
 	.querySelectorAll('#indexes tr:not(.th)')
 	.forEach((tr)=>{
-		tr.querySelector('td');
 		let td = document.createElement('td');
 		let button = document.createElement('button');
 		button.appendChild(document.createTextNode('詳しく見る'));
