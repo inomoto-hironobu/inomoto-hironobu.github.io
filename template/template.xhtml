@@ -40,9 +40,11 @@ twq('track','PageView');
 <title> - <framexs:property name="site-name"/></title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 <link rel="stylesheet" href="/css/main.css"/>
+<framexs:if-property name="pagetype" value="article">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+</framexs:if-property>
 <script src="/js/http.js"></script>
 <script async="" src="/js/controller.js"></script>
 <framexs:if-property name="google-ads-code">
@@ -82,6 +84,7 @@ twq('track','PageView');
           メインコンテンツ
         </a>
         <div class="dropdown-menu" aria-labelledby="メインコンテンツ">
+          <a class="dropdown-item" href="/contents/framexs.index.xhtml">Framexs</a>
           <a class="dropdown-item" href="/contents/howto/index.xhtml">ハウツー</a>
           <a class="dropdown-item" href="/contents/knowledge/index.xhtml">知識</a>
           <a class="dropdown-item" href="/contents/idea/index.xhtml">アイデア</a>
@@ -104,20 +107,11 @@ twq('track','PageView');
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="仕事依頼" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          仕事依頼
-        </a>
-        <div class="dropdown-menu" aria-labelledby="仕事依頼">
-          <a class="dropdown-item" href="/contents/lp/Framexs講習.xhtml">Framexs講習</a>
-          <a class="dropdown-item" href="/contents/lp/Framexs改造.xhtml">Framexs改造</a>
-          <a class="dropdown-item" href="/contents/lp/サイト改修.xhtml">サイト改修</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="基本情報" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="その他" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           その他
         </a>
-        <div class="dropdown-menu" aria-labelledby="基本情報">
+        <div class="dropdown-menu" aria-labelledby="その他">
+          <a class="dropdown-item" href="/contents/base/business.xhtml">Framexsのビジネス(工事中)</a>
           <a class="dropdown-item" href="/contents/base/books.xhtml">読んだ本</a>
           <a class="dropdown-item" href="/contents/base/history.xhtml">来歴</a>
           <a class="dropdown-item" href="/contents/base/このサイトについて.xhtml">このサイトについて</a>
@@ -130,7 +124,9 @@ twq('track','PageView');
 <div class="container">
 <div class="row">
 <aside class="col-md-3 bg-white">
+<framexs:if-property name="pagetype" value="article">
 <nav id="toc" data-toggle="toc" class="text-white"></nav>
+</framexs:if-property>
 <object type="text/plain" data="/info.txt" width="160" height="100"></object>
 <framexs:if-property name="ninja-ad-side">
 <div class="d-none d-md-block adv" style="width:210px">
@@ -139,8 +135,8 @@ twq('track','PageView');
 </script>
 </div>
 </framexs:if-property>
-<framexs:if-resource name="">
-<framexs:resource src=""/>
+<framexs:if-resource name="aside">
+<framexs:resource name="aside"/>
 </framexs:if-resource>
 </aside>
 <main class="col-md-9 bg-light" data-spy="scroll" data-target="#toc">
