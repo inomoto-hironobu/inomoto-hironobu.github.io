@@ -13,25 +13,18 @@
 <article id="main">
 <p>FramexsはXHTMLをMVCの材料として合成を行うフレームワークである。<br/>
 モデルもビューもXHTMLを使い、ウェブサイトでの配布の場合はコントローラーもXHTMLに処理命令という形で埋めこむ。</p>
+<p>このフレームワークはフロントエンドXSLT技術であるxml-stylesheet処理命令を利用している。</p>
+<pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>]]></code></pre>
 <h2>初心者用コード</h2>
-<p>モデルであるcontent.xhtmlは次のようになっているとする。</p>
+<p>ウェブサーバーがファイルシステム/docs/に結び付けられていて、次の3つのファイルがあるととする。</p>
+<ul>
+<li>/docs/framexs.xsl</li>
+<li>/docs/template.xhtml</li>
+<li>/docs/content.xhtml</li>
+</ul>
+<p>ビューであるtempalte.xhtmlは次のようになっているとする。</p>
 <figure>
 <figcaption>コード1</figcaption>
-<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>世界よこんにちは</title>
-</head>
-<body>
-<div id="main">
-<p>ハローワールド！</p>
-</div>
-</body>
-</html>]]></code></pre>
-</figure>
-<p>次にビューであるtempalte.xhtmlは次のようになっているとする。</p>
-<figure>
-<figcaption>コード2</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" xml:lang="ja" lang="ja">
 <head>
@@ -43,8 +36,25 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>これらをXSLTプロセッサに対してframexs.xslをスタイルシートに、XMLをcontent.xhtmlに、引数にframexs.skeletonをtemplate.xhtmlにすると次の出力を得る。</p>
+<p>モデルであるcontent.xhtmlは次のようになっている。</p>
 <figure>
+<figcaption>コード2</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml" href="framexs.xsl"?>
+<?framexs.skeleton template.xhtml?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>世界よこんにちは</title>
+</head>
+<body>
+<div id="main">
+<p>ハローワールド！</p>
+</div>
+</body>
+</html>]]></code></pre>
+</figure>
+<figure>
+<p>すると次のようになる。</p>
 <figcaption>コード3</figcaption>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html xml:lang="ja" lang="ja">
@@ -60,32 +70,6 @@
 </body>
 </html>]]></code></pre>
 </figure>
-
-<p>これをブラウザのXSLTプロセッサを通す場合を考える。<br/>
-ウェブサーバーがファイルシステム/docs/に結び付けられていて、次の3つのファイルがあるととする。</p>
-<ul>
-<li>/docs/framexs.xsl</li>
-<li>/docs/template.xhtml</li>
-<li>/docs/content.xhtml</li>
-</ul>
-<p>モデルであるcontent.xhtmlは次のようになっている。</p>
-<figure>
-<figcaption>コード4</figcaption>
-<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="application/xml" href="framexs.xsl"?>
-<?framexs.skeleton template.xhtml?>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>世界よこんにちは</title>
-</head>
-<body>
-<div id="main">
-<p>ハローワールド！</p>
-</div>
-</body>
-</html>]]></code></pre>
-</figure>
-
 <p>この場合ブラウザでhttp://localhost/content.xhtmlにアクセスすると出力結果が最終的なパース対象となる。<br/>
 この出力はブラウザによって解析される。</p>
 <h2>意義</h2>
@@ -125,8 +109,16 @@
 <?framexs.skeleton ../../template/template.xhtml?>]]></code></pre>
 </figure>
 <p>ソースコードは<a href="https://github.com/inomoto-hironobu/inomoto-hironobu.github.io/blob/master/contents/knowledge/framexs.xhtml">GitHubのページ</a>も参照されたい。</p>
-<h2>参考記事</h2>
-<p><a href="../howto/framexs.xhtml">入門の資料</a>を参考にする。</p>
+<h2>CSSフレームワークとの相性</h2>
+<p>FramexsはCSSフレームワークとの相性が抜群に良い。link要素やscript要素の決まりきったボイラープレートコードはテンプレートに集約され、またclass="container"などの決まりきった構成もまたテンプレートに集約される。</p>
+<h2>Buildless性</h2>
+<p>FramexsはBuildlessである。Node.jsコマンドに頼らずとも静的サイトの構築を可能にし、CSSフレームワークやJavaScriptフレームワークもBuildlessに利用することができる。</p>
+<h2>動的サイトとの相性</h2>
+<p>まだ動的サイトとの相性は検証されていないが、大きな相乗効果を生み出すことが予想できる。というのも例えばJavaプログラマーがJSPを書くとき、最終的なHTMLの合成はマークアップエンジニアに任せて、自分はごく単純なXHTMLを出力することができる。一方マークアップエンジニアはテンプレートの製作に専念できるのでJavaやPHPを覚える必要がない。今後IT業界に高い分担制、専業性をもたらすだろう。</p>
+</article>
+<article id="coda">
+<p>このようにXSLTのフレームワークは静的サイト構築を容易にしデザインを優れたものにする。<br/>
+このページ自身がそうであるし、ここのサイト全体がそうである。</p>
 </article>
 </body>
 </html>
