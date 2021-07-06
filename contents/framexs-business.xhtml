@@ -12,6 +12,46 @@
 <link href="lpcss.css" type="text/css" rel="stylesheet">
  
  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(window).scroll(function(){
+ var windowHeight = window.innerHeight ? window.innerHeight: $(window).height(),
+     topWindow = $(window).scrollTop();
+ $('#sc1').each(function(){
+  var targetPosition = $(this).offset().top;
+  if(topWindow > targetPosition - windowHeight +100){
+   $(this).addClass("fadeInDown");
+  }
+ });
+});
+
+
+$(window).scroll(function(){
+ var windowHeight = window.innerHeight ? window.innerHeight: $(window).height(),
+     topWindow = $(window).scrollTop();
+ $('#sc2').each(function(){
+  var targetPosition = $(this).offset().top;
+  if(topWindow > targetPosition - windowHeight +100){
+   $(this).addClass("fadeInDown");
+  }
+ });
+});
+ 
+ 
+$(window).scroll(function(){
+ var windowHeight = window.innerHeight ? window.innerHeight: $(window).height(),
+     topWindow = $(window).scrollTop();
+ $('#sc3').each(function(){
+  var targetPosition = $(this).offset().top;
+  if(topWindow > targetPosition - windowHeight +100){
+   $(this).addClass("fadeInDown");
+  }
+ });
+});
+ 
+</script>
+ 
+ 
 </head>
 <body>
 <article id="main">
@@ -27,88 +67,6 @@
 </div>
 </div>
 
- 
-
-<div class="s1_box">
-<div class="s1_img">
-</div>
-<div class="s1_text">
-<h2 class="s1_title">
-北九州でIT事業を行っております、ドリームネットシステムズです。
-</h2>
- ITエンジニアリングの世界ではフロンエンドという言葉があります。
-<br />フロントエンドはユーザーの端末に直接配信され動作させる領域でこれまでの一般的な常識ではHTMLやCSS、JavaScriptなどの技術が主です。
- <span class="imp_re">
-それらに加わるもう一つのフロントエンド技術があります。
-<br />それがXSLTです。</span>
-</div>
-</div>
- 
- 
-
-
-<div class="s1_copy" id="sc1">
-XSLTは西暦2000年前後は非常に注目されていた言語でXML+XSLTがウェブの将来の中心になると思われていました。
-<br />しかし、あまりに難しいうえに当時はあまり利点が無いために実際にはあまり使われませんでした。
-</div>
-<div class="s1_copy" id="sc2">
-そのXSLTが最近になって、未来を変えるような画期的なコードとして再度注目されるべき時期が来ました。
-<br />それがFramexsです。
-</div>
-
-
-
-
- 
- 
-<div class="s6_tips">
-<div class="s6_tips_title">
-Framexsとは？
-</div>
-
-FramexsとはHTML生成フレームワークであり、ウェブサイト開発を劇的に容易にする最新技術であり、ウェブサイト開発の主役として今後は高い需要が見込まれます。
-<br /><br />
-このページはいわゆるランディングページですが、このページ自身とサイト全体がFramexsによって作られ運用されています。
-<br />私自身このFramexsを利用している実感として開発、管理、品質の保持がとても容易であることを実感しています。
-<br /><br />
-多くの人に知られるようになればこれからのITは新たな時代を迎えることは確実です。
-<br />Framexsについてより知りたい方は「<a href="knowledge/framexs.xhtml">Framexsについて</a>」を読んでください。
-
-</div>
- 
-<div class="s1_copy" id="sc3">
-ここで私はこのFramexsを用いたビジネスを提案いたします。
-</div>
- 
- <div class="s8">
-<div class="s8_title">
-当社が提供する
-<br />Framexsビジネス
-</div>
-<ul class="lists">
-<li>Framexsでのサイト作成</li>
-<li>Framexsでの既存サイトの改修</li>
-<li>Framexsの講習</li>
-</ul>
-</div>
-
- 
- 
-あなたが例えばいわゆる個人サイトを運用していたとしたら、それは上手くいっているでしょうか。
-<br />
-従来の個人サイトの運用では管理人にとても大きな負担がありました。
-<br />再利用性が小さいファイルを大量に作りその管理は煩雑で長続きできるようなものではありませんでした。
-<br />実際個人サイトは2000年から2010年まで流行しましたが、その管理の難しさから2010年から2020にかけて一般的な物ではなくなりました。
-<br /><br />
-Framexsでは煩雑さを消し、自由でありながら劇的な運用簡易性をもたらします。
-<br />このビジネスによってあなたのサイトは強い輝きを持つことになります。
-<br /><br />
-これらビジネスの依頼に関してはドリームネットシステムズにご連絡ください。
-<br />ドリームネットシステムズはこのサイトの所有者であり、Framexsビジネスを行う井本とビジネスパートナーシップを結び、様々な依頼を承っております。
-  <br /><br />
-相談は無料なので、ぜひ今すぐ連絡しましょう。
-<br />
-  <br /><br />
   </div>
 <div id="cm_link">
   </div>
