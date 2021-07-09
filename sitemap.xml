@@ -21,15 +21,15 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/article/index.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/framexs-business.xhtml</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/base/index.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/history.xhtml</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/lp/index.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/books.xhtml</loc>
     <priority>0.8</priority>
   </url>
 </urlset>
