@@ -45,6 +45,14 @@ twq('track','PageView');
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </framexs:if-property>
+<framexs:if-property name="pagetype" value="lp">
+<link rel="stylesheet" href="/css/lp.css"/>
+</framexs:if-property>
+<framexs:if-property name="pagetype" value="index">
+<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script async="" src="/js/xpath.js"></script>
+<script async="" src="/js/index.js"></script>
+</framexs:if-property>
 <script src="/js/http.js"></script>
 <script async="" src="/js/controller.js"></script>
 <framexs:if-property name="google-ads-code">
@@ -52,11 +60,6 @@ twq('track','PageView');
 </framexs:if-property>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
 <framexs:script/>
-<framexs:if-property name="pagetype" value="index">
-<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-<script async="" src="/js/xpath.js"></script>
-<script async="" src="/js/index.js"></script>
-</framexs:if-property>
 </head>
 <body class="bg-primary">
 <!-- Google Tag Manager (noscript) -->
@@ -84,7 +87,6 @@ twq('track','PageView');
           メインコンテンツ
         </a>
         <div class="dropdown-menu" aria-labelledby="メインコンテンツ">
-          <a class="dropdown-item" href="/contents/framexs.index.xhtml">Framexs</a>
           <a class="dropdown-item" href="/contents/howto/index.xhtml">ハウツー</a>
           <a class="dropdown-item" href="/contents/knowledge/index.xhtml">知識</a>
           <a class="dropdown-item" href="/contents/idea/index.xhtml">アイデア</a>
@@ -121,6 +123,7 @@ twq('track','PageView');
 </header>
 <div class="container">
 <div class="row">
+<framexs:if-property name="sidebar" value="display">
 <aside class="col-md-3 bg-white">
 <framexs:if-property name="pagetype" value="article">
 <nav id="toc" data-toggle="toc" class="text-white"></nav>
@@ -137,11 +140,16 @@ twq('track','PageView');
 <framexs:resource name="aside"/>
 </framexs:if-resource>
 </aside>
-<main class="col-md-9 bg-light" data-spy="scroll" data-target="#toc">
+</framexs:if-property>
+<main class="col-md-9 bg-light" data-spy="scroll" data-target="#toc" framexs:element="">
+<framexs:attribute name="class">
+<framexs:if-property name="sidebar" value="display">col-md-9</framexs:if-property>
+bg-light
+</framexs:attribute>
 <p>更新日:<framexs:meta name="modified"/></p>
 <h1><framexs:title/></h1>
 <p class="description"><span framexs:meta-name="description"/></p>
-<article><div framexs:id-d="prelude"></div></article>
+<article id="prelude"><div framexs:id-d="prelude"></div></article>
 <framexs:if-property name="ninja-ad-body">
 <div class="adv">
 <script framexs:element="">
@@ -157,6 +165,9 @@ twq('track','PageView');
 </table>
 </framexs:if-property>
 <framexs:if-property name="pagetype" value="article">
+<div framexs:id-d="main"></div>
+</framexs:if-property>
+<framexs:if-property name="pagetype" value="lp">
 <div framexs:id-d="main"></div>
 </framexs:if-property>
 </article>

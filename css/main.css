@@ -17,7 +17,8 @@ section {
 section p {
 	border: dashed 1px lightgray;
 	background-color: white;
-	padding: 0.25rem;
+	margin: .25rem;
+	padding: 1.25rem;
 }
 section ul, section ol, section dl {
 	background-color: lightyellow;
@@ -26,7 +27,26 @@ section table {
 	background-color: linen;
 }
 section pre {
+	border-radius: 1rem;
+	border: solid .25rem blue;
 	background-color: white;
+	margin: .25rem;
+	padding-left: 2rem;
+}
+section details {
+	box-shadow: 1px 1px 2px gray;
+	margin: .25rem;
+	border: solid 1px orange;
+	background-color: white;
+}
+section details > summary {
+	cursor: pointer;
+}
+#prelude {
+	background-color: #ebf1f8;
+	padding: 2rem .5rem;
+	text-shadow: 1px 1px 2px pink;
+	font-size: 1.25rem;
 }
 .adv {
 	margin-left: auto;
