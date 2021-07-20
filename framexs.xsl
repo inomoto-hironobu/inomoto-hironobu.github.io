@@ -207,7 +207,7 @@ XSLTで実現するフレームワーク framexs
 		<xsl:param name="properties"/>
 		<xsl:choose>
 			<xsl:when test="@id = $id">
-				<xsl:apply-templates>
+				<xsl:apply-templates select=".">
 					<xsl:with-param name="content" select="$content"/>
 					<xsl:with-param name="properties" select="$properties"/>
 				</xsl:apply-templates>
