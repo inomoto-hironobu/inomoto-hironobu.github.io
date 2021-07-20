@@ -149,7 +149,9 @@ bg-light
 <p>更新日:<framexs:meta name="modified"/></p>
 <h1><framexs:title/></h1>
 <p class="description"><span framexs:meta-name="description"/></p>
+<framexs:if-id name="prelude">
 <article id="prelude"><div framexs:id-d="prelude"></div></article>
+</framexs:if-id>
 <framexs:if-property name="ninja-ad-body">
 <div class="adv">
 <script framexs:element="">
@@ -178,7 +180,9 @@ bg-light
 </script>
 </div>
 </framexs:if-property>
+<framexs:if-id name="coda">
 <article><div framexs:id-d="coda"></div></article>
+</framexs:if-id>
 </main>
 </div>
 </div>
