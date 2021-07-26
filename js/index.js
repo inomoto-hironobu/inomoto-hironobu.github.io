@@ -31,6 +31,7 @@ function pull(e) {
 			'mathml': 'http://www.w3.org/1998/Math/MathML'
 		});
 		td.appendChild(document.createTextNode(x.string('//xhtml:meta[@name=\'description\']/@content')));
+		td.appendChild(document.createElement('br'));
 		td.appendChild(document.createTextNode('【更新日：'+x.string('//xhtml:meta[@name=\'modified\']/@content')+'】'));
 		let text = x.iterate('//xhtml:article//text()', '', (v,r)=>{
 			r += v.nodeValue;
