@@ -62,7 +62,7 @@ twq('track','PageView');
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
 <framexs:script/>
 </head>
-<body class="bg-primary">
+<body class="bg-dark">
 <!-- Google Tag Manager (noscript) -->
 <noscript>
 <iframe height="0" width="0" style="display:none;visibility:hidden" framexs:element="">
@@ -70,7 +70,7 @@ twq('track','PageView');
 </iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
-<header class="bg-white">
+<header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand"><img src="/images/logo.png" width="64"/></a>
   <a class="navbar-brand" href="https://inomoto-hironobu.github.io/index.xhtml">八百幡</a>
@@ -160,8 +160,9 @@ bg-light
 </script>
 </div>
 </framexs:if-property>
-<article>
-<framexs:if-property name="pagetype" value="index">      
+<article class="main">
+<framexs:if-property name="pagetype" value="index">
+<div framexs:id-d="main"></div>
 <table id="indexes" class="responsive">
 <tr class="th"><th>リンク</th><th>情報<br/><button onclick="pullAll(this);">全てを詳しく見る（時間がかかる）</button></th></tr>
 <tr framexs:id-d="indexes"></tr>

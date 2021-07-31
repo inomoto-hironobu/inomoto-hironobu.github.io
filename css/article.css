@@ -1,15 +1,16 @@
-article > p {
-	margin: .25rem 0;
-	padding: .25rem 1.25rem;
+article.main > p {
+	border: dashed 1px lightcyan;
+	background-color: white;
+	margin: .25rem;
+	padding: 1.25rem;
 }
-section p {
+section > p {
 	border: dashed 1px lightgray;
 	background-color: white;
 	margin: .25rem;
 	padding: 1.25rem;
-
 }
-section ul, ol {
+section ul,section ol {
   color: #1e366a;
   border: dotted #1e366a 1px;/*ドット 色 太さ*/
   padding: 0.5em 0.5em 0.5em 2em;
@@ -22,7 +23,17 @@ section li {
 section table {
 	background-color: linen;
 }
-section pre {                 
+article pre {
+	border: ridge 4px lightcoral;
+}
+article > figure {
+	border-radius: 10px 10px 10px 10px;
+	border: dashed 5px green;
+	border-right-width:0;
+	border-left-width:0;
+	background-color: white;
+}
+section pre {
 	border-radius: 1rem;
 	border: solid .25rem blue;
 	background-color: white;

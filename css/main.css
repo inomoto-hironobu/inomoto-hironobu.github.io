@@ -1,25 +1,12 @@
 @charset "UTF-8";
 
-h2 {
-font-weight:bold;
-color:#2828d0;
-font-size:140%;
-margin-top:0%;
- text-shadow    : 
-       2px  2px 2px #fff,
-      -2px  2px 2px #fff,
-       2px -2px 2px #fff,
-      -2px -2px 2px #fff,
-       2px  0px 2px #fff,
-       0px  2px 2px #fff,
-      -2px  0px 2px #fff,
-       0px -2px 2px #fff;  
-line-height:120%;
-}
-
 body {
 	padding:0;
 	margin:0;
+}
+main {
+	max-width: 800px;
+	margin: auto;
 }
 address {
 	margin: auto 0;
@@ -31,7 +18,6 @@ section {
 	padding-top: 0.4rem;
 	
 }
-
 #prelude {
 	padding: 2rem .5rem;
 	text-shadow: 1px 1px 2px pink;
@@ -46,9 +32,29 @@ section {
        -1px  1px 0px #fff,
        1px  1px 0px #fff;
 }
-.adv {
-	margin-left: auto;
-	margin-right: auto;
+#coda h1,#coda h2,#coda h3,#coda h4,#coda h5,#coda h6 {
+    background: #396;
+    color: #FFF;
+    line-height: 80px;
+    text-align: center;
+}
+article#coda {
+    background: linear-gradient(#FFF, #E0FAE0);
+    font-size: 130%;
+    font-weight: bold;
+    border: solid 5px #396;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px #9a9;
+    color: #063;
+    margin-bottom: 80px;
+}                            
+article#coda > p {
+
+    text-shadow: 2px 2px 1px #fff, -2px 2px 1px #fff, 2px -2px 1px #fff, -2px -2px 1px #fff, 2px 0px 1px #fff, 0px 2px 1px #fff, -2px 0px 1px #fff, 0px -2px 1px #fff;
+    margin: 20px 20px 20px 10px;
+}
+.adv {                          
+	margin: 1rem auto;
 	background-color: white;
 }
 @media screen and (max-width:1080px) {
@@ -60,6 +66,12 @@ section {
 	}
 	table.responsive tr {
 		display: block;
+		background-color: white;
+		border: dotted 1px gray;
+		border-radius: .5rem;
+		margin: .5rem 0;
+		padding: .5rem;
+		box-shadow: 1px 1px 0px gray
 	}
 	table.responsive th,td {
 		display: block;
