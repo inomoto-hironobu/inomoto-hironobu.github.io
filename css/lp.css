@@ -76,7 +76,7 @@ section > pre {
 }
 
 section > details {
-	    background: #FEFCFC;
+	background: #FEFCFC;
     border: solid 2px #D16;
     padding: 2%;
     border-radius: 25px;
@@ -90,4 +90,16 @@ section > details > summary {
     border-bottom: solid 1px #D16;
     line-height: 21px;
     margin-bottom: 10px;
+}
+section figure {
+	text-align: center
+}
+section figure > .twitter-tweet {
+	margin: auto;
+}
+section address {
+	padding: 1rem;
+	margin: 1rem;
+	background-color:white;
+	box-shadow: 1px 1px 2px gray;
 }

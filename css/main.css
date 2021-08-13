@@ -57,6 +57,12 @@ article#coda > p {
 	margin: 1rem auto;
 	background-color: white;
 }
+ul.sharebuttons > li {
+	display: inline-block;
+}
+ul.sharebuttons div {
+	display: inline;
+}
 @media screen and (max-width:1080px) {
 	table.responsive {
 		display: block;
