@@ -41,28 +41,31 @@ twq('track','PageView');
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 <link rel="stylesheet" href="/css/main.css"/>
 <framexs:if-property name="pagetype" value="article">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.min.css"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.min.css"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 <link rel="stylesheet" href="/css/article.css"/>
 </framexs:if-property>
 <framexs:if-property name="pagetype" value="lp">
-<link rel="stylesheet" href="/css/lp.css"/>
+	<link rel="stylesheet" href="/css/lp.css"/>
 </framexs:if-property>
 <framexs:if-property name="pagetype" value="index">
-<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-<script async="" src="/js/xpath.js"></script>
-<script async="" src="/js/index.js"></script>
+	<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+	<script async="" src="/js/xpath.js"></script>
+	<script async="" src="/js/index.js"></script>
 </framexs:if-property>
 <script src="/js/http.js"></script>
 <script async="" src="/js/controller.js"></script>
 <framexs:if-property name="google-ads-code">
-<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" framexs:element=""><framexs:attribute name="data-ad-client"><framexs:property name="google-ads-code"/></framexs:attribute></script>
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" framexs:element="">
+<framexs:attribute name="data-ad-client"><framexs:property name="google-ads-code"/></framexs:attribute>
+</script>
 </framexs:if-property>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
 <framexs:script/>
 </head>
 <body class="bg-dark">
+<framexs:if-property name="google-tag-manager-code">
 <!-- Google Tag Manager (noscript) -->
 <noscript>
 <iframe height="0" width="0" style="display:none;visibility:hidden" framexs:element="">
@@ -70,6 +73,7 @@ twq('track','PageView');
 </iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
+</framexs:if-property>
 <header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand"><img src="/images/logo.png" width="64"/></a>
@@ -113,7 +117,7 @@ twq('track','PageView');
           その他
         </a>
         <div class="dropdown-menu" aria-labelledby="その他">
-          <a class="dropdown-item" href="/contents/framexs-business.xhtml">Framexsのビジネス</a>
+          <a class="dropdown-item" href="/contents/lp/framexs-business.xhtml">Framexsのビジネス</a>
           <a class="dropdown-item" href="/contents/books.xhtml">読んだ本</a>
           <a class="dropdown-item" href="/contents/history.xhtml">来歴</a>
         </div>
