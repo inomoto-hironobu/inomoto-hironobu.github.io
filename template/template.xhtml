@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <head>
-<framexs:if-property name="google-tag-manager-code">
+<framexs:if property="google-tag-manager-code">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -9,8 +9,8 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','<framexs:property name="google-tag-manager-code"/>');</script>
 <!-- End Google Tag Manager -->
-</framexs:if-property>
-<framexs:if-property name="google-analytics-code">
+</framexs:if>
+<framexs:if property="google-analytics-code">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" framexs:element="">
 <framexs:attribute name="src">https://www.googletagmanager.com/gtag/js?id=<framexs:property name="google-analytics-code"/></framexs:attribute>
@@ -22,8 +22,8 @@
 
   gtag('config', '<framexs:property name="google-analytics-code"/>');
 </script>
-</framexs:if-property>
-<framexs:if-property name="twitter-tag-code">
+</framexs:if>
+<framexs:if property="twitter-tag-code">
 <!-- Twitter universal website tag code -->
 <script>
 !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
@@ -34,39 +34,39 @@ twq('init','<framexs:property name="twitter-tag-code"/>');
 twq('track','PageView');
 </script>
 <!-- End Twitter universal website tag code -->
-</framexs:if-property>
+</framexs:if>
 <meta charset="UTF-8"/>
 <meta framexs:fix="" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 <title> - <framexs:property name="site-name"/></title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 <link rel="stylesheet" href="/css/main.css"/>
-<framexs:if-property name="pagetype" value="article">
+<framexs:if property="pagetype" value="article">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.min.css"/>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
 <link rel="stylesheet" href="/css/article.css"/>
-</framexs:if-property>
-<framexs:if-property name="pagetype" value="lp">
+</framexs:if>
+<framexs:if property="pagetype" value="lp">
 	<link rel="stylesheet" href="/css/lp.css"/>
-</framexs:if-property>
-<framexs:if-property name="pagetype" value="index">
+</framexs:if>
+<framexs:if property="pagetype" value="index">
 	<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 	<script async="" src="/js/xpath.js"></script>
 	<script async="" src="/js/index.js"></script>
 <link rel="stylesheet" href="/css/article.css"/>
-</framexs:if-property>
+</framexs:if>
 <script src="/js/http.js"></script>
 <script async="" src="/js/controller.js"></script>
-<framexs:if-property name="google-ads-code">
+<framexs:if property="google-ads-code">
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" framexs:element="">
 <framexs:attribute name="data-ad-client"><framexs:property name="google-ads-code"/></framexs:attribute>
 </script>
-</framexs:if-property>
+</framexs:if>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
 <framexs:script/>
 </head>
 <body class="bg-dark">
-<framexs:if-property name="google-tag-manager-code">
+<framexs:if property="google-tag-manager-code">
 <!-- Google Tag Manager (noscript) -->
 <noscript>
 <iframe height="0" width="0" style="display:none;visibility:hidden" framexs:element="">
@@ -74,7 +74,7 @@ twq('track','PageView');
 </iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
-</framexs:if-property>
+</framexs:if>
 <header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand"><img src="/images/logo.png" width="64"/></a>
@@ -122,6 +122,8 @@ twq('track','PageView');
           <a class="dropdown-item" href="/contents/lp/framexs-business.xhtml">Framexsのビジネス</a>
           <a class="dropdown-item" href="/contents/books.xhtml">読んだ本</a>
           <a class="dropdown-item" href="/contents/history.xhtml">来歴</a>
+          <a class="dropdown-item" href="/contents/schedule.xhtml">予定</a>
+          <a class="dropdown-item" href="/contents/future.xhtml">将来</a>
         </div>
       </li>
     </ul>
@@ -130,67 +132,67 @@ twq('track','PageView');
 </header>
 <div class="container" style="max-width:880px">
 <div class="row">
-<framexs:if-property name="sidebar" value="display">
+<framexs:if property="sidebar" value="display">
 <aside class="col-md-3 bg-white">
-<framexs:if-property name="pagetype" value="article">
+<framexs:if property="pagetype" value="article">
 <nav id="toc" data-toggle="toc" class="text-white"></nav>
-</framexs:if-property>
+</framexs:if>
 <object type="text/plain" data="/info.txt" width="160" height="100"></object>
-<framexs:if-property name="ninja-ad-side">
+<framexs:if property="ninja-ad-side">
 <div class="d-none d-md-block adv" style="width:210px">
 <script framexs:element="">
 <framexs:attribute name="src">https://adm.shinobi.jp/s/<framexs:property name="ninja-ad-side"/></framexs:attribute>
 </script>
 </div>
-</framexs:if-property>
-<framexs:if-resource name="aside">
+</framexs:if>
+<framexs:if resource="aside">
 <framexs:resource name="aside"/>
-</framexs:if-resource>
+</framexs:if>
 </aside>
-</framexs:if-property>
+</framexs:if>
 <main class="col-md-9 bg-light" data-spy="scroll" data-target="#toc" framexs:element="">
 <framexs:attribute name="class">
-<framexs:if-property name="sidebar" value="display">col-md-9</framexs:if-property>
+<framexs:if property="sidebar" value="display">col-md-9</framexs:if>
 bg-light
 </framexs:attribute>
 <p>更新日:<framexs:meta name="modified"/></p>
 <h1><framexs:title/></h1>
 <p class="description"><span framexs:meta-name="description"/></p>
-<framexs:if-id name="prelude">
+<framexs:if id="prelude">
 <article id="prelude"><div framexs:id-d="prelude"></div></article>
-</framexs:if-id>
-<framexs:if-property name="ninja-ad-body">
+</framexs:if>
+<framexs:if property="ninja-ad-body">
 <div class="adv">
 <script framexs:element="">
 <framexs:attribute name="src">https://adm.shinobi.jp/o/<framexs:property name="ninja-ad-body"/></framexs:attribute>
 </script>
 </div>
-</framexs:if-property>
+</framexs:if>
 <article class="main">
-<framexs:if-property name="pagetype" value="index">
+<framexs:if property="pagetype" value="index">
 <div framexs:id-d="main"></div>
 <table id="indexes" class="responsive">
 <tr class="th"><th>リンク</th><th>情報<br/><button onclick="pullAll(this);">全てを詳しく見る（時間がかかる）</button></th></tr>
 <tr framexs:id-d="indexes"></tr>
 </table>
-</framexs:if-property>
-<framexs:if-property name="pagetype" value="article">
+</framexs:if>
+<framexs:if property="pagetype" value="article">
 <div framexs:id-d="main"></div>
-</framexs:if-property>
-<framexs:if-property name="pagetype" value="lp">
+</framexs:if>
+<framexs:if property="pagetype" value="lp">
 <div framexs:id-d="main"></div>
-</framexs:if-property>
+</framexs:if>
 </article>
-<framexs:if-property name="ninja-ad-body">
+<framexs:if property="ninja-ad-body">
 <div class="adv">
 <script framexs:element="">
 <framexs:attribute name="src">https://adm.shinobi.jp/o/<framexs:property name="ninja-ad-body"/></framexs:attribute>
 </script>
 </div>
-</framexs:if-property>
-<framexs:if-id name="coda">
+</framexs:if>
+<framexs:if id="coda">
 <article><div framexs:id-d="coda"></div></article>
-</framexs:if-id>
+</framexs:if>
 </main>
 </div>
 </div>

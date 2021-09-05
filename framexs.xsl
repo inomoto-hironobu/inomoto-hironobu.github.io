@@ -16,7 +16,7 @@ XSLTで実現するフレームワーク framexs
 	<xsl:variable name="xhns" select="'http://www.w3.org/1999/xhtml'"/>
 	<xsl:variable name="fmxns" select="'urn:framexs'"/>
 	<xsl:variable name="empty" select="''"/>
-	<xsl:variable name="version" select="'1.18.0'"/>
+	<xsl:variable name="version" select="'1.19.0'"/>
 	
 	<xsl:template match="/">
 		<xsl:message>framexs <xsl:value-of select="$version"/></xsl:message>
@@ -221,11 +221,11 @@ XSLTで実現するフレームワーク framexs
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
-	<xsl:template match="framexs:if-id[@name]">
+	<xsl:template match="framexs:if[@id]">
 		<xsl:param name="content"/>
 		<xsl:param name="properties"/>
 		<xsl:apply-templates mode="search-id-if" select="$content/xh:html">
-			<xsl:with-param name="id" select="@name"/>
+			<xsl:with-param name="id" select="@id"/>
 			<xsl:with-param name="content" select="$content"/>
 			<xsl:with-param name="properties" select="$properties"/>
 		</xsl:apply-templates>
@@ -267,21 +267,21 @@ XSLTで実現するフレームワーク framexs
 		</xsl:for-each>
 	</xsl:template>
 
-	<xsl:template match="framexs:if-property[@name]">
+	<xsl:template match="framexs:if[@property]">
 		<xsl:param name="content"/>
 		<xsl:param name="properties"/>
-		<xsl:variable name="name" select="@name"/>
-		<xsl:variable name="if-property" select="."/>
+		<xsl:variable name="property" select="@property"/>
+		<xsl:variable name="if" select="."/>
 		<xsl:for-each select="$properties/framexs:property">
 			<xsl:choose>
-				<xsl:when test="@name = $if-property/@name and text() = $if-property/@value">
-					<xsl:apply-templates select="$if-property/node()">
+				<xsl:when test="@name = $if/@property and text() = $if/@value">
+					<xsl:apply-templates select="$if/node()">
 						<xsl:with-param name="content" select="$content"/>
 						<xsl:with-param name="properties" select="$properties"/>
 					</xsl:apply-templates> 
 				</xsl:when>
-				<xsl:when test="@name = $if-property/@name and not($if-property/@value)">
-					<xsl:apply-templates select="$if-property/node()">
+				<xsl:when test="@name = $if/@property and not($if/@value)">
+					<xsl:apply-templates select="$if/node()">
 						<xsl:with-param name="content" select="$content"/>
 						<xsl:with-param name="properties" select="$properties"/>
 					</xsl:apply-templates> 
@@ -289,14 +289,14 @@ XSLTで実現するフレームワーク framexs
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template match="framexs:if-resource[@name]">
+	<xsl:template match="framexs:if[@resource]">
 		<xsl:param name="content"/>
 		<xsl:param name="properties"/>
-		<xsl:variable name="name" select="@name"/>
-		<xsl:variable name="if-resource" select="."></xsl:variable>
+		<xsl:variable name="name" select="@resource"/>
+		<xsl:variable name="if" select="."></xsl:variable>
 		<xsl:for-each select="$content/processing-instruction('framexs.resource')">
 			<xsl:if test="$name = substring-before(.,' ')">
-				<xsl:apply-templates select="$if-resource/node()">
+				<xsl:apply-templates select="$if/node()">
 					<xsl:with-param name="content" select="$content"/>
 					<xsl:with-param name="properties" select="$properties"/>
 				</xsl:apply-templates>
