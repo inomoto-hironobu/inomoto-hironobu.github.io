@@ -63,6 +63,13 @@ ul.sharebuttons > li {
 ul.sharebuttons div {
 	display: inline;
 }
+section figure {
+	width:100%;
+}
+figure > * {
+	width:100%;
+	overflow-x: scroll;
+}
 @media screen and (max-width:1080px) {
 	table.responsive {
 		display: block;
