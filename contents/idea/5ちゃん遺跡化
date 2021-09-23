@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?framexs.skeleton ../../template/template.xhtml?>
+<?framexs.properties ../../properties/lp.properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<title>5ちゃんねる遺跡化計画</title>
+<meta name="description" content=""/>
+</head>
+<body>
+<article id="main">
+<section>
+<ol>
+<li>書き込みをできないようにする</li> 
+<li>今までの掲示板のスレッドを読めるようにする</li>
+<li>コメントとIPアドレスを紐づける</li>
+</ol>
+</section>
+</article>
+</body>
+</html>
