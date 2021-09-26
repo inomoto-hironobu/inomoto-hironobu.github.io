@@ -1,3 +1,9 @@
+section {
+	border: dotted 0 gray;
+	border-top-width: 0.2rem;
+	margin-top: 0.4rem;
+	padding-top: 0.4rem;
+}
 article.main > p {
 	border: dashed 1px lightcyan;
 	background-color: white;
@@ -32,6 +38,10 @@ article > figure {
 	border-right-width:0;
 	border-left-width:0;
 	background-color: white;
+}
+section figure {
+	width:100%;
+	overflow-x: scroll;
 }
 section pre {
 	border-radius: 1rem;

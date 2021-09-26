@@ -8,16 +8,6 @@ main {
 	max-width: 800px;
 	margin: auto;
 }
-address {
-	margin: auto 0;
-}
-section {
-	border: dotted 0 gray;
-	border-top-width: 0.2rem;
-	margin-top: 0.4rem;
-	padding-top: 0.4rem;
-	
-}
 #prelude {
 	padding: 2rem .5rem;
 	text-shadow: 1px 1px 2px pink;
@@ -63,12 +53,9 @@ ul.sharebuttons > li {
 ul.sharebuttons div {
 	display: inline;
 }
-section figure {
-	width:100%;
-}
+
 figure > * {
 	width:100%;
-	overflow-x: scroll;
 }
 @media screen and (max-width:1080px) {
 	table.responsive {
