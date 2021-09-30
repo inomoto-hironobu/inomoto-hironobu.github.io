@@ -25,10 +25,11 @@ function pullMetaFromTableData(td) {
 		td.appendChild(document.createElement('br'));
 		const modified = '【更新日：'+res.data.evaluate('//xhtml:meta[@name=\'modified\']/@content', res.data, nsResolver, XPathResult.STRING_TYPE , null).stringValue+'】';
 		td.appendChild(document.createTextNode(modified));
-		let content = x.iterate('//xhtml:article//text()', '', (v,r)=>{
-			r += v.nodeValue;
-			return r;
-		});
+		const texts = res.data.evaluate('//xhtml:article//text()', res.data, nsResolver, XPathResult.UNORDERED_NODE_ITERATOR_TYPE , null);
+		let content = '';
+		for(let v = texts.iterateNext(); v != null; v = texts.iterateNext()) {
+			content = content + v.nodeValue;
+		}
 		td.appendChild(document.createTextNode('【文字数：'+content.length+'】'));
 	});
 }
