@@ -1,4 +1,4 @@
-window.addEventListener('load', ()=>{
+window.addEventListener('DOMContentLoaded', ()=>{
 	document
 	.querySelectorAll('#indexes tr:not(.th)')
 	.forEach((tr)=>{
@@ -20,10 +20,6 @@ function pullMetaFromTableData(td) {
 	axios
 	.get(a.getAttribute('href'), {responseType:'document'})
 	.then((res)=>{
-		const x = xpath(res.data,{
-			'xhtml' : 'http://www.w3.org/1999/xhtml',
-			'mathml': 'http://www.w3.org/1998/Math/MathML'
-		});
 		const description = res.data.evaluate('//xhtml:meta[@name=\'description\']/@content', res.data, nsResolver, XPathResult.STRING_TYPE , null).stringValue;
 		td.appendChild(document.createTextNode(description));
 		td.appendChild(document.createElement('br'));
