@@ -3,19 +3,38 @@ window.addEventListener('load', ()=>{
 	.querySelectorAll('#indexes tr:not(.th)')
 	.forEach((tr)=>{
 		let td = document.createElement('td');
-		let button = document.createElement('button');
-		button.appendChild(document.createTextNode('詳しく見る'));
-		button.setAttribute('onclick', 'pull(this);');
-		td.appendChild(button);
 		tr.appendChild(td);
+		pullMetaFromTableData(td);
 	});
 });
-function nsResolver(prefix) {
-  var ns = {
-    'xhtml' : 'http://www.w3.org/1999/xhtml',
-    'mathml': 'http://www.w3.org/1998/Math/MathML'
-  };
-  return ns[prefix] || null;
+const ns = {
+	'xhtml' : 'http://www.w3.org/1999/xhtml',
+	'mathml': 'http://www.w3.org/1998/Math/MathML'
+};
+const nsResolver = function nsResolver(prefix) {
+	return ns[prefix] || null;
+};
+function pullMetaFromTableData(td) {
+	let tr = td.parentElement;
+	let a = tr.querySelector('td:first-child a');
+	axios
+	.get(a.getAttribute('href'), {responseType:'document'})
+	.then((res)=>{
+		const x = xpath(res.data,{
+			'xhtml' : 'http://www.w3.org/1999/xhtml',
+			'mathml': 'http://www.w3.org/1998/Math/MathML'
+		});
+		const description = res.data.evaluate('//xhtml:meta[@name=\'description\']/@content', res.data, nsResolver, XPathResult.STRING_TYPE , null).stringValue;
+		td.appendChild(document.createTextNode(description));
+		td.appendChild(document.createElement('br'));
+		const modified = '【更新日：'+res.data.evaluate('//xhtml:meta[@name=\'modified\']/@content', res.data, nsResolver, XPathResult.STRING_TYPE , null).stringValue+'】';
+		td.appendChild(document.createTextNode(modified));
+		let content = x.iterate('//xhtml:article//text()', '', (v,r)=>{
+			r += v.nodeValue;
+			return r;
+		});
+		td.appendChild(document.createTextNode('【文字数：'+content.length+'】'));
+	});
 }
 function pull(e) {
 	let td = e.parentElement;
