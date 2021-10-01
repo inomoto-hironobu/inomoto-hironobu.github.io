@@ -110,3 +110,9 @@ section address {
 	background-color:white;
 	box-shadow: 1px 1px 2px gray;
 }
+article dl {
+	background-color:white;
+	margin: 1rem;
+	padding: .5rem;
+	box-shadow: 2px 2px 3px pink;
+}
