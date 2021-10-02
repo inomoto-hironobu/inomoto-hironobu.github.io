@@ -57,6 +57,9 @@ ul.sharebuttons div {
 figure > * {
 	width:100%;
 }
+#osusume p {
+	margin: 0;
+}
 @media screen and (max-width:1080px) {
 	table.responsive {
 		display: block;

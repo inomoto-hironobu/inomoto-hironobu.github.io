@@ -40,22 +40,28 @@ twq('track','PageView');
 <title> - <framexs:property name="site-name"/></title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 <link rel="stylesheet" href="/css/main.css"/>
-<framexs:if property="pagetype" value="article">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.min.css"/>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
-<link rel="stylesheet" href="/css/article.css"/>
-</framexs:if>
-<framexs:if property="pagetype" value="lp">
-	<link rel="stylesheet" href="/css/lp.css"/>
-</framexs:if>
-<framexs:if property="pagetype" value="index">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-	<script src="/js/index.js"></script>
-<link rel="stylesheet" href="/css/article.css"/>
-</framexs:if>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/main.js"></script>
 <script src="/js/http.js"></script>
 <script async="" src="/js/controller.js"></script>
+
+<framexs:if property="pagetype" value="article">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link rel="stylesheet" href="/css/article.css"/>
+</framexs:if>
+
+<framexs:if property="pagetype" value="lp">
+<link rel="stylesheet" href="/css/lp.css"/>
+</framexs:if>
+
+<framexs:if property="pagetype" value="index">
+<script src="/js/index.js"></script>
+<link rel="stylesheet" href="/css/article.css"/>
+</framexs:if>
+
 <framexs:if property="google-ads-code">
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" framexs:element="">
 <framexs:attribute name="data-ad-client"><framexs:property name="google-ads-code"/></framexs:attribute>
@@ -131,11 +137,24 @@ twq('track','PageView');
 <div class="container" style="max-width:880px">
 <div class="row">
 <framexs:if property="sidebar" value="display">
-<aside class="col-md-3 bg-white">
+<aside class="col-md-4 bg-white">
 <framexs:if property="pagetype" value="article">
+<h4>目次</h4>
 <nav id="toc" data-toggle="toc" class="text-white"></nav>
 </framexs:if>
-<object type="text/plain" data="/info.txt" width="160" height="100"></object>
+
+<h4>おすすめ</h4>
+<details>
+<ul id="osusume" class="list-group">
+<li class="list-group-item">
+<p><a href="/contents/idea/5ちゃん遺跡化.xhtml">5ちゃん遺跡化計画</a></p>
+</li>
+<li class="list-group-item">
+<p><a href="/contents/idea/徴税請負株式会社.xhtml">徴税請負株式会社</a></p>
+</li>
+</ul>
+</details>
+
 <framexs:if property="ninja-ad-side">
 <div class="d-none d-md-block adv" style="width:210px">
 <script framexs:element="">
@@ -148,9 +167,9 @@ twq('track','PageView');
 </framexs:if>
 </aside>
 </framexs:if>
-<main class="col-md-9 bg-light" data-spy="scroll" data-target="#toc" style="width:100%" framexs:element="">
+<main data-spy="scroll" data-target="#toc" style="width:100%" framexs:element="">
 <framexs:attribute name="class">
-<framexs:if property="sidebar" value="display">col-md-9</framexs:if>
+<framexs:if property="sidebar" value="display">col-md-8</framexs:if>
 bg-light
 </framexs:attribute>
 <p>更新日:<framexs:meta name="modified"/></p>
@@ -197,11 +216,11 @@ bg-light
 <!-- /container -->
 <footer class="container bg-info">
 <div class="row">
-<div class="col-md" style="color:white">
+<div class="col-md-6" style="color:white">
 <address id="email">Email:<a class="text-white" href="mailto:inmthrnb@gmail.com">inmthrnb@gmail.com</a></address>
 <p><a class="text-white" href="contents/business/privacy-policy.xhtml">プライバシーポリシー</a></p>
 </div>
-<div class="col-md">
+<div class="col-md-6">
 <p>Framexs version:<framexs:version/></p>
 </div>
 </div>
