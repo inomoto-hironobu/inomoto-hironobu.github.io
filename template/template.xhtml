@@ -67,7 +67,6 @@ twq('track','PageView');
 <framexs:attribute name="data-ad-client"><framexs:property name="google-ads-code"/></framexs:attribute>
 </script>
 </framexs:if>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
 <framexs:script/>
 </head>
 <body class="bg-dark">
@@ -80,7 +79,7 @@ twq('track','PageView');
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 </framexs:if>
-<header>
+<header id="pagetop">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand"><img src="/images/logo.png" width="64"/></a>
   <a class="navbar-brand" href="https://inomoto-hironobu.github.io/index.xhtml">八百幡</a>
@@ -138,22 +137,12 @@ twq('track','PageView');
 <div class="row">
 <framexs:if property="sidebar" value="display">
 <aside class="col-md-4 bg-white">
-<framexs:if property="pagetype" value="article">
-<h4>目次</h4>
-<nav id="toc" data-toggle="toc" class="text-white"></nav>
-</framexs:if>
-<details>
-<summary>おすすめ記事</summary>
+<div class="h5">おすすめ記事</div>
 <ul id="osusume" class="list-group">
-<li class="list-group-item">
-<p><a href="/contents/idea/5ちゃん遺跡化.xhtml">5ちゃん遺跡化計画</a></p>
-</li>
-<li class="list-group-item">
-<p><a href="/contents/idea/徴税請負株式会社.xhtml">徴税請負株式会社</a></p>
-</li>
+<li class="list-group-item"><a href="/contents/idea/5ちゃん遺跡化.xhtml">5ちゃん遺跡化計画</a></li>
+<li class="list-group-item"><a href="/contents/idea/徴税請負株式会社.xhtml">徴税請負株式会社</a></li>
+<li class="list-group-item"><a href="/contents/idea/ベーシックインカム.xhtml">ベーシックインカムに関するアイデア</a></li>
 </ul>
-</details>
-
 <framexs:if property="ninja-ad-side">
 <div class="d-none d-md-block adv" style="width:210px">
 <script framexs:element="">
@@ -213,6 +202,7 @@ bg-light
 </div>
 </div>
 <!-- /container -->
+<aside class="bg-white"><div style="font-size:1.5rem;text-align:center"><a href="#pagetop">△page top</a></div></aside>
 <footer class="container bg-info">
 <div class="row">
 <div class="col-md-6" style="color:white">
@@ -227,13 +217,6 @@ bg-light
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<!-- add after bootstrap.min.css -->
-<link
-  rel="stylesheet"
-  href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"
-/>
-<!-- add after bootstrap.min.js -->
-<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
 <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
