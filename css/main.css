@@ -4,14 +4,14 @@ body {
 	padding:0;
 	margin:0;
 }
-article.main h1,article.main h2,article.main h3,article.main h4,article.main h5,article.main h6 {
+main h1,article.main h2,article.main h3,article.main h4,article.main h5,article.main h6 {
     font-weight: bold;
     margin-top: 0%;
     margin-left: 1rem;
     text-shadow: 2px 2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff, -2px -2px 2px #fff, 2px 0px 2px #fff, 0px 2px 2px #fff, -2px 0px 2px #fff, 0px -2px 2px #fff;
     line-height: 120%;
 }
-article.main h1 {
+main h1 {
 	font-size:180%;
     color: #2828d0;
 }
