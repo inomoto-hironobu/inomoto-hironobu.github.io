@@ -2,4 +2,4 @@
 <?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
 <?framexs.skeleton ../../template/template.xhtml?>
 <?framexs.properties ../../properties/properties.xml?>
-<tunnel xmlns="urn:framexs" content="../item/framexs-tunnel.xhtml"/>
+<tunnel xmlns="urn:framexs" content="../article/framexs-tunnel.xhtml"/>
