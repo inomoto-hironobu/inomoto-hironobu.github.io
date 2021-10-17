@@ -205,9 +205,10 @@ XSLTで実現するフレームワーク framexs
 		<xsl:param name="id"/>
 		<xsl:param name="content"/>
 		<xsl:param name="properties"/>
+		<xsl:param name="current"/>
 		<xsl:choose>
 			<xsl:when test="@id = $id">
-				<xsl:apply-templates select=".">
+				<xsl:apply-templates select="$current/node()">
 					<xsl:with-param name="content" select="$content"/>
 					<xsl:with-param name="properties" select="$properties"/>
 				</xsl:apply-templates>
@@ -217,6 +218,7 @@ XSLTで実現するフレームワーク framexs
 					<xsl:with-param name="id" select="$id"/>
 					<xsl:with-param name="content" select="$content"/>
 					<xsl:with-param name="properties" select="$properties"/>
+					<xsl:with-param name="current" select="$current"/>
 				</xsl:apply-templates>
 			</xsl:otherwise>
 		</xsl:choose>
@@ -224,10 +226,12 @@ XSLTで実現するフレームワーク framexs
 	<xsl:template match="framexs:if[@id]">
 		<xsl:param name="content"/>
 		<xsl:param name="properties"/>
+		<xsl:variable name="current" select="."/>
 		<xsl:apply-templates mode="search-id-if" select="$content/xh:html">
 			<xsl:with-param name="id" select="@id"/>
 			<xsl:with-param name="content" select="$content"/>
 			<xsl:with-param name="properties" select="$properties"/>
+			<xsl:with-param name="current" select="$current"/>
 		</xsl:apply-templates>
 	</xsl:template>
 	<xsl:template match="framexs:if-meta[@name]">
