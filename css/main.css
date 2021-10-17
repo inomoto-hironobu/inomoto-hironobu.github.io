@@ -4,34 +4,34 @@ body {
 	padding:0;
 	margin:0;
 }
-main h1,article.main h2,article.main h3,article.main h4,article.main h5,article.main h6 {
+.main h1,.main h2,.main h3,.main h4,.main h5,.main h6 {
     font-weight: bold;
     margin-top: 0%;
     margin-left: 1rem;
     text-shadow: 2px 2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff, -2px -2px 2px #fff, 2px 0px 2px #fff, 0px 2px 2px #fff, -2px 0px 2px #fff, 0px -2px 2px #fff;
     line-height: 120%;
 }
-main h1 {
+.main h1 {
 	font-size:180%;
     color: #2828d0;
 }
-article.main h2 {
+.main h2 {
 	font-size:150%;
 	color: #d02828;
 }
-article.main h3 {
+.main h3 {
 	font-size:120%;
 	color: #28d028;
 }
-article.main h4 {
+.main h4 {
 	font-size:110%;
 	color:gray;
 }
-article.main h5 {
+.main h5 {
 	font-size:100%;
 	color:darkgray;
 }
-article.main h6 {
+.main h6 {
 	font-size:100%;
 	color:black;
 }
@@ -55,7 +55,7 @@ article.main h6 {
     line-height: 80px;
     text-align: center;
 }
-article#coda {
+#coda {
     background: linear-gradient(#FFF, #E0FAE0);
     font-size: 130%;
     font-weight: bold;
@@ -65,14 +65,19 @@ article#coda {
     color: #063;
     margin-bottom: 80px;
 }                            
-article#coda > p {
+#coda > p {
 
     text-shadow: 2px 2px 1px #fff, -2px 2px 1px #fff, 2px -2px 1px #fff, -2px -2px 1px #fff, 2px 0px 1px #fff, 0px 2px 1px #fff, -2px 0px 1px #fff, 0px -2px 1px #fff;
     margin: 20px 20px 20px 10px;
 }
-.adv {                          
-	margin: 1rem auto;
-	background-color: white;
+aside details {
+	margin: 0.5rem 0;
+}
+.adv {
+	margin: 0 auto;
+}               
+.adv > * {                          
+	margin: .5rem auto;
 }
 ul.sharebuttons > li {
 	display: inline-block;
@@ -86,6 +91,15 @@ figure > * {
 }
 .article-list p {
 	margin: 0;
+}
+table.responsive {
+	 border-collapse: collapse;
+	 border:1px solid #333;
+}
+table.responsive td, table.responsive th {
+	border-collapse: collapse;
+	border:1px solid #333;
+	padding: .25rem;
 }
 @media screen and (max-width:1080px) {
 	table.responsive {

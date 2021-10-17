@@ -5,20 +5,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
 <title>Framexs入門と利点</title>
-<meta name="description" content="Framexsの始め方を通して利点を解説する"/>
+<meta name="description" content="Framexsの始め方を通して利点を解説する。8つのコードでFramexsの利用方法及び利点を書く。"/>
 <meta name="modified" content="2021/02/27"/>
 <link rel="up" href="index.xhtml"/>
 </head>
 <body>
-<article id="prelude">
-<p>8つのコードでFramexsの利用方法及び利点を書く。</p>
-</article>
 <article id="main">
+<section>
 <h2>事前の準備</h2>
 <p>FramexsにはHTTPサーバーが必要となる。何らかの手段によってHTTPサーバーが起動できる状態を作る。
 そしてあるディレクトリをドキュメントルートにして、ポート8085でHTTPサーバを起動したとする。
-ここにtest.txtファイルを作り中身を「test」にしたとする。この場合 `http://localhost:8085/test.txt` にブラウザでアクセスしたら「test」が表示されるはずである。このファイルパスを/test.txtで表現する。
-</p>
+ここにtest.txtファイルを作り中身を「test」にしたとする。この場合 `http://localhost:8085/test.txt` にブラウザでアクセスしたら「test」が表示されるはずである。このファイルパスを/test.txtで表現する。</p>
+</section>
+<section>
 <h2>初めに</h2>
 <p>まず<a href="https://inomoto-hironobu.github.io/framexs.xsl">framexs.xsl</a>をダウンロードする。<br/>
 それを/framexs.xslになるように置く。そして次のファイルを用意する。</p>
@@ -77,6 +76,8 @@
 </figure>
 <p>title要素が合成され、「世界よこんにちは - テンプレートタイトル」となり、テンプレートのframexs:id-d="main"の属性を持つp要素がコンテンツのid="main"属性を持つarticle要素の子要素へと置き換わっている。
 この形が基本でありここから主にテンプレートを改造していく。</p>
+</section>
+<section>
 <h2>改造</h2>
 <p>ここから次のようにファイルを移動する。</p>
 <ul>
@@ -103,6 +104,8 @@
 </figure>
 <p><code><![CDATA[<?framexs.skeleton ../template/template.xhtml?>]]></code>の部分が変更箇所である。<br/>
 <kbd>http://localhost:8085/contents/contents1.xhtml</kbd>にアクセスしてコード3と同じHTMLのDOMができているか確認しよう。</p>
+</section>
+<section>
 <h2>テンプレートの意義</h2>
 <p>contents1.xhtmlを同じディレクトリにコピーしcontent2.xhtmlを作る。</p>
 <ul>
@@ -191,6 +194,7 @@
 </html>]]></code></pre>
 </figure>
 <p>結果として得られるHTMLがコード6からコード8にするのに/contents/contents2.xhtmlの中身は全く変更していないことに注目してほしい。Framexsで管理したサイトの基盤となるHTMLはテンプレートの改造によって進める。</p>
+</section>
 </article>
 </body>
 </html>

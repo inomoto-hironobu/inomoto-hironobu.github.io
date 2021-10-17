@@ -135,6 +135,17 @@ twq('track','PageView');
 </nav>
 </header>
 <div class="container" style="max-width:880px">
+<aside class="row">
+<framexs:if property="ninja-ad-body">
+<div class="col bg-black">
+<div class="adv">
+<script framexs:element="">
+<framexs:attribute name="src">https://adm.shinobi.jp/o/<framexs:property name="ninja-ad-body"/></framexs:attribute>
+</script>
+</div>
+</div>
+</framexs:if>
+</aside>
 <div class="row">
 <framexs:if property="sidebar" value="display">
 <aside class="col-md-4 bg-white">
@@ -144,12 +155,6 @@ twq('track','PageView');
 <li class="list-group-item"><p><a href="/contents/idea/5ちゃん遺跡化.xhtml">5ちゃん遺跡化計画</a></p></li>
 <li class="list-group-item"><p><a href="/contents/idea/徴税請負株式会社.xhtml">徴税請負株式会社</a></p></li>
 <li class="list-group-item"><p><a href="/contents/idea/ベーシックインカム.xhtml">ベーシックインカムに関するアイデア</a></p></li>
-</ul>
-</details>
-<details>
-<summary>おすすめビジネス</summary>
-<ul class="list-group article-list">
-<li class="list-group-item"><p><a href="/contents/idea/反カルト説得ビジネス.xhtml">反カルト説得ビジネス</a></p></li>
 </ul>
 </details>
 <details>
@@ -170,23 +175,19 @@ twq('track','PageView');
 </framexs:if>
 <main data-spy="scroll" data-target="#toc" style="width:100%" framexs:element="">
 <framexs:attribute name="class">
+main
 <framexs:if property="sidebar" value="display">col-md-8</framexs:if>
 bg-light
 </framexs:attribute>
+
+<framexs:if-meta name="description">
+<section id="prelude"><framexs:meta name="description"/></section>
+</framexs:if-meta>
 <p>更新日:<framexs:meta name="modified"/></p>
 <h1><framexs:title/></h1>
-<p class="description"><span framexs:meta-name="description"/></p>
-<framexs:if id="prelude">
-<article id="prelude"><div framexs:id-d="prelude"></div></article>
+<framexs:if id="premain">
+<div framexs:id-d="premain"></div>
 </framexs:if>
-<framexs:if property="ninja-ad-body">
-<div class="adv">
-<script framexs:element="">
-<framexs:attribute name="src">https://adm.shinobi.jp/o/<framexs:property name="ninja-ad-body"/></framexs:attribute>
-</script>
-</div>
-</framexs:if>
-<article class="main">
 <framexs:if property="pagetype" value="index">
 <div framexs:id-d="main"></div>
 <table id="indexes" class="responsive">
@@ -200,22 +201,27 @@ bg-light
 <framexs:if property="pagetype" value="lp">
 <div framexs:id-d="main"></div>
 </framexs:if>
-</article>
+<framexs:if id="coda">
+<section id="coda"><div framexs:id-d="coda"></div></section>
+</framexs:if>
+</main>
+</div>
+<aside class="row">
 <framexs:if property="ninja-ad-body">
+<div class="col bg-black">
 <div class="adv">
 <script framexs:element="">
 <framexs:attribute name="src">https://adm.shinobi.jp/o/<framexs:property name="ninja-ad-body"/></framexs:attribute>
 </script>
 </div>
-</framexs:if>
-<framexs:if id="coda">
-<article><div framexs:id-d="coda"></div></article>
-</framexs:if>
-</main>
 </div>
+</framexs:if>
+</aside>
+<aside class="row bg-white">
+<div class="col" style="font-size:1.5rem;text-align:center"><a href="#pagetop">△page top</a></div>
+</aside>
 </div>
 <!-- /container -->
-<aside class="container bg-white" style="max-width:880px"><div style="font-size:1.5rem;text-align:center"><a href="#pagetop">△page top</a></div></aside>
 <footer class="container bg-info" style="max-width:880px">
 <div class="row">
 <div class="col-md-6" style="color:white">

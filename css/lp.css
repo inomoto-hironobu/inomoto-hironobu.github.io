@@ -1,22 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
 
-section {
-	border: dotted 0 gray;
-	border-top-width: 0.2rem;
-	border-bottom-width: 0.2rem;
-	border-radius: 10px;
-	margin-top: 0.75rem;
-	padding-top: 0.4rem;
-}
 section > section {
 	margin: 1rem 0;
 }
-article > p {
-	margin: .25rem 0;
-	padding: .25rem 1.25rem;
+.main section {
+	border: dotted 0 gray;
+	border-top-width: 0.2rem;
+	border-bottom-width: 0.2rem;
+	margin-top: 0.4rem;
+	margin-bottom: 0.4rem;
+	padding-top: 0.4rem;
+	border-radius: 5px;
 }
-section > p {
-	border: dashed 1px lightgray;
+.main > p {
+	border: dashed 1px lightcyan;
 	background-color: white;
 	margin: .25rem;
 	padding: 1.25rem;

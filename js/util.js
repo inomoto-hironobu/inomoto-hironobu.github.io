@@ -22,6 +22,7 @@ function pullMeta(target, id) {
 		for(let v = texts.iterateNext(); v != null; v = texts.iterateNext()) {
 			content = content + v.nodeValue;
 		}
+		target.appendChild(document.createElement('br'));
 		target.appendChild(document.createTextNode('【文字数：'+content.length+'】'));
 	});
 }

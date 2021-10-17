@@ -22,18 +22,18 @@
 <body>
 <h1>あいさつ</h1>
 <article>
-<framexs:if-id name="prelude">
+<framexs:if id="prelude">
 <h2>前書き</h2>
 <section>
 <p framexs:id-d="prelude"></p>
 </section>
-</framexs:if-id>
-<framexs:if-id name="main">
+</framexs:if>
+<framexs:if id="main">
 <h2>主文</h2>
 <section>
 <p framexs:id-d="main"></p>
 </section>
-</framexs:if-id>
+</framexs:if>
 
 <framexs:if-meta name="description">
 <h2>description</h2>
@@ -41,14 +41,14 @@
 <framexs:meta name="description"/>
 </secton>
 </framexs:if-meta>
-<framexs:if-resource name="hoge">
+<framexs:if resource="hoge">
 <ul>
 <framexs:resource name="hoge"/>
 </ul>
-</framexs:if-resource>
-<framexs:if-property name="hoge">
+</framexs:if>
+<framexs:if property="hoge">
 <p><framexs:property name="hoge"/></p>
-</framexs:if-property>
+</framexs:if>
 </article>
 </body>
 </html>]]></code></pre>
