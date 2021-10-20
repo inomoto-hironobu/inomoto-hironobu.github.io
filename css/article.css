@@ -8,13 +8,10 @@
 	border-radius: 5px;
 }
 .main > p {
-	border: dashed 1px lightcyan;
 	background-color: white;
-	margin: .25rem;
-	padding: 1.25rem;
 }
-section > p {
-	border: dashed 1px lightgray;
+.main section > p {
+	border: dashed 1px lightcyan;
 	background-color: white;
 	margin: .25rem;
 	padding: 1.25rem;
@@ -25,11 +22,11 @@ section ul,section ol {
   padding: 0.5em 0.5em 0.5em 2em;
 }
 
-section li {
+.main section li {
   line-height: 1.5;
   padding: 0.5em 0;
 }
-section table {
+.main section table {
 	background-color: linen;
 }
 .main figure {
@@ -54,11 +51,13 @@ section table {
 	border: solid 1px orange;
 	background-color: white;
 	margin: 0px 26px 10px;
-
-
 }
 .main details > summary {
 	cursor: pointer;
+}
+.main dl > dd {
+	background-color: white;
+	padding: .5rem;
 }
 section address {
 	padding: 1rem;

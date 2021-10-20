@@ -175,15 +175,15 @@ twq('track','PageView');
 </framexs:if>
 <main data-spy="scroll" data-target="#toc" style="width:100%" framexs:element="">
 <framexs:attribute name="class">
-main
 <framexs:if property="sidebar" value="display">col-md-8</framexs:if>
 bg-light
 </framexs:attribute>
 
 <framexs:if-meta name="description">
-<section id="prelude"><framexs:meta name="description"/></section>
+<section id="prelude"><p><framexs:meta name="description"/></p></section>
 </framexs:if-meta>
-<p>更新日:<framexs:meta name="modified"/></p>
+<section class="main">
+<p>更新日:<framexs:meta name="modified"/> <span id="github-history"></span></p>
 <h1><framexs:title/></h1>
 <framexs:if id="premain">
 <div framexs:id-d="premain"></div>
@@ -201,6 +201,7 @@ bg-light
 <framexs:if property="pagetype" value="lp">
 <div framexs:id-d="main"></div>
 </framexs:if>
+</section>
 <framexs:if id="coda">
 <section id="coda"><div framexs:id-d="coda"></div></section>
 </framexs:if>
