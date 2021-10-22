@@ -116,7 +116,7 @@ table.responsive td, table.responsive th {
 		padding: .5rem;
 		box-shadow: 1px 1px 0px gray
 	}
-	table.responsive th,td {
+	table.responsive th,table.responsive td {
 		display: block;
 	}
 	table.responsive thead {

@@ -39,9 +39,7 @@ section ul,section ol {
 .main pre {
 	border: ridge 4px lightcoral;
 	border-radius: 1rem;
-	border: solid .25rem blue;
 	background-color: white;
-	margin: .25rem;
 	padding-left: 2rem;
 }
 .main details {
@@ -66,10 +64,34 @@ section address {
 .main table tr {
 	border-bottom: solid 1px gray;
 }
-.main table td,th {
-	padding:.5rem 0;
+.main table td,.main table th {
+	padding:.5rem;
 }
 .main dl {
 	padding: 1rem;
 	box-shadow: 1px 1px 2px pink;
+}
+table.vertical {
+	display: block;
+}
+table.vertical tbody {
+	display: block;
+}
+table.vertical tr {
+	display: block;
+	background-color: white;
+	border: dotted 1px gray;
+	border-radius: .5rem;
+	margin: .5rem 0;
+	padding: .5rem;
+	box-shadow: 1px 1px 0px gray
+}
+table.vertical th,table.vertical td {
+	display: block;
+}
+table.vertical thead {
+	display:block;
+}
+table.vertical tfoot {
+	display:block;
 }
