@@ -13,7 +13,7 @@
 <article id="main">
 <p>FramexsのAPIについて省略記法でのタグと解説、結果の値を表す。<br/>
 Framexsコンテンツのサンプルとして<a href="#コード1">コード1</a>を、Framexsフラグメントのサンプルとして<a href="#コード2">コード2</a>を用意している。</p>
-<table border="1">
+<table border="1" class="vertical">
 <thead><tr><th>タグ</th><th>解説</th><th>値</th></tr></thead>
 <tbody>
 <tr>
@@ -89,8 +89,13 @@ Framexsコンテンツのサンプルとして<a href="#コード1">コード1</
 <td><![CDATA[<meta name="keywords" content="test">]]></td>
 </tr>
 <tr>
-<td>framexs:if-resource name="foo"</td>
-<td>もしname属性値のname属性値(foo)を持つresource処理命令があればテンプレートの子孫ノードを解釈する。サンプルコードでは解釈する。</td>
+<td>framexs:if resource="foo"</td>
+<td>もしresource属性値のresource属性値(foo)を持つresource処理命令があればテンプレートの子孫ノードを解釈する。サンプルコードでは解釈する。</td>
+<td></td>
+</tr>
+<tr>
+<td>framexs:if property="foo"</td>
+<td>もしresource属性値のresource属性値(foo)を持つresource処理命令があればテンプレートの子孫ノードを解釈する。サンプルコードでは解釈する。</td>
 <td></td>
 </tr>
 <tr>
