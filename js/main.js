@@ -14,7 +14,14 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	.forEach((li)=>{
 		const p = document.createElement('p');
 		li.appendChild(p);
-		pullMeta(p);
+		const a = document.evaluate('xhtml:*[1]/xhtml:a', li, nsResolver, XPathResult.FIRST_ORDERED_NODE_TYPE , null).singleNodeValue;
+		pullMeta(a, function(info) {
+			p.appendChild(document.createTextNode(info.description));
+			p.appendChild(document.createElement('br'));
+			p.appendChild(document.createTextNode('【更新日：'+info.modified+'】'));
+			p.appendChild(document.createElement('br'));
+			p.appendChild(document.createTextNode('【文字数：'+info.contentLength+'】'));
+		});
 	});
 	
 	const githubHistoryLink = document

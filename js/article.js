@@ -11,7 +11,9 @@ window.addEventListener('DOMContentLoaded', function() {
 			const button = document.createElement('button');
 			button.appendChild(document.createTextNode('情報を見る'));
 			button.onclick = function() {
-				pullMetaAfter(button,a);
+				pullMeta(a,function(info) {
+					button.parentNode.insertBefore(document.createTextNode('('+info.description+'【更新日：'+info.modified+'】'+'【文字数：'+info.contentLength+'】)'),button.nextSibling);
+				})
 				button.style.display = 'none';
 			};
 			a.parentNode.insertBefore(button, a.nextSibling);
