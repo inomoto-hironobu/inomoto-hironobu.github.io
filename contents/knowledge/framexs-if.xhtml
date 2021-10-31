@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
 <meta charset="UTF-8"/>
-<title>import</title>
+<title>Framexsのif構文</title>
 <meta name="description" content="if文機能についての解説"/>
 <meta name="modified" content="2021/05/02"/>
 </head>
@@ -22,23 +22,16 @@
 <body>
 <h1>あいさつ</h1>
 <article>
-<framexs:if id="prelude">
-<h2>前書き</h2>
+<framexs:if id="hoge">
 <section>
-<p framexs:id-d="prelude"></p>
-</section>
-</framexs:if>
-<framexs:if id="main">
 <h2>主文</h2>
-<section>
-<p framexs:id-d="main"></p>
+<p framexs:id-d="hoge"></p>
 </section>
 </framexs:if>
-
 <framexs:if-meta name="description">
-<h2>description</h2>
 <section>
-<framexs:meta name="description"/>
+<h2>description</h2>
+<p><framexs:meta name="description"/></p>
 </secton>
 </framexs:if-meta>
 <framexs:if resource="hoge">
@@ -64,6 +57,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
 <title>世界よこんにちは</title>
+<meta name="description" content="解説"/>
 </head>
 <body>
 <article id="hoge">
@@ -79,8 +73,7 @@
 <li>hoge</li>
 <li>foo</li>
 <li>bar</li>
-</framexs:resource>                                                                                                        
-]]></code></pre>
+</framexs:resource>]]></code></pre>
 </figure>
 <figure id="コード3">
 <figcaption>コード4 /properties.xml</figcaption>
@@ -105,7 +98,20 @@
 <body>
 <h1>あいさつ</h1>
 <article>
-<p>ハローワールド！</p>
+<section>
+<h2>主文</h2>
+<p>本日は晴天なり。</p>
+</section>
+<section>
+<h2>description</h2>
+<p>解説</p>
+</section>
+<ul>
+<li>hoge</li>
+<li>foo</li>
+<li>bar</li>
+</ul>
+<p>foo</p>
 </article>
 </body>
 </html>]]></code></pre>
