@@ -1,5 +1,18 @@
 <?xml version="1.0"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
+<framexs:infomation version="1.0" license="MIT License" author="井本拓伸">
+<framexs:author name="井本拓伸">
+<framexs:url></framexs:url>
+</framexs:author>
+<framexs:license>
+Copyright (c) 2021 INOMOTO Hironobu
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</framexs:license>
+</framexs:infomation>
 <head>
 <framexs:if property="google-tag-manager-code">
 <!-- Google Tag Manager -->
@@ -99,7 +112,8 @@ twq('track','PageView');
           メインコンテンツ
         </a>
         <div class="dropdown-menu" aria-labelledby="メインコンテンツ">
-          <a class="dropdown-item" href="/contents/framexs.xhtml">Framexs</a>
+          <a class="dropdown-item" href="/contents/framexs-base.xhtml">Framexsの基礎</a>
+          <a class="dropdown-item" href="/contents/framexs-application.xhtml">Framexsの応用</a>
           <a class="dropdown-item" href="/contents/howto/index.xhtml">ハウツー</a>
           <a class="dropdown-item" href="/contents/knowledge/index.xhtml">知識</a>
           <a class="dropdown-item" href="/contents/idea/index.xhtml">アイデア</a>
@@ -156,6 +170,7 @@ twq('track','PageView');
 <details>
 <summary>おすすめ記事</summary>
 <ul class="list-group article-list">
+<li class="list-group-item"><p><a href="/contents/idea/報酬投票制.xhtml">報酬投票制</a></p></li>
 <li class="list-group-item"><p><a href="/contents/idea/5ちゃん遺跡化.xhtml">5ちゃん遺跡化計画</a></p></li>
 <li class="list-group-item"><p><a href="/contents/idea/徴税請負株式会社.xhtml">徴税請負株式会社</a></p></li>
 <li class="list-group-item"><p><a href="/contents/idea/ベーシックインカム.xhtml">ベーシックインカムに関するアイデア</a></p></li>
@@ -177,38 +192,44 @@ twq('track','PageView');
 </framexs:if>
 </aside>
 </framexs:if>
-<main data-spy="scroll" data-target="#toc" style="width:100%" framexs:element="">
+<main style="width:100%" framexs:element="">
 <framexs:attribute name="class">
 <framexs:if property="sidebar" value="display">col-md-8</framexs:if>
 bg-light
 </framexs:attribute>
-
-<framexs:if-meta name="description">
-<section id="prelude"><p><framexs:meta name="description"/></p></section>
-</framexs:if-meta>
-<section class="main">
+<framexs:if id="breadcrumb">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li framexs:id-d="breadcrumb"></li>
+<li class="breadcrumb-item active" aria-current="page"><framexs:title/></li>
+</ol>
+</nav>
+</framexs:if>
+<article>
 <p>更新日:<framexs:meta name="modified"/> <span id="github-history"></span></p>
+<framexs:if id="prelude">
+<section id="prelude"><div framexs:id-d="prelude"></div></section>
+</framexs:if>
 <h1><framexs:title/></h1>
 <framexs:if id="premain">
 <div framexs:id-d="premain"></div>
 </framexs:if>
-<framexs:if property="pagetype" value="index">
+<section class="main">
 <div framexs:id-d="main"></div>
+</section>
+<framexs:if property="pagetype" value="index">
 <table id="indexes" class="responsive">
 <tr class="th"><th>リンク</th><th>情報</th></tr>
 <tr framexs:id-d="indexes"></tr>
 </table>
 </framexs:if>
-<framexs:if property="pagetype" value="article">
-<div framexs:id-d="main"></div>
+<framexs:if id="postmain">
+<div framexs:id-d="postmain"></div>
 </framexs:if>
-<framexs:if property="pagetype" value="lp">
-<div framexs:id-d="main"></div>
-</framexs:if>
-</section>
 <framexs:if id="coda">
 <section id="coda"><div framexs:id-d="coda"></div></section>
 </framexs:if>
+</article>
 </main>
 </div>
 <aside class="row">
@@ -229,17 +250,21 @@ bg-light
 </aside>
 </div>
 <!-- /container -->
-<footer class="container bg-info" style="max-width:880px">
+<footer id="footer-links" class="bg-secondary">
+<div class="container">
 <div class="row">
-<div class="col-md-6" style="color:white">
-<address id="email">Email:<a class="text-white" href="mailto:inmthrnb@gmail.com">inmthrnb@gmail.com</a></address>
-<p><a class="text-white" href="contents/business/privacy-policy.xhtml">プライバシーポリシー</a></p>
-</div>
-<div class="col-md-6 text-white">
-<p>Framexs version:<framexs:version/></p>
-<p>寄付先：PayPay銀行　すずめ支店(002)<br/>口座番号:3089450　名義人:イノモトヒロノブ</p>
+<div class="col-md-12">
+<p><a href="contents/business/privacy-policy.xhtml">プライバシーポリシー</a></p>
 </div>
 </div>
+</div>
+</footer>
+<footer class="bg-info text-white">
+<table style="width:80%;margin:auto">
+<tr><td>Email</td><td>inmthrnb@gmail.com</td></tr>
+<tr><td>Framexs version</td><td><framexs:version/></td></tr>
+<tr><td>寄付先</td><td>PayPay銀行　すずめ支店(002)<br/>口座番号:3089450　名義人:イノモトヒロノブ</td></tr>
+</table>
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

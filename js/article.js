@@ -1,9 +1,8 @@
 
 window.addEventListener('DOMContentLoaded', function() {
 	document
-	.querySelectorAll('main a[href]')
+	.querySelectorAll('#main a[href]')
 	.forEach((a)=>{
-		
 		console.log(a.getAttribute('href'));
 		const href = new URL(a.getAttribute('href'),window.location);
 		const windoworigin = new URL(window.location).origin;

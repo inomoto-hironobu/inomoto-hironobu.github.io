@@ -12,11 +12,14 @@ section > section {
 	padding-top: 0.4rem;
 	border-radius: 5px;
 }
-.main section > p {
+.main p {
 	border: dashed 1px lightcyan;
 	background-color: white;
 	margin: .25rem;
 	padding: 1.25rem;
+}
+main article {
+	padding:1rem;
 }
 section > ul,section > ol {
   color: #1e366a;

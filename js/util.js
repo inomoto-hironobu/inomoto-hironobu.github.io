@@ -10,10 +10,10 @@ const nsResolver = function nsResolver(prefix) {
 @param {Function} consumer
 description,modified,textLength
 */
-function pullMeta(link, consumer) {
+function pullMeta(link, consumer, errorHandler) {
 	axios
 	.get(link.getAttribute('href'), {responseType:'document'})
-	.then((res)=>{
+	.then(res=>{
 		const info = {
 			document:res.data,
 			description:null,
@@ -29,6 +29,9 @@ function pullMeta(link, consumer) {
 		}
 		info.contentLength = content.length;
 		consumer(info);
+	})
+	.catch(error=>{
+		errorHandler(error.response);
 	});
 }
 const xpathFacade = function(node, ns) {

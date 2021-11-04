@@ -100,6 +100,9 @@ table.responsive td, table.responsive th {
 	border:1px solid #333;
 	padding: .25rem;
 }
+#footer-links a {
+	color:white;
+}
 @media screen and (max-width:1080px) {
 	table.responsive {
 		display: block;
