@@ -15,6 +15,8 @@
 モデルもビューもXHTMLを使い、ウェブサイトでの配布の場合はコントローラーもXHTMLに処理命令という形で埋めこむ。</p>
 <p>このフレームワークはフロントエンドXSLT技術であるxml-stylesheet処理命令を利用している。</p>
 <pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>]]></code></pre>
+<section>
+
 <h2>初心者用コード</h2>
 <p>ウェブサーバーがファイルシステム/docs/に結び付けられていて、次の3つのファイルがあるととする。</p>
 <ul>
@@ -72,6 +74,8 @@
 </figure>
 <p>この場合ブラウザでhttp://localhost/content.xhtmlにアクセスすると出力結果が最終的なパース対象となる。<br/>
 この出力はブラウザによって解析される。</p>
+</section>
+<section>
 <h2>意義</h2>
 <p>これの何が嬉しいかというとlink要素やscript要素などの記述のあるテンプレートの使いまわしができるという事である。例えば次のようなコードを記述したい場合、</p>
 <figure>
@@ -86,6 +90,8 @@
 <!-- End Google Tag Manager -->]]></code></pre>
 </figure>
 <p>この記述をHTMLファイルに挿入することを考えると<strong>全ての</strong>HTMLにこの記述をしなくてはならなくかつ、変更があった場合に対応が難しい。しかしFramexsなら変更に極めて強い。</p>
+</section>
+<section>
 <h2>原初法との比較</h2>
 <p>XSLTが開発された時その意義としてあるXMLに対しての再利用性がうたわれていた。例えばコード4を出力したいとき次のようなXMLを出力して</p>
 <figure>
@@ -101,6 +107,8 @@
 <p>単純にあるXSLを適用するだけというものである。これを<dfn>原初法</dfn>と名づけると、原初法はXML+XSLT=HTMLである。</p>
 <p>これに対してFramexsは上述のようにXHTML+XHTML+XSLT=HTMLという方法で行う。<br/>
 違いは出力のひな型をXSLTにするか特殊なXHTMLにするかというものである。Framexsの方が直観的で、容易性が高く、再利用性が高い。</p>
+</section>
+<section>
 <h2>このページ</h2>
 <p>このページ自身もFramexsを応用しておりその先頭部分は以下の通りである。</p>
 <figure>
@@ -109,12 +117,19 @@
 <?framexs.skeleton ../../template/template.xhtml?>]]></code></pre>
 </figure>
 <p>ソースコードは<a href="https://github.com/inomoto-hironobu/inomoto-hironobu.github.io/blob/master/contents/knowledge/framexs.xhtml">GitHubのページ</a>も参照されたい。</p>
+</section>
+<section>
 <h2>CSSフレームワークとの相性</h2>
 <p>FramexsはCSSフレームワークとの相性が抜群に良い。link要素やscript要素の決まりきったボイラープレートコードはテンプレートに集約され、またclass="container"などの決まりきった構成もまたテンプレートに集約される。</p>
+</section>
+<section>
 <h2>Buildless性</h2>
-<p>FramexsはBuildlessである。Node.jsコマンドに頼らずとも静的サイトの構築を可能にし、CSSフレームワークやJavaScriptフレームワークもBuildlessに利用することができる。</p>
+<p>FramexsはBuildlessである。Node.jsコマンドに頼らずとも静的サイトの簡易な構築を可能にする。</p>
+</section>
+<section>
 <h2>動的サイトとの相性</h2>
-<p>まだ動的サイトとの相性は検証されていないが、大きな相乗効果を生み出すことが予想できる。というのも例えばJavaプログラマーがJSPを書くとき、最終的なHTMLの合成はマークアップエンジニアに任せて、自分はごく単純なXHTMLを出力することができる。一方マークアップエンジニアはテンプレートの製作に専念できるのでJavaやPHPを覚える必要がない。今後IT業界に高い分担制、専業性をもたらすだろう。</p>
+<p>まだ実証されていない。今後の研究の進展が待たれる。</p>
+</section>
 </article>
 <article id="coda">
 <p>このようにXSLTのフレームワークは静的サイト構築を容易にしデザインを優れたものにする。<br/>
