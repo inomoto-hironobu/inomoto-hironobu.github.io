@@ -101,3 +101,6 @@ article dl {
 	padding: .5rem;
 	box-shadow: 2px 2px 3px pink;
 }
+article img {
+	width:100%;
+}
