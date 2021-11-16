@@ -102,5 +102,12 @@ article dl {
 	box-shadow: 2px 2px 3px pink;
 }
 article img {
-	width:100%;
+	width:50%;
+	float:right;
+	shape-outside: content-box;
+}
+@media screen and (max-width:748px) {
+	article img {
+		width:100%;
+	}
 }
