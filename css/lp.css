@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
-
+:root {
+	--breakpoint-width: 748px;
+}
 section > section {
 	margin: 1rem 0;
 }
@@ -12,6 +14,7 @@ section > section {
 	padding-top: 0.4rem;
 	border-radius: 5px;
 }
+article > p,
 .main p {
 	border: dashed 1px lightcyan;
 	background-color: white;
@@ -101,10 +104,15 @@ article dl {
 	padding: .5rem;
 	box-shadow: 2px 2px 3px pink;
 }
+img.right {
+	float:right;
+}
+img.left {
+	float:left;
+}
 article img {
 	width:50%;
-	float:right;
-	shape-outside: content-box;
+	shape-outside: margin-box;
 }
 @media screen and (max-width:748px) {
 	article img {

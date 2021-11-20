@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+:root {
+	--breakpoint-width: 748px;
+}
 body {
 	padding:0;
 	margin:0;
