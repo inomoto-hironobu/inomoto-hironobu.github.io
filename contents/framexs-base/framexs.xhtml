@@ -10,23 +10,30 @@
 <meta name="modified" content="2021-09-17"/>
 </head>
 <body>
-<article id="main">
-<p>FramexsはXHTMLをMVCの材料として合成を行うフレームワークである。<br/>
-モデルもビューもXHTMLを使い、ウェブサイトでの配布の場合はコントローラーもXHTMLに処理命令という形で埋めこむ。</p>
-<p>このフレームワークはフロントエンドXSLT技術であるxml-stylesheet処理命令を利用している。</p>
-<pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>]]></code></pre>
-<section>
-
-<h2>初心者用コード</h2>
-<p>ウェブサーバーがファイルシステム/docs/に結び付けられていて、次の3つのファイルがあるととする。</p>
-<ul>
-<li>/docs/framexs.xsl</li>
-<li>/docs/template.xhtml</li>
-<li>/docs/content.xhtml</li>
-</ul>
-<p>ビューであるtempalte.xhtmlは次のようになっているとする。</p>
+<ol id="breadcrumb">
+<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item"><a href="/contents/framexs-base.xhtml">Framexsの基礎</a></li>
+</ol>
+<article>
+<section id="premain">
+<p>FramexsはXHTMLをMVCの材料として、合成を行い、HTMLを生成するXSLTフレームワークです。<br/>
+モデルもビューもXHTMLを使い、ウェブサイトでの配布の場合は、コントローラーもXHTMLに処理命令という形で埋めこみます。</p>
+<p>このフレームワークは、フロントエンドXSLT技術であるxml-stylesheet処理命令を利用しています。</p>
 <figure>
-<figcaption>コード1</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>]]></code></pre>
+</figure>
+</section>
+<section id="main">
+<section>
+<h2>サンプルコード</h2>
+<p>まずはサンプルコードを見てみましょう。次の3つのファイルがあるとします。</p>
+<ul>
+<li>/framexs.xsl</li>
+<li>/sample/1/template.xhtml</li>
+<li>/sample/1/content.xhtml</li>
+</ul>
+<figure>
+<figcaption>tempalte.xhtml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" xml:lang="ja" lang="ja">
 <head>
@@ -38,11 +45,10 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>モデルであるcontent.xhtmlは次のようになっている。</p>
 <figure>
-<figcaption>コード2</figcaption>
+<figcaption>content.xhtml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="application/xml" href="framexs.xsl"?>
+<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
 <?framexs.skeleton template.xhtml?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -55,7 +61,8 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>すると次のようになる。</p>
+<p>template.xhtmlはビュー、content.xhtmlはモデルおよびコントローラーです。</p>
+<p>すると次のようになります。<a href="/sample/1/contents.xhtml">result</a></p>
 <figure>
 <figcaption>コード3</figcaption>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
@@ -130,10 +137,11 @@
 <h2>動的サイトとの相性</h2>
 <p>まだ実証されていない。今後の研究の進展が待たれる。</p>
 </section>
-</article>
-<article id="coda">
+</section>
+<section id="coda">
 <p>このようにXSLTのフレームワークは静的サイト構築を容易にしデザインを優れたものにする。<br/>
 このページ自身がそうであるし、ここのサイト全体がそうである。</p>
+</section>
 </article>
 </body>
 </html>

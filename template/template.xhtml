@@ -100,8 +100,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
           メインコンテンツ
         </a>
         <div class="dropdown-menu" aria-labelledby="メインコンテンツ">
-          <a class="dropdown-item" href="/contents/framexs-base.xhtml">Framexsの基礎</a>
-          <a class="dropdown-item" href="/contents/framexs-application.xhtml">Framexsの応用</a>
+          <a class="dropdown-item" href="/contents/framexs-base/index.xhtml">Framexsの基礎</a>
+          <a class="dropdown-item" href="/contents/framexs-application/index.xhtml">Framexsの応用</a>
           <a class="dropdown-item" href="/contents/howto/index.xhtml">ハウツー</a>
           <a class="dropdown-item" href="/contents/knowledge/index.xhtml">知識</a>
           <a class="dropdown-item" href="/contents/idea/index.xhtml">アイデア</a>
@@ -111,7 +111,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="Framexs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Framexs
+          Framexsの基礎
         </a>
         <div class="dropdown-menu" aria-labelledby="Framexs">
           <a class="dropdown-item" href="/contents/knowledge/framexs.xhtml">Framexsについて</a>
@@ -171,9 +171,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 </script>
 </div>
 </framexs:if>
-<framexs:if resource="aside">
-<framexs:resource name="aside"/>
-</framexs:if>
+<framexs:resource name="aside"/>              
 </aside>
 </framexs:if>
 <main style="width:100%" framexs:element="">
@@ -189,17 +187,15 @@ bg-light
 </ol>
 </nav>
 </framexs:if>
+<header><p>更新日:<framexs:meta name="modified"/> <span id="github-history"></span> <span id="content-length"></span></p></header>
 <article>
-<p>更新日:<framexs:meta name="modified"/> <span id="github-history"></span></p>
 <framexs:if id="prelude">
-<section id="prelude"><div framexs:id-d="prelude"></div></section>
+<section id="prelude"></section>
 </framexs:if>
 <h1 class="title"><framexs:title/></h1>
-<framexs:if id="premain">
-<div framexs:id-d="premain"></div>
-</framexs:if>
+<framexs:id name="premain"/>
 <section class="main">
-<div framexs:id-d="main"></div>
+<framexs:id name="main"/>
 </section>
 <framexs:if property="pagetype" value="index">
 <table id="indexes" class="responsive">
@@ -207,11 +203,9 @@ bg-light
 <tr framexs:id-d="indexes"></tr>
 </table>
 </framexs:if>
-<framexs:if id="postmain">
-<div framexs:id-d="postmain"></div>
-</framexs:if>
+<framexs:id name="postmain"/>
 <framexs:if id="coda">
-<section id="coda"><div framexs:id-d="coda"></div></section>
+<section id="coda"><framexs:id name="coda"/></section>
 </framexs:if>
 </article>
 </main>
