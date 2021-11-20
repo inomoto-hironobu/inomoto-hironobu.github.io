@@ -39,11 +39,11 @@ const xpathFacade = function(node, ns) {
 	  return ns[prefix] || null;
 	};
 	const obj = {
-		iterate: function(xpath, init, consumer) {
+		iterate: function(xpath, init, method) {
 			result = node.evaluate(xpath, node, nsResolver, XPathResult.UNORDERED_NODE_ITERATOR_TYPE , null);
 			let r = init;
 			for(let v = result.iterateNext(); v != null; v = result.iterateNext()) {
-				r = consumer(v, r);
+				r = method(v, r);
 			}
 			return r;
 		},

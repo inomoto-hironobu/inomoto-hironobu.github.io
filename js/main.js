@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	});
 	
 	document
-	.querySelectorAll('.main a[href]')
+	.querySelectorAll('a.preload')
 	.forEach((a)=>{
 		console.log(a.getAttribute('href'));
 		const href = new URL(a.getAttribute('href'),window.location);
