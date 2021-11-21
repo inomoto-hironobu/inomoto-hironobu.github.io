@@ -109,6 +109,7 @@ img.right {
 }
 img.left {
 	float:left;
+	margin-right:1rem;
 }
 article img {
 	width:50%;
