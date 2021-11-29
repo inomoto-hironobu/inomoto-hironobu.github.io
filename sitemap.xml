@@ -5,7 +5,11 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/framexs.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/framexs-base/index.xhtml</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inomoto-hironobu.github.io/contents/framexs-application/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
   <url>
