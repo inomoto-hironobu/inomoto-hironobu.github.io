@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<framexs:resource xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
+<li>hoge</li>
+<li>foo</li>
+<li>bar</li>
+</framexs:resource>
