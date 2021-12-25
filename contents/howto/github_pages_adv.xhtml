@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?framexs.skeleton ../../template/template.xhtml?>
+<?framexs.properties ../../properties/ads.properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<title>GitHub Pagesに広告を貼って収益化する方法</title>
+<meta name="description" content="GitHub Pagesで広告を貼り収益化する方法を解説する。サイト管理ツールと、広告サービスについて、何を選定すべきかを書いている。"/>
+<meta name="modified" content="2021/12/25"/>
+</head>
+<body>
+<article id="main">
+<p>無料で静的サイトが構築できるGitHub Pagesに、広告を貼って収入を得たい人は少なからずいると思います。<br/>
+その方法をお教えします。</p>
+<section>
+<h2>方法</h2>
+<p>Framexsでコンテンツ管理をして、忍者AdMaxの広告を貼れば、収益化が可能です。<br/>
+実際の例として、このページがそうです。<br/>
+このページに広告が表示されているのが分かるかと思いますが、これはFramexsを使い、忍者AdMaxの広告を貼っているからです。</p>
+</section>
+<section>
+<h2>Framexsとは</h2>
+<p>Framexsとは静的サイトの簡易な管理ができるようにした、クライアント駆動のXSLTフレームワークです。<br/>
+このサイトではFramexsの解説を用意していますので、ご覧ください。</p>
+<div class="link"><a href="../framexs-base/index.xhtml">Framexsの基礎</a></div>
+</section>
+<section>
+<h2>忍者AdMaxとは</h2>
+<p>忍者ツールズが提供する広告配信サービスです。</p>
+<div class="link"><a href="https://admax.shinobi.jp/">忍者AdMax</a></div>
+</section>
+<section>
+<h2>なぜFramexs+忍者AdMaxなのか</h2>
+<p>これから「なぜ？」について解説します。</p>
+<section>
+<h3>なぜ忍者AdMaxか</h3>
+<p>広告は代表的な物はGoogle AdSenseです。しかし、GitHub Pagesで広告を貼ろうとしてもドメインの関係で認可されません。<br/>
+そこで特にそういった制限がない忍者AdMaxを選ぶことになります。</p>
+</section>
+<section>
+<h3>なぜFramexsか</h3>
+<p>そもそも、ページ数が100も行かないような静的サイトの管理にはFramexsが最適です。
+静的サイト管理のやりかたとしては、静的サイトジェネレーター（SSG）を使う方法がありますが、変更のたびにサイト生成をしなければなりません。
+GitHub Actionsで自動化する方法もありますが、変更後の確認が容易ではありません。
+一方、Framexsはクライアント駆動のコンテンツ管理を行うので変更のたびに反映されます。なのでFramexs一択です。</p>
+</section>
+</section>
+</article>                
+</body>
+</html>
