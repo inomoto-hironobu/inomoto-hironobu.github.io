@@ -45,8 +45,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <script src="/js/util.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/http.js"></script>
-<script async="" src="/js/controller.js"></script>
-
 <framexs:if property="pagetype" value="article">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
@@ -71,6 +69,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 </script>
 </framexs:if>
 <framexs:script/>
+<script async="" defer="" src="//survey.g.doubleclick.net/async_survey?site=u7mehjhrqvosros3my3mxijaa4"></script>
 </head>
 <body class="bg-dark">
 <framexs:if property="google-tag-manager-code">
@@ -154,6 +153,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <div class="row">
 <framexs:if property="sidebar" value="display">
 <aside class="col-md-4 bg-white">
+<p>この記事に感想を寄せて下さったら、報酬を進呈するキャンペーン実施中です。最後までお読みください。</p>
 <details>
 <summary>おすすめ記事</summary>
 <ul class="list-group article-list">
@@ -187,8 +187,11 @@ bg-light
 </ol>
 </nav>
 </framexs:if>
-<header><p>更新日:<framexs:meta name="modified"/> <span id="github-history"></span> <span id="content-length"></span></p></header>
+<header>
+<p><span id="github-history"></span> <span id="content-length"></span></p>
+</header>
 <article>
+<p>更新日:<framexs:meta name="modified"/> <span id="github-history"></span> <span id="content-length"></span></p>
 <framexs:if id="prelude">
 <section id="prelude"></section>
 </framexs:if>
@@ -243,6 +246,8 @@ bg-light
 <tr><td>Framexs version</td><td><framexs:version/></td></tr>
 <tr><td>寄付先</td><td>PayPay銀行　すずめ支店(002)<br/>口座番号:3089450　名義人:イノモトヒロノブ</td></tr>
 </table>
+<p style="width:80%;margin:auto">この記事を読んでどう思われましたか？感想をお寄せ下さい。もし記事の質の向上につながる物であれば、100円お支払いします。<br/>
+報酬があるのは毎月3名先着です。支払いはペイペイで行います。</p>
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
