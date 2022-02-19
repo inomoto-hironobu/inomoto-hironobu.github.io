@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?framexs.skeleton ../../template/template.xhtml?>
+<?framexs.properties ../../properties/properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<title>静的サイトにおけるSSG、SPAとFramexsの比較</title>
+<meta name="description" content="SSG、SPAとFramexsの比較"/>
+<meta name="modified" content="2022-02-19"/>
+</head>
+<body>
+<article>
+<section id="main">
+<section>
+<p>フロントエンドでの最近の状況については近年、静的サイトが注目を集めています。<br/>
+静的サイトとは、WordPressのようなプログラミングによってコンテンツが提供される、いわゆる動的サイトと比較して、静的ページのみで構築されたウェブサイトの事です。</p>
+
+<p>昔の、原始的なウェブの1990年代のサイト運営はいわゆる個人サイトなどは静的サイトも多いものでした。<br/>
+しかし、多数のHTMLを管理する煩雑さが問題となって、動的ページを提供する動的サイトが主流となりました。<br/>
+動的サイトの代表例としてはCMSのPHP製のWordPressがあります。</p>
+
+<p>そして、近年になって再び静的サイトが注目され始めています。<br/>
+その理由としては、GitHub Pagesのような無料で静的サイトを構築できる環境が整い始めていることが、要因として上げられるでしょう。<br/>
+GitHub Pages以外にもNetlify、Fireworksなど、無料でビルドできる機能を追加したサービスもあります。</p>
+
+<p>静的サイトの開発、構築について、現在の主流ではStatic Site Generater(SSG)を使ってビルドを行うのが普通となっています。<br/>
+SSGとしてはGatsby、Next.jsなど多数あります。<br/>
+そしてこのSSGはSass、ScssなどCSSメタ言語や、TypeScriptなどAltJSの使用と相性がいいものです。<br/>
+このように静的サイトにもSSGにも多種多様な選択肢が存在することによって次第に盛り上がってきています。</p>
+
+<p>またサイトのアーキテクチャとしてSingle Page Application(SPA)という考え方があります。<br/>
+1つのページで共用部分を活用しつつ中核となるコンテンツを柔軟に書き換えるアプローチをとるため、基本となるのは1つのページだけなので管理運用性はあがります。</p>
+
+<p>これらの技術は革新的であるものの、一方でデメリット、欠点も抱えているのも確かです。<br/>
+SSGはビルドが必要とされるあまり、サービスが限定されるますし、SPAではクローラーにコンテンツが拾われないといった、SEO性の悪さがあります。</p>
+
+<p>ここでFramexsという、XSLTによるフレームワークがそれら各種問題点を解消しつつ、高い管理運用性を持っている技術があるので、この機会にぜひ知っていただきたいです。<br/>
+このフレームワークでは、個別の静的ページが表示されるたびに、XSLT処理によってテンプレートとコンテンツの合成を行うことで、完成したHTMLを出力する手法を取っています。<br/>
+このためFramexsでは、ビルドレスなサイト管理が可能となっていて、SPAと比べて個別ページがクローラーに拾われるのでSEOに強いという特徴があります。<br/>
+さらに、変更は即時反映されるので開発簡易性が特段に高いという点も、特筆すべき特徴としてあげられます。</p>
+
+<p>事実、このページ、そして、このサイト全体がFramexsを使っているため、劇的に簡易な運用ができています。
+このサイトではFramexsの参照実装として存在するとともに、解説記事（<a href="../framexs-base/index.xhtml">Framexsの基礎</a>）も用意していますので、ぜひとも活用なさってください。</p>
+</section>
+</section>
+</article>
+</body>
+</html>
