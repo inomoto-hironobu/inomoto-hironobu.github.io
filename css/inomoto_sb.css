@@ -1,0 +1,463 @@
+/*### 3/7変更分 #################*/
+
+/*43.TABLEリンクが分かりづらい*/
+table.responsive td:nth-child(1) {
+  /*リンクを左寄せにする*/
+text-align: left;
+font-weight: bold;
+}
+
+
+/*47.文字間隔の調整*/
+.row p {
+  /*本文の幅を広げる*/
+  line-height: 1.5;
+  margin: 40px 0;
+}
+
+table.responsive td {
+  /*テーブル内にも対応*/
+  line-height: 1.5;
+}
+
+#coda p {
+  /*ボックス内にも対応*/
+  line-height: 1.5;
+  margin:10px;
+}
+
+.dropdown-item{
+  /*メニューの幅にも対応*/
+  line-height: 1.5;
+}
+
+/*プライバシーポリシーが崩れたので修正*/
+.col-md-12 a{
+  line-height: 250%;
+}
+
+
+/*### 3/4変更分 #################*/
+
+/*41.ファイルの変更リンクの削除*/
+header a[href*="/commits/"]{
+  display: none;
+}
+
+/*51.ヘッダーの色修正*/
+#pagetop nav{
+  background:linear-gradient(#F7F9FE,#CACACA);
+  box-shadow: 1px 1px 10px #778;
+}
+
+
+/*19.プライバシーポリシーの修正*/
+#footer-links{
+  box-shadow: 2px 2px 2px #636363;
+}
+
+
+/*### 3/3変更分 #################*/
+
+/*42.不適切リンクの削除*/
+a[href*="%E6%94%BF%E6%B2%BB%E3%81%AE%E8%A9%B1%E9%A1%8C"]{
+display:none;
+}
+
+/*### 3/2変更分 #################*/
+
+/*33.広告の位置を変える*/
+.adv{
+  position: absolute;
+  left:10500px;
+}
+
+.d-md-block {
+  position: absolute;
+  top:0px;
+  left:-200px;
+}
+/*40.targetがわかりづらい*/
+a[href*="/sample/1/contents.xhtml"]{
+  font-weight: bold;
+}
+
+a[href*="/sample/1/contents.xhtml"]::before{
+	white-space: pre ;
+  content: "\A実行結果を表示する（";
+}
+a[href*="/sample/1/contents.xhtml"]::after {
+  content: " : contents.xhtml）";
+}
+
+
+/*### 3/1変更分 #################*/
+
+
+/*38.謎のスクロールバーを消す*/
+.main figure {
+  background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+
+/*37.コード部分が見づらい*/
+.main figcaption{
+  /*タイトル部分の間隔を広げる*/
+  line-height: 40px; 
+}
+
+/*枠の変更*/
+main pre {
+    border: ridge 1px #565656;
+    box-shadow: 1px 1px 3px #999;
+}
+
+
+
+/*### 2/27変更分 #################*/
+
+/*35.リンクの見た目の調整*/
+.responsive td{
+  min-width:200px;
+}
+
+
+
+/*34.悪目立ちしている連絡ボックスを修正*/
+#coda{
+  /*見出しボックス内の色を変更*/
+    border: solid 1px #5a5a5a;
+    color:#444;
+    background: linear-gradient(#FFF, #EFEFEF);
+    /*見出しの文字を普通の文字に*/
+  font-weight: normal;
+  font-size: 100%;
+  overflow: hidden;
+}
+
+
+#coda h1,
+#coda h2,
+#coda h3,
+#coda h4,
+#coda h5,
+#coda h6{
+  /*見出しの色を変更*/
+  background: #6a6a6a;
+}
+
+#coda h3 {
+  /*見出しの文字を変更*/
+  font-size: 130%;
+  line-height: 55px;
+}
+
+
+
+/*外部リンクの見た目を調整*/
+#coda ul {
+  margin:25px;
+  padding: 10px 40px;
+}
+
+/*### 2/25変更分 #################*/
+
+
+/*32.ページトップの修正*/
+/*位置移動、リンク下線が出ないように変更*/
+.col{
+  background-color: #F1F1F1;
+  border-radius: 80px;
+  border: solid 1px #111;
+  position: fixed;
+top:80%;
+/*レスポンシブ対応*/
+left:calc(98% - 53px);
+width:53px;
+z-index: 4;
+height:40px;
+}
+
+.col a{
+/*元のページトップボタンを消す*/
+  color:RGBA(0,0,0,0);
+text-decoration: none;
+}
+
+/*ページトップボタンを記号に変更*/
+.col a:before {
+  content: "▲";
+  color:#111;
+}
+
+
+
+/*30.ヘッダーの文字が薄い*/
+#pagetop a{
+  color:#111;
+}
+
+/*31.ヘッダーが半透明になってる*/
+#pagetop{
+  /*透明化を解除*/
+  opacity: 1;
+}
+
+/*39.文字ボックス*/
+.main p{
+  /*文字ボックスの色を調整*/
+  margin-left:0px;
+  border-top: solid 1px #121212;
+  border-left: solid 1px #121212;
+  border-right: solid 2px #727272;
+  border-bottom: solid 2px #727272;
+}
+
+/*### 2/22変更分 #################*/
+
+
+/*26.二重になっている線を1つに戻す*/
+.main section {
+ padding-bottom:30px;
+    border-top: solid 0px gray;
+    border-bottom: solid 1px gray;
+     border-radius:1px;
+}
+
+/*フッダー上の二重線部分を消す*/
+.main section:last-child {
+   border-bottom: solid 0px gray;
+}
+
+
+/*19.プライバシーポリシーの修正*/
+#footer-links{
+  position: fixed;
+top:27px;
+/*レスポンシブ対応*/
+left:calc(98% - 192px);
+width:192px;
+z-index: 2;
+height:40px;
+}
+
+#footer-links p {
+  /*表示がおかしくなっていたので修正*/
+  margin: 0px 0;
+}
+
+#footer-links p:hover {
+  /*色が変わるように修正*/
+background-color:#1a74b1;
+width:192px;
+padding-left:15px;
+margin-left:-15px;
+}
+
+#footer-links a:hover {
+  /*リンク下線を除去*/
+text-decoration: none;
+}
+
+
+
+/*### 2/21変更分 #################*/
+
+
+/*メニューの緑が見づらい*/
+
+.main h3 {
+  /*H2の変更　H1と入れ替え+調整*/
+  color:black;
+    border-bottom: solid 3px gray;
+    padding-left: 5px;
+    padding-bottom:10px;
+}
+
+/*テーブル下のスペースを広げる*/
+table.responsive {
+  margin-bottom: 50px;
+}
+
+
+/*### 2/19変更分 #################*/
+
+/*24.page topの修正*/
+
+
+/*### 2/18変更分 #################*/
+
+/*25.スペースの変更*/
+
+.bg-white p {
+  /*アイドメニューの幅を広げる*/
+  line-height: 170%;
+  margin-top:30px;
+}
+
+.main {
+  /*メイン部分のスペース調整*/
+  margin-bottom: 50px;
+}
+.row nav{
+  /*パンくずのスペース調整*/
+  margin:20px 0;
+}
+
+
+/*### 2/17変更分 #################*/
+
+/*23.見出しを無彩色にし、装飾を追加*/
+.title{
+  /*H1の変更　H2と入れ替え+調整*/
+  color:black;
+    padding-left: 10px;
+    border-left: solid 8px gray;
+    border-bottom: solid 3px gray;
+    padding-bottom: 8px;
+}
+
+.main h2 {
+  /*H2の変更　H1と入れ替え+調整*/
+  color:black;
+    border-left: solid 5px gray;
+    padding-left: 10px;
+}
+
+
+
+/*### 2/16変更分 #################*/
+
+
+/*22.フッダーの問題*/
+
+.bg-info {
+  /*フッダーの色を黒に*/
+  background-color:#333;
+  /*狭かったスペースを空ける*/
+  padding:20px 50px 50px;
+}
+/*文字間隔を広げる*/
+.bg-info tr{
+  line-height: 40px;
+}
+
+/*20.ペイペイうんぬんの削除*/
+.bg-info p {
+display: none;
+}
+
+/*### 2/15変更分 #################*/
+
+.responsive td,
+.responsive tr {
+  line-height: 32px;
+}
+
+/*### 2/5変更分 #################*/
+
+
+table.responsive td {
+  /*リンクを同じ枠内にする*/
+    padding:20px 10px;
+}
+
+
+/*### 2/4変更分 #################*/
+
+
+/*6.用途不明、謎のborderを削除*/
+#prelude{
+  display: none;
+}
+
+
+/*### 2/3変更分 #################*/
+
+
+/*2.コンテンツの幅を広げる*/
+
+.row ul {
+  /*表下の間隔を広げる*/
+margin-bottom:40px;
+}
+
+/**### 2/1 #################**/
+
+.bg-dark{
+background-color:#C5C5C5;
+}
+
+/**### 1/31 #################**/
+
+
+
+/**### 1/28 #################**/
+
+
+aside .list-group-item:nth-child(1):before {
+content: "Framexsの基礎";
+color:#007bff;
+}
+aside .list-group-item:nth-child(2):before {
+content: "Framexsの応用";
+color:#007bff;
+}
+aside .list-group-item:nth-child(3),
+aside .list-group-item:nth-child(4),
+aside .list-group-item:nth-child(5){
+  display: none;
+}
+
+aside .list-group-item:after {
+  white-space: pre;
+content: "\a工事中";
+}
+
+aside .list-group-item p{
+  display: none;
+}
+
+a[href*="idea/index"],
+a[href*="knowledge/index"],
+a[href*="article/index"]{
+display:none;
+}
+
+.dropdown-toggle#Framexs{
+display:none;
+}
+
+
+/**### 1/27 #################**/
+
+#pagetop{
+  z-index: 1;
+    postion: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    }
+
+.container{
+max-width:1000px;
+width:1000px;
+}
+#coda {
+margin-top:80px;
+}
+#coda p {
+padding:5px 15px;
+}
+
+h1 {
+margin:4% 1%;
+}
+
+h2 {
+margin:1% 1% 2%;
+}
+
+
+.main section {
+margin:4% 1% 0%;
+}
