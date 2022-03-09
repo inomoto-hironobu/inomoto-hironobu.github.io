@@ -395,39 +395,6 @@ background-color:#C5C5C5;
 /**### 1/28 #################**/
 
 
-aside .list-group-item:nth-child(1):before {
-content: "Framexsの基礎";
-color:#007bff;
-}
-aside .list-group-item:nth-child(2):before {
-content: "Framexsの応用";
-color:#007bff;
-}
-aside .list-group-item:nth-child(3),
-aside .list-group-item:nth-child(4),
-aside .list-group-item:nth-child(5){
-  display: none;
-}
-
-aside .list-group-item:after {
-  white-space: pre;
-content: "\a工事中";
-}
-
-aside .list-group-item p{
-  display: none;
-}
-
-a[href*="idea/index"],
-a[href*="knowledge/index"],
-a[href*="article/index"]{
-display:none;
-}
-
-.dropdown-toggle#Framexs{
-display:none;
-}
-
 
 /**### 1/27 #################**/
 
