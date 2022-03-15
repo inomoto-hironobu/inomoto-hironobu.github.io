@@ -88,10 +88,6 @@ table.responsive td {
 
 /*### 3/4変更分 #################*/
 
-/*41.ファイルの変更リンクの削除*/
-header a[href*="/commits/"]{
-  display: none;
-}
 
 /*51.ヘッダーの色修正*/
 #pagetop nav{
@@ -106,13 +102,6 @@ header a[href*="/commits/"]{
 }
 
 
-/*### 3/3変更分 #################*/
-
-/*42.不適切リンクの削除*/
-a[href*="%E6%94%BF%E6%B2%BB%E3%81%AE%E8%A9%B1%E9%A1%8C"]{
-display:none;
-}
-
 /*### 3/2変更分 #################*/
 
 /*33.広告の位置を変える*/
@@ -125,18 +114,6 @@ display:none;
 /*  position: absolute;
   top:0px;
   left:-200px;*/
-}
-/*40.targetがわかりづらい*/
-a[href*="/sample/1/contents.xhtml"]{
-  font-weight: bold;
-}
-
-a[href*="/sample/1/contents.xhtml"]::before{
-	white-space: pre ;
-  content: "\A実行結果を表示する（";
-}
-a[href*="/sample/1/contents.xhtml"]::after {
-  content: " : contents.xhtml）";
 }
 
 
@@ -440,38 +417,6 @@ background-color:#C5C5C5;
 /**### 1/31 #################**/
 
 
-
-/**### 1/28 #################**/
-
-
-aside .list-group-item:nth-child(1):before {
-content: "Framexsの基礎";
-color:#007bff;
-}
-aside .list-group-item:nth-child(2):before {
-content: "Framexsの応用";
-color:#007bff;
-}
-aside .list-group-item:nth-child(3),
-aside .list-group-item:nth-child(4),
-aside .list-group-item:nth-child(5){
-  display: none;
-}
-
-aside .list-group-item:after {
-  white-space: pre;
-content: "\a工事中";
-}
-
-aside .list-group-item p{
-  display: none;
-}
-
-a[href*="idea/index"],
-a[href*="knowledge/index"],
-a[href*="article/index"]{
-display:none;
-}
 
 .dropdown-toggle#Framexs{
 display:none;
