@@ -16,10 +16,26 @@
 <p>FramexsにはHTTPサーバーが必要となる。何らかの手段によってHTTPサーバーが起動できる状態を作る。
 そしてあるディレクトリをドキュメントルートにして、ポート8085でHTTPサーバを起動したとする。
 ここにtest.txtファイルを作り中身を「test」にしたとする。この場合 `http://localhost:8085/test.txt` にブラウザでアクセスしたら「test」が表示されるはずである。このファイルパスを/test.txtで表現する。</p>
-</section>
+<!--
+//ここの説明があまりにもわかりづらいので、分かりやすく書き換えます//
+現在この説明では
+・アパッチ等によるローカルサーバー
+・Webサーバー
+のどちらを利用するかわかりづらいため（井本様はローカルサーバー前提と思われます）
+
+-->
+  </section>
 <section>
 <h2>初めに</h2>
-<p>まず<a href="https://inomoto-hironobu.github.io/framexs.xsl">framexs.xsl</a>をダウンロードする。<br/>
+<p>まずFremexs本体をダウンロードします。
+  <br/>
+<ul>
+<li><a href="https://inomoto-hironobu.github.io/framexs.xsl" download="https://inomoto-hironobu.github.io/framexs.xsl">Fremexs.xslをダウンロード</a> <span class="kb_show">(20KB)</span></li>
+</ul>
+  <!--
+  <a href="https://inomoto-hironobu.github.io/framexs.xsl">framexs.xsl</a>をダウンロードする。
+-->  
+  <br/>
 それを/framexs.xslになるように置く。そして次のファイルを用意する。</p>
 <ul>
 <li>/framexs.xsl</li>
