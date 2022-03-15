@@ -1,3 +1,52 @@
+/*### 3/14変更分 #################*/
+
+/*55.レスポンシブ*/
+@media screen and (max-width:767px) {
+
+/*邪魔になっていた表示を消す*/
+#footer-links{
+display: none;
+}
+
+/*タイトルの調整*/
+.title {
+  background-color: #AAA;
+  line-height: 2.0;
+border-top: solid 8px #BBB !important;
+border-right: solid 8px #999 !important;
+box-shadow: 0 6px 0px gray;
+}
+
+}
+
+
+/*表示がおかしくなっていたので修正*/
+@media screen and (min-width:767px) {
+  /*PC表示の時ワイドを1000PXで固定*/
+  .container{
+max-width:1000px;
+width:1000px;
+}
+} 
+
+/*### 3/8変更分 #################*/
+
+/*50.コードボックスの見栄えの修正*/
+.main pre {
+  
+ border: ridge 2px #888;
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+}
+
+
+/*Gitの表示がおかしくなっていたので修正
+　　：メインページには関係ありません*/
+.js-details-container .d-md-block {
+    position: relative;
+    left: 0;
+}
+
 /*### 3/7変更分 #################*/
 
 /*43.TABLEリンクが分かりづらい*/
@@ -73,9 +122,9 @@ display:none;
 }
 
 .d-md-block {
-  position: absolute;
+/*  position: absolute;
   top:0px;
-  left:-200px;
+  left:-200px;*/
 }
 /*40.targetがわかりづらい*/
 a[href*="/sample/1/contents.xhtml"]{
@@ -108,8 +157,8 @@ a[href*="/sample/1/contents.xhtml"]::after {
 
 /*枠の変更*/
 main pre {
-    border: ridge 1px #565656;
-    box-shadow: 1px 1px 3px #999;
+/*    border: ridge 1px #565656;
+    box-shadow: 1px 1px 3px #999;*/
 }
 
 
@@ -395,6 +444,39 @@ background-color:#C5C5C5;
 /**### 1/28 #################**/
 
 
+aside .list-group-item:nth-child(1):before {
+content: "Framexsの基礎";
+color:#007bff;
+}
+aside .list-group-item:nth-child(2):before {
+content: "Framexsの応用";
+color:#007bff;
+}
+aside .list-group-item:nth-child(3),
+aside .list-group-item:nth-child(4),
+aside .list-group-item:nth-child(5){
+  display: none;
+}
+
+aside .list-group-item:after {
+  white-space: pre;
+content: "\a工事中";
+}
+
+aside .list-group-item p{
+  display: none;
+}
+
+a[href*="idea/index"],
+a[href*="knowledge/index"],
+a[href*="article/index"]{
+display:none;
+}
+
+.dropdown-toggle#Framexs{
+display:none;
+}
+
 
 /**### 1/27 #################**/
 
@@ -405,10 +487,6 @@ background-color:#C5C5C5;
     top: 0;
     }
 
-.container{
-max-width:1000px;
-width:1000px;
-}
 #coda {
 margin-top:80px;
 }
@@ -427,4 +505,8 @@ margin:1% 1% 2%;
 
 .main section {
 margin:4% 1% 0%;
+}
+
+section section p {
+  
 }
