@@ -74,7 +74,12 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p><kbd>http://localhost/contents1.xhtml</kbd>にアクセスしたらコード3のようなHTMLのDOMが出来上がる。</p>
+<p>ここで、Webブラウザで<kbd>/contents1.xhtml</kbd>にアクセスすると、コード3のようなDOMが生成される。</p>
+  <!--
+//以下の記述はローカルホストのみの環境鹿サポートしておらず、Webサーバー、Gitでのページも考慮したものに書き換える。
+<kbd>http://localhost/contents1.xhtml</kbd>
+  にアクセスしたらコード3のようなHTMLのDOMが出来上がる。
+-->  
 <figure id="コード3">
 <figcaption>コード3</figcaption>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
@@ -91,8 +96,9 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>title要素が合成され、「世界よこんにちは - テンプレートタイトル」となり、テンプレートのframexs:id-d="main"の属性を持つp要素がコンテンツのid="main"属性を持つarticle要素の子要素へと置き換わっている。
-この形が基本でありここから主にテンプレートを改造していく。</p>
+<p>title要素が合成され、「世界よこんにちは - テンプレートタイトル」となる。
+<br />これは、テンプレートの <i>framexs:id-d="main"</i> の属性を持つ<p>要素がコンテンツの <i>id="main"</i> 属性を持つarticle要素の子要素へと置き換わっている。
+<br />この形がFremexsの基本であり、ここから主にテンプレートを改造していく。</p>
 </section>
 <section>
 <h2>改造</h2>
