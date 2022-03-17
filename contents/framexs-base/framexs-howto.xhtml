@@ -101,14 +101,14 @@
 <br />この形がFremexsの基本であり、ここから主にテンプレートを改造していく。</p>
 </section>
 <section>
-<h2>改造</h2>
-<p>ここから次のようにファイルを移動する。</p>
+<h2>Fremexsページの改造</h2>
+<p>ここから、次のようにディレクトリ構成を変更する。</p>
 <ul>
 <li>/framexs.xsl</li>
-<li>/contents/contents1.xhtml</li>
-<li>/template/template.xhtml</li>
+<li>/contents</li><ul><li>/contents1.xhtml</li></ul>
+<li>/template</li><ul><li>/template.xhtml</li></ul>
 </ul>
-<p>/contents/contents1.xhtmlをコード4にする。</p>
+<p>/contents/contents1.xhtmlの中身をコード4にする。</p>
 <figure id="コード4">
 <figcaption>コード4</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -126,18 +126,18 @@
 </html>]]></code></pre>
 </figure>
 <p><code><![CDATA[<?framexs.skeleton ../template/template.xhtml?>]]></code>の部分が変更箇所である。<br/>
-<kbd>http://localhost:8085/contents/contents1.xhtml</kbd>にアクセスしてコード3と同じHTMLのDOMができているか確認しよう。</p>
+<kbd>/contents/contents1.xhtml</kbd>にアクセスしてコード3と同じHTMLのDOMができているか確認しよう。</p>
 </section>
 <section>
 <h2>テンプレートの意義</h2>
 <p>contents1.xhtmlを同じディレクトリにコピーしcontent2.xhtmlを作る。</p>
 <ul>
 <li>/framexs.xsl</li>
-<li>/contents/contents1.xhtml</li>
-<li>/contents/contents2.xhtml</li>
-<li>/template/template.xhtml</li>
+<li>/contents</li><ul><li>/contents1.xhtml</li>
+                      <li>/contents2.xhtml</li></ul>
+<li>/template</li><ul><li>/template.xhtml</li></ul>
 </ul>
-<p>/contents/contents2.xhtmlをコード5にする。</p>
+<p>/contents/contents2.xhtmlの中身をコード5にする。</p>
 <figure id="コード5">
 <figcaption>コード5</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -154,7 +154,7 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p><kbd>http://localhost:8085/contents/contents2.xhtml</kbd>にアクセスしてコード6と同じHTMLのDOMができているか確認しよう。</p>
+<p><kbd>/contents/contents2.xhtml</kbd>にアクセスしてコード6と同じHTMLのDOMができているか確認しよう。</p>
 <figure id="コード6">
 <figcaption>コード6</figcaption>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
