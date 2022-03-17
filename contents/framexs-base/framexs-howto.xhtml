@@ -171,8 +171,12 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>ここからわかる通りコンテンツは僅かなコードでテンプレートを共通に使う。ここからさらにテンプレートを改造することで何が起きるか確認しよう。</p>
-<p>/template/template.xhtmlをコード7にする。</p>
+<p>ここからわかる通り、コンテンツそのものは僅かなコードで構成されており、テンプレートを共通に使うことで全体のイメージを統一できる。
+  <br />ここからさらにテンプレートを改造することで何が起きるか確認したいと思う。</p>
+  
+<h2>改造 その2</h2>
+  
+<p>/template/template.xhtmlの中身をコード7にする。</p>
 <figure id="コード7">
 <figcaption>コード7</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -193,7 +197,7 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p><kbd>http://localhost:8085/contents/contents2.xhtml</kbd>にアクセスしたらコード8のHTMLのDOMが出来上がっていることを確認する。</p>
+<p><kbd>/contents/contents2.xhtml</kbd>にアクセスしたらコード8のHTMLのDOMが出来上がっていることを確認する。</p>
 <figure id="コード8">
 <figcaption>コード8</figcaption>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
@@ -216,7 +220,9 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>結果として得られるHTMLがコード6からコード8にするのに/contents/contents2.xhtmlの中身は全く変更していないことに注目してほしい。Framexsで管理したサイトの基盤となるHTMLはテンプレートの改造によって進める。</p>
+<p>結果として得られるHTMLは、上記の通りコード6からコード8に変更しているが、
+<br />/contents/contents2.xhtmlの中身は全く変更していないことに注目してほしい。
+  <br />Framexsで管理したサイトの基盤となるHTMLはテンプレートの改造することで、全てのページに適応されるのだ。</p>
 </section>
 </article>
 </body>
