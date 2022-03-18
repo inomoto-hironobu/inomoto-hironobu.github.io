@@ -36,6 +36,12 @@ box-shadow: 0 6px 0px gray;
 max-width:1000px;
 width:1000px;
 }
+    
+.phone-only {
+  display: none;
+}
+    
+    
 } 
 
 /*### 3/8変更分 #################*/
