@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		let td = document.createElement('td');
 		tr.appendChild(td);
 		const a = document.evaluate('xhtml:*[1]/xhtml:a', tr, nsResolver, XPathResult.FIRST_ORDERED_NODE_TYPE , null).singleNodeValue;
-		pullMeta(a, function(info) {
+		pullMeta(a.getAttribute('href'), function(info) {
 			td.appendChild(document.createTextNode(info.description));
 			td.appendChild(document.createElement('br'));
 			td.appendChild(document.createTextNode('【更新日：'+info.modified+'】'));

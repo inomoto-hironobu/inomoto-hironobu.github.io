@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		const p = document.createElement('p');
 		li.appendChild(p);
 		const a = document.evaluate('xhtml:*[1]/xhtml:a', li, nsResolver, XPathResult.FIRST_ORDERED_NODE_TYPE , null).singleNodeValue;
-		pullMeta(a, function(info) {
+		pullMeta(a.getAttribute('href'), function(info) {
 			p.appendChild(document.createTextNode(info.description));
 			p.appendChild(document.createElement('br'));
 			p.appendChild(document.createTextNode('【更新日：'+info.modified+'】'));
@@ -32,7 +32,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		const href = new URL(a.getAttribute('href'),window.location);
 		const windoworigin = new URL(window.location).origin;
 		if(href.origin === windoworigin) {
-			pullMeta(a,function(info) {
+			pullMeta(a.getAttribute('href'),function(info) {
 				a.parentNode.insertBefore(document.createTextNode('（'+info.description+'【更新日：'+info.modified+'】'+'【文字数：'+info.contentLength+'】）'),a.nextSibling);
 			});
 			a.parentNode.insertBefore(a, a.nextSibling);
@@ -48,6 +48,18 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		githubHistoryLink.appendChild(document.createTextNode('ファイルの変更履歴'));
 		githubHistoryElement.appendChild(githubHistoryLink);
 	}
+	document
+	.querySelectorAll('article *[data-url]')
+	.forEach((link)=>{
+		const url = link.dataset.url;
+		let card = document.getElementById('link-template').content.cloneNode(true);
+		pullMeta(url,function(info){
+			card.querySelector('.card-title').textContent=info.title;
+			card.querySelector('.card-text').textContent=info.description;
+			card.querySelector('a').setAttribute('href',url);
+			link.replaceWith(card);
+		});	
+	});
 });
 
 

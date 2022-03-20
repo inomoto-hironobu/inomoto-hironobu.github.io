@@ -6,20 +6,22 @@ const nsResolver = function nsResolver(prefix) {
 	return ns[prefix] || null;
 };
 /**
-@param {Element} link
+@param {string} link
 @param {Function} consumer
 description,modified,textLength
 */
 function pullMeta(link, consumer, errorHandler) {
 	axios
-	.get(link.getAttribute('href'), {responseType:'document'})
+	.get(link, {responseType:'document'})
 	.then(res=>{
 		const info = {
 			document:res.data,
 			description:null,
 			modified:null,
-			contentLength:null
+			contentLength:null,
+			title:null
 		};
+		info.title = res.data.evaluate('//xhtml:title/text()', res.data, nsResolver, XPathResult.STRING_TYPE , null).stringValue;
 		info.description = res.data.evaluate('//xhtml:meta[@name=\'description\']/@content', res.data, nsResolver, XPathResult.STRING_TYPE , null).stringValue;
 		info.modified = res.data.evaluate('//xhtml:meta[@name=\'modified\']/@content', res.data, nsResolver, XPathResult.STRING_TYPE , null).stringValue;
 		const texts = res.data.evaluate('//xhtml:article//text()', res.data, nsResolver, XPathResult.UNORDERED_NODE_ITERATOR_TYPE , null);
@@ -31,7 +33,11 @@ function pullMeta(link, consumer, errorHandler) {
 		consumer(info);
 	})
 	.catch(error=>{
-		errorHandler(error.response);
+		if(errorHandler){
+			errorHandler(error.response);
+		} else {
+			console.error(error);
+		}
 	});
 }
 const xpathFacade = function(node, ns) {
