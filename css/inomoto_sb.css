@@ -2,10 +2,10 @@
 
 
 ul ul {
-    margin-bottom: 0px;
-    border: dotted #1e366a 0px;
-    padding-top: 0;
-    padding-bottom: 0;
+    margin-bottom: 0px !important;
+    border: dotted #1e366a 0px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 /*### 3/14変更分 #################*/
 
@@ -14,16 +14,16 @@ ul ul {
 
 /*邪魔になっていた表示を消す*/
 #footer-links{
-display: none;
+display: none !important;
 }
 
 /*タイトルの調整*/
 .title {
-  background-color: #AAA;
-  line-height: 2.0;
+  background-color: #AAA !important;
+  line-height: 2.0 !important;
 border-top: solid 8px #BBB !important;
 border-right: solid 8px #999 !important;
-box-shadow: 0 6px 0px gray;
+box-shadow: 0 6px 0px gray !important;
 }
 
 }
@@ -33,12 +33,12 @@ box-shadow: 0 6px 0px gray;
 @media screen and (min-width:767px) {
   /*PC表示の時ワイドを1000PXで固定*/
   .container{
-max-width:1000px;
-width:1000px;
+max-width:1000px !important;
+width:1000px !important;
 }
     
 .phone-only {
-  display: none;
+  display: none !important;
 }
     
     
@@ -49,17 +49,17 @@ width:1000px;
 /*50.コードボックスの見栄えの修正*/
 .main pre {
   
- border: ridge 2px #888;
-    border-radius: 0.5rem;
-    padding-left: 1rem;
+ border: ridge 2px #888 !important;
+    border-radius: 0.5rem !important;
+    padding-left: 1rem !important;
 }
 
 
 /*Gitの表示がおかしくなっていたので修正
 　　：メインページには関係ありません*/
 .js-details-container .d-md-block {
-    position: relative;
-    left: 0;
+    position: relative !important;
+    left: 0 !important;
 }
 
 /*### 3/7変更分 #################*/
@@ -67,37 +67,37 @@ width:1000px;
 /*43.TABLEリンクが分かりづらい*/
 table.responsive td:nth-child(1) {
   /*リンクを左寄せにする*/
-text-align: left;
-font-weight: bold;
+text-align: left !important;
+font-weight: bold !important;
 }
 
 
 /*47.文字間隔の調整*/
 .row p {
   /*本文の幅を広げる*/
-  line-height: 1.5;
-  margin: 40px 0;
+  line-height: 1.5 !important;
+  margin: 40px 0 !important;
 }
 
 table.responsive td {
   /*テーブル内にも対応*/
-  line-height: 1.5;
+  line-height: 1.5 !important;
 }
 
 #coda p {
   /*ボックス内にも対応*/
-  line-height: 1.5;
-  margin:10px;
+  line-height: 1.5 !important;
+  margin:10px !important;
 }
 
 .dropdown-item{
   /*メニューの幅にも対応*/
-  line-height: 1.5;
+  line-height: 1.5 !important;
 }
 
 /*プライバシーポリシーが崩れたので修正*/
 .col-md-12 a{
-  line-height: 250%;
+  line-height: 250% !important;
 }
 
 
@@ -106,14 +106,14 @@ table.responsive td {
 
 /*51.ヘッダーの色修正*/
 #pagetop nav{
-  background:linear-gradient(#F7F9FE,#CACACA);
-  box-shadow: 1px 1px 10px #778;
+  background:linear-gradient(#F7F9FE,#CACACA) !important;
+  box-shadow: 1px 1px 10px #778 !important;
 }
 
 
 /*19.プライバシーポリシーの修正*/
 #footer-links{
-  box-shadow: 2px 2px 2px #636363;
+  box-shadow: 2px 2px 2px #636363 !important;
 }
 
 
@@ -121,8 +121,8 @@ table.responsive td {
 
 /*33.広告の位置を変える*/
 .adv{
-  position: absolute;
-  left:10500px;
+  position: absolute !important;
+  left:10500px !important;
 }
 
 .d-md-block {
@@ -137,14 +137,14 @@ table.responsive td {
 
 /*38.謎のスクロールバーを消す*/
 .main figure {
-  background-color: #f8f9fa;
-    overflow-x: hidden;
+  background-color: #f8f9fa !important;
+    overflow-x: hidden !important;
 }
 
 /*37.コード部分が見づらい*/
 .main figcaption{
   /*タイトル部分の間隔を広げる*/
-  line-height: 40px; 
+  line-height: 40px !important; 
 }
 
 /*枠の変更*/
@@ -159,7 +159,7 @@ main pre {
 
 /*35.リンクの見た目の調整*/
 .responsive td{
-  min-width:200px;
+  min-width:200px !important;
 }
 
 
@@ -167,13 +167,13 @@ main pre {
 /*34.悪目立ちしている連絡ボックスを修正*/
 #coda{
   /*見出しボックス内の色を変更*/
-    border: solid 1px #5a5a5a;
-    color:#444;
-    background: linear-gradient(#FFF, #EFEFEF);
+    border: solid 1px #5a5a5a !important;
+    color:#444 !important;
+    background: linear-gradient(#FFF, #EFEFEF) !important;
     /*見出しの文字を普通の文字に*/
-  font-weight: normal;
-  font-size: 100%;
-  overflow: hidden;
+  font-weight: normal !important;
+  font-size: 100% !important;
+  overflow: hidden !important;
 }
 
 
