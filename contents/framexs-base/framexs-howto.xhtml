@@ -13,15 +13,18 @@
 <article id="main">
 <section>
 <h2>事前の準備</h2>
-<p>FramexsにはHTTPサーバーが必要となる。何らかの手段によってHTTPサーバーが起動できる状態を作る。
-そしてあるディレクトリをドキュメントルートにして、ポート8085でHTTPサーバを起動したとする。
-ここにtest.txtファイルを作り中身を「test」にしたとする。この場合 `http://localhost:8085/test.txt` にブラウザでアクセスしたら「test」が表示されるはずである。このファイルパスを/test.txtで表現する。</p>
-<!--
+<p>Framexsを動かすにはHTTPサーバーが必要となる。ローカルサーバー、もしくはレンタルサーバーを用意します。<br />そしてあるディレクトリをドキュメントルートにして、この場所を開発環境とします。</p>
+  <!--
 //ここの説明があまりにもわかりづらいので、分かりやすく書き換えます//
 現在この説明では
 ・アパッチ等によるローカルサーバー
 ・Webサーバー
 のどちらを利用するかわかりづらいため（井本様はローカルサーバー前提と思われます）
+
+
+そしてあるディレクトリをドキュメントルートにして、ポート8085でHTTPサーバを起動したとする。
+ここにtest.txtファイルを作り中身を「test」にしたとする。この場合 `http://localhost:8085/test.txt` にブラウザでアクセスしたら「test」が表示されるはずである。このファイルパスを/test.txtで表現する。</p>
+
 
 -->
   </section>
@@ -37,11 +40,11 @@
   <a href="https://inomoto-hironobu.github.io/framexs.xsl">framexs.xsl</a>をダウンロードする。
 -->  
  <p>
-   次に、開発環境のディレクトリにframexs.xslを置き、以下の空ファイルを作成します。</p>
+   次に、開発環境のディレクトリにframexs.xslを置き、以下のような空ファイルを作成します。</p>
 <ul>
 <li>/framexs.xsl</li>
-<li><span sytle="font-weight:bold;">/contents1.xhtml</span></li>
-<li><span sytle="font-weight:bold;">/template.xhtml</span></li>
+<li><span style="font-weight:bold; color:#633;">/contents1.xhtml</span></li>
+<li><span style="font-weight:bold; color:#633;">/template.xhtml</span></li>
 </ul>
 <p>contents1.xhtmlの中身を以下のコード1にします。</p>
 <figure id="コード1">
@@ -108,7 +111,7 @@
 <li>/contents</li><ul><li>/contents1.xhtml</li></ul>
 <li>/template</li><ul><li>/template.xhtml</li></ul>
 </ul>
-<p>/contents/contents1.xhtmlの中身をコード4にする。</p>
+<p><kbd>/contents/contents1.xhtml</kbd>の中身をコード4にする。</p>
 <figure id="コード4">
 <figcaption>コード4</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -176,7 +179,7 @@
   
 <h2>改造 その2</h2>
   
-<p>/template/template.xhtmlの中身をコード7にする。</p>
+<p><kbd>/template/template.xhtml</kbd>の中身をコード7にする。</p>
 <figure id="コード7">
 <figcaption>コード7</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -220,9 +223,8 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>結果として得られるHTMLは、上記の通りコード6からコード8に変更しているが、
-<br />/contents/contents2.xhtmlの中身は全く変更していないことに注目してほしい。
-  <br />Framexsで管理したサイトの基盤となるHTMLはテンプレートの改造することで、全てのページに適応されるのだ。</p>
+<p>結果として得られるHTMLは、上記の通りコード6からコード8に変更しているが、<kbd>/contents/contents2.xhtml</kbd>の中身は全く変更していないことに注目してほしい。
+  <br />Framexsで管理したサイトの基盤となるHTMLは、テンプレートを改造することで全てのページに適応されるのだ。</p>
 </section>
 </article>
 </body>
