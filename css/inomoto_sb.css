@@ -1,5 +1,8 @@
 /*### 3/18変更分 #################*/
 
+.main section li {
+     padding: 0.2em 0 !important;
+    }
 
 ul ul {
     margin-bottom: 0px !important;
