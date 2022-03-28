@@ -1,5 +1,53 @@
-/*### 3/18変更分 #################*/
+/*### 3/28変更分 #################*/
 
+
+.branch_F:before,
+.branch_SF:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f07c";
+    font-weight: 900;
+}
+.branch_SF:before{
+margin:0px;
+    font-weight: 100;
+}
+
+.branch_F {
+    padding: 0.7em 1.2em 1.2em !important;
+  list-style: none;
+}
+
+.branch_F LI {
+  list-style:none;
+}
+
+.branch_F LI {
+    line-height: 1.2 !important;
+    padding: 0 !important;
+}
+.branch_F:after {
+margin-bottom:0.5em;
+}
+
+.branch_T:before {
+    content: "┣";
+}
+.branch_I:before {
+    content: "┃";
+}
+
+.branch_L:before {
+    content: "┗";
+}
+.branch_IT:before {
+    content: "┃　┣";
+    margin-left: -32px;
+}
+.branch_IL:before {
+    content: "┃　┗";
+    margin-left: -32px;
+}
+/*### 3/18変更分 #################*/
 
 ul ul {
     margin-bottom: 0px;
