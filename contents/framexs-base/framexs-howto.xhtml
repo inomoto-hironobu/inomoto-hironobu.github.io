@@ -20,12 +20,8 @@
 ・アパッチ等によるローカルサーバー
 ・Webサーバー
 のどちらを利用するかわかりづらいため（井本様はローカルサーバー前提と思われます）
-
-
 そしてあるディレクトリをドキュメントルートにして、ポート8085でHTTPサーバを起動したとする。
 ここにtest.txtファイルを作り中身を「test」にしたとする。この場合 `http://localhost:8085/test.txt` にブラウザでアクセスしたら「test」が表示されるはずである。このファイルパスを/test.txtで表現する。</p>
-
-
 -->
   </section>
 <section>
@@ -41,10 +37,10 @@
 -->  
  <p>
    次に、開発環境のディレクトリにframexs.xslを置き、以下のような空ファイルを作成します。</p>
-<ul>
-<li>/framexs.xsl</li>
-<li><span style="font-weight:bold; color:#633;">/contents1.xhtml</span></li>
-<li><span style="font-weight:bold; color:#633;">/template.xhtml</span></li>
+<ul class="branch_F">
+<li class="branch_T">/framexs.xsl</li>
+<li class="branch_T"><span style="font-weight:bold; color:#633;">/contents1.xhtml</span></li>
+<li class="branch_L"><span style="font-weight:bold; color:#633;">/template.xhtml</span></li>
 </ul>
 <p>contents1.xhtmlの中身を以下のコード1にします。</p>
 <figure id="コード1">
@@ -106,10 +102,10 @@
 <section>
 <h2>Fremexsページの改造</h2>
 <p>ここから、次のようにディレクトリ構成を変更する。</p>
-<ul>
-<li>/framexs.xsl</li>
-<li>/contents</li><ul><li>/contents1.xhtml</li></ul>
-<li>/template</li><ul><li>/template.xhtml</li></ul>
+<ul class="branch_F">
+<li class="branch_T">/framexs.xsl</li>
+<li class="branch_T"><span class="branch_SF"></span>/contents</li><ul><li class="branch_IL">/contents1.xhtml</li></ul>
+<li class="branch_L"><span class="branch_SF"></span>/template</li><ul><li class="branch_L">/template.xhtml</li></ul>
 </ul>
 <p><kbd>/contents/contents1.xhtml</kbd>の中身をコード4にする。</p>
 <figure id="コード4">
@@ -134,11 +130,11 @@
 <section>
 <h2>テンプレートの意義</h2>
 <p>contents1.xhtmlを同じディレクトリにコピーしcontent2.xhtmlを作る。</p>
-<ul>
-<li>/framexs.xsl</li>
-<li>/contents</li><ul><li>/contents1.xhtml</li>
-                      <li>/contents2.xhtml</li></ul>
-<li>/template</li><ul><li>/template.xhtml</li></ul>
+<ul class="branch_F">
+<li class="branch_T">/framexs.xsl</li>
+<li class="branch_T"><span class="branch_SF"></span>/contents</li><ul><li class="branch_IT">/contents1.xhtml</li>
+                      <li class="branch_IL">/contents2.xhtml</li></ul>
+<li class="branch_L"><span class="branch_SF"></span>/template</li><ul><li class="branch_L">/template.xhtml</li></ul>
 </ul>
 <p>/contents/contents2.xhtmlの中身をコード5にする。</p>
 <figure id="コード5">
@@ -224,7 +220,7 @@
 </html>]]></code></pre>
 </figure>
 <p>結果として得られるHTMLは、上記の通りコード6からコード8に変更しているが、<kbd>/contents/contents2.xhtml</kbd>の中身は全く変更していないことに注目してほしい。
-  <br />Framexsで管理したサイトの基盤となるHTMLは、テンプレートを改造することで全てのページに適応されるのだ。</p>
+  <br />Framexsで管理したサイトの基盤となるHTMLは、テンプレートを改造することで全てのページに適応される。<br />つまり、Webページ全体のカスタマイズが少ない工程で容易に可能となるのだ。</p>
 </section>
 </article>
 </body>
