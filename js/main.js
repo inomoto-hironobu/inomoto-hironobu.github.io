@@ -49,16 +49,18 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		githubHistoryElement.appendChild(githubHistoryLink);
 	}
 	document
-	.querySelectorAll('article *[data-url]')
+	.querySelectorAll('*[data-url]')
 	.forEach((link)=>{
 		const url = link.dataset.url;
 		let card = document.getElementById('link-template').content.cloneNode(true);
 		pullMeta(url,function(info){
 			card.querySelector('.card-title').textContent=info.title;
 			card.querySelector('.card-text').textContent=info.description;
+			card.querySelector('.card-subtitle').textContent=info.modified+' 更新 文字数:'+info.contentLength;
 			card.querySelector('a').setAttribute('href',url);
 			link.replaceWith(card);
-		});	
+		});
+	});
 	});
 });
 
