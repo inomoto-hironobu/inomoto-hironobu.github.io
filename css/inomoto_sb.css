@@ -11,6 +11,7 @@
 margin:0px;
     font-weight: 100;
 }
+<<<<<<< HEAD
 
 .branch_F {
     padding: 0.7em 1.2em 1.2em !important;
@@ -53,6 +54,45 @@ margin-bottom:0.5em;
 .main section li {
      padding: 0.2em 0 !important;
     }
+=======
+
+.branch_F {
+    padding: 0.7em 1.2em 1.2em !important;
+  list-style: none;
+}
+
+.branch_F LI {
+  list-style:none;
+}
+
+.branch_F LI {
+    line-height: 1.2 !important;
+    padding: 0 !important;
+}
+.branch_F:after {
+margin-bottom:0.5em;
+}
+
+.branch_T:before {
+    content: "┣";
+}
+.branch_I:before {
+    content: "┃";
+}
+
+.branch_L:before {
+    content: "┗";
+}
+.branch_IT:before {
+    content: "┃　┣";
+    margin-left: -32px;
+}
+.branch_IL:before {
+    content: "┃　┗";
+    margin-left: -32px;
+}
+/*### 3/18変更分 #################*/
+>>>>>>> Watanabe-You-patch-1
 
 ul ul {
     margin-bottom: 0px !important;
