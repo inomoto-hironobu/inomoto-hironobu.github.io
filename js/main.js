@@ -61,6 +61,26 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			link.replaceWith(card);
 		});
 	});
+	
+	/*data-source属性を持つ要素はソースコードを参照する者であるとして、
+	所定のソースコードを呼び出し表示する
+	*/
+	document
+	.querySelectorAll('*[data-source]')
+	.forEach((link)=>{
+		const title = link.dataset.sourceTitle;
+		const type = link.dataset.sourceType;
+		const url = link.dataset.source;
+		let figure = document.getElementById('source-template').content.firstElementChild.cloneNode(true);
+		axios
+		.get(url, {responseType:'text'})
+		.then(res=>{
+			figure.setAttribute('id', title);
+			figure.querySelector('figcaption').textContent=title;
+			const code = figure.querySelector('code');
+			code.innerHTML=hljs.highlight(res.data, {language: type}).value;
+			link.replaceWith(figure);
+		});
 	});
 });
 
