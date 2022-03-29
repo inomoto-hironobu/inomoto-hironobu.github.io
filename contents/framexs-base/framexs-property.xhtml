@@ -15,7 +15,14 @@
 <li class="breadcrumb-item"><a href="/contents/framexs-base/index.xhtml">Framexsの基礎</a></li>
 </ol>
 <article id="main">
-<p>コンテンツXHTMLに定数の定義の一群を追加するプロパティ機能について解説する。次のテンプレートXHTML、コード1があるとする。</p>
+<p>Fremexsには、コンテンツXHTMLに定数の定義の一群を追加する<b>プロパティ機能</b>と呼ばれる機能があります。<br /><br />
+まずは、以下のような次のテンプレートXHTMLを用意します。</p>
+
+<ul class="branch_F">
+<li class="branch_T">/framexs.xsl</li>
+<li class="branch_L"><span style="font-weight:bold; color:#633;">/template.xhtml</span></li>
+</ul>
+
 <figure id="コード1">
 <figcaption>コード1 /template.xhtml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -29,11 +36,20 @@
 <article>
 <p framexs:id-d="main"></p>
 </article>
-<p>property:hoge:<framexs:property name="hoge"/></p>
+<footer>(C)<framexs:property name="copylight"/></footer>
 </body>
 </html>]]></code></pre>
 </figure>
-<p>これに対して次のコンテンツXHTML、コード2とプロパティXML、コード3を用意する。</p>
+<p>これに対して、コード2を持つコンテンツXHTML、コード3を持つプロパティXMLを以下のように作成する。</p>
+
+
+<ul class="branch_F">
+<li class="branch_T">/framexs.xsl</li>
+<li class="branch_T">/template.xhtml</li>
+<li class="branch_T"><span style="font-weight:bold; color:#633;">/contents.xhtml</span></li>
+<li class="branch_L"><span style="font-weight:bold; color:#633;">/properties.xml</span></li>
+</ul>
+
 <figure id="コード2">
 <figcaption>コード2 /contents.xhtml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -56,11 +72,17 @@
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <properties xmlns="urn:framexs">
 <property name="site-name">- 八百幡</property>
-<property name="hoge">foo</property>
+<property name="copylight">2021 INOMOTO Hironobu</property>
 </properties>
 ]]></code></pre>
 </figure>
-<p>すると次のコード4を得る。</p>
+
+<p>プロパティを適応するには、Fremexs本体（/framexs.xsl）を読み込んでいた<i>framexs.skeleton</i>とは異なる、<i>framexs.properties</i>で読み込む事が必要です。
+<br /><br />
+プロパティXML（/properties.xml）を、<i>&lt;?framexs.properties properties.xml?&gt;</i>という記述で/contents.xhtmlに読み込みます。
+</p>
+
+<p><kbd>/contents.xhtml</kbd>にアクセスすると、次のコード4を持つHTMLが生成される。</p>
 <figure>
 <figcaption>コード4</figcaption>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
@@ -74,11 +96,26 @@
 <article>
 <p>ハローワールド！</p>
 </article>
-<p>property:hoge:foo</p>
+<footer>(C)2021 INOMOTO Hironobu</footer>
 </body>
 </html>]]></code></pre>
 </figure>
-<p>指定するプロパティにはリストを設定できる。その場合は名前空間に気を付けること。次のコード5を参考のこと。</p>
+
+
+<p>/template.xhtmlにある <i>&lt;framexs:property name="○○"/&gt;</i> が、/properties.xmlに記述された<i>property</i>要素に指定されている定数を呼び出し、<kbd>/contents.xhtml</kbd>に反映されていることが分かります。
+<br /><br />
+例題のコードでは、<i>site-name</i>に指定された「- 八百幡」が、<i>title</i>要素に合成され、サイト名を生成しています。
+<br /><br />
+これによって、サイトの名前やコピーライトといったサイトの情報を<b>定型文</b>として別に用意しておくことで、/template.xhtmlを修正することなく、情報を書き換えることが可能となるのです。
+</p>
+
+<h3>propertyの応用</h3>
+
+<p>以上のようにプロパティは、<i>properties</i>要素をコンテナとし、その中に定数データとして<i>property</i>要素を好きなだけ追加することが出来ますが、指定するプロパティにはリストを設定することができます。
+<br /><br />
+ただしその場合は、<i>properties</i>要素を使う事はできません。
+<br /><br />
+以下のコード5をご覧ください。</p>
 <figure id="コード5">
 <figcaption>コード5 /properties.xml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -90,6 +127,11 @@
 </framexs:properties>
 ]]></code></pre>
 </figure>
+
+
+<p><i>properties</i>要素の代わりに、<i>framexs:properties</i>が使われていることが分かります。これにより、Fremexsのリスト機能 <i>framexs:list</i> を、プロパティとして扱うことが出来るようにあります。
+<br /><br />この場合、名前空間が違う事に気を付けてください。</p>
+
 </article>
 </body>
 </html>
