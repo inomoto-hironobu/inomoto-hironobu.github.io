@@ -1,3 +1,20 @@
+
+/*### 3/31変更分 #################*/
+
+
+.tips {
+  list-style: none;
+  font-size:80%;
+    font-weight: 900;
+    color: #633;
+margin-left:-54px;
+}
+.tips:before {
+  list-style: none;
+    content: "※　";
+}
+
+
 /*### 3/28変更分 #################*/
 
 
