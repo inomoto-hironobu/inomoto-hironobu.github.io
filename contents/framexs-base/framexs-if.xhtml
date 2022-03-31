@@ -15,7 +15,31 @@
 <li class="breadcrumb-item"><a href="/contents/framexs-base/index.xhtml">Framexsの基礎</a></li>
 </ol>
 <article id="main">
-<p>if文機能について解説する。次のコード1で表されるテンプレートがあるとする。</p>
+
+<p>Fremexsでも、プログラミング言語には欠かせない<b>if構文</b>を使うことが出来ます。<br /><br />if構文は、以下のように記述して使用します。</p>
+
+
+<ul>
+<li><i>&lt;framexs:if ○○="××"&gt;<br />　(表示したいコード)<br />&lt;/framexs:if&gt;</i></li>
+<ul>
+<li class="tips">○○：要素　××：要素の名前</li>
+</ul>
+</ul>
+
+
+<p>例として、○○に<i>id</i>と指定した場合、<b><i>id="××"</i></b> がif構文の条件指定となります。<br /><br />HTML内に××の名前を持つid要素が存在すれば、if構文で挟んだ<b>表示したいコード</b>を反映します。条件を満たさない場合は、表示しません。<br /><br />また、<i>framexs:if</i>の代わりに <b><i>framexs:if-meta</i></b> と記述すると、メタデータを参照することができます。
+</p>
+
+<p>それでは実際に例題コードを作りましょう。<br /><br />
+まずは、以下のコード1で表されるテンプレートを用意します。</p>
+
+
+<ul class="branch_F">
+<li class="branch_T">/framexs.xsl</li>
+<li class="branch_L"><span style="font-weight:bold; color:#633;">/template.xhtml</span></li>
+</ul>
+
+
 <figure id="コード1">
 <figcaption>コード1 /template.xhtml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -38,25 +62,37 @@
 <p><framexs:meta name="description"/></p>
 </secton>
 </framexs:if-meta>
-<framexs:if resource="hoge">
+<framexs:if resource="weather">
 <ul>
-<framexs:resource name="hoge"/>
+<framexs:resource name="weather"/>
 </ul>
 </framexs:if>
-<framexs:if property="hoge">
-<p><framexs:property name="hoge"/></p>
+<framexs:if property="copylight">
+<footer>(C)<framexs:property name="copylight"/></footer>
 </framexs:if>
 </article>
 </body>
 </html>]]></code></pre>
 </figure>
-<p>これに対して次のコンテンツXHTML、コード2とフラグメントXML、コード3を用意する。</p>
+<p>次に、コード2を持つコンテンツXHTML、コード3を持つフラグメントXML、コード4を持つプロパティXMLを以下のように作成します。</p>
+
+
+
+<ul class="branch_F">
+<li class="branch_T">/framexs.xsl</li>
+<li class="branch_T">/template.xhtml</li>
+<li class="branch_T"><span style="font-weight:bold; color:#633;">/contents.xhtml</span></li>
+<li class="branch_T"><span style="font-weight:bold; color:#633;">/foo.xml</span></li>
+<li class="branch_L"><span style="font-weight:bold; color:#633;">/properties.xml</span></li>
+</ul>
+
+
 <figure id="コード2">
 <figcaption>コード2 /contents.xhtml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton template.xhtml?>
-<?framexs.resource hoge foo.xml?>
+<?framexs.resource weather foo.xml?>
 <?framexs.properties properties.xml?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
@@ -74,9 +110,9 @@
 <figcaption>コード3 /foo.xml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <framexs:resource xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
-<li>hoge</li>
-<li>foo</li>
-<li>bar</li>
+<li>午前は晴天なり。</li>
+<li>午後も晴天なり。</li>
+<li>夜は曇天なり。</li>
 </framexs:resource>]]></code></pre>
 </figure>
 <figure id="コード3">
@@ -84,11 +120,14 @@
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <properties xmlns="urn:framexs">
 <property name="site-name">- 八百幡</property>
-<property name="hoge">foo</property>
+<property name="copylight">2021 INOMOTO Hironobu</property>
 </properties>
 ]]></code></pre>
 </figure>
-<p>すると次のコード5を得る。</p>
+
+
+<p><kbd>/contents.xhtml</kbd>にアクセスすると、次のコード5を持つHTMLが生成されていることが分かります。</p>
+
 <figure>
 <figcaption>コード5</figcaption>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
@@ -111,15 +150,26 @@
 <p>解説</p>
 </section>
 <ul>
-<li>hoge</li>
-<li>foo</li>
-<li>bar</li>
+<li>午前は晴天なり。</li>
+<li>午後も晴天なり。</li>
+<li>夜は曇天なり。</li>
 </ul>
-<p>foo</p>
+<footer>(C)2021 INOMOTO Hironobu</footer>
 </article>
 </body>
 </html>]]></code></pre>
 </figure>
+
+
+<p>
+/contents.xhtmlの <i>&lt;?framexs.resource weather foo.xml?&gt;</i> の部分で、/foo.xmlのresourceデータを<i>weather</i>の名前を持つresource変数として読み込みます。
+<br /><br />
+これにより、<i>&lt;framexs:if resource="weather"&gt;</i> の部分の条件を満たし、実行コードとして記述した <i>&lt;framexs:resource name="weather"/&gt;</i> が実行され、/foo.xmlのデータを表示させることができています。
+<br /><br />
+また、<i>&lt;framexs:if id="××"&gt;</i> も、それぞれ指定された名前を持つidが存在するため条件を満たし、指定したコードが反映されていることが分かります。
+</p>
+
+
 </article>
 </body>
 </html>
