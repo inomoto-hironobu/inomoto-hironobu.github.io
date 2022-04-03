@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?framexs.skeleton ../../template/localstorage.template.xhtml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xmlns:v-on="vuejs">
+<head>
+<meta charset="UTF-8"/>
+<title>ウェブデータベースのテストその2</title>            
+</head>
+<body>
+<article id="main">
+<p>テーブル名は<span id="tablename">hoge</span>です。</p>
+</article>
+<ul id="view">
+<li v-for="i in table">
+<h6>{{i[0]}}</h6>
+<p>{{i[1].title}}</p>
+<pre>{{i[1].content}}</pre>
+<pre>{{i[1].freespace}}</pre>
+</li>
+</ul>
+<fieldset>
+<select id="propnames">
+<option>title</option>
+<option>content</option>
+<option>freespace</option>
+</select>
+</fieldset>
+</body>
+</html>
