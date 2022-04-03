@@ -5,9 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
 <meta charset="UTF-8"/>
-<title>静的サイトにおけるSSG、SPAとFramexsの比較</title>
-<meta name="description" content="SSG、SPAとFramexsの比較"/>
-<meta name="modified" content="2022-02-19"/>
+<title>SSGとFramexsの比較</title>
+<meta name="description" content="SSGとFramexsの比較"/>
+<meta name="modified" content="2022-04-04"/>
 </head>
 <body>
 <article>
@@ -29,11 +29,8 @@ SSGとしてはGatsby、Next.jsなど多数あります。<br/>
 そしてこのSSGはSass、ScssなどCSSメタ言語や、TypeScriptなどAltJSの使用と相性がいいものです。<br/>
 このように静的サイトにもSSGにも多種多様な選択肢が存在することによって次第に盛り上がってきています。</p>
 
-<p>またサイトのアーキテクチャとしてSingle Page Application(SPA)という考え方があります。<br/>
-1つのページで共用部分を活用しつつ中核となるコンテンツを柔軟に書き換えるアプローチをとるため、基本となるのは1つのページだけなので管理運用性はあがります。</p>
-
 <p>これらの技術は革新的であるものの、一方でデメリット、欠点も抱えているのも確かです。<br/>
-SSGはビルドが必要とされるあまり、サービスが限定されるますし、SPAではクローラーにコンテンツが拾われないといった、SEO性の悪さがあります。</p>
+SSGはビルドが必要とされるあまり、サービスが限定されます。</p>
 
 <p>ここでFramexsという、XSLTによるフレームワークがそれら各種問題点を解消しつつ、高い管理運用性を持っている技術があるので、この機会にぜひ知っていただきたいです。<br/>
 このフレームワークでは、個別の静的ページが表示されるたびに、XSLT処理によってテンプレートとコンテンツの合成を行うことで、完成したHTMLを出力する手法を取っています。<br/>
@@ -41,7 +38,8 @@ SSGはビルドが必要とされるあまり、サービスが限定される�
 さらに、変更は即時反映されるので開発簡易性が特段に高いという点も、特筆すべき特徴としてあげられます。</p>
 
 <p>事実、このページ、そして、このサイト全体がFramexsを使っているため、劇的に簡易な運用ができています。
-このサイトではFramexsの参照実装として存在するとともに、解説記事（<a href="../framexs-base/index.xhtml">Framexsの基礎</a>）も用意していますので、ぜひとも活用なさってください。</p>
+このサイトではFramexsの参照実装として存在するとともに、解説記事Framexsの基礎も用意していますので、ぜひとも活用なさってください。</p>
+<div data-url="../framexs-base/index.xhtml"></div>
 </section>
 </section>
 </article>
