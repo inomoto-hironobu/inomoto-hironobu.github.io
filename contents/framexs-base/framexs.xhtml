@@ -26,14 +26,17 @@
 <section id="main">
 <section>
 <h2>サンプルコード</h2>
-<p>まずはサンプルコードを見てみましょう。次の3つのファイルがあるとします。</p>
-<ul>
-<li>/framexs.xsl</li>
-<li>/sample/1/template.xhtml</li>
-<li>/sample/1/content.xhtml</li>
+<p>まずはサンプルコードを見てみましょう。まずは、次のような3つのファイルがあるとします。</p>
+
+<ul class="branch_F">
+<li class="branch_T">/framexs.xsl</li>
+<li class="branch_L"><span class="branch_SF"></span>/sample</li><ul>
+<li class="branch_L"><span class="branch_SF"></span>/1</li>
+<ul><li class="branch_T">/template.xhtml</li>
+                      <li class="branch_L">/contents.xhtml</li></ul></ul>
 </ul>
 <figure>
-<figcaption>tempalte.xhtml</figcaption>
+<figcaption>コード1 tempalte.xhtml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" xml:lang="ja" lang="ja">
 <head>
@@ -46,7 +49,7 @@
 </html>]]></code></pre>
 </figure>
 <figure>
-<figcaption>content.xhtml</figcaption>
+<figcaption>コード2 content.xhtml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
 <?framexs.skeleton template.xhtml?>
@@ -62,7 +65,7 @@
 </html>]]></code></pre>
 </figure>
 <p>template.xhtmlはビュー、content.xhtmlはモデルおよびコントローラーです。</p>
-<p>すると次のようになります。<br/><a href="/sample/1/contents.xhtml" target="_blank" rel="noopener noreferrer" onclick="window.open('/sample/1/contents.xhtml', '', 'width=600,height=300'); return false;">実行結果を表示する（contents.xhtml）</a></p>
+<p>contents.xhtmlをブラウザで表示すると、以下のようになります。<br/><a href="/sample/1/contents.xhtml" target="_blank" rel="noopener noreferrer" onclick="window.open('/sample/1/contents.xhtml', '', 'width=600,height=300'); return false;"><span class="out_link"></span> 実行結果を表示する（contents.xhtml）</a></p>
 <figure>
 <figcaption>コード3</figcaption>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
@@ -79,12 +82,14 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>この場合ブラウザでhttp://localhost/content.xhtmlにアクセスすると出力結果が最終的なパース対象となる。<br/>
-この出力はブラウザによって解析される。</p>
+<p>コード3は実行結果で表示されたcontents.xhtmlのソースである。コード2のcontents.xhtmlとはソースが変化していることが分かります。コード1によって定義したテンプレートに従って、Fremexsが出力が変化させているのです。<br/>
+この出力はブラウザによって解析されます。</p>
 </section>
 <section>
-<h2>意義</h2>
-<p>これの何が嬉しいかというとlink要素やscript要素などの記述のあるテンプレートの使いまわしができるという事である。例えば次のようなコードを記述したい場合、</p>
+<h2>Fremexsを使う意義</h2>
+<p>Fremexsの強みは、<i>link</i>要素や<i>script</i>要素などの記述のあるテンプレートを簡単に共有できるという事が挙げられる。
+<br/><br/>
+例えば次のようなコードを記述したい場合があったとしよう。</p>
 <figure>
 <figcaption>コード5</figcaption>
 <pre><code class="language xml"><![CDATA[
@@ -96,11 +101,14 @@
   })(window,document,'script','dataLayer','GTM-5L2SQ9B');</script>
 <!-- End Google Tag Manager -->]]></code></pre>
 </figure>
-<p>この記述をHTMLファイルに挿入することを考えると<strong>全ての</strong>HTMLにこの記述をしなくてはならなくかつ、変更があった場合に対応が難しい。しかしFramexsなら変更に極めて強い。</p>
+<p>この記述をHTMLファイルに挿入することを考えると、<strong>全ての</strong>HTMLにこの記述をしなくてはならなくなる。さらに、プログラム変更があった場合、いちいち全てのHTMLを書き換えなければならなくなる。1～2ページ程度のサイトならまだしも、何千とページがあるサイトでは、とても対応しきれない。
+<br/>
+<br/>
+しかしFramexsを使えば、テンプレートを書き換えるだけで全てのHTMLに適応されるため、ページの変更が極めて簡単になる。</p>
 </section>
 <section>
 <h2>原初法との比較</h2>
-<p>XSLTが開発された時その意義としてあるXMLに対しての再利用性がうたわれていた。例えばコード4を出力したいとき次のようなXMLを出力して</p>
+<p>XSLTが開発された時、その意義としてあるXMLに対しての再利用性がうたわれていた。例えばコード4を出力したいとき次のようなXMLを出力して</p>
 <figure>
 <figcaption>コード6</figcaption>  
 <pre><code class="language xml"><![CDATA[
@@ -112,12 +120,12 @@
 ]]></code></pre>
 </figure>
 <p>単純にあるXSLを適用するだけというものである。これを<dfn>原初法</dfn>と名づけると、原初法はXML+XSLT=HTMLである。</p>
-<p>これに対してFramexsは上述のようにXHTML+XHTML+XSLT=HTMLという方法で行う。<br/>
+<p>これに対してFramexsは上述のように<strong>XHTML+XHTML+XSLT=HTML</strong>という方法で行う。<br/>
 違いは出力のひな型をXSLTにするか特殊なXHTMLにするかというものである。Framexsの方が直観的で、容易性が高く、再利用性が高い。</p>
 </section>
 <section>
 <h2>このページ</h2>
-<p>このページ自身もFramexsを応用しておりその先頭部分は以下の通りである。</p>
+<p>このページ自身もFramexsで作成されており、その先頭部分は以下の通りである。</p>
 <figure>
 <figcaption>コード7</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
@@ -127,15 +135,16 @@
 </section>
 <section>
 <h2>CSSフレームワークとの相性</h2>
-<p>FramexsはCSSフレームワークとの相性が抜群に良い。link要素やscript要素の決まりきったボイラープレートコードはテンプレートに集約され、またclass="container"などの決まりきった構成もまたテンプレートに集約される。</p>
+<p>FramexsはCSSフレームワークとの相性が抜群に良い。<i>link</i>要素や<i>script</i>要素の決まりきったボイラープレートコードはテンプレートに集約され、また <i>class="container"</i> などの決まりきった構成もまたテンプレートに集約することができる。</p>
 </section>
 <section>
 <h2>Buildless性</h2>
-<p>FramexsはBuildlessである。Node.jsコマンドに頼らずとも静的サイトの簡易な構築を可能にする。</p>
+<p>FramexsはBuildless（ビルド不要）である。<br/><i>Node.js</i>コマンドに頼らずとも静的サイトの簡易な構築を可能にする。</p>
 </section>
 <section>
 <h2>動的サイトとの相性</h2>
-<p>まだ実証されていない。今後の研究の進展が待たれる。</p>
+<p>現時点では実証されておらず、PHP等を用いた動的サイトの構築はできない。<br/>
+今後の研究の進展が待たれる。</p>
 </section>
 </section>
 <section id="coda">
