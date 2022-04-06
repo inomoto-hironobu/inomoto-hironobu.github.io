@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8"/>
 <title>Framexsのattribute</title>
-<meta name="description" content="property機能についての解説"/>
+<meta name="description" content="attribute機能についての解説"/>
 <meta name="modified" content="2021/04/24"/>
 </head>
 <body>
@@ -15,7 +15,14 @@
 <li class="breadcrumb-item"><a href="/contents/framexs-base/index.xhtml">Framexsの基礎</a></li>
 </ol>
 <article id="main">
-<p>Framexsでは属性を動的に生成することができる。次のテンプレートXHTML、コード1があるとする。</p>
+<p>Framexsでは、属性を動的に生成することができる<b>アトリビュート機能</b>と呼ばれる機能があります。<br /><br />
+まずは、以下のような次のテンプレートXHTMLを用意します。</p>
+
+<ul class="branch_F">
+<li class="branch_T">/framexs.xsl</li>
+<li class="branch_L"><span style="font-weight:bold; color:#633;">/template.xhtml</span></li>
+</ul>
+
 <figure id="コード1">
 <figcaption>コード1 /template.xhtml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -28,7 +35,7 @@
 <h1>リンク</h1>
 <article>
 <p><a framexs:element="">
-<framexs:attribute name="href">http://inomoto-hironobu.github.io/contents/knowledged/<framexs:property name="filename"/></framexs:attribute>
+<framexs:attribute name="href">http://example.com/<framexs:property name="filename"/></framexs:attribute>
 <framexs:text>リンク</framexs:text>
 test
 </a></p>
@@ -36,7 +43,15 @@ test
 </body>
 </html>]]></code></pre>
 </figure>
-<p>これに対して次のコンテンツXHTML、コード2とプロパティXML、コード3を用意する。</p>
+
+<p>これに対して、コード2を持つコンテンツXHTML、コード3を持つプロパティXMLを以下のように作成する。</p>
+<ul class="branch_F">
+<li class="branch_T">/framexs.xsl</li>
+<li class="branch_T">/template.xhtml</li>
+<li class="branch_T"><span style="font-weight:bold; color:#633;">/contents.xhtml</span></li>
+<li class="branch_L"><span style="font-weight:bold; color:#633;">/properties.xml</span></li>
+</ul>
+
 <figure id="コード2">
 <figcaption>コード2 /contents.xhtml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -55,11 +70,11 @@ test
 <figcaption>コード3 /properties.xml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <properties xmlns="urn:framexs">
-<property name="filename">framexs-attribute.xhtml</property>
+<property name="filename">hoge.html</property>
 </properties>
 ]]></code></pre>
 </figure>
-<p>すると次のコード4を得る。</p>
+<p><kbd>/contents.xhtml</kbd>にアクセスすると、次のコード4を持つHTMLが生成される。</p>
 <figure>
 <figcaption>コード4</figcaption>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
@@ -71,14 +86,24 @@ test
 <body>
 <h1>リンク</h1>
 <article>
-<p><a href="http://inomoto-hironobu.github.io/contents/knowledged/framexs-attribute.xhtml">リンク</a></p>
+<p><a href="http://example.com/hoge.html">リンク</a></p>
 </article>
 </body>
 </html>]]></code></pre>
 </figure>
-<p>framexs:element属性のある要素では子にframexs:attribute要素がある場合動的に属性を生成する。
-逆に言えばframexs:attribute要素を使いたいときは親要素にframexs:element属性を追加しなければならない。
-また、framexs:element属性のある要素では処理するのは要素のみでありテキストは無視される。なのでframexs:text要素で含めたいテキストを定義しておく。</p>
+<p><i>framexs:element</i>要素の子に<i>framexs:attribute</i>要素がある場合、<strong>アトリビュート機能</strong>が自動的に作動し、<i>framexs:element</i>要素に指定した属性を生成します。
+<br /><br />上記のコードでは、<i>a</i>タグに<i>framexs:element</i>要素が以下のような要素で構成されています。
+</p>
+<ul class="branch_F"><strong><i>framexs:element</i> aタグ</strong>
+<li class="branch_T"><i>framexs:attribute</i></li>
+<ul><li class="branch_IL"><i>href</i> 　 　　 <span style="font-weight:bold; color:#633;">http://example.com/hoge.html</span></li></ul>
+<li class="branch_T"><i>framexs:text</i>　　 <span style="font-weight:bold; color:#633;">リンク</span></li>
+<li class="branch_L"><i>(テキスト)</i>　　　<span style="font-weight:bold; color:#633;">test</span></li>
+</ul>
+<p>この場合、<i>a</i>タグの空っぽになっている属性に、<i>framexs:attribute</i>要素で指定されている属性「<i>href="http://example.com/hoge.html"</i>」が生成されます。これにより、<i>a</i>タグはURLリンクとして使えるようになります。
+<br /><br />
+一方、<i>framexs:element</i>要素には、<i>framexs:text</i>要素と、何の要素も持たないテキストも含まれていることが分かります。<br />
+アトリビュート機能では要素を持たないテキストは無視されるため、「test」のテキストは消滅してしまいます。一方で、<i>framexs:text</i>要素の「リンク」はテキストとして処理されるため、URLリンクのタイトルが「リンク」となります。</p>
 </article>
 </body>
 </html>
