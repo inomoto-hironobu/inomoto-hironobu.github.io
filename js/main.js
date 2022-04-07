@@ -56,7 +56,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		pullMeta(url,function(info){
 			card.querySelector('.card-title').textContent=info.title;
 			card.querySelector('.card-text').textContent=info.description;
-			card.querySelector('.card-subtitle').textContent=info.modified+' 更新 文字数:'+info.contentLength;
+			card.querySelector('.card-subtitle').textContent=info.modified+' 更新/'+info.contentLength+' 文字';
 			card.querySelector('a').setAttribute('href',url);
 			link.replaceWith(card);
 		});
