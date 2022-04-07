@@ -40,32 +40,58 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <meta framexs:fix="" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 <title> - <framexs:property name="site-name"/></title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
-<link rel="stylesheet" href="/css/main.css"/>
-<link rel="stylesheet" href="/css/inomoto_sb.css"/>
+<link rel="stylesheet" href="../css/main.css"/>
+<link rel="stylesheet" href="../css/inomoto_sb.css"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-<script src="/js/util.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/http.js"></script>
+<script src="../js/util.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/http.js"></script>
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
-  
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/vs.min.css"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+  <script src="../js/jquery.js"></script>
+  <link rel="stylesheet" href="../css/jquery-ui.css"/>
+  <script src="../js/jquery-ui.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+$(function() {
+$(window).scroll(function() {
+  var scroll = $(this).scrollTop();
+  console.log(scroll);
+var ws=0;
+
+if(scroll>100){
+ws=(scroll-100)/32;
+  $('#head_img').width(64-ws);
+ if(scroll>700){
+   $('#head_img').width(32);
+ }
+}
+else {
+  $('#head_img').width(64);
+}
+ });
+});
+</script>
 
 <framexs:if property="pagetype" value="article">
-<link rel="stylesheet" href="/css/article.css"/>
-<script src="/js/article.js"></script>
+<link rel="stylesheet" href="../css/article.css"/>
+<script src="../js/article.js"></script>
 </framexs:if>
 
 <framexs:if property="pagetype" value="lp">
-<link rel="stylesheet" href="/css/lp.css"/>
-<script src="/js/article.js"></script>
+<link rel="stylesheet" href="../css/lp.css"/>
+<script src="../js/article.js"></script>
 </framexs:if>
 
 <framexs:if property="pagetype" value="index">
-<script src="/js/index.js"></script>
-<link rel="stylesheet" href="/css/article.css"/>
+<script src="../js/index.js"></script>
+<link rel="stylesheet" href="../css/article.css"/>
 </framexs:if>
+
 
 <framexs:if property="google-ads-code">
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" framexs:element="">
@@ -73,7 +99,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 </script>
 </framexs:if>
 <framexs:script/>
-<script async="" defer="" src="//survey.g.doubleclick.net/async_survey?site=u7mehjhrqvosros3my3mxijaa4"></script>
+<script async="" defer="" src="..//survey.g.doubleclick.net/async_survey?site=u7mehjhrqvosros3my3mxijaa4"></script>
 </head>
 <body class="bg-dark">
 <framexs:if property="google-tag-manager-code">
@@ -87,7 +113,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 </framexs:if>
 <header id="pagetop">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand"><img src="/images/logo.png" width="64"/></a>
+  <a class="navbar-brand"><img id="head_img" src="../images/logo.png" width="64"/></a>
   <a class="navbar-brand" href="https://inomoto-hironobu.github.io/index.xhtml">八百幡</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -138,6 +164,18 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       <li class="nav-item active phone-only">
         <a class="nav-link" href="/contents/business/privacy-policy.xhtml">プライバシーポリシー</a>
       </li>
+
+
+<policy id="footer-links" class="bg-secondary">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<p><a href="/contents/business/privacy-policy.xhtml">プライバシーポリシー</a></p>
+</div>
+</div>
+</div>
+</policy>
+
       
     </ul>
   </div>
@@ -228,15 +266,6 @@ bg-light
 </aside>
 </div>
 <!-- /container -->
-<footer id="footer-links" class="bg-secondary">
-<div class="container">
-<div class="row">
-<div class="col-md-12">
-<p><a href="/contents/business/privacy-policy.xhtml">プライバシーポリシー</a></p>
-</div>
-</div>
-</div>
-</footer>
 <footer class="bg-info text-white">
 <table style="width:80%;margin:auto">
 <tr><td>Email</td><td>inmthrnb@gmail.com</td></tr>
@@ -245,7 +274,7 @@ bg-light
 </table>
 <p style="width:80%;margin:auto">この記事を読んでどう思われましたか？感想をお寄せ下さい。もし記事の質の向上につながる物であれば、100円お支払いします。<br/>
 報酬があるのは毎月3名先着です。支払いはペイペイで行います。</p>
-<p style="text-align:center">©2021 INOMOTO Hironobu</p>
+<p style="text-align:center">c2021 INOMOTO Hironobu</p>
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -254,17 +283,10 @@ bg-light
 <div class="card" style="max-width:32rem;margin:1rem auto;">
 <div class="card-body">
 <h5 class="card-title">Card title</h5>
-<h6 class="card-subtitle mb-2 text-muted">2001-01-01</h6>
 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 <a href="#" class="btn btn-primary">ページを見る</a>
 </div>
 </div>
-</template>
-<template id="source-template">
-<figure>
-<figcaption></figcaption>
-<pre><code class="language"></code></pre>
-</figure>
 </template>
 </body>
 </html>
