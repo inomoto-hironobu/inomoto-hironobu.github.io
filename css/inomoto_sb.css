@@ -1,4 +1,18 @@
 
+/*### 4/12変更分 #################*/
+
+#footer-links{
+/*レスポンシブ対応*/
+    position: absolute;
+left:calc(98% - 192px) !important;
+width:192px !important;
+/*margin-left:60%;*/
+z-index: 2 !important;
+height:40px !important;
+}
+
+
+
 /*### 3/31変更分 #################*/
 
 
@@ -380,17 +394,6 @@ text-decoration: none;
    border-bottom: solid 0px gray;
 }
 
-
-/*19.プライバシーポリシーの修正*/
-#footer-links{
-  position: fixed;
-top:27px;
-/*レスポンシブ対応*/
-left:calc(98% - 192px);
-width:192px;
-z-index: 2;
-height:40px;
-}
 
 #footer-links p {
   /*表示がおかしくなっていたので修正*/
