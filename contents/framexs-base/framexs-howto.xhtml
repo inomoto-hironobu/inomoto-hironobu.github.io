@@ -26,23 +26,22 @@
   </section>
 <section>
 <h2>初めに</h2>
-<p>まずFremexs本体をダウンロードします。</p>
+<p>まずFramexsをダウンロードします。</p>
 <ul>
 <li><span sytle="font-weight:bold; font-size:105%;">
-  <a href="https://inomoto-hironobu.github.io/framexs.xsl" download="framexs.xsl">Fremexs.xslをダウンロード</a></span>
-  <span style="font-size:90%;">(20KB)</span></li>
+  <a href="https://inomoto-hironobu.github.io/framexs.zip" download="framexs.zip">Framexsをダウンロード</a></span>
+  <span style="font-size:90%;">(4KB)</span></li>
 </ul>
   <!--
   <a href="https://inomoto-hironobu.github.io/framexs.xsl">framexs.xsl</a>をダウンロードする。
 -->  
  <p>
-   次に、開発環境のディレクトリにframexs.xslを置き、以下のような空ファイルを作成します。</p>
+   ダウンロードしたフォルダを解凍したら、中に入っているframexs.xsl、contents1.xhtml、template.xhtmlを、以下のように開発環境のディレクトリに設置します。</p>
 <ul class="branch_F">
-<li class="branch_T">/framexs.xsl</li>
-<li class="branch_T"><span style="font-weight:bold; color:#633;">/contents1.xhtml</span></li>
+<li class="branch_T"><span style="font-weight:bold; color:#633;">/framexs.xsl</span></li>
+<li class="branch_T"><span style="font-weight:bold; color:#633;">/contents.xhtml</span></li>
 <li class="branch_L"><span style="font-weight:bold; color:#633;">/template.xhtml</span></li>
 </ul>
-<p>contents1.xhtmlの中身を以下のコード1にします。</p>
 <figure id="コード1">
 <figcaption>コード1</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -59,7 +58,6 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>/template.xhtmlの中身をコード2にします。</p>
 <figure id="コード2">
 <figcaption>コード2</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -73,7 +71,7 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>ここで、Webブラウザで<kbd>/contents1.xhtml</kbd>にアクセスすると、コード3のようなDOMが生成されています。</p>
+<p>ここで、Webブラウザで<kbd>/contents.xhtml</kbd>にアクセスすると、コード3のようなDOMが生成されています。</p>
   <!--
 //以下の記述はローカルホストのみの環境鹿サポートしておらず、Webサーバー、Gitでのページも考慮したものに書き換える。
 <kbd>http://localhost/contents1.xhtml</kbd>
@@ -104,10 +102,10 @@
 <p>ここから、次のようにディレクトリ構成を変更する。</p>
 <ul class="branch_F">
 <li class="branch_T">/framexs.xsl</li>
-<li class="branch_T"><span class="branch_SF"></span>/contents</li><ul><li class="branch_IL">/contents1.xhtml</li></ul>
+<li class="branch_T"><span class="branch_SF"></span>/contents</li><ul><li class="branch_IL">/contents.xhtml</li></ul>
 <li class="branch_L"><span class="branch_SF"></span>/template</li><ul><li class="branch_L">/template.xhtml</li></ul>
 </ul>
-<p><kbd>/contents/contents1.xhtml</kbd>の中身をコード4にする。</p>
+<p><kbd>/contents/contents.xhtml</kbd>の中身をコード4にする。</p>
 <figure id="コード4">
 <figcaption>コード4</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -125,14 +123,14 @@
 </html>]]></code></pre>
 </figure>
 <p><code><![CDATA[<?framexs.skeleton ../template/template.xhtml?>]]></code>の部分が変更箇所である。<br/>
-<kbd>/contents/contents1.xhtml</kbd>にアクセスしてコード3と同じHTMLのDOMができているか確認しよう。</p>
+<kbd>/contents/contents.xhtml</kbd>にアクセスしてコード3と同じHTMLのDOMができているか確認しよう。</p>
 </section>
 <section>
 <h2>テンプレートの意義</h2>
 <p>contents1.xhtmlを同じディレクトリにコピーしcontent2.xhtmlを作る。</p>
 <ul class="branch_F">
 <li class="branch_T">/framexs.xsl</li>
-<li class="branch_T"><span class="branch_SF"></span>/contents</li><ul><li class="branch_IT">/contents1.xhtml</li>
+<li class="branch_T"><span class="branch_SF"></span>/contents</li><ul><li class="branch_IT">/contents.xhtml</li>
                       <li class="branch_IL">/contents2.xhtml</li></ul>
 <li class="branch_L"><span class="branch_SF"></span>/template</li><ul><li class="branch_L">/template.xhtml</li></ul>
 </ul>
