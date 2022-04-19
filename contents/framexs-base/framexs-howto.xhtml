@@ -13,20 +13,11 @@
 <article id="main">
 <section>
 <h2>事前の準備</h2>
-<p>Framexsを動かすにはHTTPサーバーが必要となる。ローカルサーバー、もしくはレンタルサーバーを用意します。<br />そしてあるディレクトリをドキュメントルートにして、この場所を開発環境とします。</p>
-  <!--
-//ここの説明があまりにもわかりづらいので、分かりやすく書き換えます//
-現在この説明では
-・アパッチ等によるローカルサーバー
-・Webサーバー
-のどちらを利用するかわかりづらいため（井本様はローカルサーバー前提と思われます）
-そしてあるディレクトリをドキュメントルートにして、ポート8085でHTTPサーバを起動したとする。
-ここにtest.txtファイルを作り中身を「test」にしたとする。この場合 `http://localhost:8085/test.txt` にブラウザでアクセスしたら「test」が表示されるはずである。このファイルパスを/test.txtで表現する。</p>
--->
+<p>Framexsを動かすにはHTTPサーバーが必要です。<br />ローカルサーバー、もしくはレンタルサーバーを用意し、開発環境のルートディレクトリ（以下、ディレクトリ）を作成してください。</p>
   </section>
 <section>
 <h2>初めに</h2>
-<p>まずFramexsをダウンロードします。</p>
+<p>以下のダウンロードリンクより、Framexsをダウンロードします。</p>
 <ul>
 <li><span sytle="font-weight:bold; font-size:105%;">
   <a href="https://inomoto-hironobu.github.io/framexs.zip" download="framexs.zip">Framexsをダウンロード</a></span>
@@ -36,14 +27,33 @@
   <a href="https://inomoto-hironobu.github.io/framexs.xsl">framexs.xsl</a>をダウンロードする。
 -->  
  <p>
-   ダウンロードしたフォルダを解凍したら、中に入っているframexs.xsl、contents.xhtml、template.xhtmlを、以下のように開発環境のディレクトリに設置します。</p>
+   ダウンロードしたフォルダを解凍し、中に入っているframexs.xsl、contents.xhtml、template.xhtmlを、以下の図のようにディレクトリに配置します。</p>
 <ul class="branch_F">
 <li class="branch_T"><span style="font-weight:bold; color:#633;">/framexs.xsl</span></li>
 <li class="branch_T"><span style="font-weight:bold; color:#633;">/contents.xhtml</span></li>
 <li class="branch_L"><span style="font-weight:bold; color:#633;">/template.xhtml</span></li>
 </ul>
+
+<!--
+<figure id="コード2">
+<figcaption>コード2</figcaption>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
+<head>
+<title> - テンプレートタイトル</title>
+</head>
+<body>
+<h1>あいさつ</h1>
+<article><p framexs:id-d="main">コンテンツのid属性がmainの部分を読み込み置き換える</p></article>
+</body>
+</html>]]></code></pre>
+</figure>
+-->
+
+<p>Webブラウザで<kbd>/contents.xhtml</kbd>にアクセスし、各ブラウザに付属する管理者モードでソースを見てください。ソースコードが以下のように変わっています。</p>
+
 <figure id="コード1">
-<figcaption>コード1</figcaption>
+<figcaption><b>/contents.xhtml</b>のソースコード</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton template.xhtml?>
@@ -58,8 +68,11 @@
 </body>
 </html>]]></code></pre>
 </figure>
+
+
+
 <figure id="コード2">
-<figcaption>コード2</figcaption>
+<figcaption>template.xhtmlのソースコード</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <head>
@@ -71,14 +84,10 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>ここで、Webブラウザで<kbd>/contents.xhtml</kbd>にアクセスすると、コード3のようなDOMが生成されています。</p>
-  <!--
-//以下の記述はローカルホストのみの環境鹿サポートしておらず、Webサーバー、Gitでのページも考慮したものに書き換える。
-<kbd>http://localhost/contents1.xhtml</kbd>
-  にアクセスしたらコード3のようなHTMLのDOMが出来上がる。
--->  
+
+
 <figure id="コード3">
-<figcaption>コード3</figcaption>
+<figcaption>実際にアクセスした<b>/contents.xhtml</b>のDOM</figcaption>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="ja">
 <head>
@@ -93,21 +102,23 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>Fremexsにより<i>title</i>要素が合成され、タイトルが「世界よこんにちは - テンプレートタイトル」に変わっていることが分かるでしょうか。
-<br />これは、テンプレートの <i>framexs:id-d="main"</i> の属性を持つp要素がコンテンツの <i>id="main"</i> 属性を持つ<i>article</i>要素の子要素へと置き換わっている。
-<br />この形がFremexsの基本であり、ここから主にテンプレートを改造していく。</p>
+<p>Framexsにより<i>title</i>要素が合成され、タイトルが「世界よこんにちは - テンプレートタイトル」に変わっています。
+<br />これは、テンプレートの <i>framexs:id-d="main"</i> の属性を持つ<i>p</i>要素が、コンテンツの <i>id="main"</i> 属性を持つ<i>article</i>要素の子要素へと置き換わっているからです。
+<br />この<b>変換</b>がFramexsの基本的なシステムで、コンテンツの内容を変えなくても、テンプレートを変えるだけでページのレイアウト変更が可能になります。
+<br />
+ここから主にテンプレートを改造していきましょう。</p>
 </section>
 <section>
-<h2>Fremexsページの改造</h2>
-<p>ここから、次のようにディレクトリ構成を変更する。</p>
+<h2>Fremexsページのテンプレート改造</h2>
+<p>ここから、下記の図のようにディレクトリ構成を変更します。</p>
 <ul class="branch_F">
 <li class="branch_T">/framexs.xsl</li>
 <li class="branch_T"><span class="branch_SF"></span>/contents</li><ul><li class="branch_IL">/contents.xhtml</li></ul>
 <li class="branch_L"><span class="branch_SF"></span>/template</li><ul><li class="branch_L">/template.xhtml</li></ul>
 </ul>
-<p><kbd>/contents/contents.xhtml</kbd>の中身をコード4にする。</p>
+<p>/contents/contents.xhtmlを編集ソフトで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
 <figure id="コード4">
-<figcaption>コード4</figcaption>
+<figcaption>contents.xhtml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton ../template/template.xhtml?>
@@ -122,21 +133,23 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p><code><![CDATA[<?framexs.skeleton ../template/template.xhtml?>]]></code>の部分が変更箇所である。<br/>
-<kbd>/contents/contents.xhtml</kbd>にアクセスしてコード3と同じHTMLのDOMができているか確認しよう。</p>
+<p><code><![CDATA[<?framexs.skeleton ../template/template.xhtml?>]]></code>の部分が、最初のソースコードから変更された箇所です。
+<br/>
+ディレクトリ構成を変更すると、テンプレートを呼び出せなくなりエラーとなりますが、上記のようにURLを変更することで異なるディレクトリからも呼び出すことが可能です。
+<kbd>/contents/contents.xhtml</kbd>にアクセスし、エラーが出ていないことを確認してみましょう。</p>
 </section>
 <section>
 <h2>テンプレートの意義</h2>
-<p>contents1.xhtmlを同じディレクトリにコピーしcontent2.xhtmlを作る。</p>
+<p>「/contents」ディレクトリに、新たに<b>content2.xhtml</b>を作成します。</p>
 <ul class="branch_F">
 <li class="branch_T">/framexs.xsl</li>
 <li class="branch_T"><span class="branch_SF"></span>/contents</li><ul><li class="branch_IT">/contents.xhtml</li>
                       <li class="branch_IL">/contents2.xhtml</li></ul>
 <li class="branch_L"><span class="branch_SF"></span>/template</li><ul><li class="branch_L">/template.xhtml</li></ul>
 </ul>
-<p>/contents/contents2.xhtmlの中身をコード5にする。</p>
+<p><i>contents2.xhtml</i>を編集ソフトで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
 <figure id="コード5">
-<figcaption>コード5</figcaption>
+<figcaption>contents2.xhtml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton ../template/template.xhtml?>
@@ -168,14 +181,14 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>ここからわかる通り、コンテンツそのものは僅かなコードで構成されており、テンプレートを共通に使うことで全体のイメージを統一できる。
-  <br />ここからさらにテンプレートを改造することで何が起きるか確認したいと思う。</p>
+<p>上記の通り、コンテンツそのものは僅かなコードで構成され、テンプレートを共用すれば全体のイメージを統一することができる。
+  <br />この状態でテンプレートを改造してみましょう。</p>
   
-<h2>改造 その2</h2>
+<h2>テンプレートの改造</h2>
   
-<p><kbd>/template/template.xhtml</kbd>の中身をコード7にする。</p>
+<p><i>template.xhtml</i> を編集ソフトで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
 <figure id="コード7">
-<figcaption>コード7</figcaption>
+<figcaption>template.xhtml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <head>
@@ -194,9 +207,9 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p><kbd>/contents/contents2.xhtml</kbd>にアクセスしたらコード8のHTMLのDOMが出来上がっていることを確認する。</p>
+<p>Webブラウザで<kbd>contents2.xhtml</kbd>にアクセスし、ソースを見てください。ソースコードが以下のように変わっています。</p>
 <figure id="コード8">
-<figcaption>コード8</figcaption>
+<figcaption>実際にアクセスした<b>contents2.xhtml</b>のDOM</figcaption>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="ja">
 <head>
@@ -217,8 +230,8 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>結果として得られるHTMLは、上記の通りコード6からコード8に変更しているが、<kbd>/contents/contents2.xhtml</kbd>の中身は全く変更していないことに注目してほしい。
-  <br />Framexsで管理したサイトの基盤となるHTMLは、テンプレートを改造することで全てのページに適応される。<br />つまり、Webページ全体のカスタマイズが少ない工程で容易に可能となるのだ。</p>
+<p>表示されたページのソースコードはFramexsの働きで書き換えられてはいるが、<i>contents2.xhtml</i>のソースコードには手を加えていないことに注目してほしい。
+  <br />Framexsで管理したサイトの基盤となるHTMLは、テンプレートを改造することで全てのページに適用されます。従来のWebサイトで同じ工程を行うには、全てのページで変更する必要があります。<br />その煩わしい作業をなくし、Webページ全体のカスタマイズを少ない工程で容易に実現します。</p>
 </section>
 </article>
 </body>
