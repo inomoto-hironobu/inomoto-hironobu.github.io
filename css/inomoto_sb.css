@@ -1,9 +1,12 @@
+/*### 4/19変更分 #################*/
 
-/*### 4/12変更分 #################*/
+kbd{
+    background-color: #7394b7 !important;
+}
 
 #footer-links{
 /*レスポンシブ対応*/
-    position: absolute;
+    position: absolute !important;
 left:calc(98% - 192px) !important;
 width:192px !important;
 /*margin-left:60%;*/
@@ -13,8 +16,19 @@ height:40px !important;
 
 
 
-/*### 3/31変更分 #################*/
 
+
+.dl_link:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f019";
+    font-weight: 900;
+}
+
+.out_link:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f35d";
+    font-weight: 900;
+}
 
 .tips {
   list-style: none;
@@ -29,8 +43,6 @@ margin-left:-54px;
 }
 
 
-/*### 3/28変更分 #################*/
-
 
 .branch_F:before,
 .branch_SF:before {
@@ -42,7 +54,6 @@ margin-left:-54px;
 margin:0px;
     font-weight: 100;
 }
-<<<<<<< HEAD
 
 .branch_F {
     padding: 0.7em 1.2em 1.2em !important;
@@ -80,50 +91,7 @@ margin-bottom:0.5em;
     margin-left: -32px;
 }
 
-/*### 3/18変更分 #################*/
 
-.main section li {
-     padding: 0.2em 0 !important;
-    }
-=======
-
-.branch_F {
-    padding: 0.7em 1.2em 1.2em !important;
-  list-style: none;
-}
-
-.branch_F LI {
-  list-style:none;
-}
-
-.branch_F LI {
-    line-height: 1.2 !important;
-    padding: 0 !important;
-}
-.branch_F:after {
-margin-bottom:0.5em;
-}
-
-.branch_T:before {
-    content: "┣";
-}
-.branch_I:before {
-    content: "┃";
-}
-
-.branch_L:before {
-    content: "┗";
-}
-.branch_IT:before {
-    content: "┃　┣";
-    margin-left: -32px;
-}
-.branch_IL:before {
-    content: "┃　┗";
-    margin-left: -32px;
-}
-/*### 3/18変更分 #################*/
->>>>>>> Watanabe-You-patch-1
 
 ul ul {
     margin-bottom: 0px !important;
@@ -249,12 +217,6 @@ table.responsive td {
   left:10500px !important;
 }
 
-.d-md-block {
-/*  position: absolute;
-  top:0px;
-  left:-200px;*/
-}
-
 
 /*### 3/1変更分 #################*/
 
@@ -273,8 +235,8 @@ table.responsive td {
 
 /*枠の変更*/
 main pre {
-/*    border: ridge 1px #565656;
-    box-shadow: 1px 1px 3px #999;*/
+/*    border: ridge 1px #565656 !important;
+    box-shadow: 1px 1px 3px #999 !important;*/
 }
 
 
@@ -308,21 +270,21 @@ main pre {
 #coda h5,
 #coda h6{
   /*見出しの色を変更*/
-  background: #6a6a6a;
+  background: #6a6a6a !important;
 }
 
 #coda h3 {
   /*見出しの文字を変更*/
-  font-size: 130%;
-  line-height: 55px;
+  font-size: 130% !important;
+  line-height: 55px !important;
 }
 
 
 
 /*外部リンクの見た目を調整*/
 #coda ul {
-  margin:25px;
-  padding: 10px 40px;
+  margin:25px !important;
+  padding: 10px 40px !important;
 }
 
 /*### 2/25変更分 #################*/
@@ -331,51 +293,51 @@ main pre {
 /*32.ページトップの修正*/
 /*位置移動、リンク下線が出ないように変更*/
 .col{
-  background-color: #F1F1F1;
-  border-radius: 80px;
-  border: solid 1px #111;
-  position: fixed;
-top:80%;
+  background-color: #F1F1F1 !important;
+  border-radius: 80px !important;
+  border: solid 1px #111 !important;
+  position: fixed !important;
+top:80% !important;
 /*レスポンシブ対応*/
-left:calc(98% - 53px);
-width:53px;
-z-index: 4;
-height:40px;
+left:calc(98% - 53px) !important;
+width:53px !important;
+z-index: 4 !important;
+height:40px !important;
 }
 
 .col a{
 /*元のページトップボタンを消す*/
-  color:RGBA(0,0,0,0);
-text-decoration: none;
+  color:RGBA(0,0,0,0) !important;
+text-decoration: none !important;
 }
 
 /*ページトップボタンを記号に変更*/
 .col a:before {
-  content: "▲";
-  color:#111;
+  content: "▲" !important;
+  color:#111 !important;
 }
 
 
 
 /*30.ヘッダーの文字が薄い*/
-#pagetop a{
-  color:#111;
+.navbar-light .navbar-nav .nav-link{
+  color:#111 !important;
 }
 
 /*31.ヘッダーが半透明になってる*/
 #pagetop{
   /*透明化を解除*/
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 /*39.文字ボックス*/
 .main p{
   /*文字ボックスの色を調整*/
-  margin-left:0px;
-  border-top: solid 1px #121212;
-  border-left: solid 1px #121212;
-  border-right: solid 2px #727272;
-  border-bottom: solid 2px #727272;
+  margin-left:0px !important;
+  border-top: solid 1px #121212 !important;
+  border-left: solid 1px #121212 !important;
+  border-right: solid 2px #727272 !important;
+  border-bottom: solid 2px #727272 !important;
 }
 
 /*### 2/22変更分 #################*/
@@ -383,34 +345,35 @@ text-decoration: none;
 
 /*26.二重になっている線を1つに戻す*/
 .main section {
- padding-bottom:30px;
-    border-top: solid 0px gray;
-    border-bottom: solid 1px gray;
-     border-radius:1px;
+ padding-bottom:30px !important;
+    border-top: solid 0px gray !important;
+    border-bottom: solid 1px gray !important;
+     border-radius:1px !important;
 }
 
 /*フッダー上の二重線部分を消す*/
 .main section:last-child {
-   border-bottom: solid 0px gray;
+   border-bottom: solid 0px gray !important;
 }
 
 
+/*19.プライバシーポリシーの修正*/
 #footer-links p {
   /*表示がおかしくなっていたので修正*/
-  margin: 0px 0;
+  margin: 0px 0 !important;
 }
 
 #footer-links p:hover {
   /*色が変わるように修正*/
-background-color:#1a74b1;
-width:192px;
-padding-left:15px;
-margin-left:-15px;
+background-color:#1a74b1 !important;
+width:192px !important;
+padding-left:15px !important;
+margin-left:-15px !important;
 }
 
 #footer-links a:hover {
   /*リンク下線を除去*/
-text-decoration: none;
+text-decoration: none !important;
 }
 
 
@@ -422,15 +385,15 @@ text-decoration: none;
 
 .main h3 {
   /*H2の変更　H1と入れ替え+調整*/
-  color:black;
-    border-bottom: solid 3px gray;
-    padding-left: 5px;
-    padding-bottom:10px;
+  color:black !important;
+    border-bottom: solid 3px gray !important;
+    padding-left: 5px !important;
+    padding-bottom:10px !important;
 }
 
 /*テーブル下のスペースを広げる*/
 table.responsive {
-  margin-bottom: 50px;
+  margin-bottom: 50px !important;
 }
 
 
@@ -445,17 +408,17 @@ table.responsive {
 
 .bg-white p {
   /*アイドメニューの幅を広げる*/
-  line-height: 170%;
-  margin-top:30px;
+  line-height: 170% !important;
+  margin-top:30px !important;
 }
 
 .main {
   /*メイン部分のスペース調整*/
-  margin-bottom: 50px;
+  margin-bottom: 50px !important;
 }
 .row nav{
   /*パンくずのスペース調整*/
-  margin:20px 0;
+  margin:20px 0 !important;
 }
 
 
@@ -464,18 +427,18 @@ table.responsive {
 /*23.見出しを無彩色にし、装飾を追加*/
 .title{
   /*H1の変更　H2と入れ替え+調整*/
-  color:black;
-    padding-left: 10px;
-    border-left: solid 8px gray;
-    border-bottom: solid 3px gray;
-    padding-bottom: 8px;
+  color:black !important;
+    padding-left: 10px !important;
+    border-left: solid 8px gray !important;
+    border-bottom: solid 3px gray !important;
+    padding-bottom: 8px !important;
 }
 
 .main h2 {
   /*H2の変更　H1と入れ替え+調整*/
-  color:black;
-    border-left: solid 5px gray;
-    padding-left: 10px;
+  color:black !important;
+    border-left: solid 5px gray !important;
+    padding-left: 10px !important;
 }
 
 
@@ -487,25 +450,25 @@ table.responsive {
 
 .bg-info {
   /*フッダーの色を黒に*/
-  background-color:#333;
+  background-color:#333 !important;
   /*狭かったスペースを空ける*/
-  padding:20px 50px 50px;
+  padding:20px 50px 50px !important;
 }
 /*文字間隔を広げる*/
 .bg-info tr{
-  line-height: 40px;
+  line-height: 40px !important;
 }
 
 /*20.ペイペイうんぬんの削除*/
 .bg-info p {
-display: none;
+display: none !important;
 }
 
 /*### 2/15変更分 #################*/
 
 .responsive td,
 .responsive tr {
-  line-height: 32px;
+  line-height: 32px !important;
 }
 
 /*### 2/5変更分 #################*/
@@ -513,7 +476,7 @@ display: none;
 
 table.responsive td {
   /*リンクを同じ枠内にする*/
-    padding:20px 10px;
+    padding:20px 10px !important;
 }
 
 
@@ -522,7 +485,7 @@ table.responsive td {
 
 /*6.用途不明、謎のborderを削除*/
 #prelude{
-  display: none;
+  display: none !important;
 }
 
 
@@ -530,7 +493,7 @@ table.responsive td {
 /**### 2/1 #################**/
 
 .bg-dark{
-background-color:#C5C5C5;
+background-color:#C5C5C5 !important;
 }
 
 /**### 1/31 #################**/
@@ -538,39 +501,35 @@ background-color:#C5C5C5;
 
 
 .dropdown-toggle#Framexs{
-display:none;
+display:none !important;
 }
 
 
 /**### 1/27 #################**/
 
 #pagetop{
-  z-index: 1;
-    postion: -webkit-sticky;
-    position: sticky;
-    top: 0;
+  z-index: 1 !important;
+    postion: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important;
     }
 
 #coda {
-margin-top:80px;
+margin-top:80px !important;
 }
 #coda p {
-padding:5px 15px;
+padding:5px 15px !important;
 }
 
 h1 {
-margin:4% 1%;
+margin:4% 1% !important;
 }
 
 h2 {
-margin:1% 1% 2%;
+margin:1% 1% 2% !important;
 }
 
 
 .main section {
-margin:4% 1% 0%;
-}
-
-section section p {
-  
+margin:4% 1% 0% !important;
 }
