@@ -57,22 +57,37 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <script>hljs.initHighlightingOnLoad();</script>
 
 <script>
+
+
+var wo=0;
+
 $(function() {
 $(window).scroll(function() {
   var scroll = $(this).scrollTop();
   console.log(scroll);
 var ws=0;
 
-if(scroll>100){
-ws=(scroll-100)/32;
-  $('#head_img').width(64-ws);
- if(scroll>700){
-   $('#head_img').width(32);
- }
+if(scroll>200){
+ws=1;
 }
 else {
-  $('#head_img').width(64);
+ws=0;
 }
+
+if(ws==wo){
+}
+else {
+if(ws==1){
+  $("#head_img").animate({width:"32px"},600,"easeInOutExpo");
+  console.log("IN");
+}
+else {
+  $("#head_img").animate({width:"64px"},200,"easeInOutExpo");
+  console.log("OUT");
+}
+wo=ws;
+}
+
  });
 });
 </script>
@@ -271,7 +286,7 @@ bg-light
 </div>
 <!-- /container -->
 <footer class="bg-info text-white">
-<table style="width:80%;margin:auto">
+<table style="width:50%;margin:auto">
 <tr><td>Email</td><td>inmthrnb@gmail.com</td></tr>
 <tr><td>Framexs version</td><td><framexs:version/></td></tr>
 <tr><td>寄付先</td><td>PayPay銀行　すずめ支店(002)<br/>口座番号:3089450　名義人:イノモトヒロノブ</td></tr>
@@ -280,7 +295,7 @@ bg-light
 報酬があるのは毎月3名先着です。支払いはペイペイで行います。</p>
 <p style="text-align:center">c2021 INOMOTO Hironobu</p>
 </footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <template id="link-template">
