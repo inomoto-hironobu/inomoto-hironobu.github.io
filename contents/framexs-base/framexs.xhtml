@@ -16,9 +16,9 @@
 </ol>
 <article>
 <section id="premain">
-<p>FramexsはXHTMLをMVCの材料として、合成を行い、HTMLを生成するXSLTフレームワークです。<br/>
-モデルもビューもXHTMLを使い、ウェブサイトでの配布の場合は、コントローラーもXHTMLに処理命令という形で埋めこみます。</p>
-<p>このフレームワークは、フロントエンドXSLT技術であるxml-stylesheet処理命令を利用しています。</p>
+<p>Framexsは、XHTMLをMVC（<b>モデル・ビュー・コントローラ</b>）の材料として、合成を行い、HTMLを生成するXSLTフレームワークです。<br/>
+モデルとビューの両方ともXHTMLを使い、ウェブサイトではコントローラーもXHTMLに処理命令という形で埋めこんでいます。</p>
+<br />このフレームワークは、フロントエンドXSLT技術であるxml-stylesheet処理命令を利用しています。</p>
 <figure>
 <pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>]]></code></pre>
 </figure>
@@ -26,7 +26,8 @@
 <section id="main">
 <section>
 <h2>サンプルコード</h2>
-<p>まずはサンプルコードを見てみましょう。まずは、次のような3つのファイルがあるとします。</p>
+<p>Framexsのサンプルコードを見てみましょう。
+<br />以下の図は、Framexsの代表的なディレクトリ構成です。今回は、この構成でのFramexsのはたらきについて取り上げていきます。</p>
 
 <ul class="branch_F">
 <li class="branch_T">/framexs.xsl</li>
@@ -36,7 +37,7 @@
                       <li class="branch_L">/contents.xhtml</li></ul></ul>
 </ul>
 <figure>
-<figcaption>コード1 tempalte.xhtml</figcaption>
+<figcaption>tempalte.xhtml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" xml:lang="ja" lang="ja">
 <head>
@@ -49,7 +50,7 @@
 </html>]]></code></pre>
 </figure>
 <figure>
-<figcaption>コード2 content.xhtml</figcaption>
+<figcaption>content.xhtml</figcaption>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
 <?framexs.skeleton template.xhtml?>
@@ -64,10 +65,10 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>template.xhtmlはビュー、content.xhtmlはモデルおよびコントローラーです。</p>
-<p>contents.xhtmlをブラウザで表示すると、以下のようになります。<br/><a href="/sample/1/contents.xhtml" target="_blank" rel="noopener noreferrer" onclick="window.open('/sample/1/contents.xhtml', '', 'width=600,height=300'); return false;"><span class="out_link"></span> 実行結果を表示する（contents.xhtml）</a></p>
+<p><b>template.xhtml</b>はビュー、<b>content.xhtml</b>はモデル・コントローラーとして機能します。</p>
+<p><kbd>contents.xhtml</kbd>をブラウザで表示すると、以下のようになります。<br/><a href="/sample/1/contents.xhtml" target="_blank" rel="noopener noreferrer" onclick="window.open('/sample/1/contents.xhtml', '', 'width=600,height=300'); return false;"><span class="out_link"></span> 実行結果を表示する（contents.xhtml）</a></p>
 <figure>
-<figcaption>コード3</figcaption>
+<figcaption>実際の<b>contents.xhtml</b>のソースコード</figcaption>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html xml:lang="ja" lang="ja">
 <head>
@@ -82,8 +83,7 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>コード3は実行結果で表示されたcontents.xhtmlのソースである。コード2のcontents.xhtmlとはソースが変化していることが分かります。コード1によって定義したテンプレートに従って、Fremexsが出力が変化させているのです。<br/>
-この出力はブラウザによって解析されます。</p>
+<p>このように、元々のcontents.xhtmlからソースコードが変化していることが分かります。<i>tempalte.xhtml</i>によって定義したテンプレートに従い、Fremexsがコードを書き換えているのです。</p>
 </section>
 <section>
 <h2>Fremexsを使う意義</h2>
