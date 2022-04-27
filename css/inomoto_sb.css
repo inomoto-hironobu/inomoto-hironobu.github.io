@@ -1,3 +1,93 @@
+/*### 4/26変更分 #################*/
+
+
+.main pre {
+  
+ border: ridge 2px #888 !important;
+    border-radius: 0.5rem !important;
+    padding-left: 0.4rem !important;
+}
+
+figure code {
+    margin-left: 2rem;
+}
+
+figure code:before {
+clear:both;
+  color:#900;
+  font-weight:bold;
+	white-space: pre;
+float:left;
+overflow:hidden;
+text-align:right;
+border-right:solid 1px #111;
+margin-right:8px;
+    position: absolute;
+    background: white;
+    margin-left: -2.7rem;
+    padding-left: 13px;
+}
+
+.c2:before {
+  content: "1 \A 2 ";
+}
+.c3:before {
+  content: "1 \A 2 \A 3 ";
+}
+.c4:before {
+  content: "1 \A 2 \A 3 \A 4 ";
+}
+.c5:before {
+  content: "1 \A 2 \A 3 \A 4 \A 5 ";
+}
+.c6:before {
+  content: "1 \A 2 \A 3 \A 4 \A 5 \A 6 ";
+}
+.c7:before {
+  content: "1 \A 2 \A 3 \A 4 \A 5 \A 6 \A 7 ";
+}
+.c8:before {
+  content: "1 \A 2 \A 3 \A 4 \A 5 \A 6 \A 7 \A 8 ";
+}
+.c9:before {
+  content: "1 \A 2 \A 3 \A 4 \A 5 \A 6 \A 7 \A 8 \A 9 ";
+}
+.c10:before {
+  content: "1 \A 2 \A 3 \A 4 \A 5 \A 6 \A 7 \A 8 \A 9 \A 10 ";
+}
+
+.c11:before {
+  content: "1 \A 2 \A 3 \A 4 \A 5 \A 6 \A 7 \A 8 \A 9 \A 10 \A 11 ";
+}
+
+.c12:before {
+  content: "1 \A 2 \A 3 \A 4 \A 5 \A 6 \A 7 \A 8 \A 9 \A 10 \A 11 \A 12 ";
+}
+
+.c13:before {
+  content: "1 \A 2 \A 3 \A 4 \A 5 \A 6 \A 7 \A 8 \A 9 \A 10 \A 11 \A 12 \A 13 ";
+}
+
+.c14:before {
+  content: "1 \A 2 \A 3 \A 4 \A 5 \A 6 \A 7 \A 8 \A 9 \A 10 \A 11 \A 12 \A 13 \A 14 ";
+}
+.c15:before {
+  content: "1 \A 2 \A 3 \A 4 \A 5 \A 6 \A 7 \A 8 \A 9 \A 10 \A 11 \A 12 \A 13 \A 14 \A 15 ";
+}
+.c16:before {
+  content: "1 \A 2 \A 3 \A 4 \A 5 \A 6 \A 7 \A 8 \A 9 \A 10 \A 11 \A 12 \A 13 \A 14 \A 15 \A 16 ";
+}
+.c17:before {
+  content: "1 \A 2 \A 3 \A 4 \A 5 \A 6 \A 7 \A 8 \A 9 \A 10 \A 11 \A 12 \A 13 \A 14 \A 15 \A 16 \A 17 ";
+}
+.c18:before {
+  content: "1 \A 2 \A 3 \A 4 \A 5 \A 6 \A 7 \A 8 \A 9 \A 10 \A 11 \A 12 \A 13 \A 14 \A 15 \A 16 \A 17 \A 18 ";
+}
+.c19:before {
+  content: "1 \A 2 \A 3 \A 4 \A 5 \A 6 \A 7 \A 8 \A 9 \A 10 \A 11 \A 12 \A 13 \A 14 \A 15 \A 16 \A 17 \A 18 \A 19 ";
+}
+
+
 /*### 4/19変更分 #################*/
 
 kbd{
