@@ -17,7 +17,7 @@
 <article>
 <section id="premain">
 <p>Framexsは、XHTMLをMVC（<b>モデル・ビュー・コントローラ</b>）の材料として、合成を行い、HTMLを生成するXSLTフレームワークです。<br/>
-モデルとビューの両方ともXHTMLを使い、ウェブサイトではコントローラーもXHTMLに処理命令という形で埋めこんでいます。</p>
+モデルとビューの両方ともXHTMLを使い、ウェブサイトではコントローラーもXHTMLに処理命令という形で埋めこんでいます。
 <br />このフレームワークは、フロントエンドXSLT技術であるxml-stylesheet処理命令を利用しています。</p>
 <figure>
 <pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>]]></code></pre>
@@ -38,7 +38,7 @@
 </ul>
 <figure>
 <figcaption>tempalte.xhtml</figcaption>
-<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pre><code class="language xml c10"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" xml:lang="ja" lang="ja">
 <head>
 <title> - テンプレートタイトル</title>
@@ -51,7 +51,7 @@
 </figure>
 <figure>
 <figcaption>content.xhtml</figcaption>
-<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pre><code class="language xml c13"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
 <?framexs.skeleton template.xhtml?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -69,7 +69,7 @@
 <p><kbd>contents.xhtml</kbd>をブラウザで表示すると、以下のようになります。<br/><a href="/sample/1/contents.xhtml" target="_blank" rel="noopener noreferrer" onclick="window.open('/sample/1/contents.xhtml', '', 'width=600,height=300'); return false;"><span class="out_link"></span> 実行結果を表示する（contents.xhtml）</a></p>
 <figure>
 <figcaption>実際の<b>contents.xhtml</b>のソースコード</figcaption>
-<pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
+<pre><code class="language xml c13"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html xml:lang="ja" lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -87,13 +87,12 @@
 </section>
 <section>
 <h2>Fremexsを使う意義</h2>
-<p>Fremexsの強みは、<i>link</i>要素や<i>script</i>要素などの記述のあるテンプレートを簡単に共有できるという事が挙げられる。
+<p>Fremexsの強みは、<i>link</i>要素や<i>script</i>要素などの記述のあるテンプレートを、全てのページで簡単に共有できる点が挙げられる。
 <br/><br/>
-例えば次のようなコードを記述したい場合があったとしよう。</p>
+例えば、次のようなコードを記述したい場合、</p>
 <figure>
 <figcaption>コード5</figcaption>
-<pre><code class="language xml"><![CDATA[
-<!-- Google Tag Manager -->
+<pre><code class="language xml c7"><![CDATA[<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
@@ -101,34 +100,40 @@
   })(window,document,'script','dataLayer','GTM-5L2SQ9B');</script>
 <!-- End Google Tag Manager -->]]></code></pre>
 </figure>
-<p>この記述をHTMLファイルに挿入することを考えると、<strong>全ての</strong>HTMLにこの記述をしなくてはならなくなる。さらに、プログラム変更があった場合、いちいち全てのHTMLを書き換えなければならなくなる。1～2ページ程度のサイトならまだしも、何千とページがあるサイトでは、とても対応しきれない。
+<p>この記述をHTMLファイルに挿入する場合、<strong>全ての</strong>HTMLにこの記述を挿入して、上書き保存する必要があります。
+<br/><br/>
+つまり、プログラムに変更があった場合、そのたびに全てのHTMLを書き換えることが必要となります。1～2ページ程度の小規模な個人サイトならまだしも、何百・千とページがある大規模なサイトでは、対応するのは極めて困難です。
 <br/>
 <br/>
-しかしFramexsを使えば、テンプレートを書き換えるだけで全てのHTMLに適応されるため、ページの変更が極めて簡単になる。</p>
+しかしFramexsを使えば、テンプレートを書き換えるだけで全てのHTMLに適応されるため、作業工程の大幅短縮が可能です。</p>
 </section>
 <section>
 <h2>原初法との比較</h2>
-<p>XSLTが開発された時、その意義としてあるXMLに対しての再利用性がうたわれていた。例えばコード4を出力したいとき次のようなXMLを出力して</p>
+<p>XSLTが開発された当初、その意義としてあるXMLに対しての再利用性がうたわれていました。例えば、以下のようなコードを出力したい場合、次のようなXMLを出力していました。</p>
 <figure>
 <figcaption>コード6</figcaption>  
-<pre><code class="language xml"><![CDATA[
-<?xml version="1.0" encoding="UTF-8"?>
+<pre><code class="language xml c5"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <hoge xmlns="urn:hoge">
 <foo>世界よこんにちは</foo>
 <bar>ハローワールド！</bar>
 </hoge>
 ]]></code></pre>
 </figure>
-<p>単純にあるXSLを適用するだけというものである。これを<dfn>原初法</dfn>と名づけると、原初法はXML+XSLT=HTMLである。</p>
-<p>これに対してFramexsは上述のように<strong>XHTML+XHTML+XSLT=HTML</strong>という方法で行う。<br/>
-違いは出力のひな型をXSLTにするか特殊なXHTMLにするかというものである。Framexsの方が直観的で、容易性が高く、再利用性が高い。</p>
+<p>これは、単純にXSLを適用するだけのシンプルなコードです。<b>XMLとXSLTを合成することでHTML</b>を生成するシステムを、当サイトでは<dfn>原初法</dfn>と定義します。<br /><br />
+これに対し、Framexsは<strong>2種類のXHTMLとXSLTを合わせた“3つの要素”を合成することでHTML</strong>を生成するシステムです。</p>
+
+<UL>
+<LI>原初法：<b>XML+XSLT=HTML</b></LI>
+<LI>Framexs：<b>XHTML+XHTML+XSLT=HTML</b></LI>
+</UL>
+<p>両者の違いは、出力のひな型をXSLTにするか、独自のXHTMLにするかという点です。原初法と比べるとFramexsの方が直観的に扱え容易性が高く、再利用性が高いという点で優れたシステムとなっています。</p>
 </section>
 <section>
-<h2>このページ</h2>
+<h2>このサイトもFramexsでできています</h2>
 <p>このページ自身もFramexsで作成されており、その先頭部分は以下の通りである。</p>
 <figure>
 <figcaption>コード7</figcaption>
-<pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<pre><code class="language xml c2"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
 <?framexs.skeleton ../../template/template.xhtml?>]]></code></pre>
 </figure>
 <p>ソースコードは<a href="https://github.com/inomoto-hironobu/inomoto-hironobu.github.io/blob/master/contents/knowledge/framexs.xhtml">GitHubのページ</a>も参照されたい。</p>
