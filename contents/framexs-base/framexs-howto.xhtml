@@ -17,7 +17,7 @@
   </section>
 <section>
 <h2>初めに</h2>
-<p>以下のダウンロードリンクより、Framexsをダウンロードします。</p>
+<p>以下のダウンロードリンクより、Framexsをダウンロードしてください。</p>
 <ul>
 <li><span sytle="font-weight:bold; font-size:105%;">
   <a href="https://inomoto-hironobu.github.io/framexs.zip" download="framexs.zip">Framexsをダウンロード</a></span>
@@ -27,7 +27,7 @@
   <a href="https://inomoto-hironobu.github.io/framexs.xsl">framexs.xsl</a>をダウンロードする。
 -->  
  <p>
-   ダウンロードしたフォルダを解凍し、中に入っているframexs.xsl、contents.xhtml、template.xhtmlを、以下の図のようにディレクトリに配置します。</p>
+   ダウンロードしたフォルダを解凍し、中に入っているframexs.xsl、contents.xhtml、template.xhtmlを、下図のようにディレクトリに配置します。</p>
 <ul class="branch_F">
 <li class="branch_T"><span style="font-weight:bold; color:#633;">/framexs.xsl</span></li>
 <li class="branch_T"><span style="font-weight:bold; color:#633;">/contents.xhtml</span></li>
@@ -50,11 +50,13 @@
 </figure>
 -->
 
-<p>Webブラウザで<kbd>/contents.xhtml</kbd>にアクセスし、各ブラウザに付属する管理者モードでソースを見てください。ソースコードが以下のように変わっています。</p>
+<p>Webブラウザで<kbd>/contents.xhtml</kbd>にアクセスし、各ブラウザに付属する管理者モードでソースを見てください。
+<br/>
+ソースコードが以下のように変わっています。</p>
 
 <figure id="コード1">
 <figcaption><b>/contents.xhtml</b>のソースコード</figcaption>
-<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pre><code class="language xml c13"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton template.xhtml?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -73,7 +75,7 @@
 
 <figure id="コード2">
 <figcaption>template.xhtmlのソースコード</figcaption>
-<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pre><code class="language xml c10"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <head>
 <title> - テンプレートタイトル</title>
@@ -88,7 +90,7 @@
 
 <figure id="コード3">
 <figcaption>実際にアクセスした<b>/contents.xhtml</b>のDOM</figcaption>
-<pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
+<pre><code class="language xml c13"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -104,22 +106,24 @@
 </figure>
 <p>Framexsにより<i>title</i>要素が合成され、タイトルが「世界よこんにちは - テンプレートタイトル」に変わっています。
 <br />これは、テンプレートの <i>framexs:id-d="main"</i> の属性を持つ<i>p</i>要素が、コンテンツの <i>id="main"</i> 属性を持つ<i>article</i>要素の子要素へと置き換わっているからです。
-<br />この<b>変換</b>がFramexsの基本的なシステムで、コンテンツの内容を変えなくても、テンプレートを変えるだけでページのレイアウト変更が可能になります。
+<br/>
+<br />この<b>変換</b>がFramexsの基本的なシステムで、コンテンツの内容を変えなくても、テンプレートを変えるだけでページのレイアウト変更が可能です。
 <br />
+<br/>
 ここから主にテンプレートを改造していきましょう。</p>
 </section>
 <section>
 <h2>Fremexsページのテンプレート改造</h2>
-<p>ここから、下記の図のようにディレクトリ構成を変更します。</p>
+<p>ここから、下図のようにディレクトリ構成を変更します。</p>
 <ul class="branch_F">
 <li class="branch_T">/framexs.xsl</li>
 <li class="branch_T"><span class="branch_SF"></span>/contents</li><ul><li class="branch_IL">/contents.xhtml</li></ul>
 <li class="branch_L"><span class="branch_SF"></span>/template</li><ul><li class="branch_L">/template.xhtml</li></ul>
 </ul>
-<p>/contents/contents.xhtmlを編集ソフトで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
+<p><i>/contents/contents.xhtml</i>をエディタで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
 <figure id="コード4">
 <figcaption>contents.xhtml</figcaption>
-<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pre><code class="language xml c13"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton ../template/template.xhtml?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -133,24 +137,26 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p><code><![CDATA[<?framexs.skeleton ../template/template.xhtml?>]]></code>の部分が、最初のソースコードから変更された箇所です。
+<p>3行目の<code><![CDATA[<?framexs.skeleton ../template/template.xhtml?>]]></code>の部分が、最初のソースコードから変更された箇所です。
 <br/>
-ディレクトリ構成を変更すると、テンプレートを呼び出せなくなりエラーとなりますが、上記のようにURLを変更することで異なるディレクトリからも呼び出すことが可能です。
-<kbd>/contents/contents.xhtml</kbd>にアクセスし、エラーが出ていないことを確認してみましょう。</p>
+ディレクトリ構成を変更するとテンプレートを呼び出せないエラーが発生する。そこで、上記のようにURLを変更することで、移動先のディレクトリからも呼び出せるようになります。
+<br/>
+<br/>
+<kbd>/contents/contents.xhtml</kbd>にアクセスし、エラーが出ていないか確認してみましょう。</p>
 </section>
 <section>
 <h2>テンプレートの意義</h2>
-<p>「/contents」ディレクトリに、新たに<b>content2.xhtml</b>を作成します。</p>
+<p><i>/contents</i>ディレクトリに、<b>content2.xhtml</b>を新規作成します。</p>
 <ul class="branch_F">
 <li class="branch_T">/framexs.xsl</li>
 <li class="branch_T"><span class="branch_SF"></span>/contents</li><ul><li class="branch_IT">/contents.xhtml</li>
                       <li class="branch_IL">/contents2.xhtml</li></ul>
 <li class="branch_L"><span class="branch_SF"></span>/template</li><ul><li class="branch_L">/template.xhtml</li></ul>
 </ul>
-<p><i>contents2.xhtml</i>を編集ソフトで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
+<p><i>contents2.xhtml</i>をエディタで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
 <figure id="コード5">
 <figcaption>contents2.xhtml</figcaption>
-<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pre><code class="language xml c13"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton ../template/template.xhtml?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -164,10 +170,10 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p><kbd>/contents/contents2.xhtml</kbd>にアクセスしてコード6と同じHTMLのDOMができているか確認しよう。</p>
+<p>Webブラウザで<kbd>/contents/contents2.xhtml</kbd>にアクセスし、各ブラウザに付属する管理者モードでソースを見てください。下記と同様のDOMが出来ているか確認しましょう。</p>
 <figure id="コード6">
-<figcaption>コード6</figcaption>
-<pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
+<figcaption>実際にアクセスした<b>/contents.xhtml</b>のDOM</figcaption>
+<pre><code class="language xml c13"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -181,15 +187,15 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>上記の通り、コンテンツそのものは僅かなコードで構成され、テンプレートを共用すれば全体のイメージを統一することができる。
+<p>上記の通り、コンテンツそのものは僅かなコードで構成されており、テンプレートを共用すれば全体のイメージを統一することができます。
   <br />この状態でテンプレートを改造してみましょう。</p>
   
 <h2>テンプレートの改造</h2>
   
-<p><i>template.xhtml</i> を編集ソフトで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
+<p><i>template.xhtml</i> をエディタで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
 <figure id="コード7">
 <figcaption>template.xhtml</figcaption>
-<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pre><code class="language xml c17"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <head>
 <title> - テンプレートタイトル</title>
@@ -207,10 +213,10 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>Webブラウザで<kbd>contents2.xhtml</kbd>にアクセスし、ソースを見てください。ソースコードが以下のように変わっています。</p>
+<p>Webブラウザで<kbd>contents2.xhtml</kbd>にアクセスし、各ブラウザに付属する管理者モードでソースを見てください。下記と同様のDOMが出来ているか確認しましょう。</p>
 <figure id="コード8">
 <figcaption>実際にアクセスした<b>contents2.xhtml</b>のDOM</figcaption>
-<pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
+<pre><code class="language xml c19"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -230,8 +236,10 @@
 </body>
 </html>]]></code></pre>
 </figure>
-<p>表示されたページのソースコードはFramexsの働きで書き換えられてはいるが、<i>contents2.xhtml</i>のソースコードには手を加えていないことに注目してほしい。
-  <br />Framexsで管理したサイトの基盤となるHTMLは、テンプレートを改造することで全てのページに適用されます。従来のWebサイトで同じ工程を行うには、全てのページで変更する必要があります。<br />その煩わしい作業をなくし、Webページ全体のカスタマイズを少ない工程で容易に実現します。</p>
+<p>表示されたページのソースコードはFramexsの働きで書き換えられていますが、<i>contents2.xhtml</i>の元々のソースコードには手を加えていません。
+<br /><br />Framexsで管理したサイトの基盤となるHTMLでは、テンプレートの改造が全てのページに適用されます。
+<br /><br />
+従来のWebサイトで同様の工程を実行するには、全ページのソースコードを個別に変更する必要があります。<br />その煩わしい作業をなくし、より少ない工程でWebページ全体のカスタマイズを実現します。</p>
 </section>
 </article>
 </body>
