@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?framexs.skeleton ../../template/template.xhtml?>
+<?framexs.properties ../../properties/index.properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<title>ドリームネットシステムズが考えるFramexsのメリット</title>
+<meta name="description" content="フリーランスとして活動するためのオンラインビジネス提案。"/>
+<meta name="modified" content="2021-09-17"/>
+<meta name="pagetype" content="index"/>
+</head>
+<body>
+<article id="main">
+
+<h2>Framexsのメリットって、なんだろう？</h2>
+
+<p>
+Ａ：いろいろ考えたんだけど、Framexsを使うメリットってなんですか？
+</p>
+
+<p>
+Ｂ：例えば、何らかの理由で連絡先のメールアドレスを変更した時、ホームぺージに反映する必要がある。
+<br />その場合、ホームページを以下のコードに変更するんだけど、これが大変なんだ。
+</p>
+
+<figure>
+<figcaption>変更前</figcaption>
+<pre><code class="language xml c12"><![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>タイトル - マイホームページ</title>
+</head>
+<body>
+<p>本文</p>
+<fooder>
+メール：test1@sample.com
+</fooder>
+</body>
+</html>]]>
+</code></pre>
+</figure>
+<figure>
+<figcaption>変更後</figcaption>
+<pre><code class="language xml c12"><![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>タイトル - マイホームページ</title>
+</head>
+<body>
+<p>本文</p>
+<fooder>
+メール：test2@sample.com
+</fooder>
+</body>
+</html>]]>
+</code></pre>
+</figure>
+
+
+<p>
+Ａ：メールアドレスが、<i>test<b>1</b>@sample.com</i>から<i>test<b>2</b>@sample.com</i>に変わってるね。
+<br />たった1文字変わってるだけならすぐに変更できるし、これのどこが大変なんですか？
+</p>
+
+<p>
+Ｂ：確かに、変更する箇所はたったの1文字です。
+しかし、これが10000ページで構成されるサイトだとしたら、どう思いますか？
+</p>
+
+
+<ul class="branch_F">
+<li class="branch_T">/page1.html</li>
+<li class="branch_T">/page2.html</li>
+<li class="branch_T">/page3.html</li>
+<li class="branch_T">/page4.html</li>
+<li class="branch_T">/page5.html</li>
+<li class="branch_T">/page6.html</li>
+<li class="branch_T">/page7.html</li>
+<li class="">　　・</li>
+<li class="">　　・</li>
+<li class="">　　・</li>
+<li class="branch_L">/page10000.html</li>
+</ul>
+
+
+
+<p>
+Ａ：1文字の変更を、10000回…？！　とてもじゃないけど、無理です！
+<br />フッダーは全部のページに表示されるから、全部書き換えないといけないんだ…。
+</p>
+
+<p>Ｂ：これが、HTMLとCSSだけで構成される静的サイトの致命的な弱点だね。
+<br />PHPやフレームワークの知識が無くても手軽に作れるけど、一方でメンテナンス性には難がある。
+<br />このように、共通フッターをいったん作ってしまうと、<b>"たった"</b>一文字変えるだけでも、とてつもない労力がかかる。
+</p>
+
+<p>
+Ａ：昔はたくさんあった、HTML直打ちの静的サイトが少なくなっているのは、これが理由なんですね。
+<br />そりゃ、簡単に修正できるブログや動的サイトに移りますよね…。
+</p>
+
+
+<p>
+Ｂ：ところが、静的サイトでもFramexsを導入したら、この欠点を克服できる。
+<br /><br />試しに、同じサイトをFramexsで構成すると、以下のコードになる。
+</p>
+
+
+<figure>
+<figcaption>page1.xhtml</figcaption>
+<pre><code class="language xml c13"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?framexs.skeleton template1.xhtml?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>タイトル</title>
+</head>
+<body>
+<div id="main">
+<p>本文</p>
+</div>
+</body>
+</html>]]>
+</code></pre>
+</figure>
+
+
+<figure>
+<figcaption>tempalte.xhtml</figcaption>
+<pre><code class="language xml c12"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" xml:lang="ja" lang="ja">
+<head>
+<title> - マイホームページ</title>
+</head>
+<body>
+<article><p framexs:id-d="main">コンテンツのid属性がmainの部分を読み込み置き換える</p></article>
+<fooder>
+メール：test2@sample.com
+</fooder>
+</body>
+</html>]]></code></pre>
+</figure>
+
+
+<p>
+Ａ：ええ？ ソースコードをわざわざ2つに分けちゃうんですか？
+</p>
+
+
+
+<p>
+Ｂ：フッダーが<i>template.xhtml</i>に移動させていることに注目してほしい。
+<br /><i>template.xhtml</i>は共通のテンプレートだから、全てのページに適用される。
+<br />10000ページ存在する本文が書かれたページは、書き換える必要がないんだ。
+<br />つまり、従来のHTMLで10000回かかる変更が、たった1回で済むということだね。
+</p>
+
+<p>
+Ａ：そっか！共通部分をテンプレートとしてあらかじめ用意しているんだ！
+<br />PHPやブログといった、動的サイトと同じことができるんですね！
+</p>
+
+
+
+<!--
+<h2>メリットってなんだろう？</h2>
+
+<p>
+Ｂ：見た目だけなら、静的サイトでもCSSを活用することである程度は構成できるけど、
+テンプレートはXHTMLだから、CSSの変更では対応できないURLリンクの変更も可能になる。
+
+</p>
+
+
+<p>
+・レイアウト変更がらく
+
+このような変更のしやすさは、一部分だけじゃない。
+
+ページそのものの書き換えても、対応されるんだ！
+
+
+でもCSSでよくね？
+
+いいや、CSSだけじゃどうしようもない部分もあるよ？
+
+たとえば＜a＞リンクがそうだね。
+
+＜a＞リンクは、CSSじゃ書き換えられない。
+リンク先を変えるには、HTMLを変更しないといけないんだ
+
+そこで、Framexsのテンプレートが力を発揮するよ。
+
+テンプレートはXHTMLファイル、HTMLと同じように編集ができる！
+
+なので、テンプレート中の＜a＞リンクを変更すれば、全てのページで修正が可能！
+</p>
+
+
+-->
+
+<h3>【まとめ】Framexsのメリット</h3>
+
+<ul>
+<li>テンプレートを分けることで、メンテナンス性が向上</li>
+<li>ページ数が膨大なサイトでも、手軽かつ短時間に修正・変更できるようになる</li>
+<li>CSSだけでは対応できない、URLリンクの修正にも対応できる</li>
+</ul>
+
+</article>
+</body>
+</html>
