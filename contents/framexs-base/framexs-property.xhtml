@@ -23,8 +23,8 @@
 <li class="branch_L"><span style="font-weight:bold; color:#633;">/template.xhtml</span></li>
 </ul>
 
-<figure id="コード1">
-<figcaption>コード1 /template.xhtml</figcaption>
+<div class="code-container" id="コード1">
+<div class="captioon">コード1 /template.xhtml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
@@ -39,7 +39,7 @@
 <footer>(C)<framexs:property name="copylight"/></footer>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 <p>これに対して、コード2を持つコンテンツXHTML、コード3を持つプロパティXMLを以下のように作成する。</p>
 
 
@@ -50,8 +50,8 @@
 <li class="branch_L"><span style="font-weight:bold; color:#633;">/properties.xml</span></li>
 </ul>
 
-<figure id="コード2">
-<figcaption>コード2 /contents.xhtml</figcaption>
+<div class="code-container" id="コード2">
+<div class="captioon">コード2 /contents.xhtml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton template.xhtml?>
@@ -66,16 +66,16 @@
 </article>
 </body>
 </html>]]></code></pre>
-</figure>
-<figure id="コード3">
-<figcaption>コード3 /properties.xml</figcaption>
+</div>
+<div class="code-container" id="コード3">
+<div class="captioon">コード3 /properties.xml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <properties xmlns="urn:framexs">
 <property name="site-name">- 八百幡</property>
 <property name="copylight">2021 INOMOTO Hironobu</property>
 </properties>
 ]]></code></pre>
-</figure>
+</div>
 
 <p>プロパティを適応するには、Fremexs本体（/framexs.xsl）を読み込んでいた<i>framexs.skeleton</i>とは異なる、<i>framexs.properties</i>で読み込む事が必要です。
 <br /><br />
@@ -83,8 +83,8 @@
 </p>
 
 <p><kbd>/contents.xhtml</kbd>にアクセスすると、次のコード4を持つHTMLが生成される。</p>
-<figure>
-<figcaption>コード4</figcaption>
+<div class="code-container">
+<div class="captioon">コード4</div>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html xml:lang="ja" lang="ja">
 <head>
@@ -99,7 +99,7 @@
 <footer>(C)2021 INOMOTO Hironobu</footer>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 
 
 <p>/template.xhtmlにある <i>&lt;framexs:property name="○○"/&gt;</i> が、/properties.xmlに記述された<i>property</i>要素に指定されている定数を呼び出し、<kbd>/contents.xhtml</kbd>に反映されていることが分かります。
@@ -116,8 +116,8 @@
 ただしその場合は、<i>properties</i>要素を使う事はできません。
 <br /><br />
 以下のコード5をご覧ください。</p>
-<figure id="コード5">
-<figcaption>コード5 /properties.xml</figcaption>
+<div class="code-container" id="コード5">
+<div class="captioon">コード5 /properties.xml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <framexs:properties xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
 <framexs:list name="links">
@@ -126,7 +126,7 @@
 </framexs:list>
 </framexs:properties>
 ]]></code></pre>
-</figure>
+</div>
 
 
 <p><i>properties</i>要素の代わりに、<i>framexs:properties</i>が使われていることが分かります。これにより、Fremexsのリスト機能 <i>framexs:list</i> を、プロパティとして扱うことが出来るようにあります。

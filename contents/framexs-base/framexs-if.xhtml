@@ -40,8 +40,8 @@
 </ul>
 
 
-<figure id="コード1">
-<figcaption>コード1 /template.xhtml</figcaption>
+<div class="code-container" id="コード1">
+<div class="captioon">コード1 /template.xhtml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <head>
@@ -73,7 +73,7 @@
 </article>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 <p>次に、コード2を持つコンテンツXHTML、コード3を持つフラグメントXML、コード4を持つプロパティXMLを以下のように作成します。</p>
 
 
@@ -87,8 +87,8 @@
 </ul>
 
 
-<figure id="コード2">
-<figcaption>コード2 /contents.xhtml</figcaption>
+<div class="code-container" id="コード2">
+<div class="captioon">コード2 /contents.xhtml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton template.xhtml?>
@@ -105,31 +105,31 @@
 </article>
 </body>
 </html>]]></code></pre>
-</figure>
-<figure id="コード3">
-<figcaption>コード3 /foo.xml</figcaption>
+</div>
+<div class="code-container" id="コード3">
+<div class="captioon">コード3 /foo.xml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <framexs:resource xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
 <li>午前は晴天なり。</li>
 <li>午後も晴天なり。</li>
 <li>夜は曇天なり。</li>
 </framexs:resource>]]></code></pre>
-</figure>
-<figure id="コード3">
-<figcaption>コード4 /properties.xml</figcaption>
+</div>
+<div class="code-container" id="コード3">
+<div class="captioon">コード4 /properties.xml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <properties xmlns="urn:framexs">
 <property name="site-name">- 八百幡</property>
 <property name="copylight">2021 INOMOTO Hironobu</property>
 </properties>
 ]]></code></pre>
-</figure>
+</div>
 
 
 <p><kbd>/contents.xhtml</kbd>にアクセスすると、次のコード5を持つHTMLが生成されていることが分かります。</p>
 
-<figure>
-<figcaption>コード5</figcaption>
+<div class="code-container">
+<div class="captioon">コード5</div>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html xml:lang="ja" lang="ja">
 <head>
@@ -158,7 +158,7 @@
 </article>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 
 
 <p>

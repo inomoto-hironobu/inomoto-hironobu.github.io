@@ -16,8 +16,8 @@
 </ol>
 <article id="main">
 <p>テンプレートから共通するコードを参照するimport機能について解説する。次のコード1で表されるテンプレートがあるとする。</p>
-<figure id="コード1">
-<figcaption>コード1 /template.xhtml</figcaption>
+<div class="code-container" id="コード1">
+<div class="captioon">コード1 /template.xhtml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
@@ -32,10 +32,10 @@
 </article>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 <p>これに対して次のコンテンツXHTML、コード2とフラグメントXML、コード3を用意する。</p>
-<figure id="コード2">
-<figcaption>コード2 /contents.xhtml</figcaption>
+<div class="code-container" id="コード2">
+<div class="captioon">コード2 /contents.xhtml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton template.xhtml?>
@@ -50,19 +50,19 @@
 </article>
 </body>
 </html>]]></code></pre>
-</figure>
-<figure id="コード3">
-<figcaption>コード3 /fragment.xml</figcaption>
+</div>
+<div class="code-container" id="コード3">
+<div class="captioon">コード3 /fragment.xml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <framexs:fragment xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
 <script src="hoge.js"></script>
 <link rel="stylesheet" href="foo.css"/>
 </framexs:fragment>                                                                                                        
 ]]></code></pre>
-</figure>
+</div>
 <p>すると次のコード4を得る。</p>
-<figure>
-<figcaption>コード4</figcaption>
+<div class="code-container">
+<div class="captioon">コード4</div>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html xml:lang="ja" lang="ja">
 <head>
@@ -78,7 +78,7 @@
 </article>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 </article>
 </body>
 </html>

@@ -11,8 +11,8 @@
 <article id="main">
 <h2>Framexsの多対一法</h2>
 <p>Framexsの初歩的、原始的な利用方法においてはコード1に表されるコンテンツとコード2に表されるテンプレートは次のようになっている。</p>
-<figure>
-<figcaption>コード1</figcaption>
+<div class="code-container">
+<div class="captioon">コード1</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="../framexs.xsl"?>
 <?framexs.skeleton ../template/template.xhtml?>
@@ -26,9 +26,9 @@
 </article>
 </body>
 </html>]]></code></pre>
-</figure>
-<figure>
-<figcaption>コード2</figcaption>
+</div>
+<div class="code-container">
+<div class="captioon">コード2</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" xml:lang="ja" lang="ja">
 <head>
@@ -39,7 +39,7 @@
 <article><p framexs:id-d="main">コンテンツのid属性がmainの部分を読み込み置き換える</p></article>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 <p>またファイル配置はこうなっているとする。</p>
 <dl>
 <dt>コード1</dt><dd>/contents/sample.xhtml</dd>
@@ -52,22 +52,22 @@
 <p>もし今あなたが<kbd>http://inomoto-hironobu.github.io/contents/knowledge/framexs-tunnel.xml</kbd>にアクセスしているならソースコードを見てほしい。<br/>
 あるいは<a href="https://github.com/inomoto-hironobu/inomoto-hironobu.github.io/blob/master/contents/knowledge/framexs-tunnel.xml">GitHubのソースコードのページ</a>を読んでほしい。<br/>
 次のコード3のようになっているはずだ。</p>
-<figure>
-<figcaption>コード3</figcaption>
+<div class="code-container">
+<div class="captioon">コード3</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0"?>
 <?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
 <?framexs.skeleton ../../template/template.xhtml?>
 <tunnel xmlns="urn:framexs" content="../item/framexs-tunnel.xhtml"/>]]></code></pre>
-</figure>
+</div>
 <p>これは何をしているのかというとframexs:tunnelのcontent属性で指定されたページをFramexsコンテンツXHTMLとしてFramexs処理を行わせるというものである。<br/>
 これによりテンプレートとコンテンツを多対多の関係にすることができる。コード1、コード2を結び付けるならば、コード4を用意して、</p>
-<figure>
-<figcaption>コード4</figcaption>
+<div class="code-container">
+<div class="captioon">コード4</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0"?>
 <?xml-stylesheet type="application/xml" href="../framexs.xsl"?>
 <?framexs.skeleton ../template/template.xhtml?>
 <tunnel xmlns="urn:framexs" content="../contents/sample.xhtml"/>]]></code></pre>
-</figure>
+</div>
 <p>ファイルを次のように配置する。</p>
 <dl>
 <dt>コード1</dt><dd>/contents/sample.xhtml</dd>
@@ -76,8 +76,8 @@
 <dt>コード4</dt><dd>/tunnel/sample.xml</dd>
 </dl>
 <p>/tunnel/sample.xmlにアクセスした結果はコード5になる。</p>
-<figure>
-<figcaption>コード5</figcaption>
+<div class="code-container">
+<div class="captioon">コード5</div>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html xml:lang="ja" lang="ja">
 <head>
@@ -91,7 +91,7 @@
 </article>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 </article>
 </body>
 </html>

@@ -35,8 +35,8 @@
 </ul>
 
 <!--
-<figure id="コード2">
-<figcaption>コード2</figcaption>
+<div class="code-container" id="コード2">
+<div class="captioon">コード2</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <head>
@@ -47,15 +47,15 @@
 <article><p framexs:id-d="main">コンテンツのid属性がmainの部分を読み込み置き換える</p></article>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 -->
 
 <p>Webブラウザで<kbd>/contents.xhtml</kbd>にアクセスし、各ブラウザに付属する管理者モードでソースを見てください。
 <br/>
 ソースコードが以下のように変わっています。</p>
 
-<figure id="コード1">
-<figcaption><b>/contents.xhtml</b>のソースコード</figcaption>
+<div class="code-container" id="コード1">
+<div class="captioon"><b>/contents.xhtml</b>のソースコード</div>
 <pre><code class="language xml c13"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton template.xhtml?>
@@ -69,12 +69,12 @@
 </article>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 
 
 
-<figure id="コード2">
-<figcaption>template.xhtmlのソースコード</figcaption>
+<div class="code-container" id="コード2">
+<div class="captioon">template.xhtmlのソースコード</div>
 <pre><code class="language xml c10"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <head>
@@ -85,11 +85,11 @@
 <article><p framexs:id-d="main">コンテンツのid属性がmainの部分を読み込み置き換える</p></article>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 
 
-<figure id="コード3">
-<figcaption>実際にアクセスした<b>/contents.xhtml</b>のDOM</figcaption>
+<div class="code-container" id="コード3">
+<div class="captioon">実際にアクセスした<b>/contents.xhtml</b>のDOM</div>
 <pre><code class="language xml c13"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="ja">
 <head>
@@ -103,7 +103,7 @@
 </article>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 <p>Framexsにより<i>title</i>要素が合成され、タイトルが「世界よこんにちは - テンプレートタイトル」に変わっています。
 <br />これは、テンプレートの <i>framexs:id-d="main"</i> の属性を持つ<i>p</i>要素が、コンテンツの <i>id="main"</i> 属性を持つ<i>article</i>要素の子要素へと置き換わっているからです。
 <br/>
@@ -121,8 +121,8 @@
 <li class="branch_L"><span class="branch_SF"></span>/template</li><ul><li class="branch_L">/template.xhtml</li></ul>
 </ul>
 <p><i>/contents/contents.xhtml</i>をエディタで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
-<figure id="コード4">
-<figcaption>contents.xhtml</figcaption>
+<div class="code-container" id="コード4">
+<div class="captioon">contents.xhtml</div>
 <pre><code class="language xml c13"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton ../template/template.xhtml?>
@@ -136,7 +136,7 @@
 </article>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 <p>3行目の<code><![CDATA[<?framexs.skeleton ../template/template.xhtml?>]]></code>の部分が、最初のソースコードから変更された箇所です。
 <br/>
 ディレクトリ構成を変更するとテンプレートを呼び出せないエラーが発生する。そこで、上記のようにURLを変更することで、移動先のディレクトリからも呼び出せるようになります。
@@ -154,8 +154,8 @@
 <li class="branch_L"><span class="branch_SF"></span>/template</li><ul><li class="branch_L">/template.xhtml</li></ul>
 </ul>
 <p><i>contents2.xhtml</i>をエディタで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
-<figure id="コード5">
-<figcaption>contents2.xhtml</figcaption>
+<div class="code-container" id="コード5">
+<div class="captioon">contents2.xhtml</div>
 <pre><code class="language xml c13"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton ../template/template.xhtml?>
@@ -169,10 +169,10 @@
 </article>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 <p>Webブラウザで<kbd>/contents/contents2.xhtml</kbd>にアクセスし、各ブラウザに付属する管理者モードでソースを見てください。下記と同様のDOMが出来ているか確認しましょう。</p>
-<figure id="コード6">
-<figcaption>実際にアクセスした<b>/contents.xhtml</b>のDOM</figcaption>
+<div class="code-container" id="コード6">
+<div class="captioon">実際にアクセスした<b>/contents.xhtml</b>のDOM</div>
 <pre><code class="language xml c13"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="ja">
 <head>
@@ -186,15 +186,15 @@
 </article>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 <p>上記の通り、コンテンツそのものは僅かなコードで構成されており、テンプレートを共用すれば全体のイメージを統一することができます。
   <br />この状態でテンプレートを改造してみましょう。</p>
   
 <h2>テンプレートの改造</h2>
   
 <p><i>template.xhtml</i> をエディタで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
-<figure id="コード7">
-<figcaption>template.xhtml</figcaption>
+<div class="code-container" id="コード7">
+<div class="captioon">template.xhtml</div>
 <pre><code class="language xml c17"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <head>
@@ -212,10 +212,10 @@
 <!-- add after bootstrap.min.css -->
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 <p>Webブラウザで<kbd>contents2.xhtml</kbd>にアクセスし、各ブラウザに付属する管理者モードでソースを見てください。下記と同様のDOMが出来ているか確認しましょう。</p>
-<figure id="コード8">
-<figcaption>実際にアクセスした<b>contents2.xhtml</b>のDOM</figcaption>
+<div class="code-container" id="コード8">
+<div class="captioon">実際にアクセスした<b>contents2.xhtml</b>のDOM</div>
 <pre><code class="language xml c19"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="ja">
 <head>
@@ -235,7 +235,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 <p>表示されたページのソースコードはFramexsの働きで書き換えられていますが、<i>contents2.xhtml</i>の元々のソースコードには手を加えていません。
 <br /><br />Framexsで管理したサイトの基盤となるHTMLでは、テンプレートの改造が全てのページに適用されます。
 <br /><br />

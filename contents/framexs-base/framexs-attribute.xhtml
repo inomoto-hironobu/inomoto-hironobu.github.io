@@ -23,8 +23,8 @@
 <li class="branch_L"><span style="font-weight:bold; color:#633;">/template.xhtml</span></li>
 </ul>
 
-<figure id="コード1">
-<figcaption>コード1 /template.xhtml</figcaption>
+<div class="code-container" id="コード1">
+<div class="captioon">コード1 /template.xhtml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
@@ -42,7 +42,7 @@ test
 </article>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 
 <p>これに対して、コード2を持つコンテンツXHTML、コード3を持つプロパティXMLを以下のように作成する。</p>
 <ul class="branch_F">
@@ -52,8 +52,8 @@ test
 <li class="branch_L"><span style="font-weight:bold; color:#633;">/properties.xml</span></li>
 </ul>
 
-<figure id="コード2">
-<figcaption>コード2 /contents.xhtml</figcaption>
+<div class="code-container" id="コード2">
+<div class="captioon">コード2 /contents.xhtml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton template.xhtml?>
@@ -65,18 +65,18 @@ test
 <body>
 </body>
 </html>]]></code></pre>
-</figure>
-<figure id="コード3">
-<figcaption>コード3 /properties.xml</figcaption>
+</div>
+<div class="code-container" id="コード3">
+<div class="captioon">コード3 /properties.xml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <properties xmlns="urn:framexs">
 <property name="filename">hoge.html</property>
 </properties>
 ]]></code></pre>
-</figure>
+</div>
 <p><kbd>/contents.xhtml</kbd>にアクセスすると、次のコード4を持つHTMLが生成される。</p>
-<figure>
-<figcaption>コード4</figcaption>
+<div class="code-container">
+<div class="captioon">コード4</div>
 <pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html xml:lang="ja" lang="ja">
 <head>
@@ -90,7 +90,7 @@ test
 </article>
 </body>
 </html>]]></code></pre>
-</figure>
+</div>
 <p><i>framexs:element</i>要素の子に<i>framexs:attribute</i>要素がある場合、<strong>アトリビュート機能</strong>が自動的に作動し、<i>framexs:element</i>要素に指定した属性を生成します。
 <br /><br />上記のコードでは、<i>a</i>タグに<i>framexs:element</i>要素が以下のような要素で構成されています。
 </p>
