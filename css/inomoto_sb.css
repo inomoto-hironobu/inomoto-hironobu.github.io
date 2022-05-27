@@ -1,3 +1,76 @@
+/*### 5/27変更分 #################*/
+
+
+.talk_sidea {
+background-color:#fddaf7 !important;
+    position: relative; 
+    width: 80%;
+    left: 120px !important;
+}
+.talk_sideb {
+background-color:#e8fdfb !important;
+    position: relative;
+    width: 80%;
+}
+
+.talk_sidea::before{
+position: absolute;
+    content: '';
+    top: 0px;
+    left: -120px;
+    background-image: url(../images/woman.png);
+    width: 100px;
+    height: 100px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.talk_sidea::after{
+    position: absolute;
+    content: '';
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    top: 45px;
+    left: -9px;
+    width: 16px;
+    height: 16px;
+    background: #fddaf7;
+    transform: rotate(45deg);
+}
+
+
+.talk_sideb::before{
+position: absolute;
+    content: '';
+    top: 0px;
+    right: -120px;
+    background-image: url(../images/man.png);
+    width: 100px;
+    height: 100px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.talk_sideb::after{
+    position: absolute;
+    content: '';
+    border-right: 1px solid #000;
+    border-top: 1px solid #000;
+    top: 45px;
+    right: -9px;
+    width: 16px;
+    height: 16px;
+    background: #e8fdfb;
+    transform: rotate(45deg);
+}
+
+
+
+
 /*### 4/26変更分 #################*/
 
 
