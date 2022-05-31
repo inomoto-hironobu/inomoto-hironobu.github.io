@@ -2,13 +2,13 @@
 
 
 .talk_sidea {
-background-color:#fddaf7 !important;
+background-color:#F5ECF3 !important;
     position: relative; 
     width: 80%;
     left: 120px !important;
 }
 .talk_sideb {
-background-color:#e8fdfb !important;
+background-color:#ECF6F5 !important;
     position: relative;
     width: 80%;
 }
@@ -36,7 +36,7 @@ position: absolute;
     left: -9px;
     width: 16px;
     height: 16px;
-    background: #fddaf7;
+    background: #F5ECF3;
     transform: rotate(45deg);
 }
 
@@ -64,7 +64,7 @@ position: absolute;
     right: -9px;
     width: 16px;
     height: 16px;
-    background: #e8fdfb;
+    background: #ECF6F5;
     transform: rotate(45deg);
 }
 
