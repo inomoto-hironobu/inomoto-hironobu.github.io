@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja" xmlns:v-on="vuejs">
+<head>
+<meta charset="UTF-8"/>
+<meta framexs:fix="" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<title><framexs:title/> - 八百幡（やおはた）―日々雑感のまとめ</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<framexs:script/>
+</head>
+<body>
+<framexs:list ref="sample1">
+item:<framexs:item/>
+attr:<framexs:item-attr name="title"/>
+<a framexs:element="">
+<framexs:attribute name="href"><framexs:item/></framexs:attribute>
+<framexs:item-attr name="title"/>
+</a>
+</framexs:list>
+<framexs:table>
+</framexs:table>
+</body>
+</html>
