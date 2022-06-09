@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
-<?framexs.skeleton ../../template/template.xhtml?>
+<?framexs.skeleton ../../template/main.ftml?>
 <?framexs.properties ../../properties/properties.xml?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
@@ -20,11 +20,11 @@
 
 <ul class="branch_F">
 <li class="branch_T">/framexs.xsl</li>
-<li class="branch_L"><span style="font-weight:bold; color:#633;">/template.xhtml</span></li>
+<li class="branch_L"><span style="font-weight:bold; color:#633;">/main.ftml</span></li>
 </ul>
 
 <div class="code-container" id="コード1">
-<div class="captioon">コード1 /template.xhtml</div>
+<div class="captioon">コード1 /main.ftml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
@@ -45,7 +45,7 @@
 
 <ul class="branch_F">
 <li class="branch_T">/framexs.xsl</li>
-<li class="branch_T">/template.xhtml</li>
+<li class="branch_T">/main.ftml</li>
 <li class="branch_T"><span style="font-weight:bold; color:#633;">/contents.xhtml</span></li>
 <li class="branch_L"><span style="font-weight:bold; color:#633;">/properties.xml</span></li>
 </ul>
@@ -54,7 +54,7 @@
 <div class="captioon">コード2 /contents.xhtml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
-<?framexs.skeleton template.xhtml?>
+<?framexs.skeleton main.ftml?>
 <?framexs.properties properties.xml?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
@@ -102,11 +102,11 @@
 </div>
 
 
-<p>/template.xhtmlにある <i>&lt;framexs:property name="○○"/&gt;</i> が、/properties.xmlに記述された<i>property</i>要素に指定されている定数を呼び出し、<kbd>/contents.xhtml</kbd>に反映されていることが分かります。
+<p>/main.ftmlにある <i>&lt;framexs:property name="○○"/&gt;</i> が、/properties.xmlに記述された<i>property</i>要素に指定されている定数を呼び出し、<kbd>/contents.xhtml</kbd>に反映されていることが分かります。
 <br /><br />
 例題のコードでは、<i>site-name</i>に指定された「- 八百幡」が、<i>title</i>要素に合成され、サイト名を生成しています。
 <br /><br />
-これによって、サイトの名前やコピーライトといったサイトの情報を<b>定型文</b>として別に用意しておくことで、/template.xhtmlを修正することなく、情報を書き換えることが可能となるのです。
+これによって、サイトの名前やコピーライトといったサイトの情報を<b>定型文</b>として別に用意しておくことで、/main.ftmlを修正することなく、情報を書き換えることが可能となるのです。
 </p>
 
 <h3>propertyの応用</h3>

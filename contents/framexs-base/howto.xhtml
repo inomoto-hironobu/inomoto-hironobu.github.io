@@ -1,13 +1,12 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
-<?framexs.skeleton ../../template/template.xhtml?>
+<?framexs.skeleton ../../template/main.ftml?>
 <?framexs.properties ../../properties/properties.xml?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
 <title>Framexs入門と利点</title>
 <meta name="description" content="Framexsの始め方を通して利点を解説する。8つのコードでFramexsの利用方法及び利点を書く。"/>
 <meta name="modified" content="2021/02/27"/>
-<link rel="up" href="index.xhtml"/>
 </head>
 <body>
 <article id="main">
@@ -27,11 +26,11 @@
   <a href="https://inomoto-hironobu.github.io/framexs.xsl">framexs.xsl</a>をダウンロードする。
 -->  
  <p>
-   ダウンロードしたフォルダを解凍し、中に入っているframexs.xsl、contents.xhtml、template.xhtmlを、下図のようにディレクトリに配置します。</p>
+   ダウンロードしたフォルダを解凍し、中に入っているframexs.xsl、contents.xhtml、main.ftmlを、下図のようにディレクトリに配置します。</p>
 <ul class="branch_F">
 <li class="branch_T"><span style="font-weight:bold; color:#633;">/framexs.xsl</span></li>
 <li class="branch_T"><span style="font-weight:bold; color:#633;">/contents.xhtml</span></li>
-<li class="branch_L"><span style="font-weight:bold; color:#633;">/template.xhtml</span></li>
+<li class="branch_L"><span style="font-weight:bold; color:#633;">/main.ftml</span></li>
 </ul>
 
 <!--
@@ -58,7 +57,7 @@
 <div class="captioon"><b>/contents.xhtml</b>のソースコード</div>
 <pre><code class="language xml c13"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
-<?framexs.skeleton template.xhtml?>
+<?framexs.skeleton main.ftml?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>世界よこんにちは</title>
@@ -74,7 +73,7 @@
 
 
 <div class="code-container" id="コード2">
-<div class="captioon">template.xhtmlのソースコード</div>
+<div class="captioon">main.ftmlのソースコード</div>
 <pre><code class="language xml c10"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <head>
@@ -118,14 +117,14 @@
 <ul class="branch_F">
 <li class="branch_T">/framexs.xsl</li>
 <li class="branch_T"><span class="branch_SF"></span>/contents</li><ul><li class="branch_IL">/contents.xhtml</li></ul>
-<li class="branch_L"><span class="branch_SF"></span>/template</li><ul><li class="branch_L">/template.xhtml</li></ul>
+<li class="branch_L"><span class="branch_SF"></span>/template</li><ul><li class="branch_L">/main.ftml</li></ul>
 </ul>
 <p><i>/contents/contents.xhtml</i>をエディタで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
 <div class="code-container" id="コード4">
 <div class="captioon">contents.xhtml</div>
 <pre><code class="language xml c13"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
-<?framexs.skeleton ../template/template.xhtml?>
+<?framexs.skeleton ../template/main.ftml?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>世界よこんにちは</title>
@@ -137,7 +136,7 @@
 </body>
 </html>]]></code></pre>
 </div>
-<p>3行目の<code><![CDATA[<?framexs.skeleton ../template/template.xhtml?>]]></code>の部分が、最初のソースコードから変更された箇所です。
+<p>3行目の<code><![CDATA[<?framexs.skeleton ../template/main.ftml?>]]></code>の部分が、最初のソースコードから変更された箇所です。
 <br/>
 ディレクトリ構成を変更するとテンプレートを呼び出せないエラーが発生する。そこで、上記のようにURLを変更することで、移動先のディレクトリからも呼び出せるようになります。
 <br/>
@@ -151,14 +150,14 @@
 <li class="branch_T">/framexs.xsl</li>
 <li class="branch_T"><span class="branch_SF"></span>/contents</li><ul><li class="branch_IT">/contents.xhtml</li>
                       <li class="branch_IL">/contents2.xhtml</li></ul>
-<li class="branch_L"><span class="branch_SF"></span>/template</li><ul><li class="branch_L">/template.xhtml</li></ul>
+<li class="branch_L"><span class="branch_SF"></span>/template</li><ul><li class="branch_L">/main.ftml</li></ul>
 </ul>
 <p><i>contents2.xhtml</i>をエディタで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
 <div class="code-container" id="コード5">
 <div class="captioon">contents2.xhtml</div>
 <pre><code class="language xml c13"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
-<?framexs.skeleton ../template/template.xhtml?>
+<?framexs.skeleton ../template/main.ftml?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>今日の天気</title>
@@ -192,9 +191,9 @@
   
 <h2>テンプレートの改造</h2>
   
-<p><i>template.xhtml</i> をエディタで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
+<p><i>main.ftml</i> をエディタで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
 <div class="code-container" id="コード7">
-<div class="captioon">template.xhtml</div>
+<div class="captioon">main.ftml</div>
 <pre><code class="language xml c17"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <head>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
-<?framexs.skeleton ../../template/template.xhtml?>
+<?framexs.skeleton ../../template/main.ftml?>
 <?framexs.properties ../../properties/properties.xml?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
@@ -15,7 +15,7 @@
 <div class="captioon">コード1</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="../framexs.xsl"?>
-<?framexs.skeleton ../template/template.xhtml?>
+<?framexs.skeleton ../template/main.ftml?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>世界よこんにちは</title>
@@ -43,7 +43,7 @@
 <p>またファイル配置はこうなっているとする。</p>
 <dl>
 <dt>コード1</dt><dd>/contents/sample.xhtml</dd>
-<dt>コード2</dt><dd>/template/template.xhtml</dd>
+<dt>コード2</dt><dd>/template/main.ftml</dd>
 <dt>Framexs</dt><dd>/framexs.xsl</dd>
 </dl>
 <p>この方法はコンテンツXHTMLにいくつもの処理命令を書く方法であるが、一つのコンテンツに対して一つのテンプレートが密接に結びつけてしまうことを意味する。<br/>
@@ -56,7 +56,7 @@
 <div class="captioon">コード3</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0"?>
 <?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
-<?framexs.skeleton ../../template/template.xhtml?>
+<?framexs.skeleton ../../template/main.ftml?>
 <tunnel xmlns="urn:framexs" content="../item/framexs-tunnel.xhtml"/>]]></code></pre>
 </div>
 <p>これは何をしているのかというとframexs:tunnelのcontent属性で指定されたページをFramexsコンテンツXHTMLとしてFramexs処理を行わせるというものである。<br/>
@@ -65,13 +65,13 @@
 <div class="captioon">コード4</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0"?>
 <?xml-stylesheet type="application/xml" href="../framexs.xsl"?>
-<?framexs.skeleton ../template/template.xhtml?>
+<?framexs.skeleton ../template/main.ftml?>
 <tunnel xmlns="urn:framexs" content="../contents/sample.xhtml"/>]]></code></pre>
 </div>
 <p>ファイルを次のように配置する。</p>
 <dl>
 <dt>コード1</dt><dd>/contents/sample.xhtml</dd>
-<dt>コード2</dt><dd>/template/template.xhtml</dd>
+<dt>コード2</dt><dd>/template/main.ftml</dd>
 <dt>Framexs</dt><dd>/framexs.xsl</dd>
 <dt>コード4</dt><dd>/tunnel/sample.xml</dd>
 </dl>
