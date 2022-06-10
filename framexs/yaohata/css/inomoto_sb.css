@@ -20,7 +20,7 @@ position: absolute;
     left: -120px;
     background-image: url(../images/woman.png);
     width: 100px;
-    height: 100px;
+    height: 100px;                       
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -81,11 +81,11 @@ position: absolute;
     padding-left: 0.4rem !important;
 }
 
-figure code {
+.code-container code {
     margin-left: 2rem;
 }
 
-figure code:before {
+.code-container code:before {
 clear:both;
   color:#900;
   font-weight:bold;
@@ -385,13 +385,13 @@ table.responsive td {
 
 
 /*38.謎のスクロールバーを消す*/
-.main figure {
+.main .code-container {
   background-color: #f8f9fa !important;
     overflow-x: hidden !important;
 }
 
 /*37.コード部分が見づらい*/
-.main figcaption{
+.main .caption{
   /*タイトル部分の間隔を広げる*/
   line-height: 40px !important; 
 }

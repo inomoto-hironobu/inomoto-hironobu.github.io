@@ -48,6 +48,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		githubHistoryLink.appendChild(document.createTextNode('ファイルの変更履歴'));
 		githubHistoryElement.appendChild(githubHistoryLink);
 	}
+	
 	document
 	.querySelectorAll('*[data-url]')
 	.forEach((link)=>{
@@ -71,16 +72,22 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		const title = link.dataset.sourceTitle;
 		const type = link.dataset.sourceType;
 		const url = link.dataset.source;
-		let figure = document.getElementById('source-template').content.firstElementChild.cloneNode(true);
+		let container = document.getElementById('source-template').content.firstElementChild.cloneNode(true);
 		axios
 		.get(url, {responseType:'text'})
 		.then(res=>{
-			figure.setAttribute('id', title);
-			figure.querySelector('figcaption').textContent=title;
-			const code = figure.querySelector('code');
+			container.setAttribute('id', title);
+			container.querySelector('.caption').textContent=title;
+			const code = contianer.querySelector('code');
 			code.innerHTML=hljs.highlight(res.data, {language: type}).value;
-			link.replaceWith(figure);
+			link.replaceWith(container);
 		});
+	});
+
+	document
+	.querySelectorAll('*[data-table-setting]')
+	.forEach((table)=>{
+
 	});
 });
 
