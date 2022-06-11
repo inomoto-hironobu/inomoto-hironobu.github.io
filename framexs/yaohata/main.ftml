@@ -141,24 +141,10 @@ wo=ws;
           <a class="dropdown-item" href="/contents/framexs-base/index.xhtml">Framexsの基礎に関する記事一覧</a>
           <a class="dropdown-item" href="/contents/framexs-api/index.xhtml">FTMLで使う機能のAPI記事一覧</a>
           <a class="dropdown-item" href="/contents/framexs-application/index.xhtml">Framexsの応用に関する記事一覧</a>
-          <a class="dropdown-item" href="/contents/business/framexs.xhtml">Framexsに関するビジネス</a>
-          <a class="dropdown-item" href="/contents/business/privacy-policy.xhtml">プライバシーポリシー</a>
           <a class="dropdown-item" href="/contents/article/index.xhtml">Framexsに関するオピニオン一覧</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="Framexs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Framexsの基礎
-        </a>
-        <div class="dropdown-menu" aria-labelledby="Framexs">
-          <a class="dropdown-item" href="/contents/knowledge/framexs.xhtml">Framexsについて</a>
-          <a class="dropdown-item" href="/contents/howto/framexs.xhtml">入門と利点</a>
-          <a class="dropdown-item" href="/contents/framexs-base/framexs-api.xhtml">API一覧</a>
-          <a class="dropdown-item" href="/contents/framexs-base/framexs-tunnel.xml">トンネル</a>
-          <a class="dropdown-item" href="/contents/framexs-base/framexs-property.xhtml">プロパティ</a>
-          <a class="dropdown-item" href="/contents/framexs-base/framexs-attribute.xhtml">属性の生成</a>
-          <a class="dropdown-item" href="/contents/framexs-base/framexs-if.xhtml">if文</a>
-          <a class="dropdown-item" href="/contents/framexs-base/framexs-import.xhtml">インポート</a>
+          <a class="dropdown-item" href="/contents/business/service.xhtml">Framexs学習サービス</a>
+          <a class="dropdown-item" href="/contents/business/company.xhtml">会社設立のために</a>
+          <a class="dropdown-item" href="/contents/business/privacy-policy.xhtml">プライバシーポリシー</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -202,7 +188,7 @@ wo=ws;
 </script>
 </div>
 </framexs:if>
-<framexs:resource name="aside"/>              
+<framexs:resource name="aside"/>
 </aside>
 </framexs:if>
 <main style="width:100%" framexs:element="">
