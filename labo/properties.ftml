@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta framexs:fix="" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<title><framexs:title/> - 八百幡</title>
+</head>
+<body>
+<framexs:property name="site-name"/><br/>
+<framexs:property name="site-owner"/><br/>
+<framexs:if property="site-name">
+site-nameが設定されている<br/>
+</framexs:if>
+<framexs:if property="site-name" value="八百幡">
+site-nameは八百幡<br/>
+</framexs:if>
+</body>
+</html>
