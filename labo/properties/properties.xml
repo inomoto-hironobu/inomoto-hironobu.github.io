@@ -1,7 +1,11 @@
 <?xml version="1.0"?>
 <framexs:properties xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
-
-<framexs:property name="links">
-<li title="">content1.xhtml</li>
+<framexs:base href="base.xml"/>
+<framexs:property name="nav">
+<li title="基礎">/contents/framexs-base/index.xhtml</li>
+<li title="応用">/contents/framexs-application/index.xhtml</li>
+<li title="API">/contents/framexs-api/index.xhtml</li>
+<li title="オピニオン">/contents/article/index.xhtml</li>
+<li title="その他">/contents/other/index.xhtml</li>
 </framexs:property>
 </framexs:properties>

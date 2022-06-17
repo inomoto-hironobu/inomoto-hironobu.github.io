@@ -16,7 +16,7 @@ XSLTで実現するフレームワーク framexs
 	<xsl:variable name="xhns" select="'http://www.w3.org/1999/xhtml'"/>
 	<xsl:variable name="fmxns" select="'urn:framexs'"/>
 	<xsl:variable name="empty" select="''"/>
-	<xsl:variable name="version" select="'1.22.1'"/>
+	<xsl:variable name="version" select="'1.23.0'"/>
 
 	<xsl:key name="property" match="framexs:property" use="@name"></xsl:key>
 
@@ -379,11 +379,10 @@ XSLTで実現するフレームワーク framexs
 			<xsl:when test="@id = $id">
 				<!-- コンテンツの各li要素に対して処理を行う -->
 				<xsl:for-each select="xh:li">
-					<xsl:variable name="target" select="."/>
 					<xsl:apply-templates select="$current/node()">
 						<xsl:with-param name="content" select="$content"/>
 						<xsl:with-param name="properties" select="$properties"/>
-						<xsl:with-param name="target" select="$target"/>
+						<xsl:with-param name="target" select="."/>
 					</xsl:apply-templates>
 				</xsl:for-each>
 			</xsl:when>
@@ -398,22 +397,49 @@ XSLTで実現するフレームワーク framexs
 		</xsl:choose>
 	</xsl:template>
 	
-	<xsl:template match="framexs:list[@ref]">
+	<xsl:template match="framexs:list[@ref-id and not(@ref-property)]">
 		<xsl:param name="content"/>
 		<xsl:param name="properties"/>
 		<xsl:variable name="current" select="."/>
 		<xsl:apply-templates mode="search-id-list" select="$content/xh:html">
-			<xsl:with-param name="id" select="@ref"/>
+			<xsl:with-param name="id" select="@ref-id"/>
 			<xsl:with-param name="content" select="$content"/>
 			<xsl:with-param name="properties" select="$properties"/>
 			<xsl:with-param name="current" select="$current"/>
 		</xsl:apply-templates>
 	</xsl:template>
 
+	<xsl:template match="framexs:list[@ref-property and not(@ref-id)]">
+		<xsl:param name="content"/>
+		<xsl:param name="properties"/>
+		<xsl:apply-templates select="$properties" mode="list">
+			<xsl:with-param name="content" select="$content"/>
+			<xsl:with-param name="properties" select="$properties"/>
+			<xsl:with-param name="current" select="."/>
+			<xsl:with-param name="ref" select="@ref-property"></xsl:with-param>
+		</xsl:apply-templates>
+	</xsl:template>
+
+	<xsl:template match="framexs:properties" mode="list">
+		<xsl:param name="content"/>
+		<xsl:param name="properties"/>
+		<xsl:param name="current"/>
+		<xsl:param name="ref"/>
+		<xsl:value-of select="key('property',$ref)/text()"></xsl:value-of>
+		<xsl:for-each select="key('property',$ref)/xh:li">
+			<xsl:apply-templates select="$current/node()">
+				<xsl:with-param name="content" select="$content"/>
+				<xsl:with-param name="properties" select="$properties"/>
+				<xsl:with-param name="target" select="."/>
+			</xsl:apply-templates>
+		</xsl:for-each>
+	</xsl:template>
+
 	<xsl:template match="framexs:item">
 		<xsl:param name="target"/>
 		<xsl:apply-templates select="$target/node()"/>
 	</xsl:template>
+	
 	<xsl:template match="framexs:item-attr[@name]">
 		<xsl:param name="target"></xsl:param>
 		<xsl:variable name="name" select="@name"/>
