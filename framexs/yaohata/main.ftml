@@ -41,7 +41,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 <script src="js/util.js"></script>
 <script src="js/main.js"></script>
-<script src="js/http.js"></script>
 
 <script src="js/jquery.js"></script>
 <link rel="stylesheet" href="css/jquery-ui.css"/>
@@ -93,11 +92,9 @@ wo=ws;
 
 <framexs:if property="pagetype" value="lp">
 <link rel="stylesheet" href="css/lp.css"/>
-<script src="js/article.js"></script>
 </framexs:if>
 
 <framexs:if property="pagetype" value="index">
-<script src="js/index.js"></script>
 <link rel="stylesheet" href="css/article.css"/>
 </framexs:if>
 
