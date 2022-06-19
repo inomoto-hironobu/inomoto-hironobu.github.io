@@ -14,5 +14,8 @@ site-nameが設定されている<br/>
 <framexs:if property="site-name" value="八百幡">
 site-nameは八百幡<br/>
 </framexs:if>
+<framexs:list ref-property="nav">
+<framexs:item-attr name="title"/><framexs:item/><br/>
+</framexs:list>
 </body>
 </html>

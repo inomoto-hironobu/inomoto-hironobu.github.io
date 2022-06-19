@@ -115,6 +115,7 @@ wo=ws;
 <script async="" defer="" src="..//survey.g.doubleclick.net/async_survey?site=u7mehjhrqvosros3my3mxijaa4"></script>
 </head>
 <body class="bg-dark">
+<framexs:property name="site-name"/>
 <framexs:if property="google-tag-manager-code">
 <!-- Google Tag Manager (noscript) -->
 <noscript>
