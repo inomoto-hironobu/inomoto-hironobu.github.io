@@ -218,10 +218,9 @@ bg-light
 <framexs:id name="main"/>
 </section>
 <framexs:if property="pagetype" value="index">
-<table id="indexes" class="responsive">
-<tr class="th"><th>リンク</th><th>情報</th></tr>
-<tr framexs:id-d="indexes"></tr>
-</table>
+<ul id="indexes">
+<framexs:id name="indexes"/>
+</ul>
 </framexs:if>
 <framexs:id name="postmain"/>
 <framexs:if id="coda">
