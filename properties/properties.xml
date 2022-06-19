@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <framexs:properties xmlns:framexs="urn:framexs">
-<framexs:property name="site-name">八百幡（やおはた）</framexs:property>
-<framexs:property name="google-tag-manager-code">GTM-5L2SQ9B</framexs:property>
+<framexs:base href="base.xml"/>
 <framexs:property name="pagetype">article</framexs:property>
 <framexs:property name="sidebar">display</framexs:property>
+
 </framexs:properties>
