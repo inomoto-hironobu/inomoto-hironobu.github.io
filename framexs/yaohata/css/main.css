@@ -14,8 +14,13 @@ body {
     text-shadow: 2px 2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff, -2px -2px 2px #fff, 2px 0px 2px #fff, 0px 2px 2px #fff, -2px 0px 2px #fff, 0px -2px 2px #fff;
     line-height: 120%;
 	font-size:180%;
-    color: #2828d0;
+	color:black;
+	padding-left: 10px;
+	border-left: solid 8px gray;
+	border-bottom: solid 3px gray;
+	padding-bottom: 8px;
 }
+
 .main h1,.main h2,.main h3,.main h4,.main h5,.main h6 {
     font-weight: bold;
     margin-top: 0%;
@@ -140,4 +145,504 @@ table.responsive td, table.responsive th {
 	table.responsive tfoot {
 		display:block;
 	}
+}
+#pagetop > nav{
+	background:linear-gradient(#F7F9FE,#CACACA);
+	box-shadow: 1px 1px 10px #778;
+}
+  @media screen and (max-width:767px) {
+
+	/*タイトルの調整*/
+	.title {
+	background-color: #AAA;
+	line-height: 2.0;
+	border-top: solid 8px #BBB;
+	border-right: solid 8px #999;
+	box-shadow: 0 6px 0px gray;
+	}
+	
+}
+
+/*表示がおかしくなっていたので修正*/
+@media screen and (min-width:767px) {
+/*PC表示の時ワイドを1000PXで固定*/
+.container{
+	max-width:1000px;
+	width:1000px;
+}
+}
+
+/*34.悪目立ちしている連絡ボックスを修正*/
+#coda{
+/*見出しボックス内の色を変更*/
+	border: solid 1px #5a5a5a;
+	color:#444;
+	background: linear-gradient(#FFF, #EFEFEF);
+	/*見出しの文字を普通の文字に*/
+font-weight: normal;
+font-size: 100%;
+overflow: hidden;
+}
+
+#coda h1,
+#coda h2,
+#coda h3,
+#coda h4,
+#coda h5,
+#coda h6{
+/*見出しの色を変更*/
+background: #6a6a6a;
+}
+
+#coda h3 {
+/*見出しの文字を変更*/
+font-size: 130%;
+line-height: 55px;
+}
+
+
+
+/*外部リンクの見た目を調整*/
+#coda ul {
+margin:25px;
+padding: 10px 40px;
+}
+/*31.ヘッダーが半透明になってる*/
+#pagetop{
+	/*透明化を解除*/
+	opacity: 1;
+  }
+/*19.プライバシーポリシーの修正*/
+#footer-links p {
+	/*表示がおかしくなっていたので修正*/
+	margin: 0px 0;
+}
+
+#footer-links p:hover {
+/*色が変わるように修正*/
+background-color:#1a74b1;
+width:192px;
+padding-left:15px;
+margin-left:-15px;
+}
+
+#footer-links a:hover {
+/*リンク下線を除去*/
+text-decoration: none;
+}
+/*25.スペースの変更*/
+#side-infomation p {
+	/*アイドメニューの幅を広げる*/
+	line-height: 170%;
+	margin-top:30px;
+  }
+  .dl_link:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f019";
+    font-weight: 900;
+}
+
+.out_link:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f35d";
+    font-weight: 900;
+}
+
+.tips {
+  list-style: none;
+  font-size:80%;
+    font-weight: 900;
+    color: #633;
+margin-left:-54px;
+}
+.tips:before {
+  list-style: none;
+    content: "※　";
+}
+
+ul.contact {
+	background: RGBA(255,255,255,0.02);
+    margin: 1rem auto;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+}
+.contact a {
+	color: #396;
+	display:block;
+	padding: 10px 0;
+}
+.contact > li {
+	list-style: none;
+    margin: 1rem 10%;
+    width: 80%;
+    background: linear-gradient(#efe, #beb);
+    color: #396;
+    font-weight: bold;
+    font-size: 180%;
+    border: solid 5px #396;
+    border-radius: 10px;
+    text-shadow: 2px 2px 1px #fff, -2px 2px 1px #fff, 2px -2px 1px #fff, -2px -2px 1px #fff, 2px 0px 1px #fff, 0px 2px 1px #fff, -2px 0px 1px #fff, 0px -2px 1px #fff;
+    box-shadow: 2px 2px 4px #9a9;
+
+}
+
+.talk_sidea {
+	background-color:#F5ECF3;
+		position: relative; 
+		width: 80%;
+		left: 120px;
+	}
+	.talk_sideb {
+	background-color:#ECF6F5;
+		position: relative;
+		width: 80%;
+	}
+	
+	.talk_sidea::before{
+	position: absolute;
+		content: '';
+		top: 0px;
+		left: -120px;
+		background-image: url(../images/woman.png);
+		width: 100px;
+		height: 100px;                       
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	
+	
+	.talk_sidea::after{
+		position: absolute;
+		content: '';
+		border-left: 1px solid #000;
+		border-bottom: 1px solid #000;
+		top: 45px;
+		left: -9px;
+		width: 16px;
+		height: 16px;
+		background: #F5ECF3;
+		transform: rotate(45deg);
+	}
+	
+	
+	.talk_sideb::before{
+	position: absolute;
+		content: '';
+		top: 0px;
+		right: -120px;
+		background-image: url(../images/man.png);
+		width: 100px;
+		height: 100px;
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	
+	
+	.talk_sideb::after{
+		position: absolute;
+		content: '';
+		border-right: 1px solid #000;
+		border-top: 1px solid #000;
+		top: 45px;
+		right: -9px;
+		width: 16px;
+		height: 16px;
+		background: #ECF6F5;
+		transform: rotate(45deg);
+	}
+	
+	.code-container code {
+		margin-left: 1rem;
+	}
+	
+	.code-container code:before {
+	clear:both;
+	  color:#900;
+	  font-weight:bold;
+		white-space: pre;
+	float:left;
+	overflow:hidden;
+	text-align:right;
+	border-right:solid 1px #111;
+	margin-right:8px;
+		position: absolute;
+		background: white;
+		margin-left: -2.7rem;
+		padding-left: 13px;
+	}
+
+#footer-links{
+	/*レスポンシブ対応*/
+	position: absolute;
+	left:calc(98% - 192px);
+	width:192px;
+	/*margin-left:60%;*/
+	z-index: 2;
+	height:40px;
+}
+.branch_F:before,
+.branch_SF:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f07c";
+    font-weight: 900;
+}
+.branch_SF:before{
+margin:0px;
+    font-weight: 100;
+}
+
+.branch_F {
+    padding: 0.7em 1.2em 1.2em;
+  list-style: none;
+}
+
+.branch_F LI {
+  list-style:none;
+}
+
+.branch_F LI {
+    line-height: 1.2;
+    padding: 0;
+}
+.branch_F:after {
+margin-bottom:0.5em;
+}
+
+.branch_T:before {
+    content: "┣";
+}
+.branch_I:before {
+    content: "┃";
+}
+
+.branch_L:before {
+    content: "┗";
+}
+.branch_IT:before {
+    content: "┃　┣";
+    margin-left: -32px;
+}
+.branch_IL:before {
+    content: "┃　┗";
+    margin-left: -32px;
+}
+
+ul ul {
+    margin-bottom: 0px;
+    border: dotted #1e366a 0px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+
+
+/*### 3/7変更分 #################*/
+
+/*43.TABLEリンクが分かりづらい*/
+table.responsive td:nth-child(1) {
+  /*リンクを左寄せにする*/
+text-align: left;
+font-weight: bold;
+}
+
+
+/*47.文字間隔の調整*/
+.row p {
+  /*本文の幅を広げる*/
+  line-height: 1.5;
+  margin: 40px 0;
+}
+
+
+
+#coda p {
+  /*ボックス内にも対応*/
+  line-height: 1.5;
+  margin:10px;
+}
+
+.dropdown-item{
+  /*メニューの幅にも対応*/
+  line-height: 1.5;
+}
+
+/*19.プライバシーポリシーの修正*/
+#footer-links{
+  box-shadow: 2px 2px 2px #636363;
+}
+
+
+/*### 3/2変更分 #################*/
+
+/*33.広告の位置を変える*/
+.adv{
+  position: absolute;
+  left:10500px;
+}
+
+/*35.リンクの見た目の調整*/
+.responsive td{
+  min-width:200px;
+}
+
+/*32.ページトップの修正*/
+/*位置移動、リンク下線が出ないように変更*/
+.col{
+  background-color: #F1F1F1;
+  border-radius: 80px;
+  border: solid 1px #111;
+  position: fixed;
+top:80%;
+/*レスポンシブ対応*/
+left:calc(98% - 53px);
+width:53px;
+z-index: 4;
+height:40px;
+}
+
+.col a{
+/*元のページトップボタンを消す*/
+  color:RGBA(0,0,0,0);
+text-decoration: none;
+}
+
+/*ページトップボタンを記号に変更*/
+.col a:before {
+  content: "▲";
+  color:#111;
+}
+
+
+
+/*30.ヘッダーの文字が薄い*/
+.navbar-light .navbar-nav .nav-link{
+  color:#111;
+}
+
+/*39.文字ボックス*/
+.main p{
+  /*文字ボックスの色を調整*/
+  margin-left:0px;
+  padding:1.25rem;
+  border-top: solid 1px #121212;
+  border-left: solid 1px #121212;
+  border-right: solid 2px #727272;
+  border-bottom: solid 2px #727272;
+}
+
+/*### 2/22変更分 #################*/
+
+
+/*26.二重になっている線を1つに戻す*/
+.main section {
+ padding-bottom:30px;
+    border-top: solid 0px gray;
+    border-bottom: solid 1px gray;
+     border-radius:1px;
+}
+
+/*フッダー上の二重線部分を消す*/
+.main section:last-child {
+   border-bottom: solid 0px gray;
+}
+
+
+/*メニューの緑が見づらい*/
+
+.main h3 {
+  /*H2の変更　H1と入れ替え+調整*/
+  color:black;
+    border-bottom: solid 3px gray;
+    padding-left: 5px;
+    padding-bottom:10px;
+}
+
+/*テーブル下のスペースを広げる*/
+table.responsive {
+  margin-bottom: 50px;
+}
+
+.main {
+  /*メイン部分のスペース調整*/
+  margin-bottom: 50px;
+}
+.row nav{
+  /*パンくずのスペース調整*/
+  margin:20px 0;
+}
+
+/*23.見出しを無彩色にし、装飾を追加*/
+
+.main h2 {
+  /*H2の変更　H1と入れ替え+調整*/
+  color:black;
+    border-left: solid 5px gray;
+    padding-left: 10px;
+}
+
+
+
+/*### 2/16変更分 #################*/
+
+
+/*22.フッダーの問題*/
+
+.bg-info {
+  /*フッダーの色を黒に*/
+  background-color:#333;
+  /*狭かったスペースを空ける*/
+  padding:20px 50px 50px;
+}
+/*文字間隔を広げる*/
+.bg-info tr{
+  line-height: 40px;
+}
+
+/*### 2/15変更分 #################*/
+
+.responsive td,
+.responsive tr {
+  line-height: 32px;
+}
+
+/*### 2/5変更分 #################*/
+
+
+table.responsive td {
+  /*リンクを同じ枠内にする*/
+    padding:20px 10px;
+    /*テーブル内にも対応*/
+  line-height: 1.5;
+}
+/**### 1/27 #################**/
+
+#pagetop{
+  z-index: 1;
+    postion: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    }
+
+#coda {
+margin-top:5px;
+}
+#coda p {
+padding:5px 15px;
+}
+
+h1 {
+margin:4% 1%;
+}
+
+h2 {
+margin:1% 1% 2%;
+}
+
+
+.main section {
+margin:4% 1% 0%;
 }

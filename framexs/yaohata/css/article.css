@@ -38,7 +38,6 @@ section ul,section ol {
 	border: ridge 4px lightcoral;
 	border-radius: 1rem;
 	background-color: white;
-	padding-left: 2rem;
 }
 .main details {
 	box-shadow: 1px 1px 2px gray;
@@ -96,3 +95,17 @@ table.vertical thead {
 table.vertical tfoot {
 	display:block;
 }
+kbd{
+    background-color: #7394b7;
+}
+/*38.謎のスクロールバーを消す*/
+.main .code-container {
+	background-color: #f8f9fa;
+	  overflow-x: hidden;
+  }
+  
+  /*37.コード部分が見づらい*/
+  .main .caption{
+	/*タイトル部分の間隔を広げる*/
+	line-height: 40px; 
+  }
