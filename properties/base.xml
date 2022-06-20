@@ -4,6 +4,7 @@
 <framexs:property name="google-tag-manager-code">GTM-5L2SQ9B</framexs:property>
 <framexs:property name="nav">
 <li title="基礎">/contents/framexs-base/index.xhtml</li>
+<li title="入門">/contents/framexs-introduction/index.xhtml</li>
 <li title="応用">/contents/framexs-application/index.xhtml</li>
 <li title="コマンド">/contents/framexs-command/index.xhtml</li>
 <li title="API">/contents/framexs-api/index.xhtml</li>
