@@ -20,31 +20,10 @@
 <p>これはある特定のディレクトリやファイルの配置、名前を統一したパッケージを作ることで共通性を高めることを祈念するものである</p>
 <p>CSS、JS、画像などをWordPressやスタティックサイトなどを容易に配置できるようにする</p>
 <p>WordPressのテーマ機能を参考にしているため、似通っている。</p>
-<h2>テーマの作り方</h2>
-<p>特定の書式のmain.ftmlという名前のファイルをテーマにしたいディレクトリのトップに置けばそれでテーマになる。</p>
-<p>書式は名前空間がurn:framexsのinfomation要素をhtml要素の下に置き、name要素にテーマの名前を入れるものである。</p>
-<p>例えば、サンプルという名前のテーマを創りたいなら以下のようにする。</p>
-<pre>
-<code>
-<![CDATA[
-<?xml version="1.0"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
-<infomation xmlns="urn:framexs">
-<name>サンプル</name>
-</infomation>
-<head>
-<title></title>
-<body>
-</body>
-</html>]]>
-</code>
-</pre>
-<p>参考とするためのテーマを用意している。</p>
-<ul>
-<li><a href="https://github.com/inomoto-hironobu/hoge">hogeテーマ</a>:参考用のごくシンプルなテーマ。<br/>
-テーマを自作したいときはこれから発展させていくことになります。</li>
-<li><a href="https://github.com/inomoto-hironobu/yaohata">八百幡テーマ</a></li>
-</ul>
+<p>例えば、このサイトは<a href="https://github.com/inomoto-hironobu/yaohata">八百幡テーマ</a>を使用している。</p>
+<p>テーマの利用方法は静的サイトの場合は、Git</p>
+<p>/skeleton-setting.xml</p>
+<p>/properties.xml</p>
 </section>
 </body>
 </html>
