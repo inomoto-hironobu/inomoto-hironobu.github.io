@@ -11,12 +11,22 @@ XSLTで実現するフレームワーク framexs
 	<xsl:param name="properties_loc" select="/processing-instruction('framexs.properties')"/>
 	<xsl:param name="framexs.base" select="/processing-instruction('framexs.base')"/>
 
-	<xsl:param name="basepath" select="concat($skeleton_loc, '/../')"/>
+	<xsl:variable name="skeleton_path">
+		<xsl:choose>
+			<xsl:when test="$skeleton_loc">
+				<xsl:value-of select="$skeleton_loc"></xsl:value-of>
+			</xsl:when>
+			<xsl:when test="$skeleton_setting_loc">
+				<xsl:value-of select="document($skeleton_setting_loc)/*"></xsl:value-of>
+			</xsl:when>
+		</xsl:choose>
+	</xsl:variable>
+	<xsl:variable name="basepath" select="concat($skeleton_path,'/../')"/>
 	<xsl:variable name="root" select="/"/>
 	<xsl:variable name="xhns" select="'http://www.w3.org/1999/xhtml'"/>
 	<xsl:variable name="fmxns" select="'urn:framexs'"/>
 	<xsl:variable name="empty" select="''"/>
-	<xsl:variable name="version" select="'1.24.0'"/>
+	<xsl:variable name="version" select="'1.24.2'"/>
 	<xsl:key name="property" match="framexs:property" use="@name"></xsl:key>
 	<xsl:variable name="properties" select="document($properties_loc)/framexs:properties"></xsl:variable>
 
@@ -24,18 +34,18 @@ XSLTで実現するフレームワーク framexs
 		<xsl:message>framexs <xsl:value-of select="$version"/></xsl:message>
 		<!-- 基本的な処理分けを行う。XHTMLか一般XMLか -->
 		<xsl:choose>
-			<xsl:when test="$skeleton_loc and namespace-uri(*[1]) = $fmxns">
+			<xsl:when test="$skeleton_path and namespace-uri(*[1]) = $fmxns">
 				<xsl:apply-templates select="document($skeleton_loc)/*">
 					<xsl:with-param name="content" select="document(/framexs:tunnel/@content)"/>
 				</xsl:apply-templates>
 			</xsl:when>
-			<xsl:when test="$skeleton_loc and namespace-uri(*[1]) = $xhns">
+			<xsl:when test="$skeleton_path and namespace-uri(*[1]) = $xhns">
 				<xsl:message>exec content</xsl:message>
-				<xsl:apply-templates select="document($skeleton_loc)/*">
+				<xsl:apply-templates select="document($skeleton_path)/*">
 					<xsl:with-param name="content" select="$root"/>
 				</xsl:apply-templates>
 			</xsl:when>
-			<xsl:otherwise>
+			<xsl:otherwise>  
 				<xsl:message>一般XML</xsl:message>
 				<html>
 					<head>
@@ -269,7 +279,7 @@ XSLTで実現するフレームワーク framexs
 		<xsl:param name="ref"></xsl:param>
 		<xsl:param name="content"/>
 		<xsl:variable name="property" select="key('property',$ref)"></xsl:variable>
-		<xsl:if test="($property/text() = $current/@value) or not($current/@value)">
+		<xsl:if test="count($property) != 0 and (($property/text() = $current/@value) or not($current/@value))">
 			<xsl:apply-templates select="$current/node()">
 				<xsl:with-param name="content" select="$content"/>
 			</xsl:apply-templates>
@@ -278,7 +288,6 @@ XSLTで実現するフレームワーク framexs
 	<xsl:template match="framexs:properties" mode="property_exists">
 		<xsl:param name="ref"/>
 		<xsl:variable name="property" select="key('property',$ref)"></xsl:variable>
-		<xsl:value-of select="$property"></xsl:value-of>
 		<xsl:if test="$property">true</xsl:if>
 	</xsl:template>
 	<xsl:template match="framexs:if[@property]">                                     
@@ -425,7 +434,7 @@ XSLTで実現するフレームワーク framexs
 			</xsl:apply-templates>
 		</xsl:variable>
 		<xsl:choose>
-			<xsl:when test="$exists = 'true'">test
+			<xsl:when test="$exists = 'true'">
 				<xsl:apply-templates select="$properties" mode="list">
 					<xsl:with-param name="content" select="$content"/>
 					<xsl:with-param name="current" select="."/>
@@ -612,7 +621,7 @@ XSLTで実現するフレームワーク framexs
 				<xsl:with-param name="scheme" select="substring-before($uri, ':')" />
 			</xsl:call-template>
 		</xsl:variable>
-
+                    
 		<xsl:value-of select="starts-with($uri, '/') or ($uri-has-scheme = 'true')" />
 	</xsl:template>
 

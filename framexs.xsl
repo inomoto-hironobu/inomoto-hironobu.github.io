@@ -11,12 +11,22 @@ XSLTで実現するフレームワーク framexs
 	<xsl:param name="properties_loc" select="/processing-instruction('framexs.properties')"/>
 	<xsl:param name="framexs.base" select="/processing-instruction('framexs.base')"/>
 
-	<xsl:param name="basepath" select="concat($skeleton_loc, '/../')"/>
+	<xsl:variable name="skeleton_path">
+		<xsl:choose>
+			<xsl:when test="$skeleton_loc">
+				<xsl:value-of select="$skeleton_loc"></xsl:value-of>
+			</xsl:when>
+			<xsl:when test="$skeleton_setting_loc">
+				<xsl:value-of select="document($skeleton_setting_loc)/*"></xsl:value-of>
+			</xsl:when>
+		</xsl:choose>
+	</xsl:variable>
+	<xsl:variable name="basepath" select="concat($skeleton_path,'/../')"/>
 	<xsl:variable name="root" select="/"/>
 	<xsl:variable name="xhns" select="'http://www.w3.org/1999/xhtml'"/>
 	<xsl:variable name="fmxns" select="'urn:framexs'"/>
 	<xsl:variable name="empty" select="''"/>
-	<xsl:variable name="version" select="'1.24.1'"/>
+	<xsl:variable name="version" select="'1.24.2'"/>
 	<xsl:key name="property" match="framexs:property" use="@name"></xsl:key>
 	<xsl:variable name="properties" select="document($properties_loc)/framexs:properties"></xsl:variable>
 
@@ -24,18 +34,18 @@ XSLTで実現するフレームワーク framexs
 		<xsl:message>framexs <xsl:value-of select="$version"/></xsl:message>
 		<!-- 基本的な処理分けを行う。XHTMLか一般XMLか -->
 		<xsl:choose>
-			<xsl:when test="$skeleton_loc and namespace-uri(*[1]) = $fmxns">
+			<xsl:when test="$skeleton_path and namespace-uri(*[1]) = $fmxns">
 				<xsl:apply-templates select="document($skeleton_loc)/*">
 					<xsl:with-param name="content" select="document(/framexs:tunnel/@content)"/>
 				</xsl:apply-templates>
 			</xsl:when>
-			<xsl:when test="$skeleton_loc and namespace-uri(*[1]) = $xhns">
+			<xsl:when test="$skeleton_path and namespace-uri(*[1]) = $xhns">
 				<xsl:message>exec content</xsl:message>
-				<xsl:apply-templates select="document($skeleton_loc)/*">
+				<xsl:apply-templates select="document($skeleton_path)/*">
 					<xsl:with-param name="content" select="$root"/>
 				</xsl:apply-templates>
 			</xsl:when>
-			<xsl:otherwise>
+			<xsl:otherwise>  
 				<xsl:message>一般XML</xsl:message>
 				<html>
 					<head>
