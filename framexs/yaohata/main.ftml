@@ -9,8 +9,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 -->
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <infomation xmlns="urn:framexs">
+<name>八百幡</name>
+<version>0.1.1</version>
 <author>井本拓伸</author>
 <license>MIT License</license>
+<summary>テーマをどう作ればいいかの参照として開発されたテーマ</summary>
 <description></description>
 </infomation>
 <head>
