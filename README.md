@@ -3,8 +3,11 @@
 
 コンテンツは/contentsに置いていある。
 
-テンプレートは/templateに置いてある。
+このサイトは八百幡テーマを使っている。
+https://github.com/inomoto-hironobu/yaohata
 
-プロパティ―は/propertiesに置いてある。
+プロパティ―集ファイルは/propertiesに置いてある。
 
 入口: https://inomoto-hironobu.github.io/index.xhtml
+
+実験的なコードは/laboに置いている。このリポジトリで試したいことはまずこのディレクトリで行う。
