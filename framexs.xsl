@@ -10,6 +10,7 @@ XSLTで実現するフレームワーク framexs
 	<xsl:param name="skeleton_loc" select="/processing-instruction('framexs.skeleton')"/>
 	<xsl:param name="properties_loc" select="/processing-instruction('framexs.properties')"/>
 	<xsl:param name="framexs.base" select="/processing-instruction('framexs.base')"/>
+	<xsl:param name="skeleton_setting_loc" select="/processing-instruction('framexs.skeleton-setting')"/>
 
 	<xsl:variable name="skeleton_path">
 		<xsl:choose>
@@ -26,12 +27,13 @@ XSLTで実現するフレームワーク framexs
 	<xsl:variable name="xhns" select="'http://www.w3.org/1999/xhtml'"/>
 	<xsl:variable name="fmxns" select="'urn:framexs'"/>
 	<xsl:variable name="empty" select="''"/>
-	<xsl:variable name="version" select="'1.24.2'"/>
+	<xsl:variable name="version" select="'1.24.3'"/>
 	<xsl:key name="property" match="framexs:property" use="@name"></xsl:key>
 	<xsl:variable name="properties" select="document($properties_loc)/framexs:properties"></xsl:variable>
 
 	<xsl:template match="/">
 		<xsl:message>framexs <xsl:value-of select="$version"/></xsl:message>
+		<xsl:message><xsl:value-of select="$basepath"></xsl:value-of></xsl:message>
 		<!-- 基本的な処理分けを行う。XHTMLか一般XMLか -->
 		<xsl:choose>
 			<xsl:when test="$skeleton_path and namespace-uri(*[1]) = $fmxns">

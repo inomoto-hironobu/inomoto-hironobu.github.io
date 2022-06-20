@@ -10,7 +10,7 @@ XSLTで実現するフレームワーク framexs
 	<xsl:param name="skeleton_loc" select="/processing-instruction('framexs.skeleton')"/>
 	<xsl:param name="properties_loc" select="/processing-instruction('framexs.properties')"/>
 	<xsl:param name="framexs.base" select="/processing-instruction('framexs.base')"/>
-
+	<xsl:param name="skeleton_setting_loc" select="/processing-instruction('framexs.skeleton-setting')"/>
 	<xsl:variable name="skeleton_path">
 		<xsl:choose>
 			<xsl:when test="$skeleton_loc">
