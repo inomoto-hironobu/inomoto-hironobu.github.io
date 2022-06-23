@@ -3,8 +3,10 @@
 
 コンテンツは/contentsに置いていある。
 
-このサイトは八百幡テーマを使っている。
+このサイトは八百幡テーマを使う設定をしている。
 https://github.com/inomoto-hironobu/yaohata
+
+ローカルで試す場合、Gitによってテーマ群はこのリポジトリのルートディレクトリに置く。例えば上記テーマなら/yaohataと置く。これによってGitHub Pages上で/yaohataにアクセスするのと、同じようになる。
 
 プロパティ―集ファイルは/propertiesに置いてある。
 
