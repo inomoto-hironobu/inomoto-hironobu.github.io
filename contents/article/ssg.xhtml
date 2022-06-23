@@ -41,6 +41,32 @@ SSGはビルドが必要とされるあまり、サービスが限定されま�
 このサイトではFramexsの参照実装として存在するとともに、解説記事Framexsの基礎も用意していますので、ぜひとも活用なさってください。</p>
 <div data-url="../framexs-base/index.xhtml"></div>
 </section>
+<section>
+<h2>Fremexsを使う意義</h2>
+<p>Fremexsの強みは、<i>link</i>要素や<i>script</i>要素などの記述のあるテンプレートを、全てのページで簡単に共有できる点が挙げられる。
+<br/><br/>
+例えば、次のようなコードを記述したい場合、</p>
+<div class="code-container">
+<div class="captioon">コード5</div>
+<pre><code class="language xml c7"><![CDATA[<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-5L2SQ9B');</script>
+<!-- End Google Tag Manager -->]]></code></pre>
+</div>
+<p>この記述をHTMLファイルに挿入する場合、<strong>全ての</strong>HTMLにこの記述を挿入して、上書き保存する必要があります。
+<br/><br/>
+つまり、プログラムに変更があった場合、そのたびに全てのHTMLを書き換えることが必要となります。1～2ページ程度の小規模な個人サイトならまだしも、何百・千とページがある大規模なサイトでは、対応するのは極めて困難です。
+<br/>
+<br/>
+しかしFramexsを使えば、テンプレートを書き換えるだけで全てのHTMLに適応されるため、作業工程の大幅短縮が可能です。</p>
+</section>
+<section>
+<h2>Buildless性</h2>
+<p>FramexsはBuildless（ビルド不要）である。<br/><i>Node.js</i>コマンドに頼らずとも静的サイトの簡易な構築を可能にする。</p>
+</section>
 </section>
 </article>
 </body>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?framexs.skeleton  ../../framexs/yaohata/main.ftml?>
+<?framexs.properties ../../properties/properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<title>Framexsとは</title>
+<meta name="description" content="XSLTフレームワークのFramexsとは何かを解説する。"/>
+<meta name="modified" content="2021-09-17"/>
+</head>
+<body>
+<article>
+<section>
+<h2>原初法との比較</h2>
+<p>XSLTが開発された当初、その意義としてあるXMLに対しての再利用性がうたわれていました。例えば、以下のようなコードを出力したい場合、次のようなXMLを出力していました。</p>
+<div class="code-container">
+<div class="captioon">コード6</div>  
+<pre><code class="language xml c5"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<hoge xmlns="urn:hoge">
+<foo>世界よこんにちは</foo>
+<bar>ハローワールド！</bar>
+</hoge>
+]]></code></pre>
+</div>
+<p>これは、単純にXSLを適用するだけのシンプルなコードです。<b>XMLとXSLTを合成することでHTML</b>を生成するシステムを、当サイトでは<dfn>原初法</dfn>と定義します。<br /><br />
+これに対し、Framexsは<strong>2種類のXHTMLとXSLTを合わせた“3つの要素”を合成することでHTML</strong>を生成するシステムです。</p>
+
+<UL>
+<LI>原初法：<b>XML+XSLT=HTML</b></LI>
+<LI>Framexs：<b>XHTML+XHTML+XSLT=HTML</b></LI>
+</UL>
+<p>両者の違いは、出力のひな型をXSLTにするか、独自のXHTMLにするかという点です。原初法と比べるとFramexsの方が直観的に扱え容易性が高く、再利用性が高いという点で優れたシステムとなっています。</p>
+</section>
+</article>
+</body>
+</html>
