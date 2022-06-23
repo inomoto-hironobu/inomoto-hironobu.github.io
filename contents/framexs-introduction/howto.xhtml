@@ -55,7 +55,7 @@
 
 <div class="code-container" id="コード1">
 <div class="captioon"><b>/contents.xhtml</b>のソースコード</div>
-<pre><code class="language xml c13"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton main.ftml?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -74,7 +74,7 @@
 
 <div class="code-container" id="コード2">
 <div class="captioon">main.ftmlのソースコード</div>
-<pre><code class="language xml c10"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <head>
 <title> - テンプレートタイトル</title>
@@ -89,7 +89,7 @@
 
 <div class="code-container" id="コード3">
 <div class="captioon">実際にアクセスした<b>/contents.xhtml</b>のDOM</div>
-<pre><code class="language xml c13"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
+<pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -116,13 +116,15 @@
 <p>ここから、下図のようにディレクトリ構成を変更します。</p>
 <ul class="branch_F">
 <li class="branch_T">/framexs.xsl</li>
-<li class="branch_T"><span class="branch_SF"></span>/contents</li><ul><li class="branch_IL">/contents.xhtml</li></ul>
-<li class="branch_L"><span class="branch_SF"></span>/template</li><ul><li class="branch_L">/main.ftml</li></ul>
+<li class="branch_T"><span class="branch_SF"></span>/contents</li>
+<ul><li class="branch_IL">/contents.xhtml</li></ul>
+<li class="branch_L"><span class="branch_SF"></span>/template</li>
+<ul><li class="branch_L">/main.ftml</li></ul>
 </ul>
 <p><i>/contents/contents.xhtml</i>をエディタで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
 <div class="code-container" id="コード4">
 <div class="captioon">contents.xhtml</div>
-<pre><code class="language xml c13"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton ../../framexs/yaohata/main.ftml?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -155,7 +157,7 @@
 <p><i>contents2.xhtml</i>をエディタで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
 <div class="code-container" id="コード5">
 <div class="captioon">contents2.xhtml</div>
-<pre><code class="language xml c13"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="framexs.xsl"?>
 <?framexs.skeleton-setting ../../skeleton-setting.xml?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -172,7 +174,7 @@
 <p>Webブラウザで<kbd>/contents/contents2.xhtml</kbd>にアクセスし、各ブラウザに付属する管理者モードでソースを見てください。下記と同様のDOMが出来ているか確認しましょう。</p>
 <div class="code-container" id="コード6">
 <div class="captioon">実際にアクセスした<b>/contents.xhtml</b>のDOM</div>
-<pre><code class="language xml c13"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
+<pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -194,7 +196,7 @@
 <p><i>main.ftml</i> をエディタで開き、以下のコードをコピー＆ペーストして上書き保存します。</p>
 <div class="code-container" id="コード7">
 <div class="captioon">main.ftml</div>
-<pre><code class="language xml c17"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
 <head>
 <title> - テンプレートタイトル</title>
@@ -215,7 +217,7 @@
 <p>Webブラウザで<kbd>contents2.xhtml</kbd>にアクセスし、各ブラウザに付属する管理者モードでソースを見てください。下記と同様のDOMが出来ているか確認しましょう。</p>
 <div class="code-container" id="コード8">
 <div class="captioon">実際にアクセスした<b>contents2.xhtml</b>のDOM</div>
-<pre><code class="language xml c19"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
+<pre><code class="language xml"><![CDATA[<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
