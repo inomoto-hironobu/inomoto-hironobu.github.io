@@ -1,0 +1,24 @@
+{
+  "name": "yaohata",
+  "version": "0.5.0",
+  "description": "八百幡のウェブサイト",
+  "main": "index.js",
+  "scripts": {
+    "server": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inomoto-hironobu/inomoto-hironobu.github.io.git"
+  },
+  "author": "井本拓伸",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inomoto-hironobu/inomoto-hironobu.github.io/issues"
+  },
+  "homepage": "https://github.com/inomoto-hironobu/inomoto-hironobu.github.io#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "typescript": "^4.7.4"
+  }
+}
