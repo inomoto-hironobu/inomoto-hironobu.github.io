@@ -17,6 +17,26 @@
 <article>
 <section id="main">
 <p>Framexsコンテンツについて解説する。</p>
+<p>Framexsにおいてコンテンツを表現する方法として、特殊なXHTMLを使う。</p>
+<div class="code-container">
+<div class="captioon">content.xhtml</div>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?framexs.skeleton main.ftml?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>世界よこんにちは</title>
+</head>
+<body>
+<div id="main">
+<p>ハローワールド！</p>
+</div>
+</body>
+</html>]]></code></pre>
+</div>
+<p>処理命令というXMLだからこそできる技術に依存するのが特徴である</p>
+<p>まずはスタイルシートの指定、そしてframexs.xslの解釈されるコマンドを指定している。</p>
+<p>名前空間は同じだがXHTMLはDTDの制約を受けない。これによって今のHTMLへの変換を行う。</p>
 </section>
 </article>
 </body>
