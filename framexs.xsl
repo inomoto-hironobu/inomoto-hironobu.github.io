@@ -10,15 +10,15 @@ XSLTで実現するフレームワーク framexs
 	<xsl:param name="skeleton_loc" select="/processing-instruction('framexs.skeleton')"/>
 	<xsl:param name="properties_loc" select="/processing-instruction('framexs.properties')"/>
 	<xsl:param name="framexs.base" select="/processing-instruction('framexs.base')"/>
-	<xsl:param name="skeleton_setting_loc" select="/processing-instruction('framexs.skeleton-setting')"/>
+	<xsl:param name="commands_loc" select="/processing-instruction('framexs.commands')"/>
 
 	<xsl:variable name="skeleton_path">
 		<xsl:choose>
 			<xsl:when test="$skeleton_loc">
 				<xsl:value-of select="$skeleton_loc"></xsl:value-of>
 			</xsl:when>
-			<xsl:when test="$skeleton_setting_loc">
-				<xsl:value-of select="document($skeleton_setting_loc)/*"></xsl:value-of>
+			<xsl:when test="$commands_loc">
+				<xsl:value-of select="document($commands_loc)/framexs:commands/framexs:skeleton/text()"></xsl:value-of>
 			</xsl:when>
 		</xsl:choose>
 	</xsl:variable>
@@ -27,7 +27,7 @@ XSLTで実現するフレームワーク framexs
 	<xsl:variable name="content" select="$root"></xsl:variable>
 	<xsl:variable name="xhns" select="'http://www.w3.org/1999/xhtml'"/>
 	<xsl:variable name="fmxns" select="'urn:framexs'"/>
-	<xsl:variable name="version" select="'1.24.4'"/>
+	<xsl:variable name="version" select="'1.25.0'"/>
 	<xsl:key name="property" match="framexs:property" use="@name"></xsl:key>
 	<xsl:variable name="properties" select="document($properties_loc)/framexs:properties"></xsl:variable>
 
@@ -42,7 +42,7 @@ XSLTで実現するフレームワーク framexs
 					<xsl:with-param name="content" select="$root"/>
 				</xsl:apply-templates>
 			</xsl:when>
-			<xsl:otherwise>  
+			<xsl:otherwise>
 				<xsl:message>一般XML</xsl:message>
 				<html>
 					<head>
@@ -289,14 +289,45 @@ XSLTで実現するフレームワーク framexs
 		</framexs:resource>
 	-->
 	<xsl:template match="framexs:resource[@name]">
-		<xsl:variable name="name" select="@name"/>
-		<xsl:for-each select="$content/processing-instruction('framexs.resource')">
-			<xsl:if test="$name = substring-before(.,' ')">
-				<xsl:apply-templates mode="content" select="document(substring-after(.,' '), $content)/framexs:resource/node()"/>
-			</xsl:if>
-		</xsl:for-each>
+		<xsl:variable name="name" select="@name"></xsl:variable>
+		<xsl:choose>
+			<!-- framexs.resourceに対しての処理 -->
+			<xsl:when test="$content/processing-instruction('framexs.resource')">
+				<xsl:for-each select="$content/processing-instruction('framexs.resource')">
+					<xsl:if test="$name = substring-before(.,' ')">
+						<xsl:call-template name="resource">
+							<xsl:with-param name="src" select="substring-after(.,' ')"/>
+						</xsl:call-template>
+					</xsl:if>
+				</xsl:for-each>
+			</xsl:when>
+			<!-- framexs.commandsで指定されたコマンドファイルからresourceを探し出す -->
+			<xsl:when test="document($commands_loc)/framexs:commands/framexs:resource">
+				<xsl:for-each select="document($commands_loc)/framexs:commands/framexs:resource">
+					<xsl:if test="$name = substring-before(text(),' ')">
+						<xsl:call-template name="resource">
+							<xsl:with-param name="src" select="substring-after(text(),' ')"/>
+						</xsl:call-template>
+					</xsl:if>
+				</xsl:for-each>
+			</xsl:when>
+		</xsl:choose>
+	</xsl:template>
+	<!-- srcで指定されたコマンドファイルを呼出し、処理を行う。 -->
+	<xsl:template name="resource">
+		<xsl:param name="src"/>
+		<xsl:variable name="resource" select="document($src)"></xsl:variable>
+		<xsl:choose>
+			<xsl:when test="$resource">
+				<xsl:apply-templates mode="content" select="$resource/framexs:resource/node()"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:message>読み込み失敗：<xsl:value-of select="$src"/></xsl:message>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
+	
 	<xsl:template match="framexs:properties" mode="pull_property">
 		<xsl:param name="ref"/>
 		<xsl:variable name="property" select="key('property',$ref)"/>
