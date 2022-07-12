@@ -357,7 +357,7 @@ XSLTで実現するフレームワーク framexs
 	<xsl:template match="framexs:property[@name]">
 		<xsl:variable name="exists">
 			<xsl:apply-templates select="$properties">
-				<xsl:with-param name="ref" select="@name"></xsl:with-param>
+				<xsl:with-param name="ref" select="@name"/>
 			</xsl:apply-templates>
 		</xsl:variable>
 		<xsl:choose>
