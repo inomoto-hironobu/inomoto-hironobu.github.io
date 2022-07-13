@@ -27,7 +27,7 @@ XSLTで実現するフレームワーク framexs
 	<xsl:variable name="content" select="$root"></xsl:variable>
 	<xsl:variable name="xhns" select="'http://www.w3.org/1999/xhtml'"/>
 	<xsl:variable name="fmxns" select="'urn:framexs'"/>
-	<xsl:variable name="version" select="'1.25.0'"/>
+	<xsl:variable name="version" select="'1.25.1'"/>
 	<xsl:key name="property" match="framexs:property" use="@name"></xsl:key>
 	<xsl:variable name="properties" select="document($properties_loc)/framexs:properties"></xsl:variable>
 
@@ -339,7 +339,7 @@ XSLTで実現するフレームワーク framexs
 	<xsl:template match="framexs:property[@name]">
 		<xsl:variable name="exists">
 			<xsl:apply-templates select="$properties" mode="property_exists">
-				<xsl:with-param name="ref" select="@property"></xsl:with-param>
+				<xsl:with-param name="ref" select="@name"/>
 			</xsl:apply-templates>
 		</xsl:variable>
 		<xsl:choose>
