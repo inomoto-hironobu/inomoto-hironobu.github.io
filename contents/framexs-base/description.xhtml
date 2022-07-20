@@ -2,7 +2,6 @@
 <?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
 <?framexs.commands  ../../commands.xml?>
 <?framexs.properties ../../properties/properties.xml?>
-<!--<?framexs.resource sidebar /parts/sidebar.xml?>-->
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
 <meta charset="UTF-8"/>
@@ -15,7 +14,7 @@
 <li class="breadcrumb-item"><a href="/">Home</a></li>
 <li class="breadcrumb-item"><a href="/contents/framexs-base/index.xhtml">Framexsの基礎</a></li>
 </ol>
-<article>
+<article id="main">
 <section id="premain">
 <p>Framexsは、XHTMLをMVC（<b>モデル・ビュー・コントローラ</b>）の材料として、合成を行い、HTMLを生成するXSLTフレームワークです。<br/>
 モデルとビューの両方ともXHTMLを使い、ウェブサイトではコントローラーもXHTMLに処理命令という形で埋めこんでいます。
@@ -24,7 +23,7 @@
 <pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>]]></code></pre>
 </div>
 </section>
-<section id="main">
+<section>
 <section>
 <h2>サンプルコード</h2>
 <p>Framexsのサンプルコードを見てみましょう。
