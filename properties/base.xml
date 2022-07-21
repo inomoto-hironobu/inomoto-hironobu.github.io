@@ -11,4 +11,13 @@
 <li title="オピニオン">/contents/article/index.xhtml</li>
 <li title="その他">/contents/other/index.xhtml</li>
 </framexs:property>
+<framexs:property name="script">
+<script src="/js/gh.js"></script>
+</framexs:property>
+<framexs:property name="main-header">
+<header>
+<p><span id="github-history"></span> <span id="content-length"></span></p>
+</header>
+</framexs:property>
+<framexs:property name="home-url">/index.xhtml</framexs:property>
 </framexs:properties>
