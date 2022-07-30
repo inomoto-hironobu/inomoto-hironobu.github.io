@@ -9,11 +9,23 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/business/index.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/framexs-api/index.xhtml</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inomoto-hironobu.github.io/contents/framexs-introduction/index.xhtml</loc>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://inomoto-hironobu.github.io/contents/framexs-command/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/article/index.xhtml</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inomoto-hironobu.github.io/contents/other/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
 </urlset>
