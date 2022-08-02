@@ -1,21 +1,43 @@
 <?xml version="1.0"?>
-<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
 <?framexs.commands ../../commands.xml?>
 <?framexs.properties ../../properties/properties.xml?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
 <meta charset="UTF-8"/>
-<title>（開発中）XHTMLとは何か</title>
-<meta name="description" content="（開発中）Framexsを使う上で必要になってくるXHTMLについて解説する"/>
-<meta name="modified" content="2022-06-09"/>
+<title>（開発中）framexs.properties</title>
+<meta name="description" content="framexs.propertiesについて解説する"/>
+<meta name="modified" content="2022-07-21"/>
 </head>
 <body>
-<ol id="breadcrumb">
-<li class="breadcrumb-item"><a href="/">Home</a></li>
-<li class="breadcrumb-item"><a href="/contents/framexs-base/index.xhtml">Framexsの基礎</a></li>
-</ol>
 <section id="main">
-<p>XHTMLとは何かを解説する。</p>
+<p>Framexsにはプロパティ―機能というものがあり、ページに共通する名前付きの値を定義できます。<br/>
+framexs.propertiesでは定義をまとめたファイル、プロパティーファイルを指定します。</p>
 </section>
+<pre><![CDATA[<?framexs.properties ../../properties/properties.xml?>]]></pre>
+<p>プロパティーファイルは次のようになっています。</p>
+<pre><![CDATA[<?xml version="1.0"?>
+<framexs:properties xmlns:framexs="urn:framexs">
+<framexs:base href="base.xml"/>
+<framexs:property name="pagetype">article</framexs:property>
+<framexs:property name="sidebar">display</framexs:property>
+</framexs:properties>]]></pre>
+<p>ここにあるframexs.baseによってさらにプロパティーファイル共通の値を収めたファイルを指定できます。<br/>
+共通プロパティーファイルは次のようになっています。</p>
+<pre><![CDATA[<?xml version="1.0"?>
+<framexs:properties xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
+<framexs:property name="site-name">八百幡（やおはた）</framexs:property>
+<framexs:property name="google-tag-manager-code">GTM-5L2SQ9B</framexs:property>
+<framexs:property name="nav">
+<li title="基礎">/contents/framexs-base/index.xhtml</li>
+<li title="入門">/contents/framexs-introduction/index.xhtml</li>
+<li title="応用">/contents/framexs-application/index.xhtml</li>
+<li title="コマンド">/contents/framexs-command/index.xhtml</li>
+<li title="API">/contents/framexs-api/index.xhtml</li>
+<li title="オピニオン">/contents/article/index.xhtml</li>
+<li title="その他">/contents/other/index.xhtml</li>
+</framexs:property>
+</framexs:properties>]]></pre>
+<p>プロパティには文字列のほかに、HTML要素を値にすることができます。</p>
 </body>
 </html>

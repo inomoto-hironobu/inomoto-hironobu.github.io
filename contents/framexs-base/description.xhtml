@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
-<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
 <?framexs.commands  ../../commands.xml?>
 <?framexs.properties ../../properties/properties.xml?>
-<!--<?framexs.resource sidebar /parts/sidebar.xml?>-->
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
 <meta charset="UTF-8"/>
@@ -15,16 +14,16 @@
 <li class="breadcrumb-item"><a href="/">Home</a></li>
 <li class="breadcrumb-item"><a href="/contents/framexs-base/index.xhtml">Framexsの基礎</a></li>
 </ol>
-<article>
+<article id="main">
 <section id="premain">
 <p>Framexsは、XHTMLをMVC（<b>モデル・ビュー・コントローラ</b>）の材料として、合成を行い、HTMLを生成するXSLTフレームワークです。<br/>
 モデルとビューの両方ともXHTMLを使い、ウェブサイトではコントローラーもXHTMLに処理命令という形で埋めこんでいます。
 <br />このフレームワークは、フロントエンドXSLT技術であるxml-stylesheet処理命令を利用しています。</p>
 <div class="code-container">
-<pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>]]></code></pre>
+<pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>]]></code></pre>
 </div>
 </section>
-<section id="main">
+<section>
 <section>
 <h2>サンプルコード</h2>
 <p>Framexsのサンプルコードを見てみましょう。
@@ -53,7 +52,7 @@
 <div class="code-container">
 <div class="captioon">content.xhtml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
 <?framexs.skeleton main.ftml?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -91,7 +90,7 @@
 <p>このページ自身もFramexsで作成されており、その先頭部分は以下の通りである。</p>
 <div class="code-container">
 <div class="captioon">コード7</div>
-<pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs.xsl"?>
+<pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
 <?framexs.commands ../../commands.xml?>]]></code></pre>
 </div>
 </section>
