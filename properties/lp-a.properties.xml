@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<framexs:properties xmlns:framexs="urn:framexs">
+<framexs:base href="base.xml"/>
+<framexs:property name="pagetype">lp</framexs:property>
+<framexs:property name="footer-in-head">
+<script src="/js/gh.js"></script>
+<link rel="stylesheet" href="/css/lp-a.css"/>
+</framexs:property>
+</framexs:properties>
