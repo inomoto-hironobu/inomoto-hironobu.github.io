@@ -1,7 +1,15 @@
 <?xml version="1.0"?>
 <framexs:properties xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
 <framexs:property name="site-name">八百幡（やおはた）</framexs:property>
+<framexs:property name="copyright">©2021 INOMOTO Hironobu</framexs:property>
 <framexs:property name="google-tag-manager-code">GTM-5L2SQ9B</framexs:property>
+<framexs:property name="logo">
+<img id="head_img" src="/img/logo.png" width="64"/>
+</framexs:property>
+<framexs:property name="body-class">bg-light</framexs:property>
+<framexs:property name="sidebar-class">bg-white</framexs:property>
+<framexs:property name="footer-class">bg-info text-white</framexs:property>
+<framexs:property name="home-url">/index.xhtml</framexs:property>
 <framexs:property name="nav">
 <li title="基礎">/contents/framexs-base/index.xhtml</li>
 <li title="入門">/contents/framexs-introduction/index.xhtml</li>
@@ -11,13 +19,20 @@
 <li title="オピニオン">/contents/article/index.xhtml</li>
 <li title="その他">/contents/other/index.xhtml</li>
 </framexs:property>
-<framexs:property name="script">
+<framexs:property name="footer-in-head">
 <script src="/js/gh.js"></script>
 </framexs:property>
-<framexs:property name="main-header">
+<framexs:property name="header-in-main">
 <header>
 <p><span id="github-history"></span> <span id="content-length"></span></p>
+<p>更新日:<span id="modified"></span> <span id="content-length"></span></p>
 </header>
 </framexs:property>
-<framexs:property name="home-url">/index.xhtml</framexs:property>
+<framexs:property name="footer">
+<table style="width:50%;margin:auto">
+<tr><td>Email</td><td>inmthrnb@gmail.com</td></tr>
+<tr><td>Framexs version</td><td><framexs:version/></td></tr>
+<tr><td>寄付先</td><td>PayPay銀行　すずめ支店(002)<br/>口座番号:3089450　名義人:イノモトヒロノブ</td></tr>
+</table>
+</framexs:property>
 </framexs:properties>

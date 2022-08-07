@@ -1,0 +1,5 @@
+@media screen and (min-width:748px){
+    article p {
+        margin:1rem;
+    }
+}
