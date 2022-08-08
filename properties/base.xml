@@ -12,11 +12,11 @@
 <framexs:property name="footer-class">bg-dark text-white</framexs:property>
 <framexs:property name="home-url">/index.xhtml</framexs:property>
 <framexs:property name="nav">
-<li title="基礎">/contents/framexs-base/index.xhtml</li>
-<li title="入門">/contents/framexs-introduction/index.xhtml</li>
-<li title="応用">/contents/framexs-application/index.xhtml</li>
-<li title="コマンド">/contents/framexs-command/index.xhtml</li>
-<li title="API">/contents/framexs-api/index.xhtml</li>
+<li title="基礎">/contents/base/index.xhtml</li>
+<li title="入門">/contents/introduction/index.xhtml</li>
+<li title="応用">/contents/application/index.xhtml</li>
+<li title="コマンド">/contents/command/index.xhtml</li>
+<li title="API">/contents/api/index.xhtml</li>
 <li title="オピニオン">/contents/article/index.xhtml</li>
 <li title="その他">/contents/other/index.xhtml</li>
 </framexs:property>

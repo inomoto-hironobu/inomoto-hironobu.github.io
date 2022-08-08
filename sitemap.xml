@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/framexs-base/index.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/base/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/framexs-application/index.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/application/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/framexs-api/index.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/api/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/framexs-introduction/index.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/introduction/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
 <url>
-    <loc>https://inomoto-hironobu.github.io/contents/framexs-command/index.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/command/index.xhtml</loc>
     <priority>0.8</priority>
   </url>
   <url>
