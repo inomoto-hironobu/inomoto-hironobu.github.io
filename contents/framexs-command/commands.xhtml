@@ -13,18 +13,20 @@
 <section id="main">
 <p>framexs.commandsコマンドは、コンテンツファイルのFramexsコマンドを一括して管理するためのものです。<br/>
 次のようなコードです。</p>
-<pre><![CDATA[
+<div class="code-container">
+<pre><code class="language xml"><![CDATA[
 <?framexs.commands ../../commands.xml?>
-]]></pre>
+]]></code></pre>
+</div>
 <p>コマンドファイルという、コマンドを定義するファイルの場所を指定しています。<br/>
 コマンドファイルは次のようになっています。</p>
-<pre><![CDATA[
+<pre><code class="language xml"><![CDATA[
 <?xml version="1.0"?>
 <commands xmlns="urn:framexs">
 <skeleton>/yaohata/main.ftml</skeleton>
 <resource>sidebar /parts/sidebar.xml</resource>
 </commands>
-]]></pre>
+]]></code></pre>
 <p>この利点を説明します。<br/>
 例えばコンテンツファイルに次のようなコマンドがあったとします。</p>
 <pre><![CDATA[
