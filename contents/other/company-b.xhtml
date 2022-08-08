@@ -5,55 +5,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
 <meta charset="UTF-8"/>
-<title>Framexs事業の設立</title>
-<meta name="description" content="Framexsを事業にする会社設立について考えをまとめています。"/>
-<meta name="modified" content="2022-03-27"/>
+<title>Framexsコミュニティの設立</title>
+<meta name="description" content="Framexsのコミュニティを起ち上げ、事業にする会社設立について考えをまとめています。"/>
+<meta name="modified" content="2022-08-08"/>
 </head>
-<body>
-<article id="main">
+<body id="main">
+<article>
 <section>
-<h2>日本からのフロントエンド技術を</h2>
-<p>現在のフロントエンドの技術はアメリカと中国に独占されているといってもいい状況で、日本の出る幕は今はありません。<br/>
-Google,Facebookなどが、Reactなどの製品を作り出しています。
-しかし、</p>
+<h2>ITはアメリカの独壇場</h2>
+<figure>
+<img src="../../img/3344027_s.jpg"/>
+</figure>
+<p>現在ではIT産業は、<strong>GAFA</strong>―あるいは<strong>GAFAM</strong>―と呼ばれるアメリカの一部企業に独占されているといってもいい状況で、日本の出る幕は今はありません。<br/>
+特にフロントエンドでは<strong>CSSフレームワーク</strong>、<strong>JavaScriptフレームワーク</strong>は、大企業が参画するプロジェクトが多くありますが、日本発のプロダクトは皆無といっていいでしょう。<br/></p>
 </section>
 <section>
 <h2>あなたはFramexsをご存知ですか</h2>
-<p>Framexsとは、クライアントサイドでXHTMLのテンプレートとコンテンツと合成し、HTMLを生成する、XSLTで書かれたフレームワークで、日本製です。<br/>
-要素、属性の構成をテンプレートに集約させることで再利用、コードを使いまわす事によって、ウェブサイト開発を劇的に容易にします。<br/>
-例えば静的サイトを管理するにあたっては、煩雑さを消しつつ自由でありながらWordPressのような動的サイトに匹敵する劇的なコンテンツの運用簡易性をもたらします。</p>
-<div data-url="../framexs-base/index.xhtml"></div>
+<figure>
+<figcaption></figcaption>
+<img src="../../img/3334873_s.jpg"/>
+</figure>
+<p><strong>Framexs</strong>とは、クライアントサイドで<strong>XHTML</strong>のテンプレートとコンテンツと合成し、HTMLを生成する、<strong>XSLT</strong>で書かれたフレームワークで、要素、属性の構成をテンプレートに集約して、コードを再利用する仕組みを持っています。<br/>
+ナンダカフラリ氏が原作を作り、現在では私一人で開発しています。つまり<strong>日本製</strong>です。<br/>
+このFramexsはフロントエンドにおいて<strong>XML</strong>の技術を駆使し、CSSでもJavaScriptでもできない成果をもたらします。</p>
+<div class="code-container">
+<div class="caption">このページの上部のコード</div>
+<pre><code class="language xml"><![CDATA[<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
+<?framexs.commands ../../commands.xml?>
+<?framexs.properties ../../properties/lp-b.properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">]]></code></pre>
+</div>
+<p>今までにない仕組みの技術なので、潜在的な市場価値は膨大なものがあります。</p>
 </section>
 <section>
-<h2>コミュニティの必要性</h2>
-<p>現在Framexsの開発は私のみで行われています。複数のメンバーによるFramexsの開発が行われたならば開発効率は格段に向上するはずです。<br/>
-フロントエンドではBootstrapのようなCSSフレームワーク、ReactのようなJavaScriptフレームワークは、大企業が参画するプロジェクトが多くあります。<br/>
-Framexsはそれらと比肩される革新的なフロントエンド技術です。<br/>
-なので、Framexsの潜在的な市場価値は膨大なものがあります。</p>
+<h2>日本からのフロントエンド技術を</h2>
+<p>日本には優秀なエンジニアが多い一方、日本発のITプロダクトはあまり多くありません。<br/>
+Framexsは日本初の世界で使われる技術にしたい。そして、日本の技術力が高いことの証明としたい、そんな気持ちがあります。</p>
 </section>
 <section>
-<h2>会社の設立メンバーを募集します</h2>
-<p>Framexsには未来があります。<br/>
-もし、Framexsに関する事業を展開する会社の立ち上げができたなら、大きな利益が期待できます。<br/>
-そのため会社設立のため、協力してくれる方を募集しています。<br/>
-参加してみませんか。</p>
+<h2>コミュニティ</h2>
+<p>前述の通り、現在Framexsの開発は私のみで行われています。<br/>
+ここで、複数のメンバーによるFramexsの開発が行われたならば、開発効率は格段に向上するはずです。<br/>
+例えば、もし、Framexsに関する事業を展開する会社の立ち上げができたなら、大きな利益が期待できます。<br/>
+そういった諸々の話題をするための<a class="contact" href="https://groups.google.com/g/framexs">メーリングリスト</a>を用意しています。<br/>
+お気軽に参加ください。</p>
 </section>
 <section>
-<h2>事業</h2>
-<p>主な事業としてはFramexsの利用・開発をサポートすることです。</p>
-<div data-url="service.xhtml"/>
-<p>また、Framexsではテーマという、WordPressのテーマに似通った概念があり、このテーマを製品として作ることができます。</p>
-</section>
-<section>
-<h2>連絡はドリームネットシステムズを通して</h2>
-<p>連絡に関してはドリームネットシステムズの業務依頼フォームを通してください。<br/>
-ドリームネットシステムズは、私とビジネスパートナーシップを結び、窓口として様々な依頼を承っております。</p>
-<address>
-<ul class="contact">
-<li><a class="contact" href="http://dream-netsystems.com/contacts/contact.php?mode=2">業務依頼フォーム</a></li>
-<li><a class="contact" href="tel:093-581-9888">tel:093-581-9888</a></li>
-</ul>
-</address>
+<h2>リンク</h2>
+<p>Framexsに興味が出ましたか？このサイトではFramexsに関するコンテンツを取り揃えています。</p>
+<div data-url="../framexs-base/index.xhtml"/>
+<p>また、個人的に事業としてFramexsの利用・開発をサポートを請け負っています。</p>
+<div data-url="service-b.xhtml"/>
 </section>
 </article>
 </body>

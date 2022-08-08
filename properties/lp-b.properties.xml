@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
 <framexs:properties xmlns:framexs="urn:framexs">
 <framexs:base href="base.xml"/>
-<framexs:property name="pagetype">lp</framexs:property>
 <framexs:property name="footer-in-head">
 <script src="/js/gh.js"></script>
 <link rel="stylesheet" href="/css/lp-a.css"/>
 </framexs:property>
+<framexs:property name="header-in-main">
+</framexs:property>
+<framexs:property name="main-class">col-md-12 bg-light</framexs:property>
 <framexs:property name="body-class">bg-white</framexs:property>
 <framexs:property name="footer-class">bg-primary text-white</framexs:property>
 </framexs:properties>
