@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
+<?framexs.commands ../../commands.xml?>
+<?framexs.properties ../../properties/ads.properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<title>プロパティズファイル</title>
+<meta name="description" content="テーマの利用に欠かせないプロパティズファイルについて解説"/>
+<meta name="modified" content="2022-06-14"/>
+</head>
+<body id="main">
+<article>
+<section>
+<p>プロパティズファイルは定義と値のセットを集積したものです。
+    urn:framexsの名前空間を持つXMLで表現されます。
+    プロパティズファイルは各コンテンツXHTMLの処理命令またはコマンドファイルでの定義で指定されます。
+    テーマの利用には必ずプロパティズファイルが要求されます。
+テーマのメインファイルとして使われるFTMLによってどのプロパティが定義されているかが変わってきます。</p>
+<pre><code><![CDATA[<?xml version="1.0"?>
+<framexs:properties xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
+<framexs:property name="site-name">八百幡</framexs:property>
+<framexs:property name="copyright">©2021 INOMOTO Hironobu</framexs:property>
+<framexs:property name="google-tag-manager-code">GTM-5L2SQ9B</framexs:property>
+<framexs:property name="home-url">https://inomoto-hironobu.github.io/index.xhtml</framexs:property>
+<framexs:property name="logo">
+<img id="head_img" src="/img/logo.png" width="64"/>
+</framexs:property>
+</framexs:properties>]]></code></pre>
+<p>プロパティズファイルではbase要素で共通するプロパティを集めたベースプロパティズファイルを指定できます。
+href属性でプロパティズファイルからのベースの相対パスを指定します。
+</p>
+<pre><code><![CDATA[<?xml version="1.0"?>
+<framexs:properties xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
+<framexs:base href="base.xml"/>
+<framexs:property name="footer-in-head">
+<script src="/js/gh.js"></script>
+<link rel="stylesheet" href="/css/lp-b.css"/>
+</framexs:property>
+</framexs:properties>]]></code></pre>
+</section>
+</article>
+</body>
+</html>

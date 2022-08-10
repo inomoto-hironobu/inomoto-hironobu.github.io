@@ -9,8 +9,9 @@
 <meta name="description" content="Framexsテーマについて解説する。"/>
 <meta name="modified" content="2022-06-14"/>
 </head>
-<body>
-<section id="main">
+<body id="main">
+<article>
+<section>
 <h2>共通規格の必要性</h2>
 <p>Framexsは柔軟なテンプレート機能によって開発・生産性を向上させる。<br/>
 しかし、再利用性と言う点からは原始的な方法のままでは課題がある。<br/>
@@ -24,6 +25,31 @@
 <p>テーマの利用方法は静的サイトの場合は、Git</p>
 <p>/skeleton-setting.xml</p>
 <p>/properties.xml</p>
+<p>特定の書式のmain.ftmlという名前のファイルをテーマにしたいディレクトリのトップに置けばそれでテーマになる。</p>
+<p>書式は名前空間がurn:framexsのinfomation要素をhtml要素の下に置き、name要素にテーマの名前を入れるものである。</p>
+<p>例えば、サンプルという名前のテーマを創りたいなら以下のようにする。</p>
+<pre>
+<code>
+<![CDATA[
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" lang="ja">
+<infomation xmlns="urn:framexs">
+<name>サンプル</name>
+</infomation>
+<head>
+<title></title>
+<body>
+</body>
+</html>]]>
+</code>
+</pre>
+<p>参考とするためのテーマを用意している。</p>
+<ul>
+<li><a href="https://github.com/inomoto-hironobu/foobar">foobarテーマ</a>:参考用のごくシンプルなテーマ。<br/>
+テーマを自作したいときはこれから発展させていくことになります。</li>
+<li><a href="https://github.com/inomoto-hironobu/yaohata">八百幡テーマ</a></li>
+</ul>
 </section>
+</article>
 </body>
 </html>
