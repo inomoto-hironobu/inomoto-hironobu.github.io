@@ -1,0 +1,22 @@
+.footer-links {
+    padding:0;
+}
+.footer-links li{
+    text-align: center;
+    list-style-type: none;
+}
+.footer-links a {
+    color: white;
+}
+.footer-links a:hover{
+    color: white;
+}
+
+#pagetop > nav{
+	background:linear-gradient(#F7F9FE,#CACACA);
+	box-shadow: 1px 1px 10px #778;
+}
+/*文字間隔を広げる*/
+body > footer  tr{
+	line-height: 40px;
+}
