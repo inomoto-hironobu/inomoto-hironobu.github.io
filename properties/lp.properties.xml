@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<framexs:properties xmlns:framexs="urn:framexs">
-<framexs:base href="base.xml"/>
-<framexs:property name="pagetype">lp</framexs:property>
-</framexs:properties>

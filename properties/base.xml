@@ -8,8 +8,9 @@
 <img id="head_img" src="/img/logo.png" width="64"/>
 </framexs:property>
 <framexs:property name="body-class">bg-light</framexs:property>
-<framexs:property name="nav-class"></framexs:property>
-<framexs:property name="main-class">col-md-8 bg-white</framexs:property>
+<framexs:property name="nav-class">bg-light</framexs:property>
+<framexs:property name="center-class">col-md-8</framexs:property>
+<framexs:property name="main-class">bg-white</framexs:property>
 <framexs:property name="sidebar-class">bg-white</framexs:property>
 <framexs:property name="footer-class">bg-dark text-white</framexs:property>
 <framexs:property name="home-path">/index.xhtml</framexs:property>
@@ -32,6 +33,9 @@
 <p><span id="github-history"></span> <span id="content-length"></span></p>
 <p>更新日:<span id="modified"></span> <span id="content-length"></span></p>
 </header>
+</framexs:property>
+<framexs:property name="footer-in-container">
+<div style="font-size:1.5rem;text-align:center"><a href="#top">▲</a></div>
 </framexs:property>
 <framexs:property name="footer">
 <ul class="footer-links">

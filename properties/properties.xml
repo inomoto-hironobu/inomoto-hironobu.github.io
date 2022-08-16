@@ -2,6 +2,6 @@
 <framexs:properties xmlns:framexs="urn:framexs">
 <framexs:base href="base.xml"/>
 <framexs:property name="pagetype">article</framexs:property>
-<framexs:property name="sidebar">display</framexs:property>
+<framexs:property name="sidebar1">display</framexs:property>
 
 </framexs:properties>
