@@ -2,12 +2,13 @@
 <framexs:properties xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
 <framexs:base href="base.xml"/>
 <framexs:property name="footer-in-head">
-<script src="/js/gh.js"></script>
+<script src="/js/b.js"></script>
 <link rel="stylesheet" href="/css/lp-b.css"/>
+<link rel="stylesheet" href="/css/style.css"/>
 </framexs:property>
-<framexs:property name="header-in-main">
-</framexs:property>
-<framexs:property name="main-class">col-md-12 bg-light</framexs:property>
-<framexs:property name="body-class">bg-white</framexs:property>
+<framexs:property name="sidebar1"></framexs:property>
+<framexs:property name="sidebar2"></framexs:property>
+<framexs:property name="center-class">col-md-12 bg-light</framexs:property>
+<framexs:property name="body-class">bg-light</framexs:property>
 <framexs:property name="footer-class">bg-secondary text-white</framexs:property>
 </framexs:properties>
