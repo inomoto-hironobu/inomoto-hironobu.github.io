@@ -11,7 +11,7 @@
 <framexs:property name="nav-class">bg-light</framexs:property>
 <framexs:property name="center-class">col-md-8</framexs:property>
 <framexs:property name="main-class">bg-white</framexs:property>
-<framexs:property name="sidebar-class">bg-white</framexs:property>
+<framexs:property name="sidebar1-wide-class">col-md-4 bg-white</framexs:property>
 <framexs:property name="footer-class">bg-dark text-white</framexs:property>
 <framexs:property name="home-path">/index.xhtml</framexs:property>
 <framexs:property name="use-default-css">yes</framexs:property>
@@ -34,6 +34,8 @@
 <p>更新日:<span id="modified"></span> <span id="content-length"></span></p>
 </header>
 </framexs:property>
+<framexs:property name="sidebar1">display</framexs:property>
+<framexs:property name="sidebar2"></framexs:property>
 <framexs:property name="footer-in-container">
 <div style="font-size:1.5rem;text-align:center"><a href="#top">▲</a></div>
 </framexs:property>

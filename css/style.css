@@ -23,11 +23,11 @@ body > footer  tr{
 .tips {
     list-style: none;
     font-size:80%;
-      font-weight: 900;
-      color: #633;
-  margin-left:-54px;
-  }
-  .tips:before {
+    font-weight: 900;
+    color: #633;
+    margin-left:-54px;
+}
+.tips:before {
     list-style: none;
-      content: "※　";
-  }
+    content: "※　";
+}
