@@ -11,4 +11,6 @@
 <framexs:property name="center-class">col-md-12 bg-light</framexs:property>
 <framexs:property name="body-class">bg-light</framexs:property>
 <framexs:property name="footer-class">bg-secondary text-white</framexs:property>
+<framexs:property name="header-in-main">
+</framexs:property>
 </framexs:properties>

@@ -10,89 +10,82 @@
 </head>
 <body id="main">
 <article>
-<section class="premain">
-<p>開発、講義、学習の手伝い。Framexsに関するビジネスの話をします。</p>                                         
-<div class="image-holder"><img alt="" src="../../img/3334873_s.jpg"/></div>
-</section>
 <section>
-<section>
-<h2>HTMLはXSLTフレームワーク、Framexsで作りましょう</h2>
-<p>Framexsとは、クライアントサイドでテンプレートとコンテンツと合成し、HTMLを生成する、<dfn>XSLT</dfn>で書かれたフレームワークです。<br/>
-要素、属性の構成をテンプレートに集約させることで再利用、コードを使いまわす事によって、ウェブサイト開発を劇的に容易にします。<br/>
-例えば<dfn>静的サイト</dfn>を管理するにあたっては、煩雑さを消しつつ自由でありながらWordPressのような動的サイトに匹敵する劇的なコンテンツの運用簡易性をもたらします。<br/>
-もちろん、WordPressのような動的サイトと組み合わせることで、CMS特有の縛りから自由な、HTML,CSS,JavaScirpt、画像などの、どこにでも使えるひとかたまりを創れます。<br/>
-未来技術としてこれからのIT世界で新たな時代の主役となります。</p>
-<div data-url="../base/description.xhtml"></div>
-<details>
-<summary>XSLTとは</summary>
-<p>XSLTはXMLを任意のデータに変換することに特化した言語です。</p>
-<p>XSLTは西暦2000年前後は非常に注目されていた言語でXML+XSLTがウェブの将来の中心になると思われていました。<br/>
-しかし、あまりに難しいうえに当時はあまり利点が無いと思われていたために実際にはあまり使われませんでした。</p>
-<p>しかし最近になってFramexsが誕生したことによって、フロントエンドの中心技術として、未来を変えるような重要なコンピュータ言語として再度注目されるべき時期が来ました。</p>
-</details>
-<details>
-<summary>静的サイトとは</summary>
-<p>ローカルにあるファイルがそのままApache ServerなどのHTTPサーバで配信されるシステム。PHPなどのプログラムで動くウェブシステム、いわゆる動的サイトと対比して使われる。</p>
-</details>
-</section>
-<section>
-<h2>このページもFramexsで作られている</h2>
-<p>このページはいわゆるランディングページですが、このページ自身も、そしてこのサイト全体がFramexsによって作られ運用されています。<br/>
-このサイトは静的サイトシステムとして<dfn>GitHub Pages</dfn>を利用していますが、私自身このFramexsを利用している実感として開発、管理、品質の保持がとても容易であることがあります。</p>
-<p>一例としてこのページのコードの一部はこうなっています。</p>
-<pre><code class="language xml"><![CDATA[<?xml version="1.0"?>
+<p>今あなたが見ている、このページの上のコードはこうなっています。</p>
+<pre class="code-container"><code class="language xml"><![CDATA[<?xml version="1.0"?>
 <?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
 <?framexs.commands ../../commands.xml?>
-<?framexs.properties ../../properties/lp.properties.xml?>
+<?framexs.properties ../../properties/lp-a.properties.xml?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">]]>
 </code></pre>
-<p>HTMLを学んだばかりの方は見たことのないコードのはずです。これはXMLの高度な応用であり、少しのコードで多大な効果を発揮します。<br/>
-そして、この技術の中心はXHTMLです。応用が利き、ITのあらゆる場面で駆使されることになるため、高度な専門スキルを持ちながら、低く見られがちなHTMLエンジニアの価値を、最大限に高めます。</p>
-<p>さらにFramexsにはテーマ機能があり、テンプレート、CSS、JavaScriptをまとめてパッケージングすることができます。<br/>
+<p>冒頭の<code>&lt;?xml ...</code>は何でしょうか？これは、このページが<strong>XML</strong>であることを示すための<strong>XML宣言</strong>です。<br/>
+htmlタグに<strong>名前空間</strong>があるのでこれは<strong>XHTML</strong>ですね。<br/>
+では<code>&lt;xml-stylesheet ...</code>と<code>&lt;?framexs...</code>となっているのは？<br/>
+これらはXMLの<strong>処理命令</strong>で、特にxml-stylesheetは<strong>スタイルシート</strong>を指定するもので、この場合では<strong>XSLT</strong>ファイルを指定しています。<br/>
+framexs...は<strong>Framexs</strong>で使うためのものです。</p>
+</section>
+<section>
+<h2>XSLTフレームワーク、Framexs</h2>
+<p>Framexsとは、クライアントサイドでテンプレートとコンテンツを<strong>合成</strong>し、HTMLを生成する、XSLTで書かれた<strong>フレームワーク</strong>です。<br/>
+ナンダカフラリ氏が原作を作り、現在では私一人で開発しています。</p>
+<div><a href="https://github.com/inomoto-hironobu/framexs">https://github.com/inomoto-hironobu/framexs</a></div>
+<p>要素、属性の構成を<strong>FTML</strong>というテンプレートに集約させることで再利用、つまりコードを使いまわす仕組みです。<br/>
+このページもFTMLを利用しています。その一部、titleタグのコードはこうなっています。</p>
+<pre class="code-container"><code class="language xml"><![CDATA[<title><framexs:title/> - <framexs:property name="site-name"/></title>]]></code></pre>
+<p>これによって、例えば、静的サイトを管理するにあたっては、煩雑さを消しつつ自由でありながらWordPressのような動的サイトに匹敵する劇的なコンテンツの運用簡易性をもたらします。<br/>
+もちろん、WordPressのような動的サイトと組み合わせることもできます。</p>
+<p>Framexsには<strong>テーマ機能</strong>があり、テンプレート、CSS、JavaScriptをまとめてパッケージングすることができます。<br/>
 このサイトでも<a href="https://github.com/inomoto-hironobu/yaohata">八百幡テーマ</a>を使っています。<br/>
 このテーマ機能によって、静的サイトか動的サイトかの垣根を越えます。<br/>
 例えば、WordPress用に作ったデザインをGitHub Pagesに適用する、あるいはその逆もできる、ということです。</p>
 <p>これはHTML力などフロントエンド技術を製品として形にする、ということを意味します。<br/>
 なのでGitHubでオープンソースとして公開することもできますし、製品をアマゾンなどマーケットプレイスに登録して販売することもできます。</p>
-<p>HTMLだけ書けても価値はありません。未来技術を手に入れ、HTMLエンジニアの最先端へ行きましょう！周りとの差を付ける時！</p>
+</section>
+<section>
+<h2>XMLの時代が来る！</h2>
+<pre class="code-container"><code class="language xml"><![CDATA[<?xml version="1.0"?>
+<framexs:properties xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
+<framexs:property name="site-name">八百幡</framexs:property>]]></code></pre>
+<p>このコードはFramexsのもう一つの機能、<strong>プロパティ機能</strong>の、このページで実際に使っているコードです。
+このようにFramexsは<strong>XML技術</strong>をふんだんに使っています。<br/>
+一方で現在のHTML情勢は<strong>HTML Living Standard</strong>が仕様となっていますが、これはとても制御できる代物ではありません。<br/>
+早晩<strong>破綻</strong>します。<br/>
+そして<strong>XML Scheme</strong>や<strong>Relaxng</strong>で定義される、<strong>XML化</strong>の波が訪れるでしょう。<br/>
+XMLは未来技術として、これからのIT世界で新たな時代の主役となるのです。<br/>
+HTMLだけ書けても価値はありません。未来技術を手に入れ、ITエンジニアの最先端へ行きましょう！周りとの差を付ける時です！</p>
 </section>
 <section>
 <h2>ビジネスの提案</h2>
 <p>ここで私はこのFramexsを用いたビジネスを提案いたします。例えば以下のようなことが考えられます。
 </p>
 <ul>
-<li>Framexsでのサイト作成</li>
-<li>Framexsでの既存サイトの改修</li>
-<li>Framexsの講習</li>
-<li>Framexsの有料相談</li>
+<li>Framexs、XML、さらにはHTMLのマンツーマンの講習…<strong>1時間1000円</strong></li>
+<li>XHTML、HTML、XMLの作製…<strong>1枚1000円</strong></li>
+<li>FTMLの作製…<strong>1枚1万円</strong></li>
+<li>コンサルティング…<strong>1時間1000円</strong></li>
 </ul>
-<p>他にも様々な業務が考えられます。依頼料金は少額から請け負いますので、「こうしてほしい」という相談をまずしていただきたいと思います。<br/>
+<p>他にも様々な業務が考えられます。依頼料金は少額から請け負いますので、「こうしてほしい」「こうできないか」という相談をまずしていただきたいと思います。<br/>
 メールなど時間を拘束しない相談は無料です。なので実際に何ができるかは無料相談から話を進めましょう。</p>
 </section>
 <section>
 <h2>連絡はドリームネットシステムズを通して</h2>
-<p>相談の申し込み・業務依頼などさまざまな連絡に関してはドリームネットシステムズの業務依頼フォームを通してください。<br/>
-ドリームネットシステムズは私とビジネスパートナーシップを結び、窓口として様々な依頼を承っております。</p>
-<address>
-<ul class="contact">
-<li><a class="contact contact-button" href="http://dream-netsystems.com/contacts/contact.php?mode=2">業務依頼フォーム</a></li>
-<li><a class="contact contact-button" href="tel:093-581-9888">tel:093-581-9888</a></li>
-</ul>
-</address>
+<p>相談の申し込み・業務依頼などさまざまな連絡に関しては<a href="http://dream-netsystems.com">ドリームネットシステムズ</a>の業務依頼フォームを通してください。<br/>
+ドリームネットシステムズは私とビジネスパートナーシップを結び、窓口として様々な依頼を仲介してもらっています。</p>
+<div><a class="contact contact-button" href="http://dream-netsystems.com/contacts/contact.php?mode=2">業務依頼フォーム</a></div>
+<div><a class="contact contact-button" href="tel:093-581-9888">tel:093-581-9888</a></div>
 <p>他にもFramexsに関する、より詳しい説明をしてほしいなど、どんなささいなことでも気軽にご連絡ください。</p>
 </section>
 <section>
-<h2>Framexsの学習</h2>
+<h2>Framexsの独学</h2>
 <p>このサイトでは無料でFramexsを学習できるように、学習コンテンツを用意しています。<br/>
 Framexsについてより知りたい方は私が書いたFramexsについての記事を読んでください。<br/>
-今後ともコンテンツの充実をしていくので質問等気軽にお寄せください。<a class="contact" href="mailto:inmthrnb@gmail.com">inmthrnb@gmail.com</a></p>
+今後ともコンテンツの充実をしていくので質問等気軽にお寄せください。</p>
 <div data-url="../base/index.xhtml"></div>
 </section>
 <section>
 <h2>会社設立メンバーの募集</h2>
 <p>また、Framexsを事業とする会社の設立を考えています。</p>
 <div data-url="company-a.xhtml"></div>
-</section>
 </section>
 </article>
 </body>
