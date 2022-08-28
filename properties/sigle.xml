@@ -3,5 +3,10 @@
 <framexs:base href="base.xml"/>
 <framexs:property name="pagetype">article</framexs:property>
 <framexs:property name="sidebar1">display</framexs:property>
-
+<framexs:property name="header-in-main">
+<header>
+<p><span id="github-history"></span> <span id="content-length"></span></p>
+<p>更新日:<span id="modified"></span> <span id="content-length"></span></p>
+</header>
+</framexs:property>
 </framexs:properties>

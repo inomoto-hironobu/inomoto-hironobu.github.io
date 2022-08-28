@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
 <?framexs.commands ../../commands.xml?>
-<?framexs.properties ../../properties/properties.xml?>
+<?framexs.properties ../../properties/single.xml?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
 <meta charset="UTF-8"/>
@@ -47,7 +47,7 @@
 <li class="branch_T">/framexs.xsl</li>
 <li class="branch_T">/main.ftml</li>
 <li class="branch_T"><span style="font-weight:bold; color:#633;">/contents.xhtml</span></li>
-<li class="branch_L"><span style="font-weight:bold; color:#633;">/properties.xml</span></li>
+<li class="branch_L"><span style="font-weight:bold; color:#633;">/single.xml</span></li>
 </ul>
 
 <div class="code-container" id="コード2">
@@ -68,7 +68,7 @@
 </html>]]></code></pre>
 </div>
 <div class="code-container" id="コード3">
-<div class="captioon">コード3 /properties.xml</div>
+<div class="captioon">コード3 /single.xml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <properties xmlns="urn:framexs">
 <property name="site-name">- 八百幡</property>
@@ -79,7 +79,7 @@
 
 <p>プロパティを適応するには、Fremexs本体（/framexs.xsl）を読み込んでいた<i>framexs.skeleton</i>とは異なる、<i>framexs.properties</i>で読み込む事が必要です。
 <br /><br />
-プロパティXML（/properties.xml）を、<i>&lt;?framexs.properties properties.xml?&gt;</i>という記述で/contents.xhtmlに読み込みます。
+プロパティXML（/single.xml）を、<i>&lt;?framexs.properties properties.xml?&gt;</i>という記述で/contents.xhtmlに読み込みます。
 </p>
 
 <p><kbd>/contents.xhtml</kbd>にアクセスすると、次のコード4を持つHTMLが生成される。</p>
@@ -102,7 +102,7 @@
 </div>
 
 
-<p>/main.ftmlにある <i>&lt;framexs:property name="○○"/&gt;</i> が、/properties.xmlに記述された<i>property</i>要素に指定されている定数を呼び出し、<kbd>/contents.xhtml</kbd>に反映されていることが分かります。
+<p>/main.ftmlにある <i>&lt;framexs:property name="○○"/&gt;</i> が、/single.xmlに記述された<i>property</i>要素に指定されている定数を呼び出し、<kbd>/contents.xhtml</kbd>に反映されていることが分かります。
 <br /><br />
 例題のコードでは、<i>site-name</i>に指定された「- 八百幡」が、<i>title</i>要素に合成され、サイト名を生成しています。
 <br /><br />
@@ -117,7 +117,7 @@
 <br /><br />
 以下のコード5をご覧ください。</p>
 <div class="code-container" id="コード5">
-<div class="captioon">コード5 /properties.xml</div>
+<div class="captioon">コード5 /single.xml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <framexs:properties xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
 <framexs:list name="links">
