@@ -1,5 +1,16 @@
 <?xml version="1.0"?>
 <framexs:resource xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
-<div>sidbar1-wide</div>
-<div>test</div>
+<div>GitHubリポジトリ</div>
+<ul>
+<li><a href="https://github.com/inomoto-hironobu/inomoto-hironobu.github.io">GitHub Pages</a> このサイトのコード</li>
+<li><a href="https://github.com/inomoto-hironobu/framexs">Framexs</a> FramexsのXSLなど</li>
+<li><a href="https://github.com/inomoto-hironobu/framexs4wordpress">Framexs for WordPress</a> WordPressでFramexsを利用するテーマ</li>
+<li>八百幡テーマ</li>
+<li>XHTML3.0</li>
+</ul>
+<div class="spinner-border" role="status" data-internal-path="/contents/base/description.xhtml">
+<span class="sr-only">Loading...</span>
+</div>
+<div data-internal-path="/contents/base/ftml.xhtml"/>
+<div data-internal-path="/contents/article/HTMLにフレームワークを.xhtml"/>
 </framexs:resource>
