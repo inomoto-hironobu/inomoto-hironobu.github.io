@@ -672,7 +672,7 @@ display:none !important;
 
 #pagetop{
   z-index: 1 !important;
-    postion: -webkit-sticky !important;
+    position: -webkit-sticky !important;
     position: sticky !important;
     top: 0 !important;
     }
