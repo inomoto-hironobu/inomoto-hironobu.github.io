@@ -7,4 +7,10 @@
 <framexs:property name="google-ads-code">ca-pub-1181541789430557</framexs:property>
 <framexs:property name="pagetype">article</framexs:property>
 <framexs:property name="sidebar">display</framexs:property>
+<framexs:property name="header-in-main">
+<header>
+<p><span id="github-history"></span></p>
+<p>更新日:<span id="modified"></span> <span id="content-length"></span></p>
+</header>
+</framexs:property>
 </framexs:properties>
