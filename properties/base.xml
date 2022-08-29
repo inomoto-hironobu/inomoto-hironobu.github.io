@@ -28,12 +28,6 @@
 <script src="/js/gh.js"></script>
 <link rel="stylesheet" href="/css/style.css"/>
 </framexs:property>
-<framexs:property name="header-in-main">
-<header>
-<p><span id="github-history"></span> <span id="content-length"></span></p>
-<p>更新日:<span id="modified"></span> <span id="content-length"></span></p>
-</header>
-</framexs:property>
 <framexs:property name="sidebar1">display</framexs:property>
 <framexs:property name="sidebar2"></framexs:property>
 <framexs:property name="footer-in-container">
