@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<framexs:properties xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
+<framexs:properties xmlns:framexs="framexs-properties" xmlns="http://www.w3.org/1999/xhtml">
 <framexs:base href="base.xml"/>
 <framexs:property name="footer-in-head">
 <script src="/js/a.js"></script>

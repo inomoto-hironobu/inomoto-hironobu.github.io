@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<framexs:properties xmlns:framexs="urn:framexs">
+<framexs:properties xmlns:framexs="framexs-properties">
 <framexs:base href="base.xml"/>
 <framexs:property name="pagetype">article</framexs:property>
 <framexs:property name="sidebar1">display</framexs:property>
