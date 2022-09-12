@@ -15,3 +15,10 @@
 	background:linear-gradient(#F7F9FE,#CACACA);
 	box-shadow: 1px 1px 10px #778;
 }
+
+.center {
+    display:flex
+}
+.center > * {
+    margin:auto
+}
