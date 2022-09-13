@@ -34,9 +34,20 @@
 <div style="font-size:1.5rem;text-align:center"><a href="#top">▲</a></div>
 </framexs:property>
 <framexs:property name="footer">
+<div class="row">
+<div class="col-md">
 <ul class="footer-links">
 <li><a class="contact" href="https://groups.google.com/g/framexs">メーリングリスト</a></li>
 <li><a class="contact" href="https://mail.google.com/chat/u/0/#chat/space/AAAAGMdSb88">チャットスペース</a></li>
 </ul>
+</div>
+<div class="col-md">
+<ul class="footer-links">
+<li><a href="/contents/other/info.xhtml">運営者情報</a></li>
+<li><a href="/contents/other/form.xhtml">お問合せ</a></li>
+</ul>
+</div>
+</div>
+
 </framexs:property>
 </framexs:properties>
