@@ -7,14 +7,8 @@
 <framexs:property name="logo">
 <img id="head_img" src="/img/logo.png" width="64"/>
 </framexs:property>
-<framexs:property name="body-class">bg-light</framexs:property>
-<framexs:property name="nav-class">bg-light</framexs:property>
 <framexs:property name="center-class">col-md-8</framexs:property>
-<framexs:property name="main-class">bg-white</framexs:property>
-<framexs:property name="sidebar1-wide-class">col-md-4 bg-white</framexs:property>
-<framexs:property name="footer-class">bg-dark text-white</framexs:property>
 <framexs:property name="home-path">/index.xhtml</framexs:property>
-<framexs:property name="use-default-css">yes</framexs:property>
 <framexs:property name="nav">
 <li title="基礎">/contents/base/index.xhtml</li>
 <li title="入門">/contents/introduction/index.xhtml</li>
@@ -30,6 +24,7 @@
 </framexs:property>
 <framexs:property name="sidebar1">display</framexs:property>
 <framexs:property name="sidebar2"></framexs:property>
+<framexs:property name="use-default">true</framexs:property>
 <framexs:property name="footer-in-container">
 <div style="font-size:1.5rem;text-align:center"><a href="#top">▲</a></div>
 </framexs:property>

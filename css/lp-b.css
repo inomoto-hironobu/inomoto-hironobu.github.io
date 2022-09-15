@@ -16,9 +16,9 @@
 	box-shadow: 1px 1px 10px #778;
 }
 
-.center {
+.center-contents {
     display:flex
 }
-.center > * {
+.center-contents > * {
     margin:auto
 }
