@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<framexs:resource xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
+<fr:resource xmlns:fr="urn:framexs-resource" xmlns="http://www.w3.org/1999/xhtml">
 <div>GitHubリポジトリ</div>
 <ul>
 <li><a href="https://github.com/inomoto-hironobu/inomoto-hironobu.github.io">GitHub Pages</a> このサイトのコード</li>
@@ -13,4 +13,4 @@
 </div>
 <div data-internal-path="/contents/base/ftml.xhtml"/>
 <div data-internal-path="/contents/article/HTMLにフレームワークを.xhtml"/>
-</framexs:resource>
+</fr:resource>

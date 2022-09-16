@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<framexs:properties xmlns:framexs="framexs-properties" xmlns="http://www.w3.org/1999/xhtml">
+<framexs:properties xmlns:framexs="urn:framexs-properties" xmlns="http://www.w3.org/1999/xhtml">
 <framexs:base href="base.xml"/>
 <framexs:property name="footer-in-head">
 <script src="/js/b.js"></script>
@@ -8,7 +8,5 @@
 </framexs:property>
 <framexs:property name="sidebar1"></framexs:property>
 <framexs:property name="sidebar2"></framexs:property>
-<framexs:property name="center-class">col-md-12 bg-light</framexs:property>
-<framexs:property name="body-class">bg-light</framexs:property>
-<framexs:property name="footer-class">bg-secondary text-white</framexs:property>
+<framexs:property name="center-class">col bg-light</framexs:property>
 </framexs:properties>

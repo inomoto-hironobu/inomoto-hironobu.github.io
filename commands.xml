@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<commands xmlns="framexs-commands">
+<commands xmlns="urn:framexs-commands">
 <skeleton>/yaohata/main.ftml</skeleton>
 <resource>sidebar1-wide /parts/sidebar1-wide.xml</resource>
 <resource>sidebar1-mobile /parts/sidebar1-mobile.xml</resource>
