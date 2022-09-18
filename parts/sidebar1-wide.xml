@@ -8,9 +8,7 @@
 <li>八百幡テーマ</li>
 <li>XHTML3.0</li>
 </ul>
-<div class="spinner-border" role="status" data-internal-path="/contents/base/description.xhtml">
-<span class="sr-only">Loading...</span>
-</div>
-<div data-internal-path="/contents/base/ftml.xhtml"/>
-<div data-internal-path="/contents/article/HTMLにフレームワークを.xhtml"/>
+<internal-link path="/contents/base/description.xhtml"/>
+<internal-link path="/contents/base/ftml.xhtml"/>
+<internal-link path="/contents/article/HTMLにフレームワークを.xhtml"/>
 </fr:resource>
