@@ -2,11 +2,11 @@
 <!--広告のコードつき-->
 <framexs:properties xmlns:framexs="urn:framexs-properties">
 <framexs:base href="base.xml"/>
-<framexs:property name="sidebar1"><!-- admax -->
+<framexs:property name="sidebar1-aside"><!-- admax -->
 <script src="https://adm.shinobi.jp/s/4fdb831093a7c78fcdf1b8836cd6c3f4"></script>
 <!-- admax --></framexs:property>
 <framexs:property name="header-in-container"><!-- admax -->
-<script src="https://adm.shinobi.jp/s/fd7e103e4f4f7234c97ab8aae808d945"></script>
+<script src="https://adm.shinobi.jp/s/7ccf02c5b538422fe394cf5c89b30bf5"></script>
 <!-- admax --></framexs:property>
 
 <framexs:property name="google-ads-code">ca-pub-1181541789430557</framexs:property>
