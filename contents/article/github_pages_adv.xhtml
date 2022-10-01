@@ -27,9 +27,27 @@ Framexsではビルドが必要ないので非常に管理が楽になります�
 <p>Framexsとは静的サイトの簡易な管理ができるようにした、クライアント駆動のXSLTフレームワークです。<br/>
  Framexsはクライアント駆動のコンテンツ管理を行うので変更のたびに反映されます。<br/>
 静的サイトでありながらほぼ動的サイトと同等な管理が可能です。<br/>
-しかも有料のGitHub Actionsを使う必要がありません。<br/>
+しかも有料のGitHub Actionsを使う必要がありません。</p>
+<p>例えばこのページには次のコードがあります。</p>
+<pre><code class="language xml"><![CDATA[<?framexs.properties ../../properties/ads.properties.xml?>]]></code></pre>
+<p>ads.properties.xmlというファイルを読み込んでいるわけですが、そのファイルでは、</p>
+<pre><code class="language xml"><![CDATA[<framexs:property name="header-in-container"><!-- admax -->
+<script src="https://adm.shinobi.jp/s/7ccf02c5b538422fe394cf5c89b30bf5"></script>
+<!-- admax --></framexs:property>]]></code></pre>
+<p>という記述があります。このコードが広告のコードです。<br/>
+そして、テンプレートにおいて、</p>
+<pre><code class="language xml"><![CDATA[<framexs:if property="header-in-container">
+<header class="row">
+<div class="col">
+<framexs:property name="header-in-container"/>
+</div>
+</header>
+</framexs:if>]]></code></pre>
+<p>この記述のうち、framexs:property name="header-in-container"が広告のコードに置き換わります。<br/>
+まとめると、コードの定義をするファイルとテンプレートを別々に分けることによって、広告の有るページと無いページを少しのコードで切り替えているということです。</p>
+<p>
 このサイトではFramexsの解説を用意していますので、ご覧ください。</p>
-<div class="link"><a href="../base/index.xhtml">Framexsの基礎</a></div>
+<internal-link path="../base/index.xhtml"/>
 </section>
 </article>                
 </body>
