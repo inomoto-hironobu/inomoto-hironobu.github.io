@@ -13,10 +13,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/command/index.xhtml</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://inomoto-hironobu.github.io/contents/article/index.xhtml</loc>
     <priority>0.8</priority>
   </url>

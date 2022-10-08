@@ -5,16 +5,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
 <meta charset="UTF-8"/>
-<title>（開発中）framexs.properties</title>
-<meta name="description" content="framexs.propertiesについて解説する"/>
+<title>framexs.commands</title>
+<meta name="description" content="framexs.commandsについて解説する"/>
 <meta name="modified" content="2022-07-21"/>
 </head>
 <body id="main">
 <article>
+<section>
+<p>Framexsではコンテンツから命令を受け取ることで様々な機能を実装します。<br/>
+framexs.がついた処理命令という形で行います。</p>
+<ul>
+<li>skeleton</li>
+<li>resource</li>
+<li>properites</li>
+<li>commands</li>
+</ul>
+</section>
+<section>
 <p>Framexsにはプロパティ―機能というものがあり、ページに共通する名前付きの値を定義できます。<br/>
 framexs.propertiesでは定義をまとめたファイル、プロパティーファイルを指定します。</p>
-
-
 <pre><![CDATA[<?framexs.properties ../../properties/single.xml?>]]></pre>
 <p>プロパティーファイルは次のようになっています。</p>
 <pre><![CDATA[<?xml version="1.0"?>
@@ -40,6 +49,35 @@ framexs.propertiesでは定義をまとめたファイル、プロパティー�
 </framexs:property>
 </framexs:properties>]]></pre>
 <p>プロパティには文字列のほかに、HTML要素を値にすることができます。</p>
+</section>
+<section>
+<p>framexs.commandsコマンドは、コンテンツファイルのFramexsコマンドを一括して管理するためのものです。<br/>
+次のようなコードです。</p>
+<div class="code-container">
+<pre><code class="language xml"><![CDATA[
+<?framexs.commands ../../commands.xml?>
+]]></code></pre>
+</div>
+<p>コマンドファイルという、コマンドを定義するファイルの場所を指定しています。<br/>
+コマンドファイルは次のようになっています。</p>
+<pre><code class="language xml"><![CDATA[
+<?xml version="1.0"?>
+<commands xmlns="urn:framexs">
+<skeleton>/yaohata/main.ftml</skeleton>
+<resource>sidebar /parts/sidebar.xml</resource>
+</commands>
+]]></code></pre>
+<p>この利点を説明します。<br/>
+例えばコンテンツファイルに次のようなコマンドがあったとします。</p>
+<pre><![CDATA[
+<?framexs.skeleton ../../yaohata/main.ftml?>
+<?framexs.resource sidebar ../../parts/sidebar.xml?>
+<?framexs.properties ../../properties/single.xml?>
+]]></pre>
+<p>このコードでは、テーマを切り替えたいときには、すべてのコンテンツファイルのコマンドを変えなくてはいけません。<br/>
+またリソースファイルの指定のような、共通するコードを全てのコンテンツに入れるのは、負担が大きく、ファイル名の変更も困難です。<br/>
+こういった手間を大幅に軽減する役割があります。</p>
+</section>
 </article>
 </body>
 </html>
