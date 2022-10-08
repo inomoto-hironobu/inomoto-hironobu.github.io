@@ -10,21 +10,30 @@
 <body id="main">
 <article>
 <section>
+<div class="code-container">
+<pre><code class="language xml"><![CDATA[<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
+<?framexs.commands ../../commands.xml?>
+<?framexs.properties ../../properties/lp-a.properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">]]>
+</code></pre>
+</div>
+<p>このコードは今あなたが見ている、このページの冒頭部分です。</p>
+<p>先頭の<code>&lt;?xml ...</code>は何でしょうか？これは、このページが<strong>XML</strong>であることを示すための<strong>XML宣言</strong>です。<br/>
+htmlタグに<strong>名前空間</strong>もあるので、これは<strong>XHTML</strong>ですね。<br/>
+では<code>&lt;xml-stylesheet ...</code>と<code>&lt;?framexs...</code>となっているのは？<br/>
+これらはXMLの<strong>処理命令</strong>で、特にxml-stylesheetは<strong>スタイルシート</strong>を指定するもので、この場合では<strong>XSLT</strong>ファイルを指定しています。</p>
+<p>私は今、<strong>XSLT製のフレームワーク</strong>の<strong>Framexs</strong>という、XMLの機能をフル活用するプロジェクトを進めています。<br/>
+そしてこのXMLを書く力を多くの人に提供したいと思っています。</p>
+</section>
+<section>
 <h2>XMLのお仕事</h2>
-<div class="row">
-<div class="col-md center-contents">
 <ul>
 <li>「XMLのことなんて全く分からないのに仕事で扱うことになってしまった」</li>
 <li>「社員にXMLが分かる人材が全くいない」</li>
 <li>「XML、難しすぎる」</li>
 <li>「XMLの専門家を雇うための費用が無い」</li>
-</ul></div>
-<div class="col-md">
-<figure>
-<img src="../../img/framexs.png"/>
-</figure>
-</div>
-</div>
+</ul>
 <p>そんなお困りごとを抱えていませんか？<br/>
 だったら私に<mark>業務委託</mark>しましょう！</p>
 <p>請け負う業務はXMLに関することなら<mark>なんでも</mark>！<br/>
@@ -65,42 +74,6 @@
 前もって連絡をいただくことで、契約後の<mark>不要なトラブル</mark>、<mark>余分な出費</mark>、<mark>割に合わない労力</mark>が出ること防ぎます。</p>
 </section>
 <section>
-<h2>私の技術力</h2>
-<div class="row">
-<div class="col-md">
-<figure>
-<img src="../../img/3334873_s.jpg"/>
-</figure>
-</div>
-<div class="col-md center-contents">
-<p>業務を依頼するにしても、XMLをちゃんとわかっている人に頼みたいのが当然です。<br/>
-そこで私のXMLの技術力を提示します。</p>
-</div>
-</div>
-<p>私は今、<mark>XSLT製のフレームワーク</mark>の<mark>Framexs</mark>という、XMLの機能をフル活用するプロジェクトを進めています。<br/>
-例えばこのページもFramexsを使っていて、冒頭のコードはこうなっています。</p>
-<div class="code-container">
-<pre><code class="language xml"><![CDATA[<?xml version="1.0"?>
-<?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
-<?framexs.commands ../../commands.xml?>
-<?framexs.properties ../../properties/lp-a.properties.xml?>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">]]>
-</code></pre>
-</div>
-<p>すごいでしょ？<br/>
-こんな感じで、GitHubでXMLのプロジェクトをいくつも進めています。ぜひご覧になって私の技術力を確認してください。</p>
-<dl>
-<dt><a href="https://github.com/inomoto-hironobu/framexs">Framexs</a></dt>
-<dd>ナンダカフラリ氏が創作したXSLT製のフレームワーク。現在は<mark>私一人</mark>が開発を進めています。</dd>
-<dt><a href="https://github.com/inomoto-hironobu/inomoto-hironobu.github.io">このサイト</a></dt>
-<dd>このページを含むサイト全体でFramexsを中心にXMLをフル活用！<br/>これで静的サイトであるGitHub Pagesを<mark>動的サイト並</mark>に運用しています。</dd>
-<dt><a href="https://github.com/inomoto-hironobu/yaohata">テーマ八百幡</a></dt>
-<dd>特殊なXHTMLである<mark>FTML</mark>を使って、このサイトのデザインを構築しています。</dd>
-<dt><a href="https://github.com/inomoto-hironobu/framexs4wordpress">Framexs for WordPress</a></dt>
-<dd>FramexsとWordPressを協調させるWordPresssテーマです。</dd>
-</dl>
-</section>
-<section>
 <h2>いかがでしたか</h2>
 <p>ここまでお読みいただきありがとうございます。<br/>
 私の自薦はいかがでしたか。<br/>
@@ -118,7 +91,7 @@
 <h2>リンク</h2>
 <p>もしXMLやHTMLに心得があるなら、XSLT製のフロントエンドフレームワークFramexsを学びませんか？<br/>
 FramexsはXMLの能力をフル活用した新時代技術です。</p>
-<internal-link path="../../index.xhtml"/>
+<internal-link path="../service-b.xhtml"/>
 <p>Framexs、XMLを専門にする会社の立ち上げを考えています。興味はありませんか。</p>
 <internal-link path="./company-b.xhtml"/>
 </section>
