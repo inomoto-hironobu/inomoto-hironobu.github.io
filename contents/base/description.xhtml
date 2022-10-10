@@ -38,7 +38,7 @@
                       <li class="branch_L">/contents.xhtml</li></ul></ul>
 </ul>
 <div class="code-container">
-<div class="captioon">tempalte.xhtml</div>
+<div class="caption">main.xhtml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" xml:lang="ja" lang="ja">
 <head>
@@ -46,12 +46,15 @@
 </head>
 <body>
 <h1>あいさつ</h1>
-<article><p framexs:id-d="main">コンテンツのid属性がmainの部分を読み込み置き換える</p></article>
+<article>
+<!-- コンテンツのid属性がmainの部分を読み込み置き換える -->
+<framexs:id name="main"/>
+</article>
 </body>
 </html>]]></code></pre>
 </div>
 <div class="code-container">
-<div class="captioon">content.xhtml</div>
+<div class="caption">content.xhtml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
 <?framexs.skeleton main.ftml?>
@@ -94,7 +97,6 @@
 <pre><code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
 <?framexs.commands ../../commands.xml?>]]></code></pre>
 </div>
-</section>
 </section>
 </article>
 </main>
