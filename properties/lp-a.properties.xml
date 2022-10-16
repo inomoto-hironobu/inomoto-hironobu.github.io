@@ -8,7 +8,5 @@
 </framexs:property>
 <framexs:property name="sidebar1"></framexs:property>
 <framexs:property name="sidebar2"></framexs:property>
-<framexs:property name="center-class">col-10 bg-light</framexs:property>
-<framexs:property name="header-in-main">
-</framexs:property>
+<framexs:property name="center-class">col bg-light</framexs:property>
 </framexs:properties>
