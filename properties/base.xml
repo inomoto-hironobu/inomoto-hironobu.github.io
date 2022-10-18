@@ -7,6 +7,7 @@
 <framexs:property name="logo">
 <img id="head_img" src="/img/logo.png" width="64"/>
 </framexs:property>
+<framexs:property name="title">display</framexs:property>
 <framexs:property name="center-class">col-md-8</framexs:property>
 <framexs:property name="home-path">/index.xhtml</framexs:property>
 <framexs:property name="nav">

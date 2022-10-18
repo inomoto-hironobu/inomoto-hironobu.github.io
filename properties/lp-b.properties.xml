@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="/css/style.css"/>
 <script src="/js/yaohata.js"></script>
 </framexs:property>
+<framexs:property name="title"></framexs:property>
 <framexs:property name="sidebar1"></framexs:property>
 <framexs:property name="sidebar2"></framexs:property>
 <framexs:property name="center-class">col bg-light</framexs:property>
