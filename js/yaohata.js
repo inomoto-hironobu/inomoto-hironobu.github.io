@@ -99,11 +99,38 @@ class InternalLink extends HTMLElement {
 	}
 }
 
-
+class InternalQuote extends HTMLElement {
+	constructor(){
+		super();
+		const path = this.getAttribute("path");
+		const target = this.getAttribute("target");
+		console.log(path);
+		if(path != null && new URL(path, document.location).host == document.location.host) {
+			console.log("yes");
+		}
+		const loading = document.getElementById('loading-template').content.firstElementChild.cloneNode(true);
+		
+		this.replaceWith(loading);
+		
+		pullMeta(path,function(info){
+			
+			const template = document.getElementById('quote-template').content.firstElementChild.cloneNode(true);
+			template.querySelector('.target').replaceWith(info.document.getElementById(target));
+			const a = template.querySelector('.citation a')
+			a.textContent = info.title;
+			a.setAttribute('href',path+"#"+target);
+			loading.replaceWith(template);
+		},function(error){
+			let loaderror = document.getElementById('loaderror-template').content.firstElementChild;
+			console.error(error);
+			loading.replaceWith(loaderror);
+		});
+	}
+}
 window.addEventListener('DOMContentLoaded', ()=>{
 
 	customElements.define("internal-link",InternalLink);
-
+	customElements.define("internal-quote",InternalQuote);
 	if(window.innerWidth > 750) {
 		document
 		.querySelectorAll('aside details')

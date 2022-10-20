@@ -31,3 +31,17 @@ body > footer  tr{
     list-style: none;
     content: "※　";
 }
+@media screen and (min-width: 748px){
+article {
+    max-width: 660px;
+    margin: auto;
+}
+}
+
+main figure {
+    border: dotted 1px silver;
+}
+.internal-quote{
+    border:dotted 2px gray;
+    padding: .5rem;
+}
