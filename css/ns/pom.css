@@ -1,0 +1,43 @@
+@namespace pom "http://maven.apache.org/POM/4.0.0";
+
+pom|project {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+pom|properties {
+
+}
+pom|dependencies {
+	
+}
+pom|dependency {
+	display: block ;
+}
+pom|groupId, pom|artifactId, pom|version {
+	display: list-item;
+}
+pom|groupId {
+}
+pom|artifactId {
+}
+pom|version {
+}
+pom|packaging {
+
+}
+pom|name {
+
+}
+pom|description {
+
+}
+pom|url {
+}
+pom|properties {
+
+}
+pom|dependencyManagement {
+
+}
+
