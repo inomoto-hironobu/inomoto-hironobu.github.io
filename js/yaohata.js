@@ -21,7 +21,7 @@ function pullMeta(link, consumer, errorHandler) {
 	})
 	.then(d=>{
 		const parser = new DOMParser();
-  		const data = parser.parseFromString(d, "text/html");
+  		const data = parser.parseFromString(d, "application/xml");
 		console.log(data);
 		const info = {
 			document:data,
@@ -192,11 +192,16 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		});
 	});
 
-	document
-	.querySelectorAll('*[data-table-setting]')
-	.forEach((table)=>{
-
+	fetch(document.URL)
+	.then((response)=>response.text())
+	.then((text) => {
+		const contents = new DOMParser().parseFromString(text,'application/xml');
+		const modified = contents.evaluate('//xhtml:meta[@name=\'modified\']/@content',contents,nsResolver,XPathResult.STRING_TYPE).stringValue;
+		document
+		.querySelector('#modified')
+		.replaceWith(document.createTextNode(modified));
 	});
+	
 });
 
 
