@@ -5,9 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
 <meta charset="UTF-8"/>
-<title>（開発中）Framexsコンテンツとは</title>
-<meta name="description" content="（開発中）Framexsコンテンツとは。"/>
-<meta name="modified" content="2022-06-09"/>
+<title>Framexsコンテンツとは</title>
+<meta name="description" content="Framexsコンテンツとは何かを解説。"/>
+<meta name="modified" content="2022-10-22"/>
 </head>
 <body>
 <ol id="breadcrumb">
@@ -18,7 +18,8 @@
 <article>
 <section>
 <p>Framexsコンテンツについて解説する。</p>
-<p>Framexsにおいてコンテンツを表現する方法として、特殊なXHTMLを使う。</p>
+<p>Framexsにおいてコンテンツとは、あるWebページを構成する主要の本文などを含む核となる情報を持っているデータとなる。<br/>
+これを表現する方法として、特殊なXHTMLを使う。</p>
 <div class="code-container">
 <div class="caption">content.xhtml</div>
 <pre><code class="language xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -35,9 +36,20 @@
 </body>
 </html>]]></code></pre>
 </div>
-<p>処理命令というXMLだからこそできる技術に依存するのが特徴である</p>
-<p>まずはスタイルシートの指定、そしてframexs.xslの解釈されるコマンドを指定している。</p>
-<p>名前空間は同じだがXHTMLはDTDの制約を受けない。これによって今のHTMLへの変換を行う。</p>
+<p>処理命令というXMLだからこそできる技術を応用しているのが特徴である。</p>
+<p>まずはXMLスタイルシートの指定、そしてframexs.xslの解釈されるコマンドを指定している。</p>
+<p>このXHTMLはDTDの制約を受けない。HTML Living Standard（HTML LS）のXML化したXHTMLであり、HTML LSの要素、属性、特徴を引き継がせることができる。<br/>
+これによって合成後もHTML LSとして機能させる</p>
+
+<internal-link path="commands.xhtml"/>
+</section>
+<section>
+<h2>XHTMLとは<embed></embed></h2>
+<p>XHTMLとは名前空間<samp>http://www.w3.org/1999/xhtml</samp>を持つXMLであり、歴史的にはHTML4をXMLで再定義した規格であるXHTML1.0があり、Strict、Frameset、Transientの3つがある。<br/>
+XHTML1.1ではモジュール機能が実装された。<br/>
+XHTML2.0は規格途中で挫折したが、section要素など、いくつかの仕様はHTML5、HTML LSに引き継がれた。<br/>
+HTML5をXMLとして定義したものはXHTML5といわれることがある。</p>
+<p>コンテンツで使えるコマンドは以下のページを参照のこと。</p>
 </section>
 </article>
 </main>
