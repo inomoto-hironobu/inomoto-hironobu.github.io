@@ -94,6 +94,22 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://inomoto-hironobu.github.io/contents/other/xml-a.xhtml</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://inomoto-hironobu.github.io/contents/other/xml-b.xhtml</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://inomoto-hironobu.github.io/contents/other/info.xhtml</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://inomoto-hironobu.github.io/contents/other/business.xhtml</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://inomoto-hironobu.github.io/contents/other/index.xhtml</loc>
     <priority>0.5</priority>
   </url>
