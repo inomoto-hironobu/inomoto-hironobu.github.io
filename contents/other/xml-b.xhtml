@@ -10,15 +10,7 @@
 <body id="main">
 <article>
 <section>
-<ul>
-<li>「XMLのことなんて全く分からないのに仕事で扱うことになってしまった」</li>
-<li>「社員にXMLが分かる人材が全くいない」</li>
-<li>「XML、難しすぎる、誰かに教えてほしい」</li>
-</ul>
-<p>そんなお困りごとを抱えていませんか？<br/>
-だったら私にXMLの業務、任せてください！</p>
-<p>私は今、XMLの機能をフル活用しています。<br/>
-例えばこのページ、冒頭のコードはこうなっています。</p>
+<p>現在の<mark>XML</mark>を取り巻く環境は<strong><mark>XSLT</mark>を中心に進化</strong>しています。例えば、今あなたが見ているこのページの冒頭部分を示します。</p>
 <div class="code-container">
 <pre><code class="language xml"><![CDATA[<?xml version="1.0"?>
 <?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
@@ -27,37 +19,70 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">]]>
 </code></pre>
 </div>
-<p>すごいでしょ？<br/>
-これFramexsといって、XSLT製のフレームワークを使っているんですが、こんな感じで、GitHubでXMLのプロジェクトをいくつも進めています。</p>
+<p>先頭の<code>&lt;?xml ...</code>は何でしょうか？これは、このページがXMLであることを示すための<mark>XML宣言</mark>です。<br/>
+htmlタグに<mark>名前空間</mark>もあるので、これは<mark>XHTML</mark>ですね。<br/>
+では<code>&lt;xml-stylesheet ...</code>と<code>&lt;?framexs...</code>となっているのは？<br/>
+これらはXMLの<mark>処理命令</mark>で、特に<code>xml-stylesheet</code>は<mark>スタイルシート</mark>を指定するもので、この場合では<mark>XSL</mark>ファイルを指定しています。<br/>
+そして<mark>XSLT</mark>処理を施して、今ブラウザを通して今あなたの前に現れているというわけです。</p>
+<p>私は今、<strong>XSLT製のフレームワーク</strong>の<mark>Framexs</mark>という、XMLの機能をフル活用するソフトを使っています。<br/>
+このFramexsは<strong>XMLを合成する</strong>アーキテクチャを持っています。</p>
+<p>また<mark>Java</mark>で動くライブラリは多種多様であり、<mark>XSLT3.0</mark>を実装している<mark>Saxon-HE</mark>によって<mark>JSON</mark>も含めて非常に高度なデータ加工が可能になっています。<br/>
+さらに、JavaはXSLT処理を行う上で柔軟であるため、XSLTの対象はXMLだけでなく<mark>HTML</mark>や<mark>CSV</mark>にも及びます。</p>
+<p>Javaでは<mark>DOM</mark>としてXSLをソースにできるので、<mark>HTMLパーサー</mark>を通して<strong>HTMLのXSLT処理</strong>を可能にします。</p>
+<pre><code class="language java">var parser = new nu.validator.htmlparser.dom.HtmlDocumentBuilder();
+var doc = parser.parse(Files.newInputStream(input));
+transformer.transform(new DOMSource(doc),new StreamResult(Files.newOutputStream(output)));</code></pre>
+<p>また<strong>CSVを処理することも可能</strong>です。配列としてパースした後にいったんDOMへと変換することでXSLT処理が可能です。</p>
+<pre><code class="language java">var list = Csv.load(Files.newInputStream(input), new CsvConfig(), new StringArrayListHandler());</code></pre>
+<pre><code class="language csv"><![CDATA[<csv xmlns="urn:csvml">
+<record><field>1</field><field>東京</field></record>
+<record><field>2</field><field>大阪</field></record>
+</csv>
+]]></code></pre>
+<p>このように今の技術であればXML、HTML、JSON、CSVを統合する事さえできるでしょう。</p>
+<p>さらに、現在の私はGitHubでXMLのプロジェクトをいくつも進めています。</p>
 <dl>
 <dt><a href="https://github.com/inomoto-hironobu/framexs">Framexs</a></dt><dd>ナンダカフラリ氏が創作したXSLT製のフレームワーク。現在は私一人が開発を進めています。</dd>
 <dt><a href="https://github.com/inomoto-hironobu/inomoto-hironobu.github.io">このサイト</a></dt><dd>このページを含むサイト全体でXHTMLを中心にXMLをフル活用！<br/>これで静的サイトであるGitHub Pagesを動的サイト並に運用しています。</dd>
-<dt><a href="https://github.com/inomoto-hironobu/yaohata">テーマ八百幡</a></dt><dd>特殊なXHTMLであるFTMLを使ってます。</dd>
+<dt><a href="https://github.com/inomoto-hironobu/yaohata">テーマ八百幡</a></dt><dd>特殊なXHTMLであるFTMLを使ってます。このサイトで適用しています。</dd>
+<dt><a href="https://github.com/inomoto-hironobu/framexs4wordpress">Framexs for Wordpress</a></dt><dd>WordPressでFramexsを使用する機能を持ったテーマ。</dd>
 </dl>
-<p>とまあ、こんな感じでXML、XML、XML…と嫌になるくらいXMLをバリバリ書いて活用してます。<br/>
-あまりに書きすぎて、書けて当然…と思ってしまうのですが、普通はXMLなんてわからないですよね。<br/>
-なので、私でお役に立てればと思っています。</p>
-<p>業務はXMLに関することならなんでも！<br/>
-XSLTでもXML ScehmaでもXPathでも、何でも来い！と請け負います。<br/>
-XML Schemaなら、名前付き型を作って実装させるか、group要素やattributeGroupを使う移譲のような書き方をするか、かなり悩むところですが、私にはその判断ができる知見があると自負しています。<br/>
-XSLTなら、単純な変換だけでなく、抽出、合成といったさらに高度なコードを作れます。</p>
-<p>「こうしてほしい」「こうできないか」など相談の申し込みといった、さまざまな連絡に関しては、以下からお願いします。</p>
-<internal-quote path="info.xhtml" target="連絡先"/>
-<p>労働期間が1日のちょっとした頼みなら、ランサーズからなら業務委託契約書などは必要なくすばやく購入ができます。</p>
+<p>こうやってXMLづけの日々を送っているわけです。</p>
+<p>さて、ところであなたはこんなお困りごとを抱えていませんか？</p>
+<ul>
+<li>「XMLのことなんて全く分からないのに仕事で扱うことになってしまった」</li>
+<li>「社員にXMLが分かる人材が全くいない」</li>
+<li>「XML、難しすぎる」</li>
+<li>「XMLの専門家を雇うための費用が無い」</li>
+</ul>
+<p>こういったお悩み事を私に任せてくれませんか。<br/>
+例えば、<mark>JavaScript</mark>とXSLTの比較をレポートする文章を作るための相談をしてほしい、という依頼がありました。<br/>
+そこで私は資料を作り、これを基に相談に乗りました。<br/>
+<img style="border:solid 2px gray" src="../../img/jsandxslt.png"/><br/>
+成果は上々で、大変お役に立つことができました。</p> 
+<p>このように、今の私はXMLに関わることならなんでも、1日から数カ月の長期まで、仕事を請け負っています。</p>
+<internal-quote path="business.xhtml" target="営業"/>
+<p>ぜひお任せください。<br/>
+また、1日で終わるちょっとした業務ならランサーズ経由で受け付けています。この場合なら業務委託契約書は不要です。</p>
 <div class="card" style="max-width:32rem;margin:1rem auto;">
 <div class="card-body">
 <h3 class="card-title">ランサーズ</h3>
 <p class="card-text">日本最大級、ネットで最短当日にフリーランスなどプロに発注できるマーケットです。<br/>
-ランサーズを利用するにはアカウント登録が必要です。登録は無料です。</p>
-<a href="https://www.lancers.jp/profile/HironobuInomoto/plan/91738" class="btn btn-primary business">ランサーズで購入する</a>
+業務委託契約書などは必要ありません。利用するには無料のアカウント登録が必要です。</p>
+<a href="https://www.lancers.jp/profile/HironobuInomoto/plan/91738" class="btn btn-primary business">ランサーズで依頼する</a>
 </div>
 </div>
-<internal-quote path="business.xhtml" target="営業"/>
+<p>ちょっとしたことなら要件を確認していくだけで、<strong>無料で問題解決</strong>するかもしれません。<br/>
+まずはどんな悩みや困りごとがあるか連絡してください。</p>
+<internal-quote path="info.xhtml" target="連絡先"/>
 </section>
 <section>
-<h2>Framexsを学びませんか？</h2>
-<p>もしXMLやHTMLに心得があるなら、XSLT製のフロントエンドフレームワークFramexsを学びませんか？FramexsはXMLの能力をフル活用した新時代技術です。</p>
-<internal-link path="../../index.xhtml"/>
+<h2>リンク</h2>
+<p>もしXMLやHTMLに心得があるなら、XSLT製のフロントエンドフレームワークFramexsを学びませんか？<br/>
+FramexsはXMLの能力をフル活用した新時代技術です。</p>
+<internal-link path="./service-b.xhtml"/>
+<p>Framexs、XMLを専門にする会社の立ち上げを考えています。興味はありませんか。</p>
+<internal-link path="./company-b.xhtml"/>
 </section>
 </article>
 </body>
