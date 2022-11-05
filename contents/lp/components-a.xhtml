@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../framexs.xsl"?>
+<?framexs.skeleton ../template.ftml?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" prefix="og:https://ogp.me/ns#" lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<title>八百幡コンポーネンツを使おう</title>
+<meta property="og:title" content="八百幡コンポーネンツを使おう"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content="「シェアボタンをタグ一発で表示できたら…」いろいろな要望に応える八百幡コンポーネンツを開発中です。HTMLを簡単にリッチにすることを目指しています。"/>
+<meta property="og:image" content="https://inomoto-hironobu.github.io/components/img/23863805_s.jpg"/>
+<meta property="og:url" content="https://inomoto-hironobu.github.io/components/contents/lp.xhtml"/>
+</head>
+<body>
+<article id="main">
+<p>ここによくあるツイッターのシェアボタンがありますね。</p>
+<div><twitter-button/></div>
+<p>実はこのボタンのコード、たったのこれだけです。</p>
+<pre><code><![CDATA[<twitter-button/>]]></code></pre>
+<p>ほかのシェアボタンもありますが、同じように単純なタグを挿入するだけでボタンを表示しています。</p>
+<div><facebook-button/></div>
+<pre><code><![CDATA[<facebook-button/>]]></code></pre>
+<line-button/>
+<pre><code><![CDATA[<line-button/>]]></code></pre>
+<p>パソコンからこのページを見ているならソースコードを確認してみましょう。あるいは<a href="https://github.com/inomoto-hironobu/components/blob/master/content/lp.xhtml">GitHub</a>で確認できます。</p>
+<p>これができるのは、<a href="https://github.com/inomoto-hironobu/components">八百幡コンポーネンツ</a>というものを導入しているからです。</p>
+<internal-ogp path="description.xhtml"/>
+<p>ちなみにこのリンクも八百幡コンポーネンツを使っています。</p>
+<pre><code><![CDATA[<internal-ogp path="description.xhtml"/>]]></code></pre>
+<p>これを使うには<a href="https://github.com/inomoto-hironobu/components/releases">リリース</a>からダウンロードします。あるいは上記のリポジトリをGitでクローンします。</p>
+<p>そしてこんな感じで導入します。</p>
+<pre><code><![CDATA[<script src="components/SaxonJS2.js"></script>
+<script src="components/yaohata.js"></script>
+]]></code></pre>
+<p><a href=""><the-title path=""/></a><ogp-title/></p>
+<internal-quote path="../../contents/info/owner.xhtml" target="連絡先"/>
+<p>八百幡コンポーネンツは作られてからまだ時間が浅く、まだまだ開発途中です。<br/>
+より多機能で高性能なプロダクトにするには多くの人の助けを借りなければなりません。<br/>
+このプロジェクトが成功し発展するかはどれだけSNSによる拡散が行われるかにかかっています。<br/>
+ぜひご協力ください。</p>
+<div><twitter-button/> <facebook-button/> <line-button/></div>
+<p>このページでは合わせてFramexsも使われています。<br/>
+<a href="https://inomoto-hironobu.github.io/">八百幡</a>ではFramexsの事実上の公式サイトとして運営が行われています。</p>
+</article>
+</body>
+</html>
