@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<framexs:properties xmlns:framexs="urn:framexs-properties" xmlns="http://www.w3.org/1999/xhtml">
+<framexs:properties xmlns:framexs="urn:framexs-properties" xmlns="http://www.w3.org/1999/xhtml" xmlns:yc="urn:yaohata-components">
 <framexs:property name="site-name">八百幡</framexs:property>
 <framexs:property name="copyright">©2021 INOMOTO Hironobu</framexs:property>
 <framexs:property name="google-tag-manager-code">GTM-5L2SQ9B</framexs:property>
@@ -11,20 +11,26 @@
 <framexs:property name="center-class">col-md-8</framexs:property>
 <framexs:property name="home-path">/index.xhtml</framexs:property>
 <framexs:property name="nav">
-<li title="基礎">/contents/base/index.xhtml</li>
-<li title="入門">/contents/introduction/index.xhtml</li>
-<li title="応用">/contents/application/index.xhtml</li>
-<li title="API">/contents/api/index.xhtml</li>
-<li title="オピニオン">/contents/article/index.xhtml</li>
-<li title="その他">/contents/other/index.xhtml</li>
+<li title="事業内容">/contents/business.xhtml</li>
+<li title="運営者">/contents/owner.xhtml</li>
+<li title="OSS活動">/contents/activity.xhtml</li>
 </framexs:property>
 <framexs:property name="footer-in-head">
 <script src="/js/gh.js"></script>
 <script src="/js/yaohata.js"></script>
 <link rel="stylesheet" href="/css/style.css"/>
-<script src="/js/SaxonJS2.js"></script>
+<script>
+const setting = {
+    base:"/components/sef/",
+    c:{
+        ogp:{
+            template:"ogp-template"
+        }
+    }
+}
+</script>
 </framexs:property>
-<framexs:property name="sidebar1">display</framexs:property>
+<framexs:property name="sidebar1"></framexs:property>
 <framexs:property name="sidebar2"></framexs:property>
 <framexs:property name="use-default">true</framexs:property>
 <framexs:property name="footer-in-container">
@@ -34,28 +40,28 @@
 <div class="row">
 <div class="col-md">
 <ul class="footer-links">
-<li><a class="contact" href="https://groups.google.com/g/framexs">メーリングリスト</a></li>
-<li><a class="contact" href="https://mail.google.com/chat/u/0/#chat/space/AAAAGMdSb88">チャットスペース</a></li>
+<li><a href="/framexs/index.xhtml">Framexs</a></li>
+<li><a href="/components/index.xhtml">八百幡コンポーネンツ</a></li>
+<li><a href="/yaohata/index.xhtml">テーマ八百幡</a></li>
 </ul>
 </div>
 <div class="col-md">
 <ul class="footer-links">
-<li><a href="/contents/other/info.xhtml">運営者情報</a></li>
-<li><a href="/contents/other/form.xhtml">お問合せ</a></li>
+<li><a class="contact" href="https://www.facebook.com/hironobu.inomoto">Facebook</a></li>
+<li><a class="contact" href="https://twitter.com/yaohata11">Twitter</a></li>
+<li><a class="contact" href="https://www.linkedin.com/in/拓伸-井本-8b0b31135/">LinkedIn</a></li>
 </ul>
 </div>
 </div>
-
 </framexs:property>
 <framexs:property name="footer-in-body">
-<!-- 静的サイト用の自動リンクカード生成のためのテンプレート -->
-<template id="link-template">
+<template id="ogp-template" xmlns:t="urn:template">
 <div class="card" style="max-width:32rem;margin:1rem auto;">
 <div class="card-body">
-<h5 class="card-title">Card title</h5>
-<h6 class="card-subtitle mb-2 text-muted"></h6>
-<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-<a href="#" class="btn btn-primary">ページを見る</a>
+<h5 class="card-title"><t:title/></h5>
+<h6 class="card-subtitle mb-2 text-muted"><t:subtitle/></h6>
+<p class="card-text"><t:text/></p>
+<a t:href="" t:src="" href="#" class="btn btn-primary">ページを見る</a>
 </div>
 </div>
 </template>
@@ -80,9 +86,14 @@ error
 
 <template id="quote-template">
 <blockquote class="internal-quote">
-<div class="target"></div>
-<div class="citation"><cite><a></a></cite></div>
+<div class="target"><yc:content/></div>
+<div class="citation"><cite><a yc:path=""><yc:title/></a></cite></div>
 </blockquote>
 </template>
+<script src="/components/SaxonJS2.js"></script>
+<script src="/components/yaohata-components.js"></script>
+<div id="fb-root"></div>
+<script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&amp;version=v15.0&amp;appId=1249701235068950&amp;autoLogAppEvents=1" nonce="guO3MRsZ"></script>
+
 </framexs:property>
 </framexs:properties>
