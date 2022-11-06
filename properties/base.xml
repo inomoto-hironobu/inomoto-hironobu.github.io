@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<framexs:properties xmlns:framexs="urn:framexs-properties" xmlns="http://www.w3.org/1999/xhtml" xmlns:yc="urn:yaohata-components">
+<framexs:properties xmlns:framexs="urn:framexs-properties" xmlns="http://www.w3.org/1999/xhtml">
 <framexs:property name="site-name">八百幡</framexs:property>
 <framexs:property name="copyright">©2021 INOMOTO Hironobu</framexs:property>
 <framexs:property name="google-tag-manager-code">GTM-5L2SQ9B</framexs:property>
@@ -55,19 +55,20 @@ const setting = {
 </div>
 </framexs:property>
 <framexs:property name="footer-in-body">
-<template id="ogp-template" xmlns:t="urn:template">
+
+<template id="ogp-template" xmlns:yc="urn:yaohata-components">
 <div class="card" style="max-width:32rem;margin:1rem auto;">
+<img yc:image="" />
 <div class="card-body">
-<h5 class="card-title"><t:title/></h5>
-<h6 class="card-subtitle mb-2 text-muted"><t:subtitle/></h6>
-<p class="card-text"><t:text/></p>
-<a t:href="" t:src="" href="#" class="btn btn-primary">ページを見る</a>
+<h5 class="card-title"><yc:title /></h5>
+<p class="card-text"><yc:description/></p>
+<a yc:url="" class="btn btn-primary">ページを見る</a>
 </div>
 </div>
 </template>
 
 <!-- ロード中表示テンプレート -->
-<template id="loading-template">
+<template id="loading-template" xmlns:yc="urn:yaohata-components">
 <div class="spinner-border" role="status">
 <span class="sr-only">Loading...</span>
 </div>
@@ -84,14 +85,16 @@ error
 </div>
 </template>
 
-<template id="quote-template">
+<template id="quote-template" xmlns:yc="urn:yaohata-components">
 <blockquote class="internal-quote">
 <div class="target"><yc:content/></div>
 <div class="citation"><cite><a yc:path=""><yc:title/></a></cite></div>
 </blockquote>
 </template>
+<!--八百幡コンポーネンツの取り込み-->
 <script src="/components/SaxonJS2.js"></script>
 <script src="/components/yaohata-components.js"></script>
+
 <div id="fb-root"></div>
 <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&amp;version=v15.0&amp;appId=1249701235068950&amp;autoLogAppEvents=1" nonce="guO3MRsZ"></script>
 
