@@ -12,7 +12,36 @@
 <body id="main">
 <article>
 <section>
-<p></p>
+    <p>現在の<mark>XML</mark>を取り巻く環境は<strong><mark>XSLT</mark>を中心に進化</strong>しています。例えば、今あなたが見ているこのページの冒頭部分を示します。</p>
+    <div class="code-container">
+    <pre><code class="language xml"><![CDATA[<?xml version="1.0"?>
+    <?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
+    <?framexs.commands ../../commands.xml?>
+    <?framexs.properties ../../properties/lp-a.properties.xml?>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">]]>
+    </code></pre>
+    </div>
+    <p>先頭の<code>&lt;?xml ...</code>は何でしょうか？これは、このページがXMLであることを示すための<mark>XML宣言</mark>です。<br/>
+    htmlタグに<mark>名前空間</mark>もあるので、これは<mark>XHTML</mark>ですね。<br/>
+    では<code>&lt;xml-stylesheet ...</code>と<code>&lt;?framexs...</code>となっているのは？<br/>
+    これらはXMLの<mark>処理命令</mark>で、特に<code>xml-stylesheet</code>は<mark>スタイルシート</mark>を指定するもので、この場合では<mark>XSL</mark>ファイルを指定しています。<br/>
+    そして<mark>XSLT</mark>処理を施して、今ブラウザを通して今あなたの前に現れているというわけです。</p>
+    <p>私は今、<strong>XSLT製のフレームワーク</strong>の<mark>Framexs</mark>という、XMLの機能をフル活用するソフトを使っています。<br/>
+    このFramexsは<strong>XMLを合成する</strong>アーキテクチャを持っています。</p>
+    <p>また<mark>Java</mark>で動くライブラリは多種多様であり、<mark>XSLT3.0</mark>を実装している<mark>Saxon-HE</mark>によって<mark>JSON</mark>も含めて非常に高度なデータ加工が可能になっています。<br/>
+    さらに、JavaはXSLT処理を行う上で柔軟であるため、XSLTの対象はXMLだけでなく<mark>HTML</mark>や<mark>CSV</mark>にも及びます。</p>
+    <p>Javaでは<mark>DOM</mark>としてXSLをソースにできるので、<mark>HTMLパーサー</mark>を通して<strong>HTMLのXSLT処理</strong>を可能にします。</p>
+    <pre><code class="language java">var parser = new nu.validator.htmlparser.dom.HtmlDocumentBuilder();
+    var doc = parser.parse(Files.newInputStream(input));
+    transformer.transform(new DOMSource(doc),new StreamResult(Files.newOutputStream(output)));</code></pre>
+    <p>また<strong>CSVを処理することも可能</strong>です。配列としてパースした後にいったんDOMへと変換することでXSLT処理が可能です。</p>
+    <pre><code class="language java">var list = Csv.load(Files.newInputStream(input), new CsvConfig(), new StringArrayListHandler());</code></pre>
+    <pre><code class="language csv"><![CDATA[<csv xmlns="urn:csvml">
+    <record><field>1</field><field>東京</field></record>
+    <record><field>2</field><field>大阪</field></record>
+    </csv>
+    ]]></code></pre>
+    <p>このように今の技術であればXML、HTML、JSON、CSVを統合する事さえできるでしょう。</p>
 </section>
 </article>
 </body>
