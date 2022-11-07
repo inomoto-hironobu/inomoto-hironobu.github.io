@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<framexs:properties xmlns:framexs="urn:framexs-properties" xmlns="http://www.w3.org/1999/xhtml">
+<framexs:base href="base.xml"/>
+<framexs:property name="footer-in-head">
+<link rel="stylesheet" href="/css/lp-a.css"/>
+<link rel="stylesheet" href="/css/style.css"/>
+<script src="/js/yaohata.js"></script>
+<script>
+const setting = {
+    base:"/components/sef/",
+    c:{
+        ogp:{
+            template:"ogp-template"
+        }
+    }
+}
+</script>
+</framexs:property>
+<framexs:property name="title"></framexs:property>
+<framexs:property name="sidebar1"></framexs:property>
+<framexs:property name="sidebar2"></framexs:property>
+<framexs:property name="center-class">col bg-light</framexs:property>
+</framexs:properties>

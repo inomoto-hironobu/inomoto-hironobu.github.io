@@ -2,103 +2,107 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/business.xhtml</loc>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/owner.xhtml</loc>
-    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inomoto-hironobu.github.io/contents/activity.xhtml</loc>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/privacy-policy.xhtml</loc>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/form.xhtml</loc>
-    <priority>0.8</priority>
   </url>
   
   <!--lp-->
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/lp/service-a.xhtml</loc>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/lp/service-b.xhtml</loc>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/lp/company-a.xhtml</loc>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/lp/company-b.xhtml</loc>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/lp/xml-a.xhtml</loc>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/lp/xml-b.xhtml</loc>
-    <priority>0.5</priority>
   </url>
 
+  <!--calling-->
+  <url>
+    <loc>https://inomoto-hironobu.github.io/contents/calling/company.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://inomoto-hironobu.github.io/contents/calling/components.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://inomoto-hironobu.github.io/contents/calling/framexs.xhtml</loc>
+  </url> 
   <!--article-->
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/article/github_pages_adv.xhtml</loc>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/article/HTMLにフレームワークを.xhtml</loc>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/article/ssg.xhtml</loc>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/article/xslt.xhtml</loc>
-    <priority>0.5</priority>
   </url>
 
   <!--Framexs-->
   <url>
     <loc>https://inomoto-hironobu.github.io/framexs/index.xhtml</loc>
-    <priority>0.5</priority>
   </url>
   <!--base-->
   <url>
     <loc>https://inomoto-hironobu.github.io/framexs/contents/base/description.xhtml</loc>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/framexs/contents/base/ftml.xhtml</loc>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/framexs/contents/base/theme.xhtml</loc>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/framexs/contents/base/wordpress.xhtml</loc>
-    <priority>0.5</priority>
   </url>
   <!--introduction-->
   <url>
     <loc>https://inomoto-hironobu.github.io/framexs/contents/introduction/howto.xhtml</loc>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/framexs/contents/introduction/local_web_server.xhtml</loc>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/framexs/contents/introduction/merit.xhtml</loc>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/framexs/contents/introduction/tools.xhtml</loc>
-    <priority>0.5</priority>
   </url>
 
+  <!-- components-->
+  <url>
+    <loc>https://inomoto-hironobu.github.io/components/index.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://inomoto-hironobu.github.io/components/contents/description.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://inomoto-hironobu.github.io/components/contents/api.xhtml</loc>
+  </url>
+  <!-- theme yaohata-->
+  <url>
+    <loc>https://inomoto-hironobu.github.io/yaohata/index.xhtml</loc>
+  </url>
 </urlset>
