@@ -14,9 +14,10 @@
 <li title="事業内容">/contents/business.xhtml</li>
 <li title="運営者">/contents/owner.xhtml</li>
 <li title="OSS活動">/contents/activity.xhtml</li>
+<li title="呼びかけ一覧">/contents/calling/index.xhtml</li>
+<li title="記事一覧">/contents/article/index.xhtml</li>
 </framexs:property>
 <framexs:property name="footer-in-head">
-<script src="/js/gh.js"></script>
 <script src="/js/yaohata.js"></script>
 <link rel="stylesheet" href="/css/style.css"/>
 <script>
@@ -62,7 +63,7 @@ const setting = {
 <div class="card-body">
 <h5 class="card-title"><yc:title /></h5>
 <p class="card-text"><yc:description/></p>
-<a yc:url="" class="btn btn-primary">ページを見る</a>
+<a yc:path="" class="btn btn-primary">ページを見る</a>
 </div>
 </div>
 </template>

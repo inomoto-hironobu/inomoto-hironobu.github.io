@@ -1,4 +1,4 @@
-const ns = {
+ns = {
 	'xhtml' : 'http://www.w3.org/1999/xhtml',
 	'mathml': 'http://www.w3.org/1998/Math/MathML'
 };
@@ -50,33 +50,6 @@ function pullMeta(link, consumer, errorHandler) {
 	});
 }
 
-class InternalLink extends HTMLElement {
-	constructor() {
-		super();
-		const path = this.getAttribute("path");
-		console.log(path);
-		if(path != null && new URL(path, document.location).host == document.location.host) {
-			console.log("yes");
-		}
-		const loading = document.getElementById('loading-template').content.firstElementChild.cloneNode(true);
-		
-		this.replaceWith(loading);
-		
-		pullMeta(path,function(info){
-			const template = document.getElementById('link-template').content.firstElementChild.cloneNode(true);
-			template.querySelector('.card-title').textContent=info.title;
-			template.querySelector('.card-text').textContent=info.description;
-			template.querySelector('.card-subtitle').textContent=info.modified+' 更新/'+info.contentLength+' 文字';
-			template.querySelector('a').setAttribute('href',path);
-			loading.replaceWith(template);
-		},function(error){
-			let loaderror = document.getElementById('loaderror-template').content.firstElementChild;
-			console.error(error);
-			loading.replaceWith(loaderror);
-		});
-	}
-}
-
 class InternalQuote extends HTMLElement {
 	constructor(){
 		super();
@@ -106,9 +79,6 @@ class InternalQuote extends HTMLElement {
 	}
 }
 window.addEventListener('DOMContentLoaded', ()=>{
-
-	customElements.define("internal-link",InternalLink);
-	customElements.define("internal-quote",InternalQuote);
 	if(window.innerWidth > 750) {
 		document
 		.querySelectorAll('aside details')
@@ -175,11 +145,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	.then((text) => {
 		const contents = new DOMParser().parseFromString(text,'application/xml');
 		const modified = contents.evaluate('//xhtml:meta[@name=\'modified\']/@content',contents,nsResolver,XPathResult.STRING_TYPE).stringValue;
-		document
-		.querySelector('#modified')
-		.replaceWith(document.createTextNode(modified));
+		if(modified){
+			document
+			.querySelector('#modified')
+			.replaceWith(document.createTextNode(modified));
+		}
 	});
-	
 });
 
 
