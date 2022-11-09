@@ -46,6 +46,9 @@
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/calling/framexs.xhtml</loc>
   </url> 
+  <url>
+    <loc>https://inomoto-hironobu.github.io/contents/calling/xhtml3.xhtml</loc>
+  </url>
   <!--article-->
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/article/github_pages_adv.xhtml</loc>
@@ -64,43 +67,12 @@
   <url>
     <loc>https://inomoto-hironobu.github.io/framexs/index.xhtml</loc>
   </url>
-  <!--base-->
-  <url>
-    <loc>https://inomoto-hironobu.github.io/framexs/contents/base/description.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://inomoto-hironobu.github.io/framexs/contents/base/ftml.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://inomoto-hironobu.github.io/framexs/contents/base/theme.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://inomoto-hironobu.github.io/framexs/contents/base/wordpress.xhtml</loc>
-  </url>
-  <!--introduction-->
-  <url>
-    <loc>https://inomoto-hironobu.github.io/framexs/contents/introduction/howto.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://inomoto-hironobu.github.io/framexs/contents/introduction/local_web_server.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://inomoto-hironobu.github.io/framexs/contents/introduction/merit.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://inomoto-hironobu.github.io/framexs/contents/introduction/tools.xhtml</loc>
-  </url>
 
   <!-- components-->
   <url>
     <loc>https://inomoto-hironobu.github.io/components/index.xhtml</loc>
   </url>
-  <url>
-    <loc>https://inomoto-hironobu.github.io/components/contents/description.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://inomoto-hironobu.github.io/components/contents/api.xhtml</loc>
-  </url>
+
   <!-- theme yaohata-->
   <url>
     <loc>https://inomoto-hironobu.github.io/yaohata/index.xhtml</loc>
