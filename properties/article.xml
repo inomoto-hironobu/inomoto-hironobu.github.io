@@ -2,7 +2,7 @@
 <framexs:properties xmlns:framexs="urn:framexs-properties">
 <framexs:base href="base.xml"/>
 <framexs:property name="footer-in-main">
-<div class="share-buttons" style="display:flex;margin:auto">
+<div class="share-buttons" style="margin:auto">
 <twitter-button template="twitter"/>
 <facebook-button template="facebook"/>
 <linkedin-button template="linkedin"/>
