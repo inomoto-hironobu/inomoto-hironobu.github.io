@@ -92,6 +92,25 @@ error
 <div class="citation"><cite><a yc:path=""><yc:title/></a></cite></div>
 </blockquote>
 </template>
+
+<template id="twitter" xmlns:yc="urn:yaohata-components">
+<div class="btn" style="border: solid 2px #55acee">
+<a class="share" yc:href="https://twitter.com/share?url={url}&amp;text={title}" rel="nofollow noopener" target="_blank"><i class="fab fa-twitter">twitter</i></a>
+</div>
+</template>
+
+<template id="facebook" xmlns:yc="urn:yaohata-components">
+<div class="btn" style="border: solid 2px #3b5998">
+<a class="share" yc:href="http://www.facebook.com/share.php?u={url}" rel="nofollow noopener" target="_blank"><i class="fab fa-facebook">facebook</i></a>
+</div>
+</template>
+
+<template id="linkedin" xmlns:yc="urn:yaohata-components">
+<div class="btn" style="border: solid 2px #0a66c2">
+<a class="share" yc:href="https://www.linkedin.com/sharing/share-offsite/?url={url}" rel="nofollow noopener" target="_blank"><i class="fab fa-linkedin">linkedin</i></a>
+</div>
+</template>
+
 <!--八百幡コンポーネンツの取り込み-->
 <script src="/components/SaxonJS2.js"></script>
 <script src="/components/yaohata-components.js"></script>
