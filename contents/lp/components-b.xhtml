@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
+<?framexs.commands ../../commands.xml?>
+<?framexs.properties ../../properties/lp.properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" prefix="og:https://ogp.me/ns#" lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<title>八百幡コンポーネンツを使おう</title>
+</head>
+<body>
+<article id="main">
+<section>
+<p>ここによくあるツイッターのシェアボタンがありますね。</p>
+<div><twitter-button/></div>
+<p>実はこのボタンのコード、たったのこれだけです。</p>
+<pre><code><![CDATA[<twitter-button/>]]></code></pre>
+<p>ほかのシェアボタンもありますが、同じように単純なタグを挿入するだけでボタンを表示しています。</p>
+<div><facebook-button/></div>
+<pre><code><![CDATA[<facebook-button/>]]></code></pre>
+<div><linkedin-button/></div>
+<pre><code><![CDATA[<line-button/>]]></code></pre>
+<p>パソコンからこのページを見ているならソースコードを確認してみましょう。あるいは<a href="https://github.com/inomoto-hironobu/inomoto-hironobu.github.io/blob/master/contents/calling/components.xhtml">GitHub</a>で確認できます。</p>
+<p>これができるのは、<a href="https://github.com/inomoto-hironobu/components" class="contact">八百幡コンポーネンツ</a>というものを導入しているからです。</p>
+<pre><code><![CDATA[<internal-ogp path="../../components/contents/description.xhtml"/>]]></code></pre>
+<p>これを使うには<a href="https://github.com/inomoto-hironobu/components/releases">リリース</a>からダウンロードします。あるいは上記のリポジトリをGitでクローンします。</p>
+<p>そしてこんな感じで導入します。</p>
+<pre><code><![CDATA[<script src="components/SaxonJS2.js"></script>
+<script src="components/yaohata.js"></script>
+]]></code></pre>
+<p>八百幡コンポーネンツは作られてからまだ時間が浅く、まだまだ開発途中ですが、実用性はすでに十分あります。<br/>
+そこで、事業としてこの製品の導入支援、カスタマイズの請け負いをいたします。<br/>
+あるいは八百幡コンポーネンツ作成の経験を生かしてオリジナルWebコンポーネンツ作成も承ります。<br/>
+ご依頼お待ちしております。</p>
+<internal-quote path="../business.xhtml" target="営業"/>
+<internal-quote path="../owner.xhtml" target="連絡先"/>
+</section>
+</article>
+</body>
+</html>
