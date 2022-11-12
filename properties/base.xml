@@ -13,7 +13,7 @@
 <framexs:property name="nav">
 <li title="事業内容">/contents/business.xhtml</li>
 <li title="運営者">/contents/owner.xhtml</li>
-<li title="OSS活動">/contents/activity.xhtml</li>
+<li title="製品">/contents/products.xhtml</li>
 <li title="呼びかけ一覧">/contents/calling/index.xhtml</li>
 <li title="記事一覧">/contents/article/index.xhtml</li>
 </framexs:property>
