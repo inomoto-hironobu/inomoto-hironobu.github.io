@@ -64,33 +64,16 @@ transformer.transform(new DOMSource(doc),new StreamResult(Files.newOutputStream(
 <record><field>2</field><field>大阪</field></record>
 </csv>
 ]]></code></pre>
-<p>このように今の技術であればXML、HTML、JSON、CSVに関係なく。</p>
-<p>そして私は今、<strong>XSLT製のフレームワーク</strong>の<mark>Framexs</mark>という、XMLの機能をフル活用するソフトを開発しています。<br/>
-    このFramexsは<strong>XMLを合成する</strong>アーキテクチャを持っています。例えば、今あなたが見ているこのページの冒頭部分を示します。</p>
-<div class="code-container">
-<pre><code class="language xml"><![CDATA[<?xml version="1.0"?>
-<?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
-<?framexs.commands ../../commands.xml?>
-<?framexs.properties ../../properties/lp-a.properties.xml?>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">]]>
-</code></pre>
-</div>
-<p>先頭の<code>&lt;?xml ...</code>は何でしょうか？これは、このページがXMLであることを示すための<mark>XML宣言</mark>です。<br/>
-htmlタグに<mark>名前空間</mark>もあるので、これは<mark>XHTML</mark>ですね。<br/>
-では<code>&lt;xml-stylesheet ...</code>と<code>&lt;?framexs...</code>となっているのは？<br/>
-これらはXMLの<mark>処理命令</mark>で、特に<code>xml-stylesheet</code>は<mark>スタイルシート</mark>を指定するもので、この場合では<mark>XSL</mark>ファイルを指定しています。<br/>
-そしてXSLT処理を施して、今ブラウザを通して今あなたの前に現れているというわけです。</p>
-<p>このように最新の技術によってデータは分離から統合まで細部にわたって思い通りに変化させることができます。</p>
+<p>このように今の技術であればXML、HTML、JSON、CSVに関係なく、抽象化されたデータを同じテーブルに置いて処理できます。</p>
 </section>
 <section>
 <h2>データ事業</h2>
 <p>ここで事業の提案をいたします。<br/>
 もしデータ処理にお悩みなら私に任せてくれませんか。<br/>
-私の技術知識を活かして課題を解決します。</p>
-<internal-quote path="business.xhtml" target="データ事業"/>
-<internal-quote path="business.xhtml" target="営業"/>
-<internal-quote path="info.xhtml" target="連絡先"/>
-<p>お問い合わせフォームは<a class="contact" href="https://docs.google.com/forms/d/e/1FAIpQLSeK-UPUkQM_LhzfREtC6RKYsHTgUSsZjNwAKe97XjhOWNtfWA/viewform">こちら</a>から。</p>
+特にJSONやXMLなどファイル形式がまたがっている状態でのデータの統合はXSLT3.0の威力を発揮します。<br/>
+高度な処理を行うプログラムをおつくりするなど、私の技術知識を活かして課題を解決します。</p>
+<internal-quote path="../business.xhtml" target="営業"/>
+<internal-quote path="../owner.xhtml" target="連絡先"/>
 </section>
 </article>
 </body>
