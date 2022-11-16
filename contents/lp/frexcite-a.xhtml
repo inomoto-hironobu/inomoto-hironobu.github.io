@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
+<?framexs.commands ../../commands.xml?>
+<?framexs.properties ../../properties/lp.properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<title>Frexcite事業(A)</title>
+<meta name="description" content="「フロントエンド革命が起きた」「XMLとXSLTの時代が来る」未来技術Framexsを体感しましょう。Framexsに関するビジネスについての記事。"/>
+<meta name="modified" content="2022-03-20"/>
+</head>
+<body id="main">
+<article>
+<section>
+<p>静的サイト、動的サイトという言葉をご存じですか。<br/>
+動的サイトの代表例はいわゆるCMSのWordPress、Wixです。これは裏でデータベースと連携してプログラムを動かし計算してサイトを成り立たせています。<br/>
+静的サイトというのは昔一般的だったもので、アクセスされたら置かれたHTMLなどのファイルを配布するだけという、ごくシンプルな仕組みです。<br/>
+現在では動的サイトが一般的で、コンテンツを管理するにはデータベースが必要、という一般的な認識があるからです。</p>
+<p>しかし、その常識を覆す物があります。<br/>
+それがFramexsです。</p>
+</section>
+<section>
+<h2>XSLTフレームワーク、Framexs</h2>
+<p>Framexsとは、クライアントサイドでテンプレートとコンテンツを<strong>合成</strong>し、HTMLを生成する、XSLTで書かれた<strong>フレームワーク</strong>です。<br/>
+ナンダカフラリ氏が原作を作り、現在では私一人で開発しています。</p>
+<p><a href="https://github.com/inomoto-hironobu/framexs">https://github.com/inomoto-hironobu/framexs</a></p>
+<p>要素、属性の構成を<strong>FTML</strong>というテンプレートに集約させることで再利用、つまりコードを使いまわす仕組みです。<br/>
+このページもFTMLを利用しています。その一部、titleタグのコードはこうなっています。</p>
+<pre class="code-container"><code class="language xml"><![CDATA[<title><framexs:title/> - <framexs:property name="site-name"/></title>]]></code></pre>
+<p>これによって、例えば、静的サイトを管理するにあたっては、煩雑さを消しつつ自由でありながらWordPressのような動的サイトに匹敵する劇的なコンテンツの運用簡易性をもたらします。<br/>
+もちろん、WordPressのような動的サイトと組み合わせることもできます。</p>
+</section>
+<section>
+<h2>ビジネスの提案</h2>
+<p>ここで私はFramexsでの既存サイトの改修のビジネスを提案します。<br/>
+既存のWordPressをFramexsを使った静的サイトにすることで安全性、運用簡易性、運用費の低減が期待できます。</p>
+<p>相談の申し込み・業務依頼などさまざまな連絡に関しては</p>
+<internal-quote path="../owner.xhtml" target="連絡先"/>
+<p>からお願いします。</p>
+<internal-quote path="../business.xhtml" target="営業"/>
+</section>
+</article>
+</body>
+</html>
