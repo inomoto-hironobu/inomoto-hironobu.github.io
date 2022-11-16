@@ -7,49 +7,28 @@
     <loc>https://inomoto-hironobu.github.io/contents/owner.xhtml</loc>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/activity.xhtml</loc>
-  </url>
-  <url>
     <loc>https://inomoto-hironobu.github.io/contents/privacy-policy.xhtml</loc>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/form.xhtml</loc>
   </url>
-  
-  <!--lp-->
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/lp/service-a.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://inomoto-hironobu.github.io/contents/lp/service-b.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://inomoto-hironobu.github.io/contents/lp/company-a.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://inomoto-hironobu.github.io/contents/lp/company-b.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://inomoto-hironobu.github.io/contents/lp/xml-a.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://inomoto-hironobu.github.io/contents/lp/xml-b.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/products.xhtml</loc>
   </url>
 
-  <!--calling-->
+  <!--article-->
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/calling/company.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/article/company.xhtml</loc>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/calling/components.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/article/components.xhtml</loc>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/calling/framexs.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/article/framexs.xhtml</loc>
   </url> 
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/calling/xhtml3.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/article/xhtml3.xhtml</loc>
   </url>
-  <!--article-->
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/article/github_pages_adv.xhtml</loc>
   </url>
@@ -61,20 +40,5 @@
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/article/xslt.xhtml</loc>
-  </url>
-
-  <!--Framexs-->
-  <url>
-    <loc>https://inomoto-hironobu.github.io/framexs/index.xhtml</loc>
-  </url>
-
-  <!-- components-->
-  <url>
-    <loc>https://inomoto-hironobu.github.io/components/index.xhtml</loc>
-  </url>
-
-  <!-- theme yaohata-->
-  <url>
-    <loc>https://inomoto-hironobu.github.io/yaohata/index.xhtml</loc>
   </url>
 </urlset>
