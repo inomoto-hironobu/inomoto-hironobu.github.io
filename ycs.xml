@@ -1,0 +1,9 @@
+<setting xmlns="urn:yaohata-components-setting"
+    sefbase="/components/sef/">
+    <twitter-button>
+        <template></template>
+    </twitter-button>
+    <internal-ogp>
+        <template>ogp-template</template>
+    </internal-ogp>
+</setting>
