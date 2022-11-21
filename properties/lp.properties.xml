@@ -4,20 +4,11 @@
 <framexs:property name="footer-in-head">
 <link rel="stylesheet" href="/css/lp-a.css"/>
 <link rel="stylesheet" href="/css/style.css"/>
+<script src="/xfacade/xfacade.js"></script>
 <script src="/js/yaohata.js"></script>
-<script>
-const setting = {
-    base:"/components/sef/",
-    c:{
-        ogp:{
-            template:"ogp-template"
-        }
-    }
-}
-</script>
+<link rel="yaohata-components-setting" href="/ycs.xml"/>
 </framexs:property>
+<framexs:property name="sidebar"></framexs:property>
 <framexs:property name="title"></framexs:property>
-<framexs:property name="sidebar1"></framexs:property>
-<framexs:property name="sidebar2"></framexs:property>
 <framexs:property name="center-class">col bg-light</framexs:property>
 </framexs:properties>

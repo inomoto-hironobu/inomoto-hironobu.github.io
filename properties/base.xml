@@ -11,31 +11,41 @@
 <framexs:property name="center-class">col-md-8</framexs:property>
 <framexs:property name="home-path">/index.xhtml</framexs:property>
 <framexs:property name="nav">
-<li title="事業内容">/contents/business.xhtml</li>
-<li title="運営者">/contents/owner.xhtml</li>
+<li title="事業">/contents/business.xhtml</li>
 <li title="製品">/contents/products.xhtml</li>
-<li title="呼びかけ一覧">/contents/calling/index.xhtml</li>
+<li title="運営">/contents/operation.xhtml</li>
+<li title="運営者">/contents/owner.xhtml</li>
 <li title="記事一覧">/contents/article/index.xhtml</li>
 </framexs:property>
 <framexs:property name="footer-in-head">
+<script src="/xfacade/xfacade.js"></script>
 <script src="/js/yaohata.js"></script>
 <link rel="stylesheet" href="/css/style.css"/>
-<script>
-const setting = {
-    base:"/components/sef/",
-    c:{
-        ogp:{
-            template:"ogp-template"
-        }
-    }
-}
-</script>
+<link rel="yaohata-components-setting" href="/ycs.xml"/>
 </framexs:property>
-<framexs:property name="sidebar1"></framexs:property>
-<framexs:property name="sidebar2"></framexs:property>
-<framexs:property name="use-default">true</framexs:property>
-<framexs:property name="footer-in-container">
-<div style="font-size:1.5rem;text-align:center"><a href="#top">▲</a></div>
+<framexs:property name="sidebar"></framexs:property>
+<framexs:property name="sidebar-wide">
+<ul id="contents-list" class="list-group">
+<li class="list-group-item list-group">
+<div id="製品一覧heading" class="btn btn-primary" data-toggle="collapse" data-target="#製品一覧" aria-expanded="false" aria-controls="製品一覧">製品一覧</div>
+<ul id="製品一覧" class="list-group collapse" aria-labelledby="製品一覧heading">
+<li class="list-group-item"><a href="/contents/product/framexs.xhtml">Framexs</a></li>
+<li class="list-group-item"><a href="/contents/product/f4w.xhtml">F4W</a></li>
+<li class="list-group-item"><a href="/contents/product/components.xhtml">八百幡コンポーネンツ</a></li>
+<li class="list-group-item"><a href="/contents/product/xfacade.xhtml">XFacade</a></li>
+</ul>
+</li>
+<li class="list-group-item list-group">
+<div id="事業一覧heading" class="btn btn-primary" data-toggle="collapse" data-target="#事業一覧" aria-expanded="false" aria-controls="事業一覧">事業一覧</div>
+<ul id="事業一覧" class="list-group collapse" aria-labelledby="事業一覧heading">
+<li class="list-group-item"><a href="/contents/business/xml.xhtml">XML事業</a></li>
+<li class="list-group-item"><a href="/contents/business/data.xhtml">データ事業</a></li>
+<li class="list-group-item"><a href="/contents/business/framexs.xhtml">Framexs事業</a></li>
+<li class="list-group-item"><a href="/contents/business/f4w.xhtml">F4W事業</a></li>
+<li class="list-group-item"><a href="/contents/business/components.xhtml">コンポーネンツ事業</a></li>
+</ul>
+</li>
+</ul>
 </framexs:property>
 <framexs:property name="footer">
 <div class="row">
@@ -51,6 +61,12 @@ const setting = {
 <li><a class="contact" href="https://www.facebook.com/hironobu.inomoto">Facebook</a></li>
 <li><a class="contact" href="https://twitter.com/yaohata11">Twitter</a></li>
 <li><a class="contact" href="https://www.linkedin.com/in/拓伸-井本-8b0b31135/">LinkedIn</a></li>
+</ul>
+</div>
+<div class="col-md">
+<ul class="footer-links">
+<li><a class="contact" href="/contents/privacy-policy.xhtml">プライバシーポリシー</a></li>
+<li><a class="contact" href="/contents/form.xhtml">お問合せ</a></li>
 </ul>
 </div>
 </div>
