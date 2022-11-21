@@ -11,7 +11,13 @@
 .footer-links a:hover{
     color: white;
 }
-
+.share-buttons {
+    margin:auto;
+    max-width:660px;
+}
+.share-buttons > * {
+    margin:.1rem;
+}
 #pagetop > nav{
 	background:linear-gradient(#F7F9FE,#CACACA);
 	box-shadow: 1px 1px 10px #778;
@@ -44,4 +50,59 @@ main figure {
 .internal-quote{
     border:dotted 2px gray;
     padding: .5rem;
+}
+@media screen and (max-width:1080px) {
+	table.responsive {
+		display: block;
+	}
+	table.responsive tbody {
+		display: block;
+	}
+	table.responsive tr {
+		display: block;
+		background-color: white;
+		border: dotted 1px gray;
+		border-radius: .5rem;
+		margin: .5rem 0;
+		padding: .5rem;
+		box-shadow: 1px 1px 0px gray
+	}
+	table.responsive th,table.responsive td {
+		display: block;
+	}
+	table.responsive thead {
+		display:block;
+	}
+	table.responsive tfoot {
+		display:block;
+	}
+}
+
+
+/*
+想定するコード
+<div class="code-container">
+<div class="caption">---</div>
+<pre><code>
+---
+</code></pre>
+</div>*/
+.code-container code {
+	margin-left: 1rem;
+}
+	
+.code-container code:before {
+clear:both;
+	color:#900;
+	font-weight:bold;
+	white-space: pre;
+float:left;
+overflow:hidden;
+text-align:right;
+border-right:solid 1px #111;
+margin-right:8px;
+	position: absolute;
+	background: white;
+	margin-left: -2.7rem;
+	padding-left: 13px;
 }
