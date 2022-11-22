@@ -18,10 +18,7 @@
 .share-buttons > * {
     margin:.1rem;
 }
-#pagetop > nav{
-	background:linear-gradient(#F7F9FE,#CACACA);
-	box-shadow: 1px 1px 10px #778;
-}
+
 
 .tips {
     list-style: none;
@@ -183,17 +180,6 @@ margin:25px;
 padding: 10px 40px;
 }
 
-.tips {
-	list-style: none;
-	font-size:80%;
-	font-weight: 900;
-	color: #633;
-	margin-left:-54px;
-}
-.tips:before {
-  list-style: none;
-    content: "※　";
-}
 .article-list p {
 	margin: 0;
 }
@@ -287,4 +273,25 @@ ul.sharebuttons div {
     text-shadow: 2px 2px 1px #fff, -2px 2px 1px #fff, 2px -2px 1px #fff, -2px -2px 1px #fff, 2px 0px 1px #fff, 0px 2px 1px #fff, -2px 0px 1px #fff, 0px -2px 1px #fff;
     box-shadow: 2px 2px 4px #9a9;
 
+}
+.coda h1,.coda h2,.coda h3,.coda h4,.coda h5,.coda h6 {
+    background: #396;
+    color: #FFF;
+    line-height: 80px;
+    text-align: center;
+}
+.coda {
+    background: linear-gradient(#FFF, #E0FAE0);
+    font-size: 130%;
+    font-weight: bold;
+    border: solid 5px #396;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px #9a9;
+    color: #063;
+    margin-bottom: 80px;
+}                            
+.coda > p {
+
+    text-shadow: 2px 2px 1px #fff, -2px 2px 1px #fff, 2px -2px 1px #fff, -2px -2px 1px #fff, 2px 0px 1px #fff, 0px 2px 1px #fff, -2px 0px 1px #fff, 0px -2px 1px #fff;
+    margin: 20px 20px 20px 10px;
 }
