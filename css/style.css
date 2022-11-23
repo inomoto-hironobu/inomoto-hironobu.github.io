@@ -156,8 +156,7 @@ padding:5px 15px;
 	font-weight: bold;
 	border-radius: 10px;
 	box-shadow: 2px 2px 4px #9a9;
-	margin-bottom: 80px;
-	padding-bottom: 0;
+	padding: 0.5rem;
 }
 
 .info > p {
@@ -274,23 +273,26 @@ ul.sharebuttons div {
     box-shadow: 2px 2px 4px #9a9;
 
 }
-.coda h1,.coda h2,.coda h3,.coda h4,.coda h5,.coda h6 {
+
+/*34.悪目立ちしている連絡ボックスを修正*/
+.emphasis{
+	/*見出しボックス内の色を変更*/
+	border: solid 1px #5a5a5a;
+	color:#444;
+	background: linear-gradient(#FFF, #EFEFEF);
+	/*見出しの文字を普通の文字に*/
+	font-weight: normal;
+	font-size: 100%;
+	overflow: hidden;
+}
+.emphasis h1,.emphasis h2,.emphasis h3,.emphasis h4,.emphasis h5,.emphasis h6 {
     background: #396;
     color: #FFF;
     line-height: 80px;
     text-align: center;
 }
-.coda {
-    background: linear-gradient(#FFF, #E0FAE0);
-    font-size: 130%;
-    font-weight: bold;
-    border: solid 5px #396;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px #9a9;
-    color: #063;
-    margin-bottom: 80px;
-}                            
-.coda > p {
+                        
+.emphasis > p {
 
     text-shadow: 2px 2px 1px #fff, -2px 2px 1px #fff, 2px -2px 1px #fff, -2px -2px 1px #fff, 2px 0px 1px #fff, 0px 2px 1px #fff, -2px 0px 1px #fff, 0px -2px 1px #fff;
     margin: 20px 20px 20px 10px;
