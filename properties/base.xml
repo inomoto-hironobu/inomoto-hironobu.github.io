@@ -105,7 +105,7 @@ error
 <template id="quote-template" xmlns:yc="urn:yaohata-components">
 <blockquote class="internal-quote">
 <div class="target"><yc:content/></div>
-<div class="citation"><cite><a yc:path=""><yc:title/></a></cite></div>
+<div class="citation"><cite><a yc:href="{path}"><yc:title/></a></cite></div>
 </blockquote>
 </template>
 
