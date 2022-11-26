@@ -6,4 +6,7 @@
     <internal-ogp>
         <template>ogp-template</template>
     </internal-ogp>
+    <internal-quote>
+        <template>quote-template</template>
+    </internal-quote>
 </setting>
