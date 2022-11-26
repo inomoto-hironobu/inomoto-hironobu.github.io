@@ -62,10 +62,7 @@
 		display:block;
 	}
 }
-/*30.ヘッダーの文字が薄い*/
-.navbar-nav li a.nav-link{
-	color:#111;
-}
+
 img.right {
 	float:right;
 }
@@ -129,15 +126,6 @@ table.vertical tfoot {
 	display:block;
 }
 
-.info {
-margin-top:5px;
-}
-.info p {
-padding:5px 15px;
-}
-
-
-
 .info h1,.info h2,.info h3,.info h4,.info h5,.info h6 {
 	color: #FFF;
 	line-height: 80px;
@@ -157,6 +145,7 @@ padding:5px 15px;
 	border-radius: 10px;
 	box-shadow: 2px 2px 4px #9a9;
 	padding: 0.5rem;
+	margin-top:5px;
 }
 
 .info > p {
@@ -165,6 +154,7 @@ padding:5px 15px;
 	text-shadow: 2px 2px 1px #fff, -2px 2px 1px #fff, 2px -2px 1px #fff, -2px -2px 1px #fff, 2px 0px 1px #fff, 0px 2px 1px #fff, -2px 0px 1px #fff, 0px -2px 1px #fff;
 	margin: 20px 20px 20px 10px;
 	border-width: 0;
+	padding:5px 15px;
 }
 
 .info h3 {
@@ -274,7 +264,6 @@ ul.sharebuttons div {
 
 }
 
-/*34.悪目立ちしている連絡ボックスを修正*/
 .emphasis{
 	/*見出しボックス内の色を変更*/
 	border: solid 1px #5a5a5a;
