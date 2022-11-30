@@ -7,13 +7,8 @@ const x = new XFacade()
 window.addEventListener('DOMContentLoaded', ()=>{
 	if(window.innerWidth > 750) {
 		const result = x.dom(document)
-		.uiterator("//ul[contains(@class,'collapse')]");
-		let e = null;
-		array = [];
-		while(e = result.iterateNext()){
-			array.push(e);
-		}
-		array.forEach((e)=>{
+		.uarray("//ul[contains(@class,'collapse')]")
+		.forEach((e)=>{
 			e.classList.toggle("show");
 		});
 	}
