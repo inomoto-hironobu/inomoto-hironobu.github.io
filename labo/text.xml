@@ -1,0 +1,3 @@
+<test xmlns="urn:test">
+<hoge class="bar">foo</hoge>
+</test>
