@@ -129,7 +129,9 @@ error
 
 <!--八百幡コンポーネンツの取り込み-->
 <script src="/components/SaxonJS2.js"></script>
-<script src="/components/yaohata-components.js"></script>
+<script src="/components/basic.js"></script>
+<script src="/components/d3.js"></script>
+<script src="/components/visualization.js"></script>
 
 <div id="fb-root"></div>
 <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&amp;version=v15.0&amp;appId=1249701235068950&amp;autoLogAppEvents=1" nonce="guO3MRsZ"></script>
