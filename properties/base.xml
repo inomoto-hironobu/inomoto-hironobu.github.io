@@ -102,6 +102,10 @@ error
 </div>
 </template>
 
+<template id="link-template" xmlns:yc="urn:yaohata-components">
+<div><a yc:href="{path}"><yc:title/></a></div>
+</template>
+
 <template id="quote-template" xmlns:yc="urn:yaohata-components">
 <blockquote class="internal-quote">
 <div class="target"><yc:content/></div>
