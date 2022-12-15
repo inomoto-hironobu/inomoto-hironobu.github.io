@@ -9,23 +9,30 @@
 <meta property="og:title" content="八百幡コンポーネンツを使おう"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="「シェアボタンをタグ一発で表示できたら…」いろいろな要望に応える八百幡コンポーネンツを開発中です。HTMLを簡単にリッチにすることを目指しています。"/>
-<meta property="og:image" content="https://inomoto-hironobu.github.io/components/img/23863805_s.jpg"/>
-<meta property="og:url" content="https://inomoto-hironobu.github.io/contents/calling/components.xhtml"/>
+<meta property="og:image" content="https://inomoto-hironobu.github.io/img/23863805_s.jpg"/>
 </head>
 <body>
 <article id="main">
 <section>
-<p>ここによくあるツイッターのシェアボタンがありますね。</p>
-<div><twitter-button/></div>
-<p>実はこのボタンのコード、たったのこれだけです。</p>
+<p>ここに円グラフがありますね。</p>
+<pie-chart csv="../lp/test.csv" col="年" row="2010" width="640" height="400">
+<attributes style="max-width:640px;width:100%"/>
+</pie-chart>
+<p>これは次の架空のデータのうち、一部を読み取って変換しています。</p>
+<pre><code><![CDATA[年,所得税収,法人税収,消費税収,その他税収
+2000,10.1,10.2,10.3,20
+2010,11,12,13,10
+2020,11,12,23,10]]></code></pre>
+<p>そのためのコードはたったのこれだけです。</p>
+<pre><code><![CDATA[<pie-chart csv="test.csv" col="年" row="2010" width="640" height="400">
+<attr style="max-width:640;width:100%"/>
+</pie-chart>]]></code></pre>
+<p>他にもあります。</p>
 <pre><code><![CDATA[<twitter-button/>]]></code></pre>
-<p>ほかのシェアボタンもありますが、同じように単純なタグを挿入するだけでボタンを表示しています。</p>
-<div><facebook-button/></div>
-<pre><code><![CDATA[<facebook-button/>]]></code></pre>
-<line-button/>
-<pre><code><![CDATA[<line-button/>]]></code></pre>
+<p>とすればシェアボタンです。</p>
+<div><twitter-button/></div>
 <p>パソコンからこのページを見ているならソースコードを確認してみましょう。あるいは<a href="https://github.com/inomoto-hironobu/inomoto-hironobu.github.io/blob/master/contents/calling/components.xhtml">GitHub</a>で確認できます。</p>
-<p>これができるのは、<a href="https://github.com/inomoto-hironobu/components" class="contact">八百幡コンポーネンツ</a>というものを導入しているからです。</p>
+<p>これができるのは、八百幡コンポーネンツというものを導入しているからです。</p>
 <pre><code><![CDATA[<internal-ogp path="../../components/contents/description.xhtml"/>]]></code></pre>
 <p>これを使うには<a href="https://github.com/inomoto-hironobu/components/releases">リリース</a>からダウンロードします。あるいは上記のリポジトリをGitでクローンします。</p>
 <p>そしてこんな感じで導入します。</p>
@@ -34,9 +41,8 @@
 ]]></code></pre>
 <p>八百幡コンポーネンツは作られてからまだ時間が浅く、まだまだ開発途中です。<br/>
 より多機能で高性能なプロダクトにするには多くの人の助けを借りなければなりません。<br/>
-このプロジェクトが成功し発展するかはどれだけSNSによる拡散が行われるかにかかっています。<br/>
-ぜひご協力ください。</p>
-<p>ぜひシェアをお願いします。</p>
+ぜひご参加ください。<br/>
+<a href="https://github.com/inomoto-hironobu/components" class="contact">https://github.com/inomoto-hironobu/components</a></p>
 </section>
 </article>
 </body>
