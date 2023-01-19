@@ -10,7 +10,15 @@
 </head>
 <body id="main">
 <article>
+<section class="row justify-content-center align-items-center" style="background:url('../../img/3334873_s.jpg'); background-repeat: no-repeat;background-position: center;">
+<div class="col-lg-8 text-center text-white font-weight-bold" style="font-size:3rem">HTMLエンジニアの全てを変える<br/>
+    HTMLエンジニアが全てを変える</div>
+<p class="col-lg-8 text-center bg-dark text-white">これからHTMLエンジニアにとって大事な話があります。
+    もしあなたがHTMLエンジニアなら、続きをお読みください。</p>
+</section>
 <section>
+<p>このページはXSLT製フレームワーク、Framexsという技術を使ってます。
+<br/>このページの冒頭部分はこうなっています。</p>
 <div class="code-container">
 <pre><code class="language xml"><![CDATA[<?xml version="1.0"?>
 <?xml-stylesheet type="application/xml" href="../../framexs/framexs.xsl"?>
@@ -19,69 +27,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">]]>
 </code></pre>
 </div>
-<p>このコードは今あなたが見ている、このページの冒頭部分です。</p>
-<p>先頭の<code>&lt;?xml ...</code>は何でしょうか？これは、このページが<strong>XML</strong>であることを示すための<strong>XML宣言</strong>です。<br/>
-htmlタグに<strong>名前空間</strong>もあるので、これは<strong>XHTML</strong>ですね。<br/>
-では<code>&lt;xml-stylesheet ...</code>と<code>&lt;?framexs...</code>となっているのは？<br/>
-これらはXMLの<strong>処理命令</strong>で、特にxml-stylesheetは<strong>スタイルシート</strong>を指定するもので、この場合では<strong>XSLT</strong>ファイルを指定しています。<br/>
-framexs...は<strong>Framexs</strong>で使うためのものです。</p>
+<p>このFramexsというのは、フロントエンドで動くWordPressのようなもので、もしこれが、例えば
+<br/>file:///C:/html/example.xhtml
+<br/>としてアクセスでき、</p>
+<div class="code-container">
+<pre>
+<code class="language xml"><![CDATA[<?xml-stylesheet type="application/xml" href="https://cdnjs.cloudflare.com/ajax/libs/framexs/1.29/framxs.xsl"?>]]></code>
+</pre>
+</div>
+<p>こうできたら便利そうですね。
+<br/>…しかし残念ながら今の時点ではうまくいきません。
+<br/>今のブラウザは、Framexsに対して、</p>
+<ul>
+<li>fileプロトコルでは動かない</li>
+<li>オリジンが同一でないと動かない</li>
+<li>XSLT1.0にしか対応していない</li>
+</ul>
+<p>といった処理をするようになっているからです。
+<br/>しかしこれは、裏を返せば、</p>
+<ul>
+<li>fileプロトコルで動作する</li>
+<li>オリジンが異なっていても動く</li>
+<li>XSLT3.0に対応する</li>
+</ul>
+<P>といった条件がそろえば、クラウドストレージとの組み合わせでFramexsが爆発的に使われるようになるでしょう。
+<br/>潜在的なFramexsの市場価値は、膨大です。
+<br/>そして、HTMLエンジニアの市場価値を何百倍にも高めるでしょう。</P>
 </section>
 <section>
-<h2>XSLTフレームワーク、Framexs</h2>
-<p>Framexsとは、クライアントサイドでテンプレートとコンテンツを<strong>合成</strong>し、HTMLを生成する、XSLTで書かれた<strong>フレームワーク</strong>です。<br/>
-ナンダカフラリ氏が原作を作り、現在では私一人で開発しています。</p>
-<p><a href="https://github.com/inomoto-hironobu/framexs">https://github.com/inomoto-hironobu/framexs</a></p>
-<p>要素、属性の構成を<strong>FTML</strong>というテンプレートに集約させることで再利用、つまりコードを使いまわす仕組みです。<br/>
-このページもFTMLを利用しています。その一部、titleタグのコードはこうなっています。</p>
-<pre class="code-container"><code class="language xml"><![CDATA[<title><framexs:title/> - <framexs:property name="site-name"/></title>]]></code></pre>
-<p>これによって、例えば、静的サイトを管理するにあたっては、煩雑さを消しつつ自由でありながらWordPressのような動的サイトに匹敵する劇的なコンテンツの運用簡易性をもたらします。<br/>
-もちろん、WordPressのような動的サイトと組み合わせることもできます。</p>
-<p>Framexsには<strong>テーマ機能</strong>があり、テンプレート、CSS、JavaScriptをまとめてパッケージングすることができます。<br/>
-このサイトでも<a href="https://github.com/inomoto-hironobu/yaohata">八百幡テーマ</a>を使っています。<br/>
-このテーマ機能によって、静的サイトか動的サイトかの垣根を越えます。<br/>
-例えば、WordPress用に作ったデザインをGitHub Pagesに適用する、あるいはその逆もできる、ということです。</p>
-<p>これはHTML力などフロントエンド技術を製品として形にする、ということを意味します。<br/>
-なのでGitHubでオープンソースとして公開することもできますし、製品をアマゾンなどマーケットプレイスに登録して販売することもできます。</p>
+<h2 class="h2">HTMLエンジニア</h2>
+<p>現況を見てみれば、HTMLエンジニアは不遇にあっています。
+<br/>「HTMLなんて誰でも書ける」
+<br/>なんて言われることもあります。
+<br/>はっきり言うべきです。
+<br/>「それは間違っている」
+<br/>HTMLエンジニアには本来の尊敬と収入があるべきです。</p>
 </section>
 <section>
-<h2>XMLの時代が来る！</h2>
-<pre class="code-container"><code class="language xml"><![CDATA[<?xml version="1.0"?>
-<framexs:properties xmlns:framexs="urn:framexs" xmlns="http://www.w3.org/1999/xhtml">
-<framexs:property name="site-name">八百幡</framexs:property>]]></code></pre>
-<p>このコードはFramexsのもう一つの機能、<strong>プロパティ機能</strong>の、このページで実際に使っているコードです。
-このようにFramexsは<strong>XML技術</strong>をふんだんに使っています。<br/>
-一方で現在のHTML情勢は<strong>HTML Living Standard</strong>が仕様となっていますが、これはとても制御できる代物ではありません。<br/>
-早晩<strong>破綻</strong>します。<br/>
-そして<strong>XML Schema</strong>や<strong>Relaxng</strong>で定義される、<strong>XML化</strong>の波が訪れるでしょう。<br/>
-XMLは未来技術として、これからのIT世界で新たな時代の主役となるのです。<br/>
-HTMLだけ書けても価値はありません。未来技術を手に入れ、ITエンジニアの最先端へ行きましょう！周りとの差を付ける時です！</p>
+<h2>あなたの労働力をください</h2>
+<p>さて、Framexsですが、GitHubで管理されています。</p>
+<div class="text-center"><a href="https://github.com/inomoto-hironobu/framexs" class="btn btn-primary business">GitHubのリポジトリ</a></div>
+<p>私はこれを商品として提示します。
+<br/>お値段は、あなたの労力です。</p>
+<p>あなたの労働力が時給3000円だとするなら、10分間で500円なので、10分間見ていただけたら、Framexsに500円を払ったことと同じというわけです。
+<br/>どのくらい時間をかけるか、つまり値段を決めるのはあなた次第、となります。</p>
+<p>「購入」いただくとどうなるか…まず、Framexsの技術を習得でき、サイト作成技術の幅が広がります。
+<br/>さらにXHTMLを通してXMLの知識が身につきます。
+<br/>そしてもし、ブラウザがXSLTの処理を進化させるほど、「購入」したなら、HTMLエンジニア全体の地位の向上を通して、あなたには収入の大幅な増加がもたらされます。</p>
 </section>
 <section>
-<h2>ビジネスの提案</h2>
-<p>ここで私はこのFramexsを用いたビジネスを提案いたします。</p>
-<p>Framexsの講習を受けてみませんか。講習を受けることで静的サイト構築・運営ができるようになります。</p>
-<p>相談の申し込み・業務依頼などさまざまな連絡に関しては</p>
-<internal-quote path="../owner.xhtml" target="連絡先"/>
-<p>からお願いします。<br/>
-いくつかのサービスを構えていますので、適切なサービスをお選びください。なおアカウントがない場合は作成する必要があります。<br/>
-他にも様々な業務が考えられます。「こうしてほしい」「こうできないか」と気軽に連絡していただきたいと思います。</p>
-<internal-quote path="../operation.xhtml" target="運営情報"/>
-</section>
-<section>
-<h2>Framexsの独学</h2>
-<p>このサイトでは無料でFramexsを学習できるように、学習コンテンツを用意しています。<br/>
-Framexsについてより知りたい方は私が書いたFramexsについての記事を読んでください。<br/>
-今後ともコンテンツの充実をしていくので質問等気軽にお寄せください。</p>
-<internal-ogp path="../../framexs/index.xhtml"/>
-</section>
-<section>
-<h2>リンク</h2>
-<p>FramexsはXSLTを中心に、XMLの技術を総動員してフロントエンドを盛り立てるプロダクトです。<br/>
-そのためXMLを学習する必要があります。<br/>
-XMLは、フロントエンドだけでなくIT産業全体の中核となっていくでしょう。<br/>
-そこで、これを機会にXMLの学習はいかがですか。<br/>
-学習のお手伝いも含めてXMLの業務を請け負っています。<br/>
-<internal-link path="xml-a.xhtml"/></p>
+<h2 class="h2">第一歩を！</h2>
+<p>私の伝えたいことは以上です。
+<br/>GitHubのFramexsリポジトリをクリックしましょう。
+<br/>世界を、あなたを、変える第一歩です。</p>
+<div class="text-center"><a href="https://github.com/inomoto-hironobu/framexs" class="btn btn-primary business">GitHubのリポジトリ</a></div>
 </section>
 </article>
 </body>
