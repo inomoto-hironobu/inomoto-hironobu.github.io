@@ -7,6 +7,17 @@
 <framexs:property name="logo">
 <img id="head_img" src="/img/logo.png" width="64"/>
 </framexs:property>
+<framexs:property name="header-in-head">
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-977584136"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-977584136');
+</script>
+</framexs:property>
 <framexs:property name="title">display</framexs:property>
 <framexs:property name="center-class">col-md-8</framexs:property>
 <framexs:property name="home-path">/index.xhtml</framexs:property>
