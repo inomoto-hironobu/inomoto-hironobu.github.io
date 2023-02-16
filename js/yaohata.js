@@ -1,14 +1,9 @@
-const x = new XFacade()
-.ns({
-	'xhtml' : 'http://www.w3.org/1999/xhtml',
-	'mathml': 'http://www.w3.org/1998/Math/MathML'
-})
-
 window.addEventListener('DOMContentLoaded', ()=>{
 	if(window.innerWidth > 750) {
-		const result = x.dom(document)
-		.uarray("//ul[contains(@class,'collapse')]")
-		.forEach((e)=>{
+		const r = SaxonJS.XPath.evaluate("//ul[contains(@class,'collapse')]",document,{
+			xpathDefaultNamespace:"http://www.w3.org/1999/xhtml",
+			resultForm:"array"
+		}).forEach((e)=>{
 			e.classList.toggle("show");
 		});
 	}
@@ -17,13 +12,14 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	.then((response)=>response.text())
 	.then((text) => {
 		const contents = new DOMParser().parseFromString(text,'application/xml');
-		console.log(x);
-		const modified = x.dom(contents).text('//xhtml:meta[@name=\'created\']/@content');;
-		if(modified){
+		SaxonJS.XPath.evaluate('//meta[@name=\'created\']/@content',document,{
+			xpathDefaultNamespace:"http://www.w3.org/1999/xhtml",
+			resultForm:"array"
+		}).forEach((e)=>{
 			document
 			.querySelector('#created')
-			.replaceWith(document.createTextNode(modified));
-		}
+			.replaceWith(document.createTextNode(e));
+		});
 	});
 });
 
