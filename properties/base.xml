@@ -29,10 +29,9 @@
 <framexs:property name="center-class">col-md-8</framexs:property>
 <framexs:property name="home-path">/index.xhtml</framexs:property>
 <framexs:property name="nav">
-<li title="製品">/contents/products.xhtml</li>
-<li title="運営">/contents/operation.xhtml</li>
-<li title="運営者">/contents/owner.xhtml</li>
-<li title="連絡先一覧">/contents/contact.xhtml</li>
+<li title="自己紹介">/contents/self-introduction.xhtml</li>
+<li title="OSS">/contents/products.xhtml</li>
+<li title="受託">/contents/recieving.xhtml</li>
 <li title="記事一覧">/contents/article/index.xhtml</li>
 </framexs:property>
 <framexs:property name="footer-in-head">

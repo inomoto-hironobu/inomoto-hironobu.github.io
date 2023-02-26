@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/business.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://inomoto-hironobu.github.io/contents/owner.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/self-introduction.xhtml</loc>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/privacy-policy.xhtml</loc>
   </url>
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/form.xhtml</loc>
-  </url>
-  <url>
     <loc>https://inomoto-hironobu.github.io/contents/products.xhtml</loc>
   </url>
-
+  <url>
+    <loc>https://inomoto-hironobu.github.io/contents/recieving.xhtml</loc>
+  </url>
   <!--article-->
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/article/company.xhtml</loc>
