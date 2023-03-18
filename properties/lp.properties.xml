@@ -4,7 +4,6 @@
 <framexs:property name="footer-in-head">
 <link rel="stylesheet" href="/css/lp-a.css"/>
 <link rel="stylesheet" href="/css/style.css"/>
-<script src="/xfacade/xfacade.js"></script>
 <script src="/js/yaohata.js"></script>
 <link rel="yaohata-components-setting" href="/ycs.xml"/>
 </framexs:property>
