@@ -302,3 +302,40 @@ ul.sharebuttons div {
     border: dotted 6px #ffa500;/*線*/
     color:#000000;/*文字色*/
 }
+article > details, section > details {
+	box-shadow: 1px 1px 2px gray;
+	margin: .75rem .25rem;
+	padding: .5rem;
+	border: solid 1px orange;
+	background-color: white;
+	margin: 0px 26px 10px;
+}
+main details > summary {
+	cursor: pointer;
+}
+
+article > p,
+section > p {
+	font-size: 16px;
+	font-family: "Hiragino maru Gothic ProN W4", "Hiragino Kaku Gothic Pro","Hiragino Sans", "arial", "Meiryo", "MS PGothic", sans-serif;
+	border: dashed 1px lightcyan;
+	background-color: white;
+	margin: 1.25rem 0;
+	padding: 1.25rem;
+	/*本文の幅を広げる*/
+	line-height: 1.5;
+	/*文字ボックスの色を調整*/
+	border-top: solid 1px #121212;
+	border-left: solid 1px #121212;
+	border-right: solid 2px #727272;
+	border-bottom: solid 2px #727272;
+}
+@media screen and (max-width:1080px) {
+	article > p,
+	section > p {
+	border-width: 0;
+	margin: .25rem 0;
+	padding: .25rem;
+	line-height: 2;
+}
+}
