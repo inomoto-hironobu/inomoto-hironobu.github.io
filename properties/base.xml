@@ -25,6 +25,13 @@
   gtag('config', 'AW-977584136');
 </script>
 </framexs:property>
+
+<framexs:property name="footer-in-head">
+<script src="/js/yaohata.js"></script>
+<link rel="stylesheet" href="/css/style.css"/>
+<link rel="yaohata-components-setting" href="/ycs.xml"/>
+</framexs:property>
+
 <framexs:property name="title">display</framexs:property>
 <framexs:property name="center-class">col-md-8</framexs:property>
 <framexs:property name="home-path">/index.xhtml</framexs:property>
@@ -34,11 +41,7 @@
 <li title="受託">/contents/recieving.xhtml</li>
 <li title="記事一覧">/contents/article/index.xhtml</li>
 </framexs:property>
-<framexs:property name="footer-in-head">
-<script src="/js/yaohata.js"></script>
-<link rel="stylesheet" href="/css/style.css"/>
-<link rel="yaohata-components-setting" href="/ycs.xml"/>
-</framexs:property>
+
 <framexs:property name="sidebar"></framexs:property>
 <framexs:property name="sidebar-wide">
 <ul id="contents-list" class="list-group">
@@ -64,13 +67,6 @@
 </framexs:property>
 <framexs:property name="footer">
 <div class="row">
-<div class="col-md">
-<ul class="footer-links">
-<li><a href="/framexs/index.xhtml">Framexs</a></li>
-<li><a href="/components/index.xhtml">八百幡コンポーネンツ</a></li>
-<li><a href="/theme-yaohata/index.xhtml">テーマ八百幡</a></li>
-</ul>
-</div>
 <div class="col-md">
 <ul class="footer-links">
 <li><a class="contact" href="https://www.facebook.com/hironobu.inomoto">Facebook</a></li>
@@ -149,6 +145,7 @@ error
 <!--八百幡コンポーネンツの取り込み-->
 <script src="/components/lib/SaxonJS2.js"></script>
 <script src="/components/basic.js"></script>
+<script src="/components/template.js"></script>
 <script src="/components/lib/d3.js"></script>
 <script src="/components/visualization.js"></script>
 
