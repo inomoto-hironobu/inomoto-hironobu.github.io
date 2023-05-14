@@ -36,6 +36,7 @@
 <framexs:property name="center-class">col-md-8</framexs:property>
 <framexs:property name="home-path">/index.xhtml</framexs:property>
 <framexs:property name="nav">
+<li title="野望">/contents/ambition.xhtml</li>
 <li title="自己紹介">/contents/self-introduction.xhtml</li>
 <li title="OSS">/contents/products.xhtml</li>
 <li title="受託">/contents/recieving.xhtml</li>
