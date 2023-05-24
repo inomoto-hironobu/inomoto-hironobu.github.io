@@ -128,13 +128,13 @@ error
 <template id="share-buttons" xmlns:yc="urn:yaohata-components">
 <div class="wrapper">
 <div class="btn" style="border: solid 2px #55acee">
-<a class="share" style="color:#55acee" yc:href="https://twitter.com/share?url={url}&amp;text={title}" rel="nofollow noopener" target="_blank"><i class="fab fa-twitter"> twitter</i></a>
+<a class="share" style="color:#55acee" yc:href="https://twitter.com/intent/tweet?url={url}&amp;text={title}" rel="nofollow noopener" target="_blank"><i class="fab fa-twitter"> twitter</i></a>
 </div>
 <div class="btn" style="border: solid 2px #3b5998">
-<a class="share" style="color:#3b5998" yc:href="http://www.facebook.com/share.php?u={url}" rel="nofollow noopener" target="_blank"><i class="fab fa-facebook"> facebook</i></a>
+<a class="share" style="color:#3b5998" yc:href="http://www.facebook.com/sharer/sharer.php?u={url}" rel="nofollow noopener" target="_blank"><i class="fab fa-facebook"> facebook</i></a>
 </div>
 <div class="btn" style="border: solid 2px #00B900; ">
-<a class="share" style="color:#00B900;" yc:href="https://social-plugins.line.me/lineit/share?url={url}" rel="nofollow noopener" target="_blank"><i class="fab fa-line"> line</i></a>
+<a class="share" style="color:#00B900;" yc:href="https://timeline.line.me/social-plugin/share?url={url}" rel="nofollow noopener" target="_blank"><i class="fab fa-line"> line</i></a>
 </div>
 </div>
 </template>
