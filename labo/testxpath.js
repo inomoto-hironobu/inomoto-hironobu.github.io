@@ -13,23 +13,6 @@ function test1(){
     console.log(result);
 }
 
-
-
-function test1(){
-let array = [1,"2",[3]];
-
-let obj = {
-    test:array
-};
-
-let xpath = "array:filter(function($a){$a='2'})";
-
-//
-let result = SaxonJS.XPath.evaluate(xpath,array);
-
-console.log(result);
-}
-
 try {
     test1();
 } catch(e){

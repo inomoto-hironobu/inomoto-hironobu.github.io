@@ -1,0 +1,29 @@
+<html>
+<head>
+<script src="../components/SaxonJS2.js"></script>
+<script>
+window.addEventListener('click',(e)=>console.log(e));
+
+window.addEventListener('change',(e)=>console.log(e));
+
+window.addEventListener('change',(e)=>{
+    let xpath = "index-of($target,/html/body/select)";
+
+    //
+    let result = SaxonJS.XPath.evaluate(xpath,document,{params:{target:e.target},xpathDefaultNamespace:"http://www.w3.org/1999/xhtml"});
+
+    console.log(result);
+});
+
+</script>
+
+
+</head>
+<body>
+test
+<select>
+<option>test</option>
+<option>test2</option>
+</select>
+</body>
+</html>
