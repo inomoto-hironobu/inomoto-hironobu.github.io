@@ -1,0 +1,22 @@
+<?php
+set_time_limit(1000);
+echo 'test';
+sleep(60);
+echo 'test';
+sleep(60);
+echo 'test';
+sleep(60);
+echo 'test';
+sleep(60);
+echo 'test';
+sleep(60);
+echo 'test';
+sleep(60);
+echo 'test';
+sleep(60);
+echo 'test';
+sleep(60);
+echo 'test';
+sleep(60);
+echo 'test';
+sleep(0);

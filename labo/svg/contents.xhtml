@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="application/xml" href="../framexs.xsl"?>
+<?framexs.skeleton ../template.ftml?>
+<?framexs.properties ../../common/properties/ads.properties.xml?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<title></title>
+<meta name="description" content=""/>
+<meta name="modified" content=""/>
+<script src="../vue.global.js"></script>
+<script src="script.js"></script>
+</head>"
+<body>
+<section id="main">
+<div id="app">
+<ul>
+<li v-for="obj in objects"><select v-model="obj.href"><option v-for="path in paths">{{path.id}}</option></select><input v-model="obj.x"/><input v-model="obj.y"/></li>
+</ul>
+<ul>
+<li v-for="path in paths"><input v-model="path.id"/><input v-model="path.d"/><input v-model="path.style"/></li>
+</ul>
+<svg viewBox="0 0 400 180">
+    <use v-for="obj in objects" fill="purple" v-bind:href="'#'+obj.href" v-bind:x="obj.x" v-bind:y="obj.y"/>
+    <defs>
+        <path v-for="path in paths" v-bind:id="path.id" v-bind:d="path.d" v-bind:style="path.style"/>
+    </defs>
+</svg>
+
+</div>
+<div id="app2">
+    x:{{xy.x}},y:{{xy.y}}
+    {{d}}
+</div>
+<svg id="t" viewBox="0 0 400 280">
+    <path d=""/>
+</svg>
+</section>
+</body>
+</html>
