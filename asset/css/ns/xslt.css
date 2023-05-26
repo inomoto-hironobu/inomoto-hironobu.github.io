@@ -1,0 +1,23 @@
+@namespace "http://www.w3.org/1999/XSL/Transform";
+
+stylesheet {
+	color: red;
+	border: solid 1px red;
+	padding: 1em;
+	display: block;
+}
+template {
+	color: blue;
+	border: solid 1px blue;
+	padding: 1em;
+	display: block;
+}
+value-of {
+	height: 1em;
+	width: 100%;
+	background-color: pink;
+	display:block;
+}
+apply-templates {
+	display:block;
+}

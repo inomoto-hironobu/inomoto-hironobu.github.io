@@ -1,0 +1,18 @@
+@namespace "http://xmlns.jcp.org/xml/ns/persistence/orm";
+
+entity-mappings {
+	display: block;
+	font-size: 16px;
+}
+schema {
+	display: block;
+	font-size: 2em;
+}
+description {
+	display: block;
+	font-size: 1em;
+}
+package {
+	display: block;
+	font-size: 1em;
+}

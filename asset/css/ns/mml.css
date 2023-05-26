@@ -1,0 +1,19 @@
+@namespace mml "http://www.w3.org/1998/Math/MathML";
+
+mml|mo {
+	color: red;
+}
+mml|mn {
+	color: blue;
+}
+mml|mi {
+	color: green;
+}
+mml|mrow {
+	border: solid 1px aqua;
+	padding: 1em;
+	margin: 1em;
+}
+mml|msqrt {
+	border: solid 1px pink;
+}
