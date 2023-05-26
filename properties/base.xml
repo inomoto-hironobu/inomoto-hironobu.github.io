@@ -5,8 +5,9 @@
 <framexs:property name="google-tag-manager-code">GTM-5L2SQ9B</framexs:property>
 <framexs:property name="home-url">https://inomoto-hironobu.github.io/index.xhtml</framexs:property>
 <framexs:property name="logo">
-<img id="head_img" src="/img/logo.png" width="64"/>
+<img id="head_img" src="/asset/img/logo.png" width="64"/>
 </framexs:property>
+
 <framexs:property name="header-in-head">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -27,9 +28,12 @@
 </framexs:property>
 
 <framexs:property name="footer-in-head">
-<script src="/js/yaohata.js"></script>
-<link rel="stylesheet" href="/css/style.css"/>
+<script src="/asset/js/yaohata.js"></script>
+<link rel="stylesheet" href="/asset/css/style.css"/>
 <link rel="yaohata-components-setting" href="/ycs.xml"/>
+<meta
+  http-equiv="Content-Security-Policy"
+  content="default-src 'self'; img-src https://*; media-src youtube.com script-src https://*; child-src 'none';" />
 </framexs:property>
 
 <framexs:property name="title">display</framexs:property>
