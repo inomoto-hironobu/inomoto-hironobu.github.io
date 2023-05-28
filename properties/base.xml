@@ -33,7 +33,7 @@
 <link rel="yaohata-components-setting" href="/ycs.xml"/>
 <meta
   http-equiv="Content-Security-Policy"
-  content="default-src 'self'; img-src https://*; media-src youtube.com script-src https://*; child-src 'none';" />
+  content="img-src https://* http://localhost; media-src youtube.com; script-src https://* http://localhost 'unsafe-inline'; script-src-elem https://* http://localhost" />
 </framexs:property>
 
 <framexs:property name="title">display</framexs:property>
