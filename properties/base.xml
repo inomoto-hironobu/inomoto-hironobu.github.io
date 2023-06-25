@@ -70,6 +70,34 @@
 </li>
 </ul>
 </framexs:property>
+
+<framexs:property name="footer-in-center">
+<div style="padding:0.5rem; border:solid 1px grey">
+<h2>コメント欄</h2>
+<p>実験的にコメント欄を設置しました。お気軽に書き込みください。
+<br/>なお、上手くいかなかったときは閉鎖する可能性があります。</p>
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = "https://inomoto-hironobu.github.io/";  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = "https://inomoto-hironobu.github.io/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://yaohata.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</framexs:property>
+
 <framexs:property name="footer">
 <div class="row">
 <div class="col-md">
@@ -170,6 +198,6 @@ error
 
 <div id="fb-root"></div>
 <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&amp;version=v15.0&amp;appId=1249701235068950&amp;autoLogAppEvents=1" nonce="guO3MRsZ"></script>
-
+<script id="dsq-count-scr" src="//yaohata.disqus.com/count.js" async=""></script>
 </framexs:property>
 </framexs:properties>
