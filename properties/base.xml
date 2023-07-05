@@ -41,39 +41,15 @@
 <framexs:property name="home-path">/index.xhtml</framexs:property>
 <framexs:property name="nav">
 <li title="野望">/contents/ambition.xhtml</li>
-<li title="自己紹介">/contents/self-introduction.xhtml</li>
-<li title="OSS">/contents/products.xhtml</li>
+<li title="自己紹介">/contents/aboutme.xhtml</li>
 <li title="受託">/contents/recieving.xhtml</li>
 <li title="記事一覧">/contents/article/index.xhtml</li>
 </framexs:property>
 
 <framexs:property name="sidebar"></framexs:property>
-<framexs:property name="sidebar-wide">
-<ul id="contents-list" class="list-group">
-<li class="list-group-item list-group">
-<div id="製品一覧heading" class="btn btn-primary" data-toggle="collapse" data-target="#製品一覧" aria-expanded="false" aria-controls="製品一覧">製品一覧</div>
-<ul id="製品一覧" class="list-group collapse" aria-labelledby="製品一覧heading">
-<li class="list-group-item"><a href="/contents/product/framexs.xhtml">Framexs</a></li>
-<li class="list-group-item"><a href="/contents/product/f4w.xhtml">F4W</a></li>
-<li class="list-group-item"><a href="/contents/product/components.xhtml">八百幡コンポーネンツ</a></li>
-</ul>
-</li>
-<li class="list-group-item list-group">
-<div id="事業一覧heading" class="btn btn-primary" data-toggle="collapse" data-target="#事業一覧" aria-expanded="false" aria-controls="事業一覧">事業一覧</div>
-<ul id="事業一覧" class="list-group collapse" aria-labelledby="事業一覧heading">
-<li class="list-group-item"><a href="/contents/business/xml.xhtml">XML事業</a></li>
-<li class="list-group-item"><a href="/contents/business/data.xhtml">データ事業</a></li>
-<li class="list-group-item"><a href="/contents/business/framexs.xhtml">Framexs事業</a></li>
-<li class="list-group-item"><a href="/contents/business/f4w.xhtml">F4W事業</a></li>
-<li class="list-group-item"><a href="/contents/business/components.xhtml">コンポーネンツ事業</a></li>
-</ul>
-</li>
-</ul>
-</framexs:property>
+<framexs:property name="sidebar-wide"></framexs:property>
 
-<framexs:property name="footer-in-center">
-
-</framexs:property>
+<framexs:property name="footer-in-center"></framexs:property>
 
 <framexs:property name="footer">
 <div class="row">
