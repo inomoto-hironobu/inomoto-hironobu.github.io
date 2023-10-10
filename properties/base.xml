@@ -1,39 +1,11 @@
 <?xml version="1.0"?>
 <framexs:properties xmlns:framexs="urn:framexs-properties" xmlns="http://www.w3.org/1999/xhtml">
-<framexs:property name="site-name">八百幡</framexs:property>
+<framexs:property name="site-name">井本拓伸の個人サイト</framexs:property>
 <framexs:property name="copyright">©2021 INOMOTO Hironobu</framexs:property>
 <framexs:property name="google-tag-manager-code">GTM-5L2SQ9B</framexs:property>
-<framexs:property name="home-url">https://inomoto-hironobu.github.io/index.xhtml</framexs:property>
+<framexs:property name="home-url">https://inomoto-hironogu.github.io/index.xhtml</framexs:property>
 <framexs:property name="logo">
 <img id="head_img" src="/asset/img/logo.png" width="64"/>
-</framexs:property>
-
-<framexs:property name="header-in-head">
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5L2SQ9B');</script>
-  <!-- End Google Tag Manager -->
-<!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-977584136"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-977584136');
-</script>
-</framexs:property>
-
-<framexs:property name="footer-in-head">
-<script src="/asset/js/yaohata.js"></script>
-<link rel="stylesheet" href="/asset/css/style.css"/>
-<link rel="yaohata-components-setting" href="/ycs.xml"/>
-<meta
-  http-equiv="Content-Security-Policy"
-  content="img-src https://* http://localhost; media-src youtube.com; script-src https://* http://localhost 'unsafe-inline'; script-src-elem https://* http://localhost" />
 </framexs:property>
 
 <framexs:property name="title">display</framexs:property>
@@ -42,14 +14,7 @@
 <framexs:property name="nav">
 <li title="野望">/contents/ambition.xhtml</li>
 <li title="自己紹介">/contents/aboutme.xhtml</li>
-<li title="記事一覧">/contents/article/index.xhtml</li>
-<li title="お問合せ">/contents/form.xhtml</li>
 </framexs:property>
-
-<framexs:property name="sidebar"></framexs:property>
-<framexs:property name="sidebar-wide"></framexs:property>
-
-<framexs:property name="footer-in-center"></framexs:property>
 
 <framexs:property name="footer">
 <div class="row">
@@ -60,97 +25,7 @@
 <li><a class="contact" href="https://www.linkedin.com/in/拓伸-井本-8b0b31135/">LinkedIn</a></li>
 </ul>
 </div>
-<div class="col-md">
-<ul class="footer-links">
-<li><a class="contact" href="/contents/privacy-policy.xhtml">プライバシーポリシー</a></li>
-<li><a class="contact" href="/contents/form.xhtml">お問合せ</a></li>
-</ul>
-</div>
 </div>
 </framexs:property>
-<framexs:property name="footer-in-body">
 
-<template id="ogp-template" xmlns:yc="urn:yaohata-components">
-<div class="card" style="max-width:32rem;margin:1rem auto;">
-<img yc:image="" />
-<div class="card-body">
-<h5 class="card-title"><yc:title /></h5>
-<p class="card-text"><yc:description/></p>
-<a yc:path="" class="btn btn-primary">ページを見る</a>
-</div>
-</div>
-</template>
-
-<!-- ロード中表示テンプレート -->
-<template id="loading-template" xmlns:yc="urn:yaohata-components">
-<div class="spinner-border" role="status">
-<span class="sr-only">Loading...</span>
-</div>
-</template>
-
-<!-- ロードエラーテンプレート -->
-<template id="loaderror-template">
-<div class="card" style="max-width:32rem;margin:1rem auto;">
-<div class="card-body">
-<div class="text-danger">
-error
-</div>
-</div>
-</div>
-</template>
-
-<template id="link-template" xmlns:yc="urn:yaohata-components">
-<div><a yc:href="{path}"><yc:title/></a></div>
-</template>
-
-<template id="quote-template" xmlns:yc="urn:yaohata-components">
-<blockquote class="internal-quote">
-<div class="target"><yc:content/></div>
-<div class="citation"><cite><a yc:href="{path}"><yc:title/></a></cite></div>
-</blockquote>
-</template>
-
-<template id="share-buttons" xmlns:yc="urn:yaohata-components">
-<div class="wrapper">
-<div class="btn" style="border: solid 2px #55acee">
-<a class="share" style="color:#55acee" yc:href="https://twitter.com/intent/tweet?url={url}&amp;text={title}" rel="nofollow noopener" target="_blank"><i class="fab fa-twitter"> twitter</i></a>
-</div>
-<div class="btn" style="border: solid 2px #3b5998">
-<a class="share" style="color:#3b5998" yc:href="http://www.facebook.com/sharer/sharer.php?u={url}" rel="nofollow noopener" target="_blank"><i class="fab fa-facebook"> facebook</i></a>
-</div>
-<div class="btn" style="border: solid 2px #00B900; ">
-<a class="share" style="color:#00B900;" yc:href="https://timeline.line.me/social-plugin/share?url={url}" rel="nofollow noopener" target="_blank"><i class="fab fa-line"> line</i></a>
-</div>
-</div>
-</template>
-
-<template id="twitter" xmlns:yc="urn:yaohata-components">
-<div class="btn" style="border: solid 2px #55acee">
-<a class="share" yc:href="https://twitter.com/share?url={url}&amp;text={title}" rel="nofollow noopener" target="_blank"><i class="fab fa-twitter">twitter</i></a>
-</div>
-</template>
-
-<template id="facebook" xmlns:yc="urn:yaohata-components">
-<div class="btn" style="border: solid 2px #3b5998">
-<a class="share" yc:href="http://www.facebook.com/share.php?u={url}" rel="nofollow noopener" target="_blank"><i class="fab fa-facebook">facebook</i></a>
-</div>
-</template>
-
-<template id="linkedin" xmlns:yc="urn:yaohata-components">
-<div class="btn" style="border: solid 2px #0a66c2">
-<a class="share" yc:href="https://www.linkedin.com/sharing/share-offsite/?url={url}" rel="nofollow noopener" target="_blank"><i class="fab fa-linkedin">linkedin</i></a>
-</div>
-</template>
-
-<!--八百幡コンポーネンツの取り込み-->
-<script src="/components/lib/SaxonJS2.js"></script>
-<script src="/components/basic.js"></script>
-<script src="/components/template.js"></script>
-<script src="/components/lib/d3.js"></script>
-<script src="/components/visualization.js"></script>
-
-<div id="fb-root"></div>
-<script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&amp;version=v15.0&amp;appId=1249701235068950&amp;autoLogAppEvents=1" nonce="guO3MRsZ"></script>
-<script id="dsq-count-scr" src="//yaohata.disqus.com/count.js" async=""></script>
-</framexs:property>
 </framexs:properties>
