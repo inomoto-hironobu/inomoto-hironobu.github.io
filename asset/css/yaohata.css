@@ -1,0 +1,280 @@
+@charset "UTF-8";
+
+:root {
+	--breakpoint-width: 748px;
+}
+body {
+	padding:0;
+	margin:0;
+}
+
+aside details {
+	margin: 0.5rem 0;
+}
+
+
+figure > * {
+	width:100%;
+}
+
+#footer-links a {
+	color:white;
+}
+
+
+body > footer {
+	/*狭かったスペースを空ける*/
+	padding:20px 50px 50px;
+}
+
+
+@media screen and (max-width:767px) {
+
+	body > footer {
+		padding: 10px 25px 25px;
+	}
+}
+
+/*31.ヘッダーが半透明になってる*/
+#pagetop{
+	/*透明化を解除*/
+	opacity: 1;
+}
+
+#pagetop > nav{
+	background:linear-gradient(#F7F9FE,#CACACA);
+	box-shadow: 1px 1px 10px #778;
+}
+/*25.スペースの変更*/
+#side-infomation p {
+	/*アイドメニューの幅を広げる*/
+	line-height: 170%;
+	margin-top:30px;
+  }
+  .dl_link:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f019";
+    font-weight: 900;
+}
+
+.out_link:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f35d";
+    font-weight: 900;
+}
+
+
+main ul ul {
+    margin-bottom: 0px;
+    border: dotted #1e366a 0px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/*19.プライバシーポリシーの修正*/
+#footer-links{
+  box-shadow: 2px 2px 2px #636363;
+}
+
+#pagetop{
+  z-index: 1;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    }
+
+main > section,
+article > section {
+	border: dotted 0 gray;
+	border-top-width: 0.2rem;
+	border-bottom-width: 0.2rem;
+	margin-top: 0.4rem;
+	margin-bottom: 0.4rem;
+	padding-top: 0.4rem;
+	border-radius: 5px;
+}
+
+section ul,section ol {
+  color: #1e366a;
+  border: dotted #1e366a 1px;/*ドット 色 太さ*/
+  padding: 0.5em 0.5em 0.5em 2em;
+}
+
+main section li {
+  line-height: 1.5;
+  padding: 0.5em 0;
+}
+main section table {
+	background-color: linen;
+}
+main figure {
+	width:100%;
+	border-right-width:0;
+	border-left-width:0;
+	background-color: white;
+}
+main figcaption {
+	text-align: center;
+}
+/*50.コードボックスの見栄えの修正*/
+main pre {
+	border: ridge 2px #888;
+	border-radius: 0.5rem;
+	background-color: white;
+}
+
+main dl > dd {
+	background-color: white;
+	padding: .5rem;
+}
+section address {
+	padding: 1rem;
+	box-shadow: 1px 1px 2px gray;
+}                           
+main table tr {
+	border-bottom: solid 1px gray;
+}
+main table td,.main table th {
+	padding:.5rem;
+}
+main dl {
+	padding: 1rem;
+	box-shadow: 1px 1px 2px pink;
+}
+article img {
+    width:100%;
+}
+
+kbd{
+    background-color: #7394b7;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
+:root {
+	--breakpoint-width: 748px;
+}
+
+
+article img {
+	shape-outside: margin-box;
+}
+@media screen and (min-width:748px) {
+	article {
+		max-width:660px;
+		margin:auto;
+	}
+}
+@media screen and (max-width:748px) {
+	article img {
+		width:100%;
+	}
+}
+main h1,.main h2,.main h3,.main h4,.main h5,.main h6 {
+    font-weight: bold;
+    margin-top: 0%;
+    margin-left: 1rem;
+    text-shadow: 2px 2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff, -2px -2px 2px #fff, 2px 0px 2px #fff, 0px 2px 2px #fff, -2px 0px 2px #fff, 0px -2px 2px #fff;
+    line-height: 120%;
+}
+/*23.見出しを無彩色にし、装飾を追加*/
+
+main h2 {
+/*H2の変更　H1と入れ替え+調整*/
+color:black;
+border-left: solid 5px gray;
+padding-left: 10px;
+}
+h1 {
+margin:4% 1%;
+}
+
+h2 {
+margin:1% 1% 2%;
+}
+
+/*26.二重になっている線を1つに戻す*/
+main section {
+	margin:4% 1% 0%;
+	padding-bottom:30px;
+	border-top: solid 0px gray;
+	border-bottom: solid 1px gray;
+	border-radius:1px;
+}
+
+/*フッダー上の二重線部分を消す*/
+main section:last-child {
+	border-bottom: solid 0px gray;
+}
+
+
+/*メニューの緑が見づらい*/
+
+main h3 {
+	/*H2の変更　H1と入れ替え+調整*/
+	color:black;
+	border-bottom: solid 3px gray;
+	padding-left: 5px;
+	padding-bottom:10px;
+}
+
+
+main {
+	padding-top:20px;
+}
+#sidebar1-wide {
+	padding-top:20px;
+}
+a.navbar-brand {
+	color:black;
+}
+main figure {
+    border: dotted 1px silver;
+}
+@media screen and (min-width: 748px){
+	article {
+		max-width: 660px;
+		margin: auto;
+	}
+}
+/*文字間隔を広げる*/
+body > footer  tr{
+	line-height: 40px;
+}
+/*30.ヘッダーの文字が薄い*/
+.navbar-nav li a.nav-link{
+	color:#111;
+}
+blockquote {
+    position: relative;
+    padding: 30px 15px 8px 15px;
+    box-sizing: border-box;
+    font-style: italic;
+    background: #efefef;
+    color: #555;
+}
+
+blockquote:before{
+    display: inline-block;
+    position: absolute;
+    top: 13px;
+    left: 15px;
+    content: "\f10d";
+    font-family: "Font Awesome 5 Free";
+    color: #cfcfcf;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 900;
+}
+
+blockquote p {
+    padding: 0;
+    margin: 10px 0;
+    line-height: 1.7;
+}
+
+blockquote cite {
+    display: block;
+    text-align: right;
+    color: #888888;
+    font-size: 0.9em;
+}

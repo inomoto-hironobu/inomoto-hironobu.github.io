@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://inomoto-hironobu.github.io/contents/self-introduction.xhtml</loc>
+    <loc>https://inomoto-hironobu.github.io/contents/aboutme.xhtml</loc>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/privacy-policy.xhtml</loc>
@@ -24,9 +24,6 @@
   </url> 
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/article/xhtml3.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://inomoto-hironobu.github.io/contents/article/github_pages_adv.xhtml</loc>
   </url>
   <url>
     <loc>https://inomoto-hironobu.github.io/contents/article/html_framework.xhtml</loc>

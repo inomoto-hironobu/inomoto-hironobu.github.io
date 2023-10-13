@@ -1,0 +1,303 @@
+<?xml version="1.0"?>  
+<!--
+                Copyright (c) 2021 INOMOTO Hironobu
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" xmlns:yc="urn:yaohata-components" lang="ja">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5L2SQ9B');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-977584136"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'AW-977584136');
+</script>
+<framexs:if property="google-tag-manager-code">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','<framexs:property name="google-tag-manager-code"/>');</script>
+<!-- End Google Tag Manager -->
+</framexs:if>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KZNQJCL');</script>
+  <!-- End Google Tag Manager -->
+<framexs:if property="google-analytics-code">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" framexs:element="">
+<framexs:attribute name="src">https://www.googletagmanager.com/gtag/js?id=<framexs:property name="google-analytics-code"/></framexs:attribute>
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '<framexs:property name="google-analytics-code"/>');
+  
+</script>
+</framexs:if>
+
+<framexs:if-meta name="framexs-theme">
+<script>
+    dataLayer.push({"event":"framexs","theme":"<framexs:meta name="framexs-theme"/>"});
+</script>
+</framexs:if-meta>
+
+<meta charset="UTF-8"/>
+<meta framexs:fix="" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+<title><framexs:title/> - <framexs:property name="site-name"/></title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+<link rel="stylesheet" href="asset/css/yaohata.css"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+<meta property="og:title" content=""/>
+<meta property="og:description" content=""/>
+<meta property="og:url" content=""/>
+<meta property="og:image" content=""/>
+
+<script src="asset/js/jquery.js"></script>
+<link rel="stylesheet" href="asset/css/jquery-ui.css"/>
+<script src="asset/js/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<framexs:if property="google-ads-code">
+<script async="" crossorigin="anonymous" framexs:element="">
+<framexs:attribute name="src">https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<framexs:property name="google-ads-code"/></framexs:attribute>
+</script>
+</framexs:if>
+
+<framexs:if property="use-default" value="true">
+<link rel="stylesheet" href="css/default.css"/>
+</framexs:if>
+
+<framexs:meta/>
+<framexs:link/>
+<framexs:script/>
+<script src="/asset/js/yaohata.js"></script>
+<link rel="stylesheet" href="/asset/css/style.css"/>
+<link rel="yaohata-components-setting" href="/ycs.xml"/>
+<meta
+  http-equiv="Content-Security-Policy"
+  content="img-src https://* http://localhost; media-src youtube.com; script-src https://* http://localhost 'unsafe-inline'; script-src-elem https://* http://localhost" />
+
+</head>
+<body class="bg-light">
+<framexs:property name=""/>
+<framexs:if property="google-tag-manager-code">
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe height="0" width="0" style="display:none;visibility:hidden" framexs:element="">
+<framexs:attribute name="src">https://www.googletagmanager.com/ns.html?id=<framexs:property name="google-tag-manager-code"/></framexs:attribute>
+</iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+</framexs:if>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZNQJCL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header id="pagetop">
+<nav id="navbar" class="navbar navbar-expand-lg">
+  <a class="navbar-brand"><framexs:property name="logo"/></a>
+  <a class="navbar-brand" framexs:element="">
+  <framexs:attribute name="href"><framexs:property name="home-url"/></framexs:attribute>
+  <framexs:property name="site-name"/>
+  </a>
+  <button class="d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="">ナビ</span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" framexs:element="">
+         <framexs:attribute name="href"><framexs:property name="home-path"/></framexs:attribute>
+         <framexs:text>Home </framexs:text>
+         <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <framexs:list ref-property="nav">
+        <li class="nav-item">
+          <a class="nav-link" framexs:element="">
+            <framexs:attribute name="href"><framexs:item/></framexs:attribute>
+            <framexs:item-attr name="title"/>
+          </a>
+        </li>
+      </framexs:list>
+    </ul>
+  </div>
+</nav>
+</header>
+
+<div id="top" style="height:90px;z-index:-1;position:absolute"></div>
+
+<div class="container">
+<framexs:if property="header-in-container">
+<header class="row">
+<div class="col">
+<framexs:property name="header-in-container"/>
+</div>
+</header>
+</framexs:if>
+
+<div class="row">
+
+
+<framexs:if property="sidebar" value="display">
+<!--PC用サイドバー1-->
+<aside id="sidebar-wide" class="d-none d-md-block col-md-4 bg-white">
+<framexs:resource name="sidebar-wide"/>
+<framexs:property name="sidebar-wide"/>
+</aside>
+
+
+<!--モバイル用サイドバー1-->
+<aside id="sidebar-mobile" class="col d-md-none d-block">
+<framexs:resource name="sidebar-mobile"/>
+<framexs:property name="sidebar-wide"/>
+</aside>
+</framexs:if>
+
+<!--メインパネル-->
+<div framexs:element="">
+<framexs:attribute name="class">
+center
+<framexs:switch property="sidebar">
+<framexs:case value="display">
+col-md-8
+</framexs:case>
+<framexs:case value="">
+col
+</framexs:case>
+</framexs:switch>
+</framexs:attribute>
+<framexs:if id="breadcrumb">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li framexs:id-d="breadcrumb"></li>
+<li class="breadcrumb-item active" aria-current="page"><framexs:title/></li>
+</ol>
+</nav>
+</framexs:if>
+<framexs:property name="header-in-center"/>
+<main style="width:100%" class="bg-white">
+<framexs:property name="header-in-main"/>
+
+<framexs:if property="title" value="display"><h1 class="title"><framexs:title/></h1></framexs:if>
+
+<framexs:id name="main"/>
+
+<framexs:property name="footer-in-main"/>
+</main>
+<framexs:property name="footer-in-center"/>
+</div>
+</div>
+<!-- /row -->
+
+<footer class="footer-in-container">
+<div style="font-size:1.5rem;text-align:center"><a style="color:black" href="#top">▲</a></div>
+</footer>
+
+</div>
+<!-- /container -->
+<footer id="footer" class="bg-secondary text-white">
+
+<framexs:property name="footer"/>
+
+<div style="text-align:center"><framexs:property name="copyright"/></div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<template id="ogp-template" xmlns:yc="urn:yaohata-components">
+  <div class="card" style="max-width:32rem;margin:1rem auto;">
+  <img yc:image="" />
+  <div class="card-body">
+  <h5 class="card-title"><yc:title /></h5>
+  <p class="card-text"><yc:description/></p>
+  <a yc:path="" class="btn btn-primary">ページを見る</a>
+  </div>
+  </div>
+  </template>
+  
+  <!-- ロード中表示テンプレート -->
+  <template id="loading-template" xmlns:yc="urn:yaohata-components">
+  <div class="spinner-border" role="status">
+  <span class="sr-only">Loading...</span>
+  </div>
+  </template>
+  
+  <!-- ロードエラーテンプレート -->
+  <template id="loaderror-template">
+  <div class="card" style="max-width:32rem;margin:1rem auto;">
+  <div class="card-body">
+  <div class="text-danger">
+  error
+  </div>
+  </div>
+  </div>
+  </template>
+  
+  <template id="link-template" xmlns:yc="urn:yaohata-components">
+  <div><a yc:href="{path}"><yc:title/></a></div>
+  </template>
+  
+  <template id="quote-template" xmlns:yc="urn:yaohata-components">
+  <blockquote class="internal-quote">
+  <div class="target"><yc:content/></div>
+  <div class="citation"><cite><a yc:href="{path}"><yc:title/></a></cite></div>
+  </blockquote>
+  </template>
+  
+  <template id="share-buttons" xmlns:yc="urn:yaohata-components">
+  <div class="wrapper">
+  <div class="btn" style="border: solid 2px #55acee">
+  <a class="share" style="color:#55acee" yc:href="https://twitter.com/intent/tweet?url={url}&amp;text={title}" rel="nofollow noopener" target="_blank"><i class="fab fa-twitter"> twitter</i></a>
+  </div>
+  <div class="btn" style="border: solid 2px #3b5998">
+  <a class="share" style="color:#3b5998" yc:href="http://www.facebook.com/sharer/sharer.php?u={url}" rel="nofollow noopener" target="_blank"><i class="fab fa-facebook"> facebook</i></a>
+  </div>
+  <div class="btn" style="border: solid 2px #00B900; ">
+  <a class="share" style="color:#00B900;" yc:href="https://timeline.line.me/social-plugin/share?url={url}" rel="nofollow noopener" target="_blank"><i class="fab fa-line"> line</i></a>
+  </div>
+  </div>
+  </template>
+  
+  <!--八百幡コンポーネンツの取り込み-->
+  <script src="/components/lib/SaxonJS2.js"></script>
+  <script src="/components/basic.js"></script>
+  <script src="/components/template.js"></script>
+  <script src="/components/lib/d3.js"></script>
+  <script src="/components/visualization.js"></script>
+  
+  <div id="fb-root"></div>
+  <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&amp;version=v15.0&amp;appId=1249701235068950&amp;autoLogAppEvents=1" nonce="guO3MRsZ"></script>
+  <script id="dsq-count-scr" src="//yaohata.disqus.com/count.js" async=""></script>
+</body>
+</html>
