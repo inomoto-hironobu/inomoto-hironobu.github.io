@@ -1,0 +1,141 @@
+<?xml version="1.0"?>  
+<!--
+                Copyright (c) 2021 INOMOTO Hironobu
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:framexs="urn:framexs" xmlns:yc="urn:yaohata-components" prefix="og:https://ogp.me/ns#" lang="ja">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5L2SQ9B');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="UTF-8"/>
+<meta framexs:fix="" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<meta property="og:title" content=""/>
+<meta property="og:description" content=""/>
+<meta property="og:type" content=""/>
+<meta property="og:image" content=""/>
+<meta property="og:url" content=""/>
+<title><framexs:title/> - 八百幡</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<framexs:script/>
+</head>
+<body class="bg-light">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe height="0" width="0" style="display:none;visibility:hidden" src="https://www.googletagmanager.com/ns.html?id=GTM-5L2SQ9B"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header id="pagetop">
+<nav id="navbar" class="navbar navbar-expand-lg">
+  <a class="navbar-brand"><img src="../img/logo.png" width="64" height="64"/></a>
+  <a class="navbar-brand" href="https://inomoto-hironobu.github.io/">
+    八百幡
+  </a>
+  <button class="d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="">ナビ</span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">
+          Home
+         <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</header>
+
+<div id="top" style="height:90px;z-index:-1;position:absolute"></div>
+
+<div class="container">
+<div class="row">
+
+<!--PC用サイドバー1-->
+<aside id="sidebar1-wide" class="d-none d-md-block col-md-4 bg-white">
+</aside>
+
+<!--モバイル用サイドバー1-->
+<framexs:if property="sidebar1" value="display">
+<aside id="sidebar1-mobile" framexs:element="">
+<framexs:attribute name="class">
+col d-md-none d-block
+</framexs:attribute>
+</aside>
+</framexs:if>
+
+<!--メインパネル-->
+<div framexs:element="" class="col-md-8 center">
+<framexs:attribute name="class">
+center
+<framexs:property name="center-class">
+col
+</framexs:property>
+</framexs:attribute>
+
+<main style="width:100%" class="bg-white">
+
+<h1 class="title"><framexs:title/></h1>
+
+<framexs:id name="main"/>
+
+</main>
+</div>
+
+</div>
+<!-- /row -->
+
+</div>
+<!-- /container -->
+<footer id="footer" class="bg-secondary text-white">
+<div><a href="http://inomoto-hironobu.github.io/">Framexs</a></div>
+<div style="text-align:center">八百幡</div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!-- ロード中表示テンプレート -->
+<template id="loading-template">
+<div class="spinner-border" role="status">
+<span class="sr-only">Loading...</span>
+</div>
+</template>
+
+<!-- ロードエラーテンプレート -->
+<template id="loaderror-template">
+<div class="card" style="max-width:32rem;margin:1rem auto;">
+<div class="card-body">
+<div class="text-danger">
+error
+</div>
+</div>
+</div>
+</template>
+<script src="../components/lib/d3.js"></script>
+<script src="../components/lib/SaxonJS2.js"></script>
+<script src="../components/js/visualization.js"></script>
+<div id="fb-root"></div>
+<script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&amp;version=v15.0&amp;appId=1249701235068950&amp;autoLogAppEvents=1" nonce="guO3MRsZ"></script>
+</body>
+</html>
