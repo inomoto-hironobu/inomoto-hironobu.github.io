@@ -102,7 +102,7 @@ gtag('config', 'AW-977584136');
 <link rel="yaohata-components-setting" href="/ycs.xml"/>
 <meta
   http-equiv="Content-Security-Policy"
-  content="img-src https://* http://localhost; media-src youtube.com; script-src https://* http://localhost 'unsafe-inline'; script-src-elem https://* http://localhost" />
+  content="img-src https://* http://localhost; media-src youtube.com; script-src https://* http://localhost http://localhost:18080 'unsafe-inline'; script-src-elem https://* http://localhost http://localhost:18080" />
 
 </head>
 <body class="bg-light">
@@ -291,13 +291,12 @@ col
   
   <!--八百幡コンポーネンツの取り込み-->
   <script src="/components/lib/SaxonJS2.js"></script>
-  <script src="/components/basic.js"></script>
-  <script src="/components/template.js"></script>
+  <script src="/components/js/basic.js"></script>
+  <script src="/components/js/template.js"></script>
   <script src="/components/lib/d3.js"></script>
-  <script src="/components/visualization.js"></script>
+  <script src="/components/js/visualization.js"></script>
   
   <div id="fb-root"></div>
   <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&amp;version=v15.0&amp;appId=1249701235068950&amp;autoLogAppEvents=1" nonce="guO3MRsZ"></script>
-  <script id="dsq-count-scr" src="//yaohata.disqus.com/count.js" async=""></script>
 </body>
 </html>

@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<!--広告のコードつき-->
-<framexs:properties xmlns:framexs="urn:framexs-properties">
-<framexs:base href="base.xml"/>
-<framexs:property name="pagetype">index</framexs:property>
-<framexs:property name="sidebar1"></framexs:property>
-<framexs:property name="center-class">col</framexs:property>
-<framexs:property name="header-in-main"></framexs:property>
-</framexs:properties>

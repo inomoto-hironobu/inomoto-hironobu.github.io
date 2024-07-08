@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <framexs:properties xmlns:framexs="urn:framexs-properties" xmlns="http://www.w3.org/1999/xhtml">
-<framexs:property name="site-name">井本拓伸の個人サイト</framexs:property>
+<framexs:property name="site-name">井本拓伸のHTML研究部屋</framexs:property>
 <framexs:property name="copyright">©2021 INOMOTO Hironobu</framexs:property>
 <framexs:property name="google-tag-manager-code">GTM-5L2SQ9B</framexs:property>
 <framexs:property name="home-url">https://inomoto-hironogu.github.io/index.xhtml</framexs:property>
@@ -12,8 +12,8 @@
 <framexs:property name="center-class">col-md-8</framexs:property>
 <framexs:property name="home-path">/index.xhtml</framexs:property>
 <framexs:property name="nav">
-<li title="野望">/contents/ambition.xhtml</li>
 <li title="自己紹介">/contents/aboutme.xhtml</li>
+<li title="記事一覧">/contents/article/index.xhtml</li>
 </framexs:property>
 
 <framexs:property name="footer">

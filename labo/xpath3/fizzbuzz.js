@@ -10,6 +10,8 @@ else if($i mod 5 = 0) then "buzz"
 else $i
 `;
 
-console.log(xpath);
-dataset = SaxonJS.XPath.evaluate(xpath, null);
-console.log(dataset);
+window.addEventListener("load", function() {
+	console.log(xpath);
+	dataset = SaxonJS.XPath.evaluate(xpath, null);
+	console.log(dataset);
+});
