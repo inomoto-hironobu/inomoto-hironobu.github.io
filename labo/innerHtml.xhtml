@@ -1,0 +1,106 @@
+<?xml-stylesheet type="application/xml" href="../framexs/framexs.xsl"?>
+<?framexs.skeleton template.ftml?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Sample</title>
+</head>
+<body id="contents">
+	<div id="div"></div>
+	<comments-container v="1"></comments-container>
+	<template id="comments-template"><div class="comments"></div><nav><button class="prev"></button><span class="page"></span><button class="next"></button></nav></template>
+	<script type="text/javascript">
+		class CommentsContainer extends HTMLElement {
+		constructor() {
+			super();
+			this.shadow = this.attachShadow({mode:"open"});
+			//数字として保存
+			this.page = parseInt(this.getAttribute("page"));
+			this.classId = this.getAttribute("class-id");
+			this.clazz = this.getAttribute("class");
+			this.type = this.getAttribute("type");
+			this.unit = this.getAttribute("unit");
+			this.order = this.getAttribute("order");
+			//数字として保存
+			this.max = parseInt(this.getAttribute("max"));
+			
+			const template = document.getElementById("comments-template");
+			console.log(template);
+			this.shadow.appendChild(template.content.cloneNode(true));
+			console.log(template.content.cloneNode(true));
+			console.log(this.shadow);
+			this.nav = this.shadow.querySelector("nav");
+			/*this.span = this.nav.querySelector("span.page");
+			this.nav.querySelector("button.prev").addEventListener("click",(e)=>{
+				this.setAttribute("page", this.page - 1);
+			});
+			this.nav.querySelector("button.next").addEventListener("click",(e)=>{
+				this.setAttribute("page", this.page + 1);
+			});*/
+			this.comments = this.shadow.querySelector(".comments");
+			
+			
+		}
+		static get observedAttributes() {
+			return ["page","v","id"];
+		}
+		attributeChangedCallback(attr, oldVal, newVal) {
+			console.log("changed");
+			if(attr === "page") {
+				this.page = parseInt(newVal);
+				//this.span.textContent = this.page;
+				this.load();
+			} else if(attr === "v") {
+				this.page = 1;
+				//this.span.textContent = 1;
+				this.load();
+			} else {
+				console.log(attr+newVal+oldVal);
+			}
+			
+			
+		}
+		load() {
+			const data = new URLSearchParams();
+			if(this.page) data.append("page", this.page);
+			if(this.clazz) data.append("class", this.clazz);
+			if(this.classId) data.append("id", this.classId);
+			if(this.max) data.append("max", this.max);
+			if(this.type) data.append("type", this.type);
+			if(this.unit) data.append("unit", this.unit);
+			if(this.order) data.append("order", this.order);
+			
+			fetch("text.html")
+			.then(response=>response.text())
+			.then(text=>{
+				console.log(text);
+				this.shadow.innerHTML = text;
+				/*
+				const xhtml = parser.parseFromString(text, "application/xml");
+				const children = xhtml.documentElement.children;
+				while(this.comments.firstChild) {this.comments.removeChild(this.comments.firstChild)}
+				for(let i = 0; i &gt; children.length; i++) {
+					this.comments.appendChild(children.item(0));
+				}
+				*/
+				this.shadow.querySelectorAll("pre.comment-text").forEach(e=>parseCommentText(e))
+				
+				//time要素を○○前に書き変える
+				let times = this.comments.querySelectorAll('time[datetime]');
+				times.forEach(time=>{
+					try {
+						let datetime = time.getAttribute("datetime");
+						let str = displayTime(datetime);
+						time.textContent = str;
+					} catch (e) {
+						console.error(e);
+					}
+				});
+				
+			});
+			
+		}
+	}
+	customElements.define("comments-container",CommentsContainer)
+	</script>
+</body>
+</html>

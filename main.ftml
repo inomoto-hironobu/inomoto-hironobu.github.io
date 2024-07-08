@@ -99,7 +99,7 @@ gtag('config', 'AW-977584136');
 <framexs:script/>
 <script src="/asset/js/yaohata.js"></script>
 <link rel="stylesheet" href="/asset/css/style.css"/>
-<link rel="yaohata-components-setting" href="/ycs.xml"/>
+<link rel="yaohata-components-location" href="/components/"/>
 <meta
   http-equiv="Content-Security-Policy"
   content="img-src https://* http://localhost; media-src youtube.com; script-src https://* http://localhost http://localhost:18080 'unsafe-inline'; script-src-elem https://* http://localhost http://localhost:18080" />
@@ -122,7 +122,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <header id="pagetop">
 <nav id="navbar" class="navbar navbar-expand-lg">
-  <a class="navbar-brand"><framexs:property name="logo"/></a>
   <a class="navbar-brand" framexs:element="">
   <framexs:attribute name="href"><framexs:property name="home-url"/></framexs:attribute>
   <framexs:property name="site-name"/>
