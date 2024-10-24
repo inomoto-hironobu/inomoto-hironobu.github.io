@@ -8,9 +8,7 @@
 .footer-links a {
     color: white;
 }
-.footer-links a:hover{
-    color: white;
-}
+
 .share-buttons {
     margin:auto;
     max-width:660px;
@@ -28,7 +26,7 @@
     margin-left:-54px;
 }
 .tips:before {
-    list-style: none;
+
     content: "※　";
 }
 
@@ -74,19 +72,14 @@ img.left {
 	/*メニューの幅にも対応*/
 	line-height: 1.5;
   }
-/*
-想定するコード
-<div class="code-container">
-<div class="caption">---</div>
-<pre><code>
----
-</code></pre>
-</div>*/
+
 .code-container code {
+	position: relative;
 	margin-left: 1rem;
 }
 	
 .code-container code:before {
+	position: absolute;
 clear:both;
 	color:#900;
 	font-weight:bold;
@@ -150,11 +143,11 @@ table.vertical tfoot {
 
 .info > p {
 	line-height: 1.5;
-	margin:10px;
 	text-shadow: 2px 2px 1px #fff, -2px 2px 1px #fff, 2px -2px 1px #fff, -2px -2px 1px #fff, 2px 0px 1px #fff, 0px 2px 1px #fff, -2px 0px 1px #fff, 0px -2px 1px #fff;
-	margin: 20px 20px 20px 10px;
 	border-width: 0;
+	 margin: 20px 10px;
 	padding:5px 15px;
+	
 }
 
 .info h3 {
@@ -243,26 +236,20 @@ ul.sharebuttons div {
 }
 
 .contact-button {
-	background: RGBA(255,255,255,0.02);
-    margin: 1rem auto;
-    text-align: center;
-    width: 100%;
-    padding: 10px 0;
-	color: #396;
-	display:block;
-	padding: 10px 0;
-	margin: 1rem 10%;
-    width: 80%;
     background: linear-gradient(#efe, #beb);
+    margin: 1rem 10%;
+    text-align: center;
+    width: 80%;
+    padding: 10px 0;
     color: #396;
     font-weight: bold;
     font-size: 180%;
     border: solid 5px #396;
     border-radius: 10px;
-    text-shadow: 2px 2px 1px #fff, -2px 2px 1px #fff, 2px -2px 1px #fff, -2px -2px 1px #fff, 2px 0px 1px #fff, 0px 2px 1px #fff, -2px 0px 1px #fff, 0px -2px 1px #fff;
+    text-shadow: 2px 2px 1px #fff;
     box-shadow: 2px 2px 4px #9a9;
-
 }
+
 
 .emphasis{
 	/*見出しボックス内の色を変更*/
