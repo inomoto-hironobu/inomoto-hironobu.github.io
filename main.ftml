@@ -24,25 +24,29 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 gtag('config', 'AW-977584136');
+
+gtag('event', 'conversion_event_default_1', {
+// <event_parameters>
+}); 
 </script>
 <framexs:if property="google-tag-manager-code">
-<!-- Google Tag Manager -->
+      <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','<framexs:property name="google-tag-manager-code"/>');</script>
-<!-- End Google Tag Manager -->
+      <!-- End Google Tag Manager -->
 </framexs:if>
-<!-- Google Tag Manager -->
+    <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-KZNQJCL');</script>
-  <!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager -->
 <framexs:if property="google-analytics-code">
-<!-- Global site tag (gtag.js) - Google Analytics -->
+      <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" framexs:element="">
 <framexs:attribute name="src">https://www.googletagmanager.com/gtag/js?id=<framexs:property name="google-analytics-code"/></framexs:attribute>
 </script>
@@ -108,18 +112,18 @@ gtag('config', 'AW-977584136');
 <body class="bg-light">
 <framexs:property name=""/>
 <framexs:if property="google-tag-manager-code">
-<!-- Google Tag Manager (noscript) -->
+      <!-- Google Tag Manager (noscript) -->
 <noscript>
 <iframe height="0" width="0" style="display:none;visibility:hidden" framexs:element="">
 <framexs:attribute name="src">https://www.googletagmanager.com/ns.html?id=<framexs:property name="google-tag-manager-code"/></framexs:attribute>
 </iframe>
 </noscript>
-<!-- End Google Tag Manager (noscript) -->
+      <!-- End Google Tag Manager (noscript) -->
 </framexs:if>
-<!-- Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZNQJCL"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- End Google Tag Manager (noscript) -->
 <header id="pagetop">
 <nav id="navbar" class="navbar navbar-expand-lg">
   <a class="navbar-brand" framexs:element="">
@@ -167,21 +171,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <framexs:if property="sidebar" value="display">
-<!--PC用サイドバー1-->
+          <!--PC用サイドバー1-->
 <aside id="sidebar-wide" class="d-none d-md-block col-md-4 bg-white">
 <framexs:resource name="sidebar-wide"/>
 <framexs:property name="sidebar-wide"/>
 </aside>
 
 
-<!--モバイル用サイドバー1-->
+          <!--モバイル用サイドバー1-->
 <aside id="sidebar-mobile" class="col d-md-none d-block">
 <framexs:resource name="sidebar-mobile"/>
 <framexs:property name="sidebar-wide"/>
 </aside>
 </framexs:if>
 
-<!--メインパネル-->
+        <!--メインパネル-->
 <div framexs:element="">
 <framexs:attribute name="class">
 center
@@ -215,14 +219,14 @@ col
 <framexs:property name="footer-in-center"/>
 </div>
 </div>
-<!-- /row -->
+      <!-- /row -->
 
 <footer class="footer-in-container">
 <div style="font-size:1.5rem;text-align:center"><a style="color:black" href="#top">▲</a></div>
 </footer>
 
 </div>
-<!-- /container -->
+    <!-- /container -->
 <footer id="footer" class="bg-secondary text-white">
 
 <framexs:property name="footer"/>
@@ -244,15 +248,15 @@ col
   </div>
   </div>
   </template>
-  
-  <!-- ロード中表示テンプレート -->
+
+    <!-- ロード中表示テンプレート -->
   <template id="loading-template" xmlns:yc="urn:yaohata-components">
   <div class="spinner-border" role="status">
   <span class="sr-only">Loading...</span>
   </div>
   </template>
-  
-  <!-- ロードエラーテンプレート -->
+
+    <!-- ロードエラーテンプレート -->
   <template id="loaderror-template">
   <div class="card" style="max-width:32rem;margin:1rem auto;">
   <div class="card-body">
@@ -287,8 +291,8 @@ col
   </div>
   </div>
   </template>
-  
-  <!--八百幡コンポーネンツの取り込み-->
+
+    <!--八百幡コンポーネンツの取り込み-->
   <script src="/components/lib/SaxonJS2.js"></script>
   <script src="/components/js/basic.js"></script>
   <script src="/components/js/template.js"></script>
