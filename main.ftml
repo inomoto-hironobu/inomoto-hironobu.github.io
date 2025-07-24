@@ -101,6 +101,7 @@ gtag('event', 'conversion_event_default_1', {
 <framexs:meta/>
 <framexs:link/>
 <framexs:script/>
+<framexs:style/>
 <script src="/asset/js/yaohata.js"></script>
 <link rel="stylesheet" href="/asset/css/style.css"/>
 <link rel="yaohata-components-location" href="/components/"/>
